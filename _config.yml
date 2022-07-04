@@ -65,10 +65,10 @@ author:
       url: "https://tomfieber.github.io"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/tomfieber"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/tomfieber"
 
 footer:
   links:
