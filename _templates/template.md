@@ -1,11 +1,10 @@
 ---
-title: "Post: Standard"
+title: ""
+date: {{date}} @ {{time}}
 excerpt_separator: "<!--more-->"
 categories:
   - Blog
 tags:
-  - Post Formats
-  - readability
-  - standard
+  - walkthrough
 ---
 
