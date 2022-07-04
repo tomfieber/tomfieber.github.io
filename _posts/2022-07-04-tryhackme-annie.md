@@ -136,6 +136,8 @@ stty raw -echo;fg
 
 >**NOTE:** If you're using the ZSH shell, it's important to put `stty raw -echo;fg` all on one line. The shell seems to complain if you don't. 
 
+Go ahead and grab the user flag. 
+
 # SSH
 Checking around annie's home directory, we find an SSH key that will let us get a more stable shell. Copy that key onto your attacking machine and change permissions using 
 
@@ -163,7 +165,7 @@ Once we have a compatible hash, we can use `john` to crack the passphrase.
 john --wordlist=/opt/wordlists/rockyou.txt annie.hash
 ```
 
-![](/assets/images/Pasted%20image%2020220704140440.png)
+After a few minutes, the hash will crack and you'll have the passphrase. 
 
 Awesome! We can get a stable SSH connection now and won't have to worry about a reverse shell dropping. 
 
