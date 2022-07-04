@@ -11,8 +11,9 @@ tags:
 # Summary
 Annie is a **medium** difficulty Linux box on [TryHackMe](https://tryhackme.com/room/annie). This machine involved compromising a vulnerable AnyDesk installation and then abusing an uncommon SetUID binary to elevate privileges to root. 
 <!--more-->
-# Enumeration
-## Nmap
+# Walkthrough
+## Enumeration
+### Nmap
 After exporting the hostname and IP to environment variables, I ran a basic nmap scan with default scripts and version detection against all ports. 
 
 ```bash
@@ -52,8 +53,8 @@ I grabbed that exploit using `searchsploit`.
 searchsploit -m 49613
 ```
 
-# Exploit
-## Updating the exploit code
+## Exploit
+### Updating the exploit code
 Reviewing the code, we can see there are a couple of things we need to update for it to work. 
 
 ```python
@@ -118,7 +119,7 @@ To make this code work, we need to update the following:
 After updating those values and running the exploit with `python2 49613.py` we get a connection back to our `netcat` listener. 
 
 ![](/assets/images/Pasted%20image%2020220704133946.png)
-## Stabilize the shell
+### Stabilize the shell
 Stablize the reverse shell with the following commands
 ```bash
 # Spawn a bash shell with Python
@@ -138,7 +139,7 @@ stty raw -echo;fg
 
 Go ahead and grab the user flag. 
 
-# SSH
+## SSH
 Checking around annie's home directory, we find an SSH key that will let us get a more stable shell. Copy that key onto your attacking machine and change permissions using 
 
 ```bash
@@ -169,16 +170,16 @@ After a few minutes, the hash will crack and you'll have the passphrase.
 
 Awesome! We can get a stable SSH connection now and won't have to worry about a reverse shell dropping. 
 
-# Privilege Escalation
-## Enumeration
+## Privilege Escalation
+### Enumeration
 From here, you're free to use whatever privilege escalation enumeration script you like (i.e., LinEnum, LinPEAS, Linux-Smart-Enumeration). Personally, I prefer LSE. If you don't like any of those, feel free to enumerate manually. 
 
-## Uncommon SetUID binary
+### Uncommon SetUID binary
 Looking through the output of LSE, there's an uncommon binary with the setuid bit set. 
 
 ![](/assets/images/Pasted%20image%2020220704141246.png)
 
-## Setcap
+### Setcap
 The `setcap` binary allows the user to set file capabilities. To exploit this, we can make a copy of the `python3` binary and modify the capabilities of that file as detailed [here](https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/). 
 
 ### Copy the Python binary
