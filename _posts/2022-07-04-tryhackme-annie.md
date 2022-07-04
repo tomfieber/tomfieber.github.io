@@ -44,7 +44,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 After some research, I found that TCP port 7070 is commonly used with AnyDesk software. To test that theory, I checked online for exploits for AnyDesk and found one that looked promising. 
 
-![](Pasted%20image%2020220704132548.png)
+![](/assets/images/Pasted%20image%2020220704132548.png)
 
 I grabbed that exploit using `searchsploit`.
 
@@ -117,7 +117,7 @@ To make this code work, we need to update the following:
 
 After updating those values and running the exploit with `python2 49613.py` we get a connection back to our `netcat` listener. 
 
-![](Pasted%20image%2020220704133946.png)
+![](/assets/images/Pasted%20image%2020220704133946.png)
 ## Stabilize the shell
 Stablize the reverse shell with the following commands
 ```bash
@@ -145,7 +145,7 @@ chmod 600 annie.key
 
 As soon as we try to SSH into the machine as the `annie` user, we find that the key has a passphrase. 
 
-![](Pasted%20image%2020220704135152.png)
+![](/assets/images/Pasted%20image%2020220704135152.png)
 
 ## Cracking the passphrase
 To crack the passphrase for Annie's key, we need to use `ssh2john`. Depending on how you have `John the Ripper` installed, your installation location may be different, but you can find it with `locate ssh2john`. 
@@ -163,7 +163,7 @@ Once we have a compatible hash, we can use `john` to crack the passphrase.
 john --wordlist=/opt/wordlists/rockyou.txt annie.hash
 ```
 
-![](Pasted%20image%2020220704140440.png)
+![](/assets/images/Pasted%20image%2020220704140440.png)
 
 Awesome! We can get a stable SSH connection now and won't have to worry about a reverse shell dropping. 
 
@@ -174,7 +174,7 @@ From here, you're free to use whatever privilege escalation enumeration script y
 ## Uncommon SetUID binary
 Looking through the output of LSE, there's an uncommon binary with the setuid bit set. 
 
-![](Pasted%20image%2020220704141246.png)
+![](/assets/images/Pasted%20image%2020220704141246.png)
 
 ## Setcap
 The `setcap` binary allows the user to set file capabilities. To exploit this, we can make a copy of the `python3` binary and modify the capabilities of that file as detailed [here](https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/). 
@@ -200,6 +200,6 @@ Now that we've set the capability on the local python binary, we can run the fol
 ./python3 -c 'import os;os.setuid(0);os.system("/bin/bash")'
 ```
 
-![](Pasted%20image%2020220704142433.png)
+![](/assets/images/Pasted%20image%2020220704142433.png)
 
 Now you grab the root flag and finsh the room. 
