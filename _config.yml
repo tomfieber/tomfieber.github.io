@@ -69,15 +69,18 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/tomfieber"
+    - label: "Discord - th0m12"
+      icon: "fab fa-brands fa-discord"
+      
 
 footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/tomfieber"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/tomfieber"
 
 defaults:
   # _posts
