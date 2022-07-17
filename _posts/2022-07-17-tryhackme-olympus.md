@@ -42,7 +42,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ### Website
 Checking out the website we get an "Under construction" message. However, the message does indicate that the old version of the website is still available somewhere on this domain. Let's see if we can find it. 
 
-![](assets/images/Pasted%20image%2020220717074903.png)
+![](../assets/images/Pasted%20image%2020220717074903.png)
 
 ### Fuzzing
 ```bash
@@ -63,7 +63,7 @@ static                  [Status: 301, Size: 311, Words: 20, Lines: 10]
 
 There's a directory `~webmaster` that returns a 301 HTTP code ("Moved Permanently"). Chekcing that out reveals a blog of some sort titled "Victor's CMS". 
 
-![](assets/images/Pasted%20image%2020220717075646.png)
+![](../assets/images/Pasted%20image%2020220717075646.png)
 
 ## SQL Injection
 After poking around the site for a bit, we find a `credentials.php` page that looks like it might be making a call to a backend database. We can run that through `sqlmap` to see if anything comes back. 
@@ -153,7 +153,7 @@ $ john --wordlist=/opt/wordlists/rockyou.txt --format=bcrypt creds.txt
 
 John quickly cracks the password for the `prometheus` users. We can now log into the website with those credentials. That drops us onto an admin page. 
 
-![](assets/images/Pasted%20image%2020220717084451.png)
+![](../assets/images/Pasted%20image%2020220717084451.png)
 
 After testing all the functionality on this page, it seems like this is a bit of a rabbit hole. 
 
@@ -174,11 +174,11 @@ chat                    [Status: 302, Size: 0, Words: 1, Lines: 1]
 
 Awesome, there's a chat page we can look at. 
 
-![](assets/images/Pasted%20image%2020220717111208.png)
+![](../assets/images/Pasted%20image%2020220717111208.png)
 
 The credentials we found earlier for `prometheus` work to log in here, and we're greeted with the "Olympus Chat App". 
 
-![](assets/images/Pasted%20image%2020220717111338.png)
+![](../assets/images/Pasted%20image%2020220717111338.png)
 
 There's a file upload functionality on this page, but reading the chat messages it's clear that the application uses a random name function to rename the files when they're uploaded. Since we don't know what that function is, we'll have to dig a little bit more. 
 
@@ -215,7 +215,7 @@ Now we just need to figure out if there are any filters in place that would prev
 
 To get a webshell on server, uploaded a normal image using the file upload functionality on the chat page, intercepted the request with Burp and sent the request to the Burp Repeater. In the repeater tab I did the following:
 
-![](assets/images/Pasted%20image%2020220717113111.png)
+![](../assets/images/Pasted%20image%2020220717113111.png)
 
 1. Change the filename to `shell.php`
 2. Chage the Content-Type from `image/jpeg` to `application/x-php`
