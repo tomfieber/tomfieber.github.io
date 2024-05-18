@@ -12,5 +12,6 @@ Certs:
 - CISSP
 - OSEP
 - OSCP
+- CRTO
 - CREST CRT
 - CREST CPSA
