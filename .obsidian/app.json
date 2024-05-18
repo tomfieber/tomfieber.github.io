@@ -1,4 +1,5 @@
 {
   "attachmentFolderPath": "assets/images",
-  "newLinkFormat": "absolute"
+  "newLinkFormat": "absolute",
+  "showUnsupportedFiles": true
 }
