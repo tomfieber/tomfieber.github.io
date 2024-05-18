@@ -7,6 +7,10 @@
   icon: 'fab fa-linkedin'
   url:  'https://www.linkedin.com/in/thomasfieber'
 
+- type: email
+  icon: "fas fa-envelope"
+  noblank: true # open link in current tab
+
 - type: rss
   icon: "fas fa-rss"
   noblank: true
