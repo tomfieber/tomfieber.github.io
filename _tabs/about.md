@@ -4,5 +4,13 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+# About me
+
+I'm a dad, husband, and retired Army veteran. Striving to be the okayest pentester I can be. 
+
+Certs:
+- CISSP
+- OSEP
+- OSCP
+- CREST CRT
+- CREST CPSA
