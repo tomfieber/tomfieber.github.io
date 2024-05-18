@@ -11,6 +11,8 @@ tags:
   - uac
 ---
 ![](/assets/images/Pasted%20image%2020240518150601.png)
+
+
 OS: Windows
 Difficulty: Easy
 Platform: [VulnLab](https://wiki.vulnlab.com/guidance/easy/escape)
