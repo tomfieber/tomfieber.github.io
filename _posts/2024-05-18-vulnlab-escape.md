@@ -14,10 +14,10 @@ tags:
 
 # Summary
 
-Escape is an easy rated Windows box from 
+Escape is an easy rated Windows box from [VulnLab](https://wiki.vulnlab.com/guidance/easy/escape). This box involved breaking out of a restricted kiosk environment, recovering an obfuscated RDP password, and finally bypassing UAC to escalate privilges. 
 
-# Enumeration
-## Nmap
+## Walkthrough
+### Enumeration
 Nmap shows that only port 3389 is open on the server.
 
 ```
@@ -84,7 +84,7 @@ Once we're logged in, we are presented with sign for the `Busan Expo`.
 
 ![](assets/images/Pasted%20image%2020240518153903.png)
 
-# Kiosk Breakout
+### Kiosk Breakout
 Right click and most commands are restricted in kiosk mode; however, we can use the Windows key to bring up the menu and select Microsoft Edge from there to get a browser with a URL bar and most functionality enabled.
 
 Within Edge, we can use the following in the URL bar to get a directory listing of the `C:\` drive. 
@@ -103,13 +103,13 @@ The `profiles.xml` looks like it has an encrypted password in it. We'll need to 
 
 ![](/assets/images/Pasted%20image%2020240518155104.png)
 
-# User Flag
+### User Flag
 
 We can just grab the user flag from here. 
 
 ![](/assets/images/Pasted%20image%2020240518155305.png)
 
-# Privilege Escalation
+### Privilege Escalation
 
 To proceed, we're going to need a proper shell. Since we're fairly restricted on what we can execute, we'll need to download `cmd.exe` and then rename it to `msedge` since that's one of the only things allowed in kiosk mode.
 
