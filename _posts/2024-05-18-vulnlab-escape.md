@@ -12,12 +12,12 @@ tags:
 ---
 ![](/assets/images/Pasted%20image%2020240518150601.png)
 
+# Summary
 
-OS: Windows
-Difficulty: Easy
-Platform: [VulnLab](https://wiki.vulnlab.com/guidance/easy/escape)
+Escape is an easy rated Windows box from 
 
 # Enumeration
+## Nmap
 Nmap shows that only port 3389 is open on the server.
 
 ```
