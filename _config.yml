@@ -28,8 +28,11 @@ url: "https://tomfieber.github.io"
 github:
   username: tomfieber # change to your github username
 
-twitter:
-  username: tomfieber # change to your twitter username
+#twitter:
+ # username: tomfieber # change to your twitter username
+
+linkedin:
+  username: thomasfieber
 
 social:
   # Change to your full name.

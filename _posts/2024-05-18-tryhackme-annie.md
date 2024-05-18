@@ -1,7 +1,12 @@
 ---
 layout: post
-title: 'TryHackMe: Annie'
+title: "TryHackMe: Annie"
 date: 2024-05-18 12:00 -0500
+categories: writeup
+tags:
+  - thm
+  - anydesk
+  - setuid
 ---
 
 # Summary
