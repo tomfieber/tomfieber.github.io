@@ -1,0 +1,159 @@
+{
+  "main": {
+    "id": "679d8f356428ae71",
+    "type": "split",
+    "children": [
+      {
+        "id": "19e765b4e542cf08",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1554065bef17f411",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2024-05-18-tryhackme-annie.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c2c480c194075d9f",
+    "type": "split",
+    "children": [
+      {
+        "id": "33cffbf7a316d41c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5590b21b0824a964",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ff0685bd5ac725bc",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e2244efec53e8f95",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "c9ac31eee6410ef0",
+    "type": "split",
+    "children": [
+      {
+        "id": "d78b05dc82ac7bb2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7f8de8f1b43d031",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/2024-05-18-tryhackme-annie.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4adb614204f0113a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_posts/2024-05-18-tryhackme-annie.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "bfa5f0d9416d8c7b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "8375d2e0c5c03292",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/2024-05-18-tryhackme-annie.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "5590b21b0824a964",
+  "lastOpenFiles": [
+    "assets/images/Pasted image 20220704142433.png",
+    "assets/images/Pasted image 20220704141246.png",
+    "assets/images/Pasted image 20220704135152.png",
+    "assets/images/Pasted image 20220704133946.png",
+    "assets/images/Pasted image 20220704132548.png",
+    "assets/images/bio-photo.jpeg"
+  ]
+}

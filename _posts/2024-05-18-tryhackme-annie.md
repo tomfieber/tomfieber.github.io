@@ -114,7 +114,8 @@ To make this code work, we need to update the following:
 
 After updating those values and running the exploit with `python2 49613.py` we get a connection back to our `netcat` listener. 
 
-![](/assets/images/Pasted%20image%2020220704133946.png)
+![Testing](/assets/images/Pasted%20image%2020220704133946.png)
+
 ### Stabilize the shell
 Stablize the reverse shell with the following commands
 ```bash
