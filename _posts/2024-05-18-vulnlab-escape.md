@@ -149,6 +149,10 @@ After getting the new shell, we can observe that the `admin` user is a member of
 
 Something I learned doing this lab was that it wasn't necessary to use something like `fodhelper` to bypass UAC in this case. Using the following command brought up the UAC dialog and clicking on the "Yes" button brings up PowerShell running as a high integrity process. 
 
+```
+Start-Process powershell -Verb runas
+```
+
 ![](/assets/images/Pasted%20image%2020240518171406.png)
 
 We can see that we now have all administrative privileges. 
