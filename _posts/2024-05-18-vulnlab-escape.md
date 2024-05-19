@@ -121,7 +121,7 @@ After checking around a little bit it seems like we're pretty much restricted to
 
 Start up RDP plus from `C:\Program Files (x86)\Remote Desktop Plus\rdp.exe`. 
 
-![](/assets/images/Pasted%20image%2020240518161251.png]]
+![](/assets/images/Pasted%20image%2020240518161251.png)
 
 From the `Manage profiles` menu, select `Import profile` from the `Import and export` menu.
 
