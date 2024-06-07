@@ -193,12 +193,12 @@ When we enter that and hit "Update Banner Image", we get back the following resp
 Looks like a base64-encoded string.
 
 ```bash
-echo 'eyJSZXZpZXdBcHBVc2VybmFtZSI6ImFkbWluIiwiUmV2aWV3QXBwUGFzc3dvcmQiOiJhZG1pbkAhISEiLCJTeXNNb25BcHBVc2VybmFtZSI6ImFkbWluaXN0cmF0b3IiLCJTeXNNb25BcHBQYXNzd29yZCI6IlMkOSRxazZkIyoqTFFVIn0=' | base64 -d | jq
+echo 'eyJSZXZpZXdBcHBVc2VybmFtZS[...SNIP...]N0cmF0b3IiLCJTeXNNb25BcHBQYXNzd29yZCI6IlMkOSRxazZkIyoqTFFVIn0=' | base64 -d | jq
 {
   "ReviewAppUsername": "admin",
-  "ReviewAppPassword": "admin@!!!",
+  "ReviewAppPassword": "[REDACTED]",
   "SysMonAppUsername": "administrator",
-  "SysMonAppPassword": "S$9$qk6d#**LQU"
+  "SysMonAppPassword": "[REDACTED]"
 }
 ```
 
