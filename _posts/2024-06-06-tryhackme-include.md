@@ -383,8 +383,8 @@ One potential option to prevent the path traversal might be to use the `realpath
 ---
 # Resources
 
-[PHP.net | preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
+preg-replace - https://www.php.net/manual/en/function.preg-replace.php
 
-[PHP.net | strpos()](https://www.php.net/manual/en/function.strpos.php)
+strpos - https://www.php.net/manual/en/function.strpos.php
 
-[PHP.net | realpath()](https://www.php.net/manual/en/function.realpath.php)
+realpath - https://www.php.net/manual/en/function.realpath.php
