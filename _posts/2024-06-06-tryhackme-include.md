@@ -12,7 +12,7 @@ tags:
 
 ## Summary
 
-Include is a **MEDIUM** difficulty room on [TryHackMe](https://tryhackme.com/r/room/include) that involves abusing a prototype pollution vulnerability to get access to an admin panel, leveraging an internal API to obtain credentials for another service, and then combining a Local File Inclusion (LFI) vulnerability with log poisoning to achieve Remote Code Execution (RCE) on the web server. 
+Include is a **MEDIUM** difficulty room on [TryHackMe](https://tryhackme.com/r/room/include) that involves abusing a prototype pollution vulnerability to get access to an admin panel, leveraging an internal API to obtain credentials for another service via a Server-Side Request Forgery (SSRF), and then combining a Local File Inclusion (LFI) vulnerability with log poisoning to achieve Remote Code Execution (RCE) on the web server. 
 
 ## Walkthrough
 
