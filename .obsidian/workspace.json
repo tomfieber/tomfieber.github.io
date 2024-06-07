@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-06-06-tryhackme-include.md",
+                "file": "_posts/2024-06-07-tryhackme-kenobi.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-06-06-tryhackme-include.md",
+                "file": "_posts/2024-06-07-tryhackme-kenobi.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-06-06-tryhackme-include.md",
+                "file": "_posts/2024-06-07-tryhackme-kenobi.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-06-06-tryhackme-include.md"
+                "file": "_posts/2024-06-07-tryhackme-kenobi.md"
               }
             }
           }
@@ -148,19 +148,20 @@
   },
   "active": "1554065bef17f411",
   "lastOpenFiles": [
+    "assets/images/Pasted image 20240607140530.png",
+    "assets/images/Pasted image 20240607134822.png",
+    "assets/images/Pasted image 20240607134737.png",
+    "assets/images/Pasted image 20240607134152.png",
+    "assets/images/Pasted image 20240607133035.png",
+    "assets/images/Pasted image 20240607125757.png",
+    "assets/images/46f437a95b1de43238c290a9c416c8d4.png",
+    "_posts/2024-06-06-tryhackme-include.md",
+    "_posts/2024-06-07-tryhackme-kenobi.md",
     "assets/images/Pasted image 20240607083503.png",
     "assets/images/Pasted image 20240607083339.png",
     "assets/images/Pasted image 20240607082700.png",
     "assets/images/Pasted image 20240607082114.png",
-    "assets/images/Pasted image 20240607081938.png",
-    "assets/images/Pasted image 20240607081809.png",
-    "assets/images/Pasted image 20240607080714.png",
-    "assets/images/Pasted image 20240607080247.png",
-    "assets/images/Pasted image 20240607075442.png",
-    "assets/images/Pasted image 20240607075320.png",
-    "assets/images/Pasted image 20240607074913.png",
     "_posts/2024-05-18-vulnlab-escape.md",
-    "_posts/2024-06-06-tryhackme-include.md",
     "_posts/2024-05-18-tryhackme-annie.md"
   ]
 }
