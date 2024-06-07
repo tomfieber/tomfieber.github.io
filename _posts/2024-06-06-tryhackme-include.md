@@ -10,15 +10,15 @@ tags:
 ---
 ![](assets/images/include.png)
 
-# Summary
+## Summary
 
 Include is a **MEDIUM** difficulty room on [TryHackMe](https://tryhackme.com/r/room/include) that involves abusing a prototype pollution vulnerability to get access to an admin panel, leveraging an internal API to obtain credentials for another service, and then combining a Local File Inclusion (LFI) vulnerability with log poisoning to achieve Remote Code Execution (RCE) on the web server. 
 
-# Walkthrough
+## Walkthrough
 
-## Enumeration
+### Enumeration
 
-### Port Scanning
+#### Port Scanning
 
 The initial Nmap scan shows 8 ports open, as follows:
 
@@ -33,9 +33,9 @@ The initial Nmap scan shows 8 ports open, as follows:
 50000/open/tcp/http/Apachehttpd2.4.41((Ubuntu))
 ```
 
-### Service Enumeration
+#### Service Enumeration
 
-#### SSH
+##### SSH
 
 This isn't an ancient version of SSH, so it's unlikely that we'll find an exploitable condition in SSH itself, but it's worth checking to see if the service accepts password authentication and/or if a weak password might be in use. 
 
@@ -58,7 +58,7 @@ root@10.10.172.107: Permission denied (publickey,password).
 
 We can move on from SSH for now.
 
-#### SMTP
+##### SMTP
 
 Using `telnet` to connect to the SMTP service, we're able to enumerate valid users on the system, as shown below. Note the message after attempting to send mail to a user that does not exist ("doesnotexist") compared to the message received after entering a user that does exist ("root").
 
@@ -84,7 +84,7 @@ We can use a tool like `smtp-user-enum` to try to gather a list of valid usernam
 
 Let's hold onto this for now and come back to it later. 
 
-#### IMAP/POP3
+##### IMAP/POP3
 
 We can grab the IMAP banner with netcat.
 
@@ -142,10 +142,10 @@ RETR 1
 -ERR Unknown command.
 ```
 
-## Exploitation
+### Exploitation
 
-### Web
-#### HTTP - Port 4000
+#### Web
+##### HTTP - Port 4000
 
 After adding the IP to the `/etc/hosts` file with the command below we're able to browse to the first web app:
 
@@ -202,7 +202,7 @@ echo 'eyJSZXZpZXdBcHBVc2VybmFtZSI6ImFkbWluIiwiUmV2aWV3QXBwUGFzc3dvcmQiOiJhZG1pbk
 }
 ```
 
-#### HTTP - Port 50000
+##### HTTP - Port 50000
 
 Sweet. We've got a password that will allow us to log into the other web app on port 50000. 
 
@@ -347,7 +347,7 @@ Here is the "mystery" text file that will give us flag 2.
 
 ![](assets/images/Pasted%20image%2020240607083503.png)
 
-# Additional Digging
+## Additional Digging
 
 Looking at the code for `profile.php`, we can see what's happening here.
 
@@ -381,7 +381,7 @@ So the code is stripping out `../` sequences, but it's using the `preg_replace` 
 One potential option to prevent the path traversal might be to use the `realpath` PHP function which returns the canonicalized absolute path. I am not a PHP developer though, so if there are better solutions to prevent this, I'd love to hear about them. 
 
 ---
-# Resources
+## Resources
 
 preg-replace - https://www.php.net/manual/en/function.preg-replace.php
 
