@@ -4,15 +4,15 @@ title: "TryHackMe: Include"
 date: 2024-06-07 0700 -0500
 categories: writeup
 tags:
-  - prototype_pollution
   - LFI
   - log_poisoning
+  - SSRF
 ---
 ![](assets/images/include.png)
 
 ## Summary
 
-Include is a **MEDIUM** difficulty room on [TryHackMe](https://tryhackme.com/r/room/include) that involves abusing a prototype pollution vulnerability to get access to an admin panel, leveraging an internal API to obtain credentials for another service via a Server-Side Request Forgery (SSRF), and then combining a Local File Inclusion (LFI) vulnerability with log poisoning to achieve Remote Code Execution (RCE) on the web server. 
+Include is a **MEDIUM** difficulty room on [TryHackMe](https://tryhackme.com/r/room/include) that involves abusing a logic flaw to get access to an admin panel, leveraging an internal API to obtain credentials for another service via a Server-Side Request Forgery (SSRF), and then combining a Local File Inclusion (LFI) vulnerability with log poisoning to achieve Remote Code Execution (RCE) on the web server. 
 
 ## Walkthrough
 
@@ -383,8 +383,8 @@ One potential option to prevent the path traversal might be to use the `realpath
 ---
 ## Resources
 
-preg-replace - https://www.php.net/manual/en/function.preg-replace.php
+[preg-replace](https://www.php.net/manual/en/function.preg-replace.php)  
 
-strpos - https://www.php.net/manual/en/function.strpos.php
+[strpos](https://www.php.net/manual/en/function.strpos.php)
 
-realpath - https://www.php.net/manual/en/function.realpath.php
+[realpath](https://www.php.net/manual/en/function.realpath.php)
