@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "45efad971834913a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2024-06-11-tryhackme-airplane.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-06-07-tryhackme-kenobi.md",
+                "file": "_posts/2024-06-11-tryhackme-airplane.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-06-07-tryhackme-kenobi.md",
+                "file": "_posts/2024-06-11-tryhackme-airplane.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-06-07-tryhackme-kenobi.md"
+                "file": "_posts/2024-06-11-tryhackme-airplane.md"
               }
             }
           }
@@ -146,8 +159,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1554065bef17f411",
+  "active": "45efad971834913a",
   "lastOpenFiles": [
+    "README.md",
+    "_posts/2024-06-11-tryhackme-airplane.md",
+    "assets/images/Pasted image 20240607153910.png",
+    "assets/images/Pasted image 20240607151423.png",
+    "assets/images/Pasted image 20240607151334.png",
+    "_posts/2024-06-07-tryhackme-kenobi.md",
     "assets/images/Pasted image 20240607140530.png",
     "assets/images/Pasted image 20240607134822.png",
     "assets/images/Pasted image 20240607134737.png",
@@ -156,11 +175,6 @@
     "assets/images/Pasted image 20240607125757.png",
     "assets/images/46f437a95b1de43238c290a9c416c8d4.png",
     "_posts/2024-06-06-tryhackme-include.md",
-    "_posts/2024-06-07-tryhackme-kenobi.md",
-    "assets/images/Pasted image 20240607083503.png",
-    "assets/images/Pasted image 20240607083339.png",
-    "assets/images/Pasted image 20240607082700.png",
-    "assets/images/Pasted image 20240607082114.png",
     "_posts/2024-05-18-vulnlab-escape.md",
     "_posts/2024-05-18-tryhackme-annie.md"
   ]
