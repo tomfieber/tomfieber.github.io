@@ -9,8 +9,6 @@ tags:
   - path-variable-manipulation
 image: /images/tryhackme_kenobi/kenobi.png
 ---
-![](/images/kenobi.png)
-
 ## Summary
 
 Kenobi is an **EASY** room on [TryHackMe](https://tryhackme.com/r/room/kenobi) that involves accessing an open Samba share, and then abusing a vulnerable version of ProFtpd to get a foothold on the machine, and then abusing a SUID binary to elevate privileges to root. 
