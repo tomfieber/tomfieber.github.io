@@ -7,6 +7,9 @@ tags:
   - samba
   - ProFtpd
   - path-variable-manipulation
+img_path: /assets/images/tryhackme_kenobi
+image:
+   path: kenobi.png
 ---
 ![](assets/images/kenobi.png)
 

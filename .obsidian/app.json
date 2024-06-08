@@ -1,5 +1,5 @@
 {
-  "attachmentFolderPath": "\\/assets/images",
+  "attachmentFolderPath": "assets/images/tryhackme_kenobi",
   "newLinkFormat": "absolute",
   "showUnsupportedFiles": true,
   "useMarkdownLinks": true
