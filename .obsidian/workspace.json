@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-05-18-vulnlab-escape.md",
+                "file": "_posts/2024-05-18-tryhackme-annie.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-05-18-vulnlab-escape.md",
+                "file": "_posts/2024-05-18-tryhackme-annie.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-05-18-vulnlab-escape.md",
+                "file": "_posts/2024-05-18-tryhackme-annie.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-05-18-vulnlab-escape.md"
+                "file": "_posts/2024-05-18-tryhackme-annie.md"
               }
             }
           }
@@ -148,9 +148,13 @@
   },
   "active": "1554065bef17f411",
   "lastOpenFiles": [
+    "_posts/2024-05-18-vulnlab-escape.md",
+    "images/tryhackme_annie/annie.png",
+    "images/tryhackme_annie/annie.png.crdownload",
+    "images/tryhackme_annie",
+    "images/New folder",
     "images/vulnlab_escape/escape.png",
     "images/vulnlab_escape",
-    "_posts/2024-05-18-vulnlab-escape.md",
     "_posts/2024-06-06-tryhackme-include.md",
     "images/tryhackme_include",
     "_posts/2024-06-07-tryhackme-kenobi.md",
@@ -163,8 +167,6 @@
     "assets/images/Pasted image 20240607134152.png",
     "assets/images/Pasted image 20240607134737.png",
     "assets/images/Pasted image 20240607153910.png",
-    "assets/images/Pasted image 20220704133946.png",
-    "assets/images/Pasted image 20220704132548.png",
     "assets/images/tryhackme_kenobi",
     "README.md",
     "_posts/2024-06-11-tryhackme-airplane.md"
