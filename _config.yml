@@ -14,9 +14,9 @@ timezone: America/Chicago
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Tom Fieber # the main title
+title: The Okayest Pentester # the main title
 
-tagline: The okayest pentester # it will display as the sub-title
+tagline: Trying not to mess up worse than anyone else. # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Writeups, articles, and consistent learning.
