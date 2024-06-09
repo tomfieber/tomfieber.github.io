@@ -2,9 +2,8 @@
 layout: post
 date: 2024-05-18 15:00 -0500
 title: "VulnLab: Escape"
-categories: writeup
+categories: vulnlab
 tags:
-  - vulnlab
   - kiosk
   - rdp
   - password
