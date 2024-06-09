@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "19e765b4e542cf08",
+        "id": "898f8ef11ba7d430",
         "type": "tabs",
         "children": [
           {
-            "id": "1554065bef17f411",
+            "id": "2eb62db2aac4d93c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_posts/2024-05-18-tryhackme-annie.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-05-18-tryhackme-annie.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-05-18-tryhackme-annie.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "_posts/2024-05-18-tryhackme-annie.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -146,19 +138,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1554065bef17f411",
+  "active": "2eb62db2aac4d93c",
   "lastOpenFiles": [
+    "images/bio-photo.jpeg",
+    "_posts/2024-06-06-tryhackme-include.md",
     "_posts/2024-05-18-vulnlab-escape.md",
+    "_posts/2024-05-18-tryhackme-annie.md",
     "images/tryhackme_annie/annie.png",
     "images/tryhackme_annie/annie.png.crdownload",
     "images/tryhackme_annie",
     "images/New folder",
     "images/vulnlab_escape/escape.png",
     "images/vulnlab_escape",
-    "_posts/2024-06-06-tryhackme-include.md",
     "images/tryhackme_include",
     "_posts/2024-06-07-tryhackme-kenobi.md",
-    "_posts/2024-05-18-tryhackme-annie.md",
     "images/tryhackme_kenobi/kenobi.png",
     "assets/images/tryhackme_kenobi/kenobi.png",
     "assets/images/Pasted image 20240607125757.png",
