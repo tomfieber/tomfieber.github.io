@@ -2,9 +2,8 @@
 layout: post
 title: "TryHackMe: Annie"
 date: 2024-05-18 12:00 -0500
-categories: writeup
+categories: tryhackme
 tags:
-  - thm
   - anydesk
   - setuid
 image: /images/tryhackme_annie/annie.png
