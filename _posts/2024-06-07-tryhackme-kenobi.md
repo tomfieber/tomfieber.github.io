@@ -2,7 +2,7 @@
 layout: post
 title: "TryHackMe: Kenobi"
 date: 2024-06-07 18:00 -0500
-categories: [tryhackme, easy]
+categories: [tryhackme, thm-easy]
 tags:
   - samba
   - ProFtpd
