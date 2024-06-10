@@ -2,7 +2,7 @@
 layout: post
 title: "TryHackMe: Annie"
 date: 2024-05-18 12:00 -0500
-categories: tryhackme
+categories: [tryhackme, easy]
 tags:
   - anydesk
   - setuid
