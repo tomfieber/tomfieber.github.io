@@ -2,7 +2,7 @@
 layout: post
 title: "TryHackMe: Include"
 date: 2024-06-07 0700 -0500
-categories: [tryhackme, thm-medium]
+categories: [writeups, tryhackme]
 tags:
   - LFI
   - log_poisoning
