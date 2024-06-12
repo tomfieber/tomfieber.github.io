@@ -74,7 +74,7 @@ sudo mount -t nfs $ip:/var var -o nolock
 
 And then we can list the contents of the exported share.
 
-![](/images/Pasted%20image%2020240607125757.png)
+![](images/tryhackme_kenobi/Pasted%20image%2020240607125757.png)
 
 ```bash
 tree
@@ -710,7 +710,7 @@ AllowOverwrite          on
 
 Checking exploit-db for exploits related to the ProFtpd version we identified, we see that there are 4 exploits found. 
 
-![](/images/Pasted%20image%2020240607133035.png)
+![](images/tryhackme_kenobi/Pasted%20image%2020240607133035.png)
 
 I'm going to grab the exploit 49908 using 
 
@@ -739,7 +739,7 @@ Exploit Completed
 
 After running the exploit, we can see that the key is now in the `/var/tmp` directory.
 
-![](/images/Pasted%20image%2020240607134152.png)
+![](images/tryhackme_kenobi/Pasted%20image%2020240607134152.png)
 
 After changing the permissions on the key to 600 (`chmod 600 <KEY>`) we're able to ssh into the box as the `kenobi` user. 
 
@@ -777,11 +777,11 @@ find / -perm -u=s -type f 2>/dev/null
 
 One stands out as odd.
 
-![](/images/Pasted%20image%2020240607134737.png)
+![](images/tryhackme_kenobi/Pasted%20image%2020240607134737.png)
 
 Running that binary, we're presented with three options. 
 
-![](/images/Pasted%20image%2020240607134822.png)
+![](images/tryhackme_kenobi/Pasted%20image%2020240607134822.png)
 
 Running through all the options once, it seems pretty straightforward, so we'll need to figure out a way to abuse it.
 
@@ -886,6 +886,6 @@ kenobi@kenobi:~$ export PATH=.:$PATH
 
 Running the `/usr/bin/menu` binary again and selecting option 3 causes the application to run OUR version of `bash` and gives us a shell as root. 
 
-![](/images/Pasted%20image%2020240607140530.png)
+![](images/tryhackme_kenobi/Pasted%20image%2020240607140530.png)
 
 

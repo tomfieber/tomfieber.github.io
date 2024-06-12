@@ -79,7 +79,7 @@ RCPT TO: root
 
 We can use a tool like `smtp-user-enum` to try to gather a list of valid usernames. I ran this using the `john.txt` wordlist from [statistically-likely-usernames](https://github.com/insidetrust/statistically-likely-usernames). As shown below, the we've found two usernames: `joshua` and `charles`.
 
-![](/images/Pasted%20image%2020240606074209.png)
+![](images/tryhackme_include/Pasted%20image%2020240606074209.png)
 
 Let's hold onto this for now and come back to it later. 
 
@@ -152,41 +152,41 @@ After adding the IP to the `/etc/hosts` file with the command below we're able t
 echo -n '10.10.188.130\tinclude.thm' | sudo tee -a /etc/hosts
 ```
 
-![](/images/Pasted%20image%2020240606202332.png)
+![](images/tryhackme_include/Pasted%20image%2020240606202332.png)
 
 After logging in with `guest:guest` we're greeted with a "Review App". 
 
-![](/images/Pasted%20image%2020240606202537.png)
+![](images/tryhackme_include/Pasted%20image%2020240606202537.png)
 
 Looking at the "guest" profile, there are a number of different attributes, and it looks like we can recommend activities for the user.
 
-![](/images/Pasted%20image%2020240606202756.png)
+![](images/tryhackme_include/Pasted%20image%2020240606202756.png)
 
 Under the "Recommend an Activity to guest" heading, it's possible to add a new activity type and name. To start, I entered `test:test`. As shown below, this gets added as a new attribute. 
 
-![](/images/Pasted%20image%2020240606203123.png)
+![](images/tryhackme_include/Pasted%20image%2020240606203123.png)
 
 The attribute that sticks out the most is that `isAdmin: false`. It might be possible to overwrite the `isAdmin` value to give ourselves admin privileges.
 
 After entering `isAdmin:true` in the recommend an activity section, we can see that our user is now an admin and we have access to some new menu options. 
 
-![](/images/Pasted%20image%2020240606203355.png)
+![](images/tryhackme_include/Pasted%20image%2020240606203355.png)
 
 Selecting the "API" option from the navigation bar brings up some API documentation listing endpoints on the localhost. 
 
-![](/images/Pasted%20image%2020240607074044.png)
+![](images/tryhackme_include/Pasted%20image%2020240607074044.png)
 
 On the settings page, there's an option to update the profile banner. 
 
-![](/images/Pasted%20image%2020240607074202.png)
+![](images/tryhackme_include/Pasted%20image%2020240607074202.png)
 
 This accepts a URL as input. It might be possible to use this to reach those API endpoints. 
 
-![](/images/Pasted%20image%2020240607074305.png)
+![](images/tryhackme_include/Pasted%20image%2020240607074305.png)
 
 When we enter that and hit "Update Banner Image", we get back the following response:
 
-![](/images/Pasted%20image%2020240607074354.png)
+![](images/tryhackme_include/Pasted%20image%2020240607074354.png)
 
 
 Looks like a base64-encoded string.
@@ -205,25 +205,25 @@ echo 'eyJSZXZpZXdBcHBVc2VybmFtZS[...SNIP...]N0cmF0b3IiLCJTeXNNb25BcHBQYXNzd29yZC
 
 Sweet. We've got a password that will allow us to log into the other web app on port 50000. 
 
-![](/images/Pasted%20image%2020240607074657.png)
+![](images/tryhackme_include/Pasted%20image%2020240607074657.png)
 
 After using those credentials to log in, we land on a dashboard that contains the first flag.
 
-![](/images/Pasted%20image%2020240607074913.png)
+![](images/tryhackme_include/Pasted%20image%2020240607074913.png)
 
 Notice in the source code for `dashboard.php`, the profile picture is sourced from `profile.php` using an `img` parameter. 
 
-![](/images/Pasted%20image%2020240607075320.png)
+![](images/tryhackme_include/Pasted%20image%2020240607075320.png)
 
 In fact, we can see this request in Burp Suite.
 
-![](/images/Pasted%20image%2020240607075442.png)
+![](images/tryhackme_include/Pasted%20image%2020240607075442.png)
 
 My first thought with this is testing for path traversal. Since I'm on Burp community edition with a significantly throttled intruder, I'm going to use `ffuf` for testing this quickly. Zapproxy, Caido, or other fuzzing tools will also probably work.
 
 To make this work with `ffuf` I saved the request to a file and then replaced "profile.png" with "FUZZ", as shown below:
 
-![](/images/Pasted%20image%2020240607080247.png)
+![](images/tryhackme_include/Pasted%20image%2020240607080247.png)
 
 Having configured the request file, we can run `ffuf` against it. 
 
@@ -268,7 +268,7 @@ ________________________________________________
 
 After fuzzing we find some path traversal sequences that work. Testing one of those in Burp, we find that it does in fact work to grab the `/etc/passwd` file. 
 
-![](/images/Pasted%20image%2020240607080714.png)
+![](images/tryhackme_include/Pasted%20image%2020240607080714.png)
 
 From here, we need to find a way to get RCE. Since we have an LFI vulnerability, as well as a couple services exposed on the server, my thought is log poisoning. 
 
@@ -302,19 +302,19 @@ Jun  7 13:09:01 mail CRON[2220]: pam_unix(cron:session): session closed for user
 
 After attempting to SSH into the server, we can check the log again to see if the new entry is there. 
 
-![](/images/Pasted%20image%2020240607081809.png)
+![](images/tryhackme_include/Pasted%20image%2020240607081809.png)
 
 Perfect. Let's see if we can inject a PHP web shell here. 
 
-![](/images/Pasted%20image%2020240607081938.png)
+![](images/tryhackme_include/Pasted%20image%2020240607081938.png)
 
 Trying to use the standard SSH syntax doesn't work. However, it's possible to still poison the log using `NetExec` or `hydra`. Here, I used `NetExec`. 
 
-![](/images/Pasted%20image%2020240607082114.png)
+![](images/tryhackme_include/Pasted%20image%2020240607082114.png)
 
 After checking the log again along with the `id` command, we can see that we've got command execution. 
 
-![](/images/Pasted%20image%2020240607082700.png)
+![](images/tryhackme_include/Pasted%20image%2020240607082700.png)
 
 From here, you can either list the contents of the `/var/www/html/` directory from Burp repeater, or you can try to get a reverse shell and browse around a bit easier. The first time I did this room, I did it entirely in Burp, but for the purpose of this writeup, I'll test the reverse shell method.
 
@@ -340,11 +340,11 @@ Priority: u=4
 
 ```
 
-![](/images/Pasted%20image%2020240607083339.png)
+![](images/tryhackme_include/Pasted%20image%2020240607083339.png)
 
 Here is the "mystery" text file that will give us flag 2.
 
-![](/images/Pasted%20image%2020240607083503.png)
+![](images/tryhackme_include/Pasted%20image%2020240607083503.png)
 
 ## Additional Digging
 
