@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-05-18-vulnlab-escape.md",
+                "file": "_drafts/2024-06-13-vulnlab-lock.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-05-18-vulnlab-escape.md",
+                "file": "_drafts/2024-06-13-vulnlab-lock.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-05-18-vulnlab-escape.md",
+                "file": "_drafts/2024-06-13-vulnlab-lock.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-05-18-vulnlab-escape.md"
+                "file": "_drafts/2024-06-13-vulnlab-lock.md"
               }
             }
           }
@@ -148,25 +148,29 @@
   },
   "active": "2eb62db2aac4d93c",
   "lastOpenFiles": [
-    "images/Pasted image 20240607153910.png",
-    "images/Pasted image 20240607151423.png",
-    "images/Pasted image 20240607151334.png",
-    "images/tryhackme_kenobi/Pasted image 20240607140530.png",
-    "images/tryhackme_kenobi/Pasted image 20240607134822.png",
-    "images/tryhackme_kenobi/Pasted image 20240607134737.png",
-    "images/tryhackme_kenobi/Pasted image 20240607134152.png",
-    "images/tryhackme_kenobi/Pasted image 20240607133035.png",
-    "images/tryhackme_kenobi/Pasted image 20240607125757.png",
     "_posts/2024-06-07-tryhackme-kenobi.md",
-    "images/tryhackme_include/Pasted image 20240607083503.png",
-    "images/tryhackme_include/Pasted image 20240607083339.png",
-    "_posts/2024-05-18-vulnlab-escape.md",
-    "_posts/2024-06-06-tryhackme-include.md",
+    "_drafts/2024-06-13-vulnlab-lock.md",
+    "images/vulnlab_lock/lock.avif.crdownload",
+    "images/vulnlab_lock/lock.avif",
+    "images/vulnlab_lock",
     "_posts/2024-05-18-tryhackme-annie.md",
+    "_posts/2024-05-18-vulnlab-escape.md",
+    "_drafts",
+    "images/vulnlab_escape/Pasted image 20240518171447.png",
+    "images/vulnlab_escape/Pasted image 20240518170437.png",
+    "images/vulnlab_escape/Pasted image 20240518171406.png",
+    "images/vulnlab_escape/Pasted image 20240518171013.png",
+    "images/vulnlab_escape/Pasted image 20240518161405.png",
+    "images/vulnlab_escape/Pasted image 20240518161612.png",
+    "images/vulnlab_escape/Pasted image 20240518161024.png",
+    "images/vulnlab_escape/Pasted image 20240518160619.png",
+    "images/vulnlab_escape/Pasted image 20240518161251.png",
+    "images/vulnlab_escape",
+    "images/images",
+    "_posts/2024-06-06-tryhackme-include.md",
     "images/tryhackme_annie/annie.png.crdownload",
     "images/tryhackme_annie",
     "images/New folder",
-    "images/vulnlab_escape",
     "images/tryhackme_include",
     "assets/images/tryhackme_kenobi",
     "README.md",

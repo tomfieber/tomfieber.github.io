@@ -18,7 +18,7 @@ Escape is an easy rated Windows box from [VulnLab](https://wiki.vulnlab.com/guid
 ### Enumeration
 Nmap shows that only port 3389 is open on the server.
 
-```
+```console
 Nmap scan report for 10.10.126.31
 Host is up, received echo-reply ttl 127 (0.13s latency).
 Scanned at 2024-05-18 15:07:54 CDT for 315s
@@ -70,8 +70,8 @@ Host script results:
 
 Since there's no credentials, we can try to access the RDP service by disabling NLA.
 
-```bash
-escape xfreerdp /v:$ip /dynamic-resolution +clipboard -sec-nla
+```console
+xfreerdp /v:$ip /dynamic-resolution +clipboard -sec-nla
 ```
 
 This brings up the following prompt. Looks like we can login as the `KioskUser0` without a password.
@@ -87,7 +87,7 @@ Right click and most commands are restricted in kiosk mode; however, we can use 
 
 Within Edge, we can use the following in the URL bar to get a directory listing of the `C:\` drive. 
 
-```
+```console
 file://c:\
 ```
 
@@ -159,4 +159,4 @@ We can see that we now have all administrative privileges.
 
 Now, with the high integrity PowerShell go ahead and grab the `root.txt` from the `C:\Users\Administrator\Dekstop\` directory. 
 
-That's it! Congrats on rooting the box. 
+That's it! Congrats on rooting the box.
