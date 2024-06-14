@@ -2,12 +2,14 @@
 layout: post
 date: 2024-05-18 15:00 -0500
 title: "VulnLab: Escape"
-categories: [writeups, vulnlab]
+categories:
+  - writeups
+  - vulnlab
 tags:
   - kiosk
   - rdp
-  - password
   - uac
+  - password-deobfuscation
 image: /images/vulnlab_escape/escape.png
 ---
 ## Summary
@@ -71,7 +73,7 @@ Host script results:
 Since there's no credentials, we can try to access the RDP service by disabling NLA.
 
 ```console
-xfreerdp /v:$ip /dynamic-resolution +clipboard -sec-nla
+$ xfreerdp /v:$ip /dynamic-resolution +clipboard -sec-nla
 ```
 
 This brings up the following prompt. Looks like we can login as the `KioskUser0` without a password.
@@ -138,7 +140,7 @@ When the tool detects an obfuscated password, it displays the plaintext password
 Since we've already got a shell we can just try `runas` with that password to see if it's possible to escalate to the admin user. We get a shell with the following command:
 
 ```
-runas /user:ESCAPE\admin cmd
+PS> runas /user:ESCAPE\admin cmd
 ```
 
 After getting the new shell, we can observe that the `admin` user is a member of the `Administrators` group, however this shell is running at a medium integrity level which means we'll need to bypass UAC to get a high integrity shell. 
@@ -148,7 +150,7 @@ After getting the new shell, we can observe that the `admin` user is a member of
 Something I learned doing this lab was that it wasn't necessary to use something like `fodhelper` to bypass UAC in this case. Using the following command brought up the UAC dialog and clicking on the "Yes" button brings up PowerShell running as a high integrity process. 
 
 ```
-Start-Process powershell -Verb runas
+PS> Start-Process powershell -Verb runas
 ```
 
 ![](images/vulnlab_escape/Pasted%20image%2020240518171406.png)

