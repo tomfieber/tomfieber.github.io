@@ -3,5 +3,6 @@
   "newLinkFormat": "absolute",
   "showUnsupportedFiles": true,
   "useMarkdownLinks": true,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "root"
 }
