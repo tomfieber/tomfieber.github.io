@@ -8,6 +8,9 @@ tags:
   - smb
   - privilege-abuse
 image: /images/vulnlab_breach/breach.png
+categories:
+  - writeups
+  - vulnlab
 ---
 ## TL;DR
 
