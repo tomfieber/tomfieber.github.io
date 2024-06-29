@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "898f8ef11ba7d430",
+        "id": "49467eb48ec650c8",
         "type": "tabs",
         "children": [
           {
-            "id": "2eb62db2aac4d93c",
+            "id": "9712107feb811ffa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-06-22-vulnlab-breach.md",
+                "file": "_posts/2024-06-28-vulnlab-manage.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "c9ac31eee6410ef0",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-06-22-vulnlab-breach.md",
+                "file": "_posts/2024-06-28-vulnlab-manage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-06-22-vulnlab-breach.md",
+                "file": "_posts/2024-06-28-vulnlab-manage.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-06-22-vulnlab-breach.md"
+                "file": "_posts/2024-06-28-vulnlab-manage.md"
               }
             }
           }
@@ -148,17 +149,21 @@
   },
   "active": "5590b21b0824a964",
   "lastOpenFiles": [
+    "_posts/2024-06-22-vulnlab-breach.md",
+    "_posts/2024-06-28-vulnlab-manage.md",
+    "images/vulnlab_manage/manage.png.crdownload",
+    "images/vulnlab_manage/manage.png",
+    "images/vulnlab_manage",
+    "images/New folder",
     "images/vulnlab_breach/Pasted image 20240621142209.png",
     "images/vulnlab_breach/Pasted image 20240621164514.png",
     "_posts/testing/testpost.md",
-    "_posts/2024-06-22-vulnlab-breach.md",
     "_posts/testing",
     "testing/testpost.md",
     "testing",
     "images/vulnlab_breach/breach.png",
     "images/vulnlab_breach/breach.png.crdownload",
     "images/vulnlab_breach",
-    "images/New folder",
     "_posts/2024-06-07-tryhackme-kenobi.md",
     "_posts/2024-05-18-vulnlab-escape.md",
     "_posts/2024-06-06-tryhackme-include.md",
@@ -176,10 +181,6 @@
     "images/vulnlab_escape/Pasted image 20240518170437.png",
     "images/vulnlab_escape/Pasted image 20240518171406.png",
     "images/vulnlab_escape/Pasted image 20240518171013.png",
-    "images/vulnlab_escape/Pasted image 20240518161405.png",
-    "images/vulnlab_escape/Pasted image 20240518161612.png",
-    "images/vulnlab_escape",
-    "images/images",
     "README.md",
     "_posts/2024-06-11-tryhackme-airplane.md"
   ]
