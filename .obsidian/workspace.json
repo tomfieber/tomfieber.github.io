@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-06-28-vulnlab-manage.md",
+                "file": "_posts/2024-06-29-vulnlab-baby.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-06-28-vulnlab-manage.md",
+                "file": "_posts/2024-06-29-vulnlab-baby.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-06-28-vulnlab-manage.md",
+                "file": "_posts/2024-06-29-vulnlab-baby.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-06-28-vulnlab-manage.md"
+                "file": "_posts/2024-06-29-vulnlab-baby.md"
               }
             }
           }
@@ -147,14 +147,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5590b21b0824a964",
+  "active": "9712107feb811ffa",
   "lastOpenFiles": [
-    "_posts/2024-06-22-vulnlab-breach.md",
     "_posts/2024-06-28-vulnlab-manage.md",
+    "_posts/2024-06-29-vulnlab-baby.md",
+    "images/vulnlab_baby/baby.png",
+    "images/vulnlab_baby/baby.png.crdownload",
+    "images/vulnlab_baby",
+    "images/New folder",
+    "_posts/2024-06-22-vulnlab-breach.md",
     "images/vulnlab_manage/manage.png.crdownload",
     "images/vulnlab_manage/manage.png",
     "images/vulnlab_manage",
-    "images/New folder",
     "images/vulnlab_breach/Pasted image 20240621142209.png",
     "images/vulnlab_breach/Pasted image 20240621164514.png",
     "_posts/testing/testpost.md",
@@ -175,12 +179,9 @@
     "_posts/2024-05-18-tryhackme-annie.md",
     "images/vulnlab_lock/lock.avif.crdownload",
     "images/vulnlab_lock/lock.avif",
-    "images/vulnlab_lock",
-    "_drafts",
     "images/vulnlab_escape/Pasted image 20240518171447.png",
     "images/vulnlab_escape/Pasted image 20240518170437.png",
     "images/vulnlab_escape/Pasted image 20240518171406.png",
-    "images/vulnlab_escape/Pasted image 20240518171013.png",
     "README.md",
     "_posts/2024-06-11-tryhackme-airplane.md"
   ]
