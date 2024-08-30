@@ -16,7 +16,7 @@ timezone: America/Chicago
 
 title: The Okayest Pentester # the main title
 
-tagline: Trying not to mess up worse than anyone else. # it will display as the sub-title
+tagline: Dad, husband, U.S. Army retired. # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Writeups, articles, and consistent learning.
