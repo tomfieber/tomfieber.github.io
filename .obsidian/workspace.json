@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_drafts/Managed.md",
+                "file": "_posts/2024-08-28-ADCS-ESC1_ESC8.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_drafts/Managed.md",
+                "file": "_posts/2024-08-28-ADCS-ESC1_ESC8.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_drafts/Managed.md",
+                "file": "_posts/2024-08-28-ADCS-ESC1_ESC8.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,8 +125,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_drafts/Managed.md"
+                "file": "_posts/2024-08-28-ADCS-ESC1_ESC8.md"
               }
+            }
+          },
+          {
+            "id": "b84f06424735e2a9",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
             }
           }
         ],
@@ -134,7 +142,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 330.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -143,27 +151,34 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "e869b515ea6fe1d8",
   "lastOpenFiles": [
-    "assets/img/favicons/safari-pinned-tab.svg",
-    "assets/img/favicons/mstile-150x150.png",
-    "assets/img/favicons/favicon-32x32.png",
-    "assets/img/favicons/favicon-16x16.png",
-    "assets/img/favicons/apple-touch-icon.png",
-    "assets/img/favicons/android-chrome-512x512.png",
-    "assets/img/favicons/android-chrome-192x192.png",
+    "images/adcs_esc1-esc8/thumbnail.png",
+    "images/adcs_esc1-esc8/Pasted image 20240828093153.png",
+    "images/adcs_esc1-esc8/Pasted image 20240828093110.png",
+    "images/adcs_esc1-esc8/Pasted image 20240828092548.png",
+    "images/adcs_esc1-esc8/Pasted image 20240828092533.png",
+    "images/adcs_esc1-esc8/Pasted image 20240828092510.png",
+    "images/adcs_esc1-esc8/Pasted image 20240828092437.png",
+    "images/adcs_esc1-esc8/Pasted image 20240812132821.png",
+    "images/adcs_esc1-esc8/Pasted image 20240812131709.png",
+    "images/adcs_esc1-esc8/Pasted image 20240828093339.png",
+    "images/adcs_esc1-esc8/Pasted image 20240828093439.png",
+    "_posts/2024-08-28-ADCS-ESC1_ESC8.md",
+    "images/adcs_esc1-esc8",
+    "_posts/2024-07-04-vulnlab-retro.md",
+    "_drafts/Managed.md",
     "assets/img/favicons/favicon.ico",
     "assets/img/favicons",
     "assets/img/New folder",
     "assets/img",
     "assets/New folder",
     "_drafts/2024-06-13-vulnlab-lock.md",
-    "_drafts/Managed.md",
     "_drafts/2024-07-14-vulnlab-phantom.md",
-    "images/vulnlab_phantom/phantom.avif",
     "images/vulnlab_phantom/phantom.avif.crdownload",
     "images/vulnlab_phantom",
     "_posts/2024-05-18-tryhackme-annie.md",
@@ -171,14 +186,9 @@
     "_drafts/2024-06-16-hackthebox-builder.md",
     "_drafts/2024-06-15-tryhackme-mkingdom.md",
     "_posts/2024-07-04-vulnlab-data.md",
-    "images/vulnlab_data/data.png",
-    "images/vulnlab_data/Pasted image 20240630135414.png",
-    "_posts/2024-07-04-vulnlab-retro.md",
     "images/vulnlab_data/data.png.crdownload",
-    "images/vulnlab_retro/Pasted image 20240704145857.png",
     "_posts/2024-06-29-vulnlab-baby.md",
     "images/vulnlab_retro/retro.png.crdownload",
-    "images/vulnlab_retro",
     "_tabs/tags.md",
     "_tabs/categories.md",
     "_tabs/archives.md",
