@@ -122,7 +122,7 @@ To make this code work, we need to update the following:
 
 After updating those values and running the exploit with `python2 49613.py` we get a connection back to our `netcat` listener. 
 
-![Testing](images/tryhackme_annie/Pasted%20image%2020220704133946.png)
+![Testing](/images/tryhackme_annie/Pasted%20image%2020220704133946.png)
 
 ### Stabilize the shell
 Stablize the reverse shell with the following commands
@@ -182,7 +182,7 @@ From here, you're free to use whatever privilege escalation enumeration script y
 ### Uncommon SetUID binary
 Looking through the output of LSE, there's an uncommon binary with the setuid bit set. 
 
-![](images/tryhackme_annie/Pasted%20image%2020220704141246.png)
+![image](/images/tryhackme_annie/Pasted%20image%2020220704141246.png)
 
 ### Setcap
 The `setcap` binary allows the user to set file capabilities. To exploit this, we can make a copy of the `python3` binary and modify the capabilities of that file as detailed [here](https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/). 

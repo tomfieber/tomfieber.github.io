@@ -79,11 +79,11 @@ $ xfreerdp /v:$ip /dynamic-resolution +clipboard -sec-nla
 
 This brings up the following prompt. Looks like we can login as the `KioskUser0` without a password.
 
-![](images/vulnlab_escape/Pasted%20image%2020240518153626.png)
+![](/images/vulnlab_escape/Pasted%20image%2020240518153626.png)
 
 Once we're logged in, we are presented with sign for the `Busan Expo`. 
 
-![](images/vulnlab_escape/Pasted%20image%2020240518153903.png)
+![](/images/vulnlab_escape/Pasted%20image%2020240518153903.png)
 
 ### Kiosk Breakout
 Right click and most commands are restricted in kiosk mode; however, we can use the Windows key to bring up the menu and select Microsoft Edge from there to get a browser with a URL bar and most functionality enabled.

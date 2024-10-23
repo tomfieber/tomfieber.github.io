@@ -594,3 +594,4 @@ Running the `/usr/bin/menu` binary again and selecting option 3 causes the appli
 ![](images/tryhackme_kenobi/Pasted%20image%2020240607140530.png)
 
 
+
