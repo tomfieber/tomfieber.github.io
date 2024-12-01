@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_tabs/misc.md",
+                "file": "_tabs/about.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "misc"
+              "title": "about"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_tabs/misc.md",
+                "file": "_tabs/about.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for misc"
+              "title": "Backlinks for about"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_tabs/misc.md",
+                "file": "_tabs/about.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from misc"
+              "title": "Outgoing links from about"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_tabs/misc.md"
+                "file": "_tabs/about.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of misc"
+              "title": "Outline of about"
             }
           }
         ]
@@ -164,7 +164,7 @@
   },
   "active": "f66f735778d49395",
   "lastOpenFiles": [
-    "_tabs/categories.md",
-    "_tabs/misc.md"
+    "_tabs/misc.md",
+    "_tabs/categories.md"
   ]
 }
