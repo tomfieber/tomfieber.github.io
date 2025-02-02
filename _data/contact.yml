@@ -7,9 +7,9 @@
   icon: "fab fa-linkedin" # icons powered by <https://fontawesome.com/>
   url: "https://www.linkedin.com/in/thomasfieber" # Fill with your Linkedin homepage
 
-- type: email
-  icon: "fas fa-envelope"
-  noblank: true # open link in current tab
+- type: discord
+  icon: "fa-brands fa-discord" # icons powered by <https://fontawesome.com/>
+  url: "https://discord.gg/u774mnNu" # Fill with your Linkedin homepage
 
 - type: rss
   icon: "fas fa-rss"
