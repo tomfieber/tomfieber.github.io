@@ -2,4 +2,5 @@ site_name: The Okayest Pentester
 site_url: https://tomfieber.github.io
 theme:
   name: material
+  features: [navigation.tabs, navigation.tabs.sticky]
 plugins: [blog,search]
