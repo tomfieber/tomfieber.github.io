@@ -1,0 +1,4 @@
+site_name: My Cheatsheets
+site_url: https://tomfieber.github.io/
+theme:
+  name: material
