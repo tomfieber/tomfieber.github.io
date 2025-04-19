@@ -1,8 +1,12 @@
 site_name: My Cheatsheets
 site_url: https://tomfieber.github.io/
+repo_url: https://github.com/tomfieber/tomfieber.github.io
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands/github
   features:
     - navigation.tabs
     - navigation.sticky
     - navigation.sections
+    - search.suggest
