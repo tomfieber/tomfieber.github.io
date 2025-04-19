@@ -2,3 +2,7 @@ site_name: My Cheatsheets
 site_url: https://tomfieber.github.io/
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.sticky
+    - navigation.sections
