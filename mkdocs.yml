@@ -3,6 +3,19 @@ site_url: https://tomfieber.github.io/
 repo_url: https://github.com/tomfieber/tomfieber.github.io
 repo_name: tomfieber/tomfieber.github.io
 theme:
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   name: material
   icon:
     repo: fontawesome/brands/github
@@ -10,7 +23,30 @@ theme:
     - navigation.tabs
     - navigation.sticky
     - navigation.sections
+    - navigation.path
+    - navigation.indexes
+    - navigation.footer
+    - navigation.top
     - search.suggest
 plugins:
-  - blog
+  - blog:
+      blog_toc: true
+      post_dir: "{blog}/articles"
+      post_date_format: full
+      post_url_date_format: yyyy/MM/dd
+      post_url_format: "{date}/{slug}"
+      post_excerpt_max_categories: 2
+      post_excerpt_separator: <!-- more -->
+      post_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      post_excerpt: required
+      post_excerpt_separator: <!-- more -->
+      archive: true
+      archive_name: Archive
+      archive_date_format: yyyy
+      archive_url_format: "archive/{date}"
+      authors_file: "{blog}/.authors.yml"
   - search
+  - social
+  - tags
