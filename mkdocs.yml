@@ -27,6 +27,8 @@ theme:
     - navigation.footer
     - navigation.top
     - search.suggest
+    - content.code.copy
+    - content.code.select
 plugins:
   - blog:
       blog_toc: true
