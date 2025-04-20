@@ -20,15 +20,14 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
+    - navigation.tabs.sticky
     - navigation.tabs
-    - navigation.path
     - navigation.sections
     - navigation.indexes
     - navigation.footer
     - navigation.top
     - search.suggest
     - content.code.copy
-    - content.code.select
 plugins:
   - blog:
       blog_toc: true
@@ -50,3 +49,8 @@ plugins:
       authors_file: "{blog}/.authors.yml"
   - search
   - tags
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
