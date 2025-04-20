@@ -13,7 +13,3 @@ theme:
     - search.suggest
 plugins:
   - blog
-nav:
-  - index.md
-  - Blog
-    - blog/index.md
