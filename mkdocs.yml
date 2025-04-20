@@ -48,5 +48,4 @@ plugins:
       archive_url_format: "archive/{date}"
       authors_file: "{blog}/.authors.yml"
   - search
-  - social
   - tags
