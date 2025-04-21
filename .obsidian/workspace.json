@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Web/index.md",
+                "file": "docs/notes/xss.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "xss"
             }
           }
         ]
@@ -170,6 +170,7 @@
   },
   "active": "3741635411638596",
   "lastOpenFiles": [
+    "docs/Web/index.md",
     "docs/blog/articles/thm-annie.md",
     "docs/kittyhacker2.jpg",
     "kittyhacker2.jpg",
