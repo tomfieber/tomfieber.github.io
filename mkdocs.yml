@@ -63,3 +63,38 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+
+# Copyright
+copyright: Copyright &copy; 2016 - 2025 Tom Fieber
+
+not_in_nav: |
+  /notes/**/*.md
+
+nav:
+  - Home: index.md
+  - Web:
+    - web/index.md
+    - Checklists:
+      - Information Gathering: web/checklists/01-information-gathering.md
+      - Configuration Management and Deployment Testing: web/checklists/02-configuration-management-deployment-testing.md
+      - Identity Management Testing: web/checklists/03-identity-management-testing.md
+      - Authentication Testing: web/checklists/04-authentication-testing.md
+      - Authorization Testing: web/checklists/05-authorization-testing.md
+      - Session Management Testing: web/checklists/06-session-management-testing.md
+      - Input Validation Testing: web/checklists/07-input-validation-testing.md
+      - Error Handling: web/checklists/08-error-handling.md
+      - Testing Weak Cryptography: web/checklists/09-testing-weak-cryptography.md
+      - Business Logic Testing: web/checklists/10-business-logic-testing.md
+      - Client-Side Testing: web/checklists/11-client-side-testing.md
+      - API Testing: web/checklists/12-api-testing.md
+  - Infrastructure:
+    - infrastructure/index.md
+    - General:
+      - Scanning: infrastructure/general/01-scanning.md
+      - Vulnerability Scanner: infrastructure/general/02-vulnerability-scanner.md
+      - Information Gathering: infrastructure/general/information-gathering.md
+      - Network Configuration: infrastructure/general/network-configuration.md
+  - Blog:
+    - blog/index.md
+  - CV:
+    - cv/index.md

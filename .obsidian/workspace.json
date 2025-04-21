@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Web/checklists/01-information-gathering.md",
+                "file": "docs/infrastructure/general/01-scanning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01-information-gathering"
+              "title": "01-scanning"
             }
           }
         ]
@@ -168,14 +168,45 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4965aba11e200e30",
+  "active": "3741635411638596",
   "lastOpenFiles": [
-    "docs/Web/notes/xss.md",
-    "docs/Web/checklists",
-    "docs/Web/index.md",
     "docs/blog/articles/thm-annie.md",
-    "docs/kittyhacker2.jpg",
-    "kittyhacker2.jpg",
-    "docs/Web/notes/cors.md"
+    "docs/infrastructure/general/network-configuration.md",
+    "docs/infrastructure/general/information-gathering.md",
+    "docs/infrastructure/network-configuration.md",
+    "docs/infrastructure/information-gathering.md",
+    "docs/assets/images",
+    "docs/blog/articles/test-article.md",
+    "docs/Infrastructure/general/01-scanning.md",
+    "docs/assets/screenshots",
+    "docs/assets",
+    "docs/cv/index.md",
+    "docs/cv",
+    "docs/infrastructure/general/index.md",
+    "docs/infrastructure/general/02-vulnerability-scanner.md",
+    "docs/infrastructure/general/01-scanning.md",
+    "docs/infrastructure/general",
+    "docs/infrastructure/01-general/index.md",
+    "docs/infrastructure/01-general/02-vulnerability-scanner.md",
+    "docs/infrastructure/01-general/01-scanning.md",
+    "docs/infrastructure/01-general",
+    "docs/about-me/index.md",
+    "docs/about-me",
+    "docs/web/checklists/03-identity-management-testing.md",
+    "docs/web/checklists/12-api-testing.md",
+    "docs/web/checklists/11-client-side-testing.md",
+    "docs/web/checklists/10-business-logic-testing.md",
+    "docs/web/checklists/09-testing-weak-cryptography.md",
+    "docs/web/checklists/08-error-handling.md",
+    "docs/web/checklists/07-input-validation-testing.md",
+    "docs/web/checklists/06-session-management-testing.md",
+    "docs/web/checklists/05-authorization-testing.md",
+    "docs/web/checklists/04-authentication-testing.md",
+    "docs/web/checklists/02-configuration-management-deployment-testing.md",
+    "docs/web/checklists",
+    "docs/web",
+    "docs/infrastructure",
+    "docs/assets/images/kittyhacker2.jpg",
+    "kittyhacker2.jpg"
   ]
 }
