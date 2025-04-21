@@ -112,7 +112,8 @@ s.close()
 print('reverse shell should connect within 5 seconds')
 ```
 
->**NOTE:** This code runs with Python2. I'm sure there's a way to update the code to work with Python3, but I didn't try it.
+!!! warning
+    This code runs with Python2. I'm sure there's a way to update the code to work with Python3, but I didn't try it.
 
 To make this code work, we need to update the following:
 - The 'ip' variable. This is the IP address of the THM machine. Leave the 'port' variable alone. 
@@ -138,7 +139,8 @@ Ctrl+z
 stty raw -echo;fg
 ```
 
->**NOTE:** If you're using the ZSH shell, it's important to put `stty raw -echo;fg` all on one line. The shell seems to complain if you don't. 
+!!! tip
+    If you're using the ZSH shell, it's important to put `stty raw -echo;fg` all on one line. The shell seems to complain if you don't. 
 
 Go ahead and grab the user flag. 
 
