@@ -1,0 +1,24 @@
+# Authentication Testing
+
+- [ ]  Testing for Credentials Transported over an Encrypted Channel [WSTG-ATHN-01](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/01-Testing_for_Credentials_Transported_over_an_Encrypted_Channel)
+    - [ ]  Check in the browser - look at URL bar/lock status
+    - [ ]  Watch the network tab
+    - [ ]  Wireshark
+- [ ]  Testing for Default Credentials [WSTG-ATHN-02](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/02-Testing_for_Default_Credentials)
+- [ ]  Testing for Weak Lock Out Mechanism [WSTG-ATHN-03](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/03-Testing_for_Weak_Lock_Out_Mechanism)
+    - [ ]  Can you still log in after 20+ invalid logon attempts?
+- [ ]  Testing for Bypassing Authentication Schema [WSTG-ATHN-04](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/04-Testing_for_Bypassing_Authentication_Schema)
+- [ ]  Testing for Vulnerable Remember Password [WSTG-ATHN-05](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/05-Testing_for_Vulnerable_Remember_Password)
+- [ ]  Testing for Browser Cache Weaknesses [WSTG-ATHN-06](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/06-Testing_for_Browser_Cache_Weaknesses)
+- [ ]  Testing for Weak Authentication Methods [WSTG-ATHN-07](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/07-Testing_for_Weak_Authentication_Methods)
+- [ ]  Testing for Weak Security Question Answer [WSTG-ATHN-08](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/08-Testing_for_Weak_Security_Question_Answer)
+- [ ]  Testing for Weak Password Change or Reset Functionalities [WSTG-ATHN-09](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/09-Testing_for_Weak_Password_Change_or_Reset_Functionalities)
+    - [ ]  Does the application validate the user?
+    - [ ]  Is the current password required to change it?
+    - [ ]  Are forgot password tokens sufficiently random/encrypted?
+        - [ ]  Only good once
+        - [ ]  Limited time -- how long?
+- [ ]  Testing for Weaker Authentication in Alternative Channel [WSTG-ATHN-10](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/10-Testing_for_Weaker_Authentication_in_Alternative_Channel)
+- [ ]  Testing Multi-Factor Authentication (MFA) [WSTG-ATHN-11](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/11-Testing_Multi-Factor_Authentication)
+    - [ ]  If present, can it be brute forced?
+    - [ ]  Can you skip the MFA verification -- force browse away from the verification page?

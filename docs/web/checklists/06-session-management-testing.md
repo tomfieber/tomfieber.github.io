@@ -1,0 +1,24 @@
+# Session Management Testing
+
+- [ ]  Testing for Session Management Schema [WSTG-SESS-01](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/01-Testing_for_Session_Management_Schema)
+- [ ]  Testing for Cookies Attributes [WSTG-SESS-02](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes)
+- [ ]  Testing for Session Fixation [WSTG-SESS-03](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/03-Testing_for_Session_Fixation)
+    - [ ]  Are cookies updated after login?
+- [ ]  Testing for Exposed Session Variables [WSTG-SESS-04](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/04-Testing_for_Exposed_Session_Variables)
+- [ ]  Testing for Cross Site Request Forgery [WSTG-SESS-05](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery)
+    - [ ]  Relevant action
+    - [ ]  Cookie-based auth
+    - [ ]  No unpredictable parameters
+- [ ]  Testing for Logout Functionality [WSTG-SESS-06](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/06-Testing_for_Logout_Functionality)
+    - [ ]  Does logoff terminate the session?
+- [ ]  Testing Session Timeout [WSTG-SESS-07](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/07-Testing_Session_Timeout)
+    - [ ]  Does the application terminate inactive sessions?
+    - [ ]  Does it redirect to a non-sensitive page?
+- [ ]  Testing for Session Puzzling [WSTG-SESS-08](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/08-Testing_for_Session_Puzzling)
+- [ ]  Testing for Session Hijacking [WSTG-SESS-09](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/09-Testing_for_Session_Hijacking)
+- [ ]  Testing JSON Web Tokens [WSTG-SESS-10](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/10-Testing_JSON_Web_Tokens)
+- [ ]  Testing for Concurrent Sessions [WSTG-SESS-11](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/11-Testing_for_Concurrent_Sessions)
+    - [ ]  Multiple tabs
+    - [ ]  Multiple devices
+    - [ ]  Does logging in on one log out of the other?
+    - [ ]  What happens when you try to edit the same data in different sessions?
