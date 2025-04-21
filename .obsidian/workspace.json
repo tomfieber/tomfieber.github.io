@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/notes/xss.md",
+                "file": "docs/Web/checklists/01-information-gathering.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "xss"
+              "title": "01-information-gathering"
             }
           }
         ]
@@ -168,12 +168,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3741635411638596",
+  "active": "4965aba11e200e30",
   "lastOpenFiles": [
+    "docs/Web/notes/xss.md",
+    "docs/Web/checklists",
     "docs/Web/index.md",
     "docs/blog/articles/thm-annie.md",
     "docs/kittyhacker2.jpg",
     "kittyhacker2.jpg",
-    "docs/notes/cors.md"
+    "docs/Web/notes/cors.md"
   ]
 }
