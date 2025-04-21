@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/infrastructure/general/01-scanning.md",
+                "file": "docs/web/checklists/07-input-validation-testing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01-scanning"
+              "title": "07-input-validation-testing"
             }
           }
         ]
@@ -170,6 +170,10 @@
   },
   "active": "3741635411638596",
   "lastOpenFiles": [
+    "docs/notes/command-injection.md",
+    "docs/web/checklists/07-input-validation-testing.md",
+    "docs/notes/sqli.md",
+    "docs/infrastructure/general/01-scanning.md",
     "docs/blog/articles/thm-annie.md",
     "docs/infrastructure/general/network-configuration.md",
     "docs/infrastructure/general/information-gathering.md",
@@ -184,7 +188,6 @@
     "docs/cv",
     "docs/infrastructure/general/index.md",
     "docs/infrastructure/general/02-vulnerability-scanner.md",
-    "docs/infrastructure/general/01-scanning.md",
     "docs/infrastructure/general",
     "docs/infrastructure/01-general/index.md",
     "docs/infrastructure/01-general/02-vulnerability-scanner.md",
@@ -198,11 +201,8 @@
     "docs/web/checklists/10-business-logic-testing.md",
     "docs/web/checklists/09-testing-weak-cryptography.md",
     "docs/web/checklists/08-error-handling.md",
-    "docs/web/checklists/07-input-validation-testing.md",
     "docs/web/checklists/06-session-management-testing.md",
     "docs/web/checklists/05-authorization-testing.md",
-    "docs/web/checklists/04-authentication-testing.md",
-    "docs/web/checklists/02-configuration-management-deployment-testing.md",
     "docs/web/checklists",
     "docs/web",
     "docs/infrastructure",
