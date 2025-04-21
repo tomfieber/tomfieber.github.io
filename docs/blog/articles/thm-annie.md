@@ -8,6 +8,7 @@ date: 2025-04-19
 slug: thm-annie
 ---
 # TryHackMe: Annie
+![](images/tryhackme_annie/annie.png)
 ## Summary
 
 Annie is a **medium** difficulty Linux box on [TryHackMe](https://tryhackme.com/room/annie). This machine involved compromising a vulnerable AnyDesk installation and then abusing an uncommon SetUID binary to elevate privileges to root. 
