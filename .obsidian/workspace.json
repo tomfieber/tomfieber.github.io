@@ -168,8 +168,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3741635411638596",
+  "active": "4965aba11e200e30",
   "lastOpenFiles": [
+    "docs/notes/index.md",
+    "docs/notes/index",
     "docs/notes/command-injection.md",
     "docs/web/checklists/07-input-validation-testing.md",
     "docs/notes/sqli.md",
@@ -202,10 +204,8 @@
     "docs/web/checklists/09-testing-weak-cryptography.md",
     "docs/web/checklists/08-error-handling.md",
     "docs/web/checklists/06-session-management-testing.md",
-    "docs/web/checklists/05-authorization-testing.md",
     "docs/web/checklists",
     "docs/web",
-    "docs/infrastructure",
     "docs/assets/images/kittyhacker2.jpg",
     "kittyhacker2.jpg"
   ]

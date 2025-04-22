@@ -67,8 +67,8 @@ markdown_extensions:
 # Copyright
 copyright: Copyright &copy; 2016 - 2025 Tom Fieber
 
-not_in_nav: |
-  /notes/**/*.md
+# not_in_nav: |
+#   /notes/**/*.md
 
 nav:
   - Home: index.md
@@ -94,6 +94,13 @@ nav:
       - Vulnerability Scanner: infrastructure/general/02-vulnerability-scanner.md
       - Information Gathering: infrastructure/general/information-gathering.md
       - Network Configuration: infrastructure/general/network-configuration.md
+  - Notes:
+    - notes/index.md
+    - Web:
+      - CORS: notes/cors.md
+      - Command Injection: notes/command-injection.md
+      - Cross-Site Scripting: notes/xss.md
+      - SQL Injection: notes/sqli.md
   - Blog:
     - blog/index.md
   - CV:
