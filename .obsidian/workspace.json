@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/infrastructure/internal/smb.md",
+                "file": "docs/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "smb"
+              "title": "index"
             }
           }
         ]
@@ -170,8 +170,8 @@
   },
   "active": "3741635411638596",
   "lastOpenFiles": [
-    "docs/infrastructure/internal/network-enumeration.md",
     "docs/infrastructure/internal/smb.md",
+    "docs/infrastructure/internal/network-enumeration.md",
     "docs/infrastructure/internal/domain-vuln-scanning.md",
     "docs/infrastructure/internal/domain-data.md",
     "docs/infrastructure/index.md",
