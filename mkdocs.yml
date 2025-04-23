@@ -63,6 +63,28 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+extra:
+  analytics: 
+    provider: google
+    property: G-HH4Y2D319L
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
 
 # Copyright
 copyright: Copyright &copy; 2016 - 2025 Tom Fieber
@@ -89,18 +111,28 @@ nav:
       - API Testing: web/checklists/12-api-testing.md
   - Infrastructure:
     - infrastructure/index.md
-    - General:
-      - Scanning: infrastructure/general/01-scanning.md
-      - Vulnerability Scanner: infrastructure/general/02-vulnerability-scanner.md
-      - Information Gathering: infrastructure/general/information-gathering.md
-      - Network Configuration: infrastructure/general/network-configuration.md
+    - Checklsits:
+      - Network Enumeration: infrastructure/internal/network-enumeration.md
+      - Domain Testing: 
+        - Domain Data: infrastructure/internal/domain-data.md
+        - Domain Vulnerability Scanning: infrastructure/internal/domain-vuln-scanning.md
+        - Domain SMB Checks: infrastructure/internal/smb.md
   - Notes:
     - notes/index.md
+    - General:
+      - Scanning: notes/nmap.md
+      - Low Hanging Fruit: notes/low-hanging-fruit.md
+      - Footprinting:
+        - FTP: notes/ftp.md
+        - SSH: notes/ssh.md
     - Web:
       - CORS: notes/cors.md
-      - Command Injection: notes/command-injection.md
       - Cross-Site Scripting: notes/xss.md
-      - SQL Injection: notes/sqli.md
+      - Injection:
+        - Command Injection: notes/command-injection.md
+        - SQL Injection: notes/sqli.md
+    - Cloud:
+      - Azure: notes/azure.md
   - Blog:
     - blog/index.md
   - CV:
