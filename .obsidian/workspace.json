@@ -170,10 +170,10 @@
   },
   "active": "3741635411638596",
   "lastOpenFiles": [
-    "docs/infrastructure/internal/domain-vuln-scanning.md",
-    "docs/infrastructure/internal/smb.md",
-    "docs/infrastructure/internal/domain-data.md",
     "docs/infrastructure/internal/network-enumeration.md",
+    "docs/infrastructure/internal/smb.md",
+    "docs/infrastructure/internal/domain-vuln-scanning.md",
+    "docs/infrastructure/internal/domain-data.md",
     "docs/infrastructure/index.md",
     "docs/infrastructure/general/index.md",
     "docs/infrastructure/internal",
