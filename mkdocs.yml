@@ -71,6 +71,12 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/tomfieber
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/tomfieber
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/thomasfieber
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/4J6q3Y8708504340083507253
   analytics: 
     provider: google
     property: G-HH4Y2D319L
