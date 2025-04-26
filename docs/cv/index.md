@@ -7,25 +7,16 @@ Security consultant with 3 years of experience in penetration testing. Retired U
 - MS in Cybersecurity, Utica University, 2015
 ## Work Experience
 
-January 2024 - Present
-
-TrustFoundry
-
-Senior Security Consultant
+TrustFoundry, Senior Security Consultant - January 2024-Present
 
 - Does stuff
 
-June 2022 - January 2024
 
-TrustFoundry
-
-Security Consultant
+TrustFoundry, Security Consultant - June 2022-January 2024
 
 - Did stuff
 
-August 2001 - August 2022
-U.S. Army
-Counterintelligence Technician (CW4 Retired)
+U.S. Army, Counterintelligence Technician (CW4 Retired) - August 2001-August 2022
 - Did cool stuff
 
 ## Publications
