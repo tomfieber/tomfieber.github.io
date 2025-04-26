@@ -8,13 +8,19 @@ Security consultant with 3 years of experience in penetration testing. Retired U
 ## Work Experience
 
 January 2024 - Present
+
 TrustFoundry
+
 Senior Security Consultant
+
 - Does stuff
 
 June 2022 - January 2024
+
 TrustFoundry
+
 Security Consultant
+
 - Did stuff
 
 August 2001 - August 2022
