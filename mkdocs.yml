@@ -68,6 +68,9 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tomfieber
   analytics: 
     provider: google
     property: G-HH4Y2D319L
