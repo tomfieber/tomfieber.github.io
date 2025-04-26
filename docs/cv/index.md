@@ -17,6 +17,7 @@ TrustFoundry, Security Consultant - June 2022-January 2024
 - Did stuff
 
 U.S. Army, Counterintelligence Technician (CW4 Retired) - August 2001-August 2022
+
 - Did cool stuff
 
 ## Publications
