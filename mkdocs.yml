@@ -32,9 +32,6 @@ theme:
     - search.suggest
     - content.code.copy
 plugins:
-  - social:
-      cards_layout_options:
-        font_family: Noto Sans SC
   - blog:
       blog_toc: true
       post_dir: "{blog}/articles"
