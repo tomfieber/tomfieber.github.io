@@ -1,3 +1,0 @@
-# Infrastructure Pentest Checklists
-
-## General

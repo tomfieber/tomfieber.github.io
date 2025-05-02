@@ -57,7 +57,7 @@ nslookup localhost
 
 ### Port Scanning
 
-- [ ] Run [nmap](../../notes/nmap.md) scans
+- [ ] Run [nmap](../general/general-01-nmap.md) scans
 	- [ ] Discovery
 	- [ ] TCP
 	- [ ] UDP

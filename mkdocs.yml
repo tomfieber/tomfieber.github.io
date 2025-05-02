@@ -99,48 +99,48 @@ copyright: Copyright &copy; 2016 - 2025 Tom Fieber
 # not_in_nav: |
 #   /notes/**/*.md
 
-nav:
-  - Home: index.md
-  - Web:
-    - web/index.md
-    - Checklists:
-      - Information Gathering: web/checklists/01-information-gathering.md
-      - Configuration Management and Deployment Testing: web/checklists/02-configuration-management-deployment-testing.md
-      - Identity Management Testing: web/checklists/03-identity-management-testing.md
-      - Authentication Testing: web/checklists/04-authentication-testing.md
-      - Authorization Testing: web/checklists/05-authorization-testing.md
-      - Session Management Testing: web/checklists/06-session-management-testing.md
-      - Input Validation Testing: web/checklists/07-input-validation-testing.md
-      - Error Handling: web/checklists/08-error-handling.md
-      - Testing Weak Cryptography: web/checklists/09-testing-weak-cryptography.md
-      - Business Logic Testing: web/checklists/10-business-logic-testing.md
-      - Client-Side Testing: web/checklists/11-client-side-testing.md
-      - API Testing: web/checklists/12-api-testing.md
-  - Infrastructure:
-    - infrastructure/index.md
-    - Checklsits:
-      - Network Enumeration: infrastructure/internal/network-enumeration.md
-      - Domain Testing: 
-        - Domain Data: infrastructure/internal/domain-data.md
-        - Domain Vulnerability Scanning: infrastructure/internal/domain-vuln-scanning.md
-        - Domain SMB Checks: infrastructure/internal/smb.md
-  - Notes:
-    - notes/index.md
-    - General:
-      - Scanning: notes/nmap.md
-      - Low Hanging Fruit: notes/low-hanging-fruit.md
-      - Footprinting:
-        - FTP: notes/ftp.md
-        - SSH: notes/ssh.md
-    - Web:
-      - CORS: notes/cors.md
-      - Cross-Site Scripting: notes/xss.md
-      - Injection:
-        - Command Injection: notes/command-injection.md
-        - SQL Injection: notes/sqli.md
-    - Cloud:
-      - Azure: notes/azure.md
-  - Blog:
-    - blog/index.md
-  - CV:
-    - cv/index.md
+# nav:
+#   - Home: index.md
+#   - Web:
+#     - web/index.md
+#     - Checklists:
+#       - Information Gathering: web/checklists/01-information-gathering.md
+#       - Configuration Management and Deployment Testing: web/checklists/02-configuration-management-deployment-testing.md
+#       - Identity Management Testing: web/checklists/03-identity-management-testing.md
+#       - Authentication Testing: web/checklists/04-authentication-testing.md
+#       - Authorization Testing: web/checklists/05-authorization-testing.md
+#       - Session Management Testing: web/checklists/06-session-management-testing.md
+#       - Input Validation Testing: web/checklists/07-input-validation-testing.md
+#       - Error Handling: web/checklists/08-error-handling.md
+#       - Testing Weak Cryptography: web/checklists/09-testing-weak-cryptography.md
+#       - Business Logic Testing: web/checklists/10-business-logic-testing.md
+#       - Client-Side Testing: web/checklists/11-client-side-testing.md
+#       - API Testing: web/checklists/12-api-testing.md
+#   - Infrastructure:
+#     - infrastructure/index.md
+#     - Checklsits:
+#       - Network Enumeration: infrastructure/internal/network-enumeration.md
+#       - Domain Testing: 
+#         - Domain Data: infrastructure/internal/domain-data.md
+#         - Domain Vulnerability Scanning: infrastructure/internal/domain-vuln-scanning.md
+#         - Domain SMB Checks: infrastructure/internal/smb.md
+#   - Notes:
+#     - notes/index.md
+#     - General:
+#       - Scanning: notes/nmap.md
+#       - Low Hanging Fruit: notes/low-hanging-fruit.md
+#       - Footprinting:
+#         - FTP: notes/ftp.md
+#         - SSH: notes/ssh.md
+#     - Web:
+#       - CORS: notes/cors.md
+#       - Cross-Site Scripting: notes/xss.md
+#       - Injection:
+#         - Command Injection: notes/command-injection.md
+#         - SQL Injection: notes/sqli.md
+#     - Cloud:
+#       - Azure: notes/azure.md
+#   - Blog:
+#     - blog/index.md
+#   - CV:
+#     - cv/index.md

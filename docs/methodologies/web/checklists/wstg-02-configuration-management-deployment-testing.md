@@ -5,16 +5,16 @@
 - [ ]  Test File Extensions Handling for Sensitive Information [WSTG-CONF-03](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/03-Test_File_Extensions_Handling_for_Sensitive_Information)
 - [ ]  Review Old Backup and Unreferenced Files for Sensitive Information [WSTG-CONF-04](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/04-Review_Old_Backup_and_Unreferenced_Files_for_Sensitive_Information)
 
-```bash
-ffuf -c -u <https://target.com/FUZZ> -w raft-medium-files.txt -e .bak,.old,.backup -of csv -o old-files.csv
-```
+	```bash
+	ffuf -c -u <https://target.com/FUZZ> -w raft-medium-files.txt -e .bak,.old,.backup -of csv -o old-files.csv
+	```
 
 - [ ]  Enumerate Infrastructure and Application Admin Interfaces [WSTG-CONF-05](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/05-Enumerate_Infrastructure_and_Application_Admin_Interfaces)
 - [ ]  Test HTTP Methods [WSTG-CONF-06](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/06-Test_HTTP_Methods)
 
-```bash
-curl -X OPTIONS <https://target.com>
-```
+	```bash
+	curl -X OPTIONS <https://target.com>
+	```
 
 - [ ]  Test HTTP Strict Transport Security [WSTG-CONF-07](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/07-Test_HTTP_Strict_Transport_Security)
 - [ ]  ~~Test RIA Cross Domain Policy [WSTG-CONF-08](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/08-Test_RIA_Cross_Domain_Policy)~~
