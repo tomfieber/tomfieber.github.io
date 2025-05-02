@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/about_me/about-01-cv.md",
+                "file": "docs/methodologies/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "about-01-cv"
+              "title": "index"
             }
           }
         ]
@@ -171,13 +171,14 @@
   },
   "active": "3741635411638596",
   "lastOpenFiles": [
+    "docs/about_me/about-01-cv.md",
+    "docs/methodologies/index.md",
     "docs/index.md",
     "docs/methodologies/infrastructure/index.md",
     "docs/methodologies/infrastructure/cloud/index.md",
     "docs/methodologies/infrastructure/internal/inpt-01-network-enumeration.md",
     "docs/methodologies/web/checklists/wstg-07-input-validation-testing.md",
     "docs/about_me/index.md",
-    "docs/about_me/about-01-cv.md",
     "docs/methodologies/web/notes/webnotes-04-cors.md",
     "docs/methodologies/web/notes/webnotes-03-command-injection.md",
     "docs/methodologies/web/notes/webnotes-02-sqli.md",
@@ -196,7 +197,6 @@
     "docs/methodologies/infrastructure/internal/inpt-04-smb.md",
     "docs/methodologies/infrastructure/internal/inpt-03-domain-vuln-scanning.md",
     "docs/methodologies/infrastructure/internal/inpt-02-domain-data.md",
-    "docs/methodologies/infrastructure/general/general-02-low-hanging-fruit.md",
     "docs/about_me",
     "docs/methodologies/infrastructure/cloud",
     "docs/infrastructure/internal",
