@@ -30,13 +30,14 @@
 
 
 
-
-
-
-
-
 - [ ] Domain groups
+```
+nxc smb 10.3.10.10 -u 'user' -p 'password' --groups
+```
 - [ ] Domain password policy
+```
+nxc smb 10.3.10.10 -u 'user' -p 'password' --pass-pol
+```
 - [ ] Domain trusts
 - [ ] Domain GPOs
 - [ ] Bloodhound
