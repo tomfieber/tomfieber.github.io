@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/methodologies/web/cheatsheet/index.md",
-                "mode": "source",
+                "file": "docs/methodologies/infrastructure/infrastructure/inpt-01-network-enumeration.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "inpt-01-network-enumeration"
             }
           }
         ]
@@ -171,8 +171,8 @@
   },
   "active": "3741635411638596",
   "lastOpenFiles": [
-    "docs/methodologies/infrastructure/infrastructure/inpt-01-network-enumeration.md",
     "docs/methodologies/web/cheatsheet/index.md",
+    "docs/methodologies/infrastructure/infrastructure/inpt-01-network-enumeration.md",
     "docs/methodologies/general/tools/tools-002-scope_parser.py.md",
     "docs/methodologies/general/general-05-password-attacks.md",
     "docs/methodologies/general/general-06-common-services.md",

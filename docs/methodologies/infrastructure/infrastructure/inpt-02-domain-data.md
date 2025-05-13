@@ -75,7 +75,7 @@
 ### Bloodhound
 === "bloodhound-python"
 	```bash
-	something
+	bloodhound-python
 	```
 === "SharpHound"
 	```powershell
