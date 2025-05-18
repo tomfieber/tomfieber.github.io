@@ -216,11 +216,194 @@ nslookup localhost
 		Get-DomainUser -Identity $name -Properties *
 		```
 
+		```powershell
+		Get-ADUser -Filter * -Properties *| select Samaccountname,Description
+		```
+
+		```powershell
+		Get-ADUser -Filter * -Properties * | select name,logoncount,@{expression={[datetime]::fromFileTime($_.pwdlastset )}} AlteredSecuri
+		```
+
 		Search for a particular string in user attributes
 		
 		```powershell
 		Get-DomainUser -LDAPFilter "Description=*built*" | Select name,Description
 		```
+
+		```powershell
+		Get-ADUser -Filter 'Description -like "*built*"' - Properties Description | select name,Description
+		```
+
+- [ ] Check for local admin privileges
+
+	=== "Linux" 
+	
+		```bash
+		placeholder
+		```
+	
+	=== "Windows"
+	
+		```powershell
+		placeholder
+		```
+
+	!!! tip "If you have admin privileges"
+	
+		Check for logged in users
+
+- [ ] Check for logged in users
+
+	=== "Linux"
+	
+		```bash
+		placeholder
+		```
+	
+	=== "Windows"
+	
+		```powershell
+		Get-NetLoggedon -ComputerName dcorp-adminsrv
+		```
+		
+		Get local logged in users
+		
+		```powershell
+		Get-LoggedonLocal -ComputerName dcorp-adminsrv
+		```
+		
+		Get the last logged in user
+		
+		```powershell
+		Get-LastLoggedOn -ComputerName dcorp-adminsrv
+		```
+
+### Domain Group Enumeration
+
+- [ ] Get a list of domain groups
+
+	=== "Linux" 
+	
+		```bash
+		something
+		```
+	
+	=== "Windows"
+		
+		```powershell
+		Get-DomainGroup
+		```
+		
+		Get details of a specific group
+		```powershell
+		Get-DomainGroup -Identity "Domain Admins"
+		```
+
+		```powershell
+		Get-DomainGroup -Domain $TARGETDOMAIN
+		```
+
+		```powershell
+		Get-ADGroup -Filter * | select Name
+		```
+		
+		```powershell
+		Get-ADGroup -Filter * -Properties *
+		```
+
+		Get groups containing the word "admin"
+		
+		```powershell
+		Get-DomainGroup *admin*
+		```
+		
+		```powershell
+		Get-ADGroup -Filter 'Name -like "*admin*"' | select Name
+		```
+
+- [ ] Get group membership
+
+	=== "Linux"
+	
+		```bash
+		placeholder
+		```
+	
+	=== "Windows"
+	
+		```powershell
+		Get-DomainGroupMember -Identity "Domain Admins" -Recurse
+		```
+		
+		```powershell
+		Get-ADGroupMember -Identity "Domain Admins" -Recursive
+		```
+
+- [ ] List all the local groups on a machine
+
+	=== "Linux"
+	
+		```bash
+		placeholder
+		```
+	
+	=== "Windows"
+	
+		```powershell
+		Get-NetLocalGroup -ComputerName dcorp-dc
+		```
+		
+		Get members of a specific group
+		
+		```powershell
+		Get-NetLocalGroupMember -ComputerName dcorp-dc -GroupName Administrators
+		```
+
+
+
+### Domain Computer Enumeration
+
+- [ ] Get a list of domain computer objects
+
+	=== "Linux"
+	
+		```bash
+		placeholder
+		```
+	
+	=== "Windows - PowerView"
+	
+		```powershell
+		Get-DomainComputer | select -ExpandProperty dnshostname
+		```
+	
+		```powershell
+		Get-DomainComputer -OperatingSystem "*Server 2022*"
+		```
+		
+		```powershell
+		Get-DomainComputer -Ping
+		```
+	
+	=== "Windows - AD Module"
+	
+		```powershell
+		Get-ADComputer -Filter * | select Name
+		```
+		
+		```powershell
+		Get-ADComputer -Filter * -Properties *
+		```
+		
+		```powershell
+		Get-ADComputer -Filter 'OperatingSystem -like "*Server 2022*"' - Properties OperatingSystem | select Name,OperatingSystem
+		```
+		
+		```powershell
+		Get-ADComputer -Filter * -Properties DNSHostName | %{TestConnection -Count 1 -ComputerName $_.DNSHostName}
+		```
+
+
 
 
 

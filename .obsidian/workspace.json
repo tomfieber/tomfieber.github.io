@@ -171,7 +171,7 @@
   },
   "active": "3741635411638596",
   "lastOpenFiles": [
-    "docs/Methodologies/Cheatsheets/web/index.md",
+    "docs/Methodologies/References/infrastructure/infra-008-evasion.md",
     "docs/Methodologies/Cheatsheets/web/index.md",
     "docs/Methodologies/Cheatsheets/network/index.md",
     "docs/blog/index.md",
@@ -197,7 +197,6 @@
     "docs/Methodologies/References/web/webnotes-04-cors.md",
     "docs/Methodologies/References/infrastructure/infra-010-windows-attacks.md",
     "docs/Methodologies/References/infrastructure/infra-009-mssql-exchange-sccm.md",
-    "docs/Methodologies/References/infrastructure/infra-008-evasion.md",
     "docs/Methodologies/References/infrastructure/infra-007-ad-trust-attacks.md",
     "docs/Methodologies/References/infrastructure/infra-006-ntlm-relay.md",
     "docs/Methodologies/References/infrastructure/infra-005-dacl-attacks.md",
