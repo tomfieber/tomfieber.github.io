@@ -1,7 +1,5 @@
 authors:
   tomfieber:
-    name: "Tom Fieber"        # Author name
-    description: Dad, husband, okay pentester # Author description
-    avatar: /assets/images/kittyhacker2.jpg        # Author avatar
-    slug: "tomfieber"           # Author profile slug
-    url: "https://github.com/tomfieber"            # Author website URL
+    name: Tom Fieber
+    description: The Okayest Pentester
+    avatar: assets/images/kittyhacker2.jpg

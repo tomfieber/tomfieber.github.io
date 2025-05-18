@@ -1,5 +1,6 @@
 {
   "useMarkdownLinks": true,
   "newLinkFormat": "relative",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "docs/assets/screenshots"
 }
