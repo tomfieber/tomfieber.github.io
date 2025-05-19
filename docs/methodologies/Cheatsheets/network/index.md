@@ -1,4 +1,5 @@
 # Network Pentesting
+--- 
 ## Unauthenticated Testing
 ### Recon
 - [ ] Work out where we are
@@ -359,8 +360,6 @@ nslookup localhost
 		Get-NetLocalGroupMember -ComputerName dcorp-dc -GroupName Administrators
 		```
 
-
-
 ### Domain Computer Enumeration
 
 - [ ] Get a list of domain computer objects
@@ -404,8 +403,66 @@ nslookup localhost
 		```
 
 
+### Domain Shares Enumeration
 
+- [ ] Identify all accessible shares
 
+	=== "Linux"
+	
+		```bash
+		nxc smb smb_enabled_hosts.txt -u 'user' -p 'password' --shares
+		```
+
+		```bash
+		nxc smb smb_enabled_hosts.txt -u 'user' -p 'password' --shares --filter-shares READ WRITE
+		```
+	
+	=== "Windows"
+	
+		```powershell
+		Invoke-ShareFinder -Verbose
+		```
+		
+		```powershell
+		Invoke-FileFinder -Verbose
+		```
+		
+		```powershell
+		Get-NetFileServer
+		```
+
+	!!! tip "PowerHuntShares"
+		[GitHub Link](https://github.com/NetSPI/PowerHuntShares)
+		```
+		Invoke-HuntSMBShares -NoPing -OutputDirectory C:\AD\Tools -HostList C:\AD\Tools\servers.txt
+		```
+
+- [ ] Spider SMB shares
+
+	```bash
+	nxc smb $TARGET -u 'user' -p 'password' -M spider_shares
+	```
+
+- [ ] Search for interesting files
+
+	=== "Linux"
+	
+		!!! tip "Manspider"
+			The previous method is no longer maintained. The recommended method is now using Docker
+		
+			```bash
+			docker run --rm -v ./manspider:/root/.manspider blacklanternsecurity/manspider --help
+			```
+
+		Search for files that may contain creds
+		```bash
+		manspider smb_enabled_hosts.txt -f passw user admin account network login logon -d evilcorp -u 'user' -p 'password'
+		```
+
+		Search for files with "password" in the name
+		```bash
+		manspider smb_enabled_hosts.txt -f passw -e xlsx csv -d evilcorp -u 'user' -p 'password'
+		```
 
 ## Local Privilege Escalation
 

@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "cb6520a67ed7fdc0",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/notes/cors.md",
+                "file": "docs/Methodologies/Cheatsheets/network/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for cors"
+              "title": "Backlinks for index"
             }
           },
           {
@@ -142,21 +143,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/notes/cors.md",
+                "file": "docs/Methodologies/Cheatsheets/network/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of cors"
+              "title": "Outline of index"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,6 +172,10 @@
   },
   "active": "3741635411638596",
   "lastOpenFiles": [
+    "docs/stylesheets/extra.css",
+    "docs/stylesheets",
+    "stylesheets/extra.css",
+    "stylesheets",
     "docs/Methodologies/References/infrastructure/infra-008-evasion.md",
     "docs/Methodologies/Cheatsheets/web/index.md",
     "docs/Methodologies/Cheatsheets/network/index.md",
@@ -205,9 +210,6 @@
     "docs/methodologies/web/notes/wstg-01-information-gathering.md",
     "docs/Methodologies/Cheatsheets/wifi",
     "docs/Methodologies/References/general/c2",
-    "docs/Methodologies/References/infrastructure/privilege-escalation",
-    "docs/Methodologies/References/general/tools",
-    "docs/Methodologies/References/infrastructure",
     "docs/assets/images/kittyhacker2.jpg",
     "kittyhacker2.jpg"
   ]
