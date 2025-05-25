@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Methodologies/Cheatsheets/network/index.md",
+                "file": "docs/blog/articles/thm-annie.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "thm-annie"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "cb6520a67ed7fdc0",
@@ -143,21 +142,32 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Methodologies/Cheatsheets/network/index.md",
+                "file": "docs/blog/articles/thm-annie.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of thm-annie"
+            }
+          },
+          {
+            "id": "b3dbb20cb89c67e4",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,18 +177,24 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "custom-sort:Toggle custom sorting": false
+      "custom-sort:Toggle custom sorting": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "3741635411638596",
   "lastOpenFiles": [
+    "docs/assets/screenshots/Pasted image 20250525094526.png",
+    "docs/assets/screenshots/Pasted image 20250525094345.png",
+    "docs/assets/screenshots/Pasted image 20250525093133.png",
+    "docs/assets/screenshots/Pasted image 20250518111327.png",
+    "docs/blog/articles/thm-annie.md",
+    "docs/Methodologies/Cheatsheets/network/index.md",
     "docs/stylesheets/extra.css",
     "docs/stylesheets",
     "stylesheets/extra.css",
     "stylesheets",
     "docs/Methodologies/References/infrastructure/infra-008-evasion.md",
     "docs/Methodologies/Cheatsheets/web/index.md",
-    "docs/Methodologies/Cheatsheets/network/index.md",
     "docs/blog/index.md",
     "docs/writeups/index.md",
     "docs/Methodologies/Cheatsheets/wifi/index.md",
@@ -187,7 +203,6 @@
     "docs/blog2/articles",
     "docs/blog2/index.md",
     "docs/blog2",
-    "docs/assets/screenshots/Pasted image 20250518111327.png",
     "Pasted image 20250518111146.png",
     "docs/Methodologies/References/index.md",
     "docs/Methodologies/References",
@@ -207,9 +222,7 @@
     "docs/Methodologies/References/infrastructure/infra-005-dacl-attacks.md",
     "docs/Methodologies/References/infrastructure/infra-004-kerberos.md",
     "docs/Methodologies/References/infrastructure/infra-003-lateral-movement.md",
-    "docs/methodologies/web/notes/wstg-01-information-gathering.md",
     "docs/Methodologies/Cheatsheets/wifi",
-    "docs/Methodologies/References/general/c2",
     "docs/assets/images/kittyhacker2.jpg",
     "kittyhacker2.jpg"
   ]

