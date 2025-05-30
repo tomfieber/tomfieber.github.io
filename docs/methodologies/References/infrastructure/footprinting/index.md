@@ -2,44 +2,90 @@
 
 ## Infrastructure-based Enumeration
 
-|**Command**|**Description**|
-|---|---|
-|`curl -s https://crt.sh/\?q\=<target-domain>\&output\=json \| jq .`|Certificate transparency.|
-|`for i in $(cat ip-addresses.txt);do shodan host $i;done`|Scan each IP address in a list using Shodan.|
+Check certificate transparency records
 
----
+```bash
+curl -s https://crt.sh/\?q\=<target-domain>\&output\=json | jq .
+```
 
+Scan IPs using Shodan
+
+```bash
+for i in $(cat ip-addresses.txt);do shodan host $i;done
+```
+
+--- 
 ## Host-based Enumeration
 
-##### FTP
+=== "FTP"
 
-|**Command**|**Description**|
-|---|---|
-|`ftp <FQDN/IP>`|Interact with the FTP service on the target.|
-|`nc -nv <FQDN/IP> 21`|Interact with the FTP service on the target.|
-|`telnet <FQDN/IP> 21`|Interact with the FTP service on the target.|
-|`openssl s_client -connect <FQDN/IP>:21 -starttls ftp`|Interact with the FTP service on the target using encrypted connection.|
-|`wget -m --no-passive ftp://anonymous:anonymous@<target>`|Download all available files on the target FTP server.|
+	General interaction
+	
+	```bash
+	ftp $IP $PORT
+	```
+	
+	Check encrypted connection
+	
+	```bash
+	openssl s_client -connect <FQDN/IP>:21 -starttls ftp
+	```
+	
+	Download all available files on the target FTP server
+	
+	```bash
+	wget -m --no-passive ftp://anonymous:anonymous@$TARGET
+	```
 
-##### SMB
+=== "SMB"
 
-|**Command**|**Description**|
-|---|---|
-|`smbclient -N -L //<FQDN/IP>`|Null session authentication on SMB.|
-|`smbclient //<FQDN/IP>/<share>`|Connect to a specific SMB share.|
-|`rpcclient -U "" <FQDN/IP>`|Interaction with the target using RPC.|
-|`samrdump.py <FQDN/IP>`|Username enumeration using Impacket scripts.|
-|`smbmap -H <FQDN/IP>`|Enumerating SMB shares.|
-|`crackmapexec smb <FQDN/IP> --shares -u '' -p ''`|Enumerating SMB shares using null session authentication.|
-|`enum4linux-ng.py <FQDN/IP> -A`|SMB enumeration using enum4linux.|
+	Check null sessions
+	
+	```bash
+	smbclient -N -L //$TARGET
+	```
+	
+	```bash
+	nxc smb $TARGET -u '' -p '' 
+	```
+	
+	Interact with the target using RPC
+	
+	```bash
+	rpcclient -U "" $TARGET
+	```
+	
+	Username enumeration
+	
+	```bash
+	samrdump.py $TARGET
+	```
+	
+	Enumeration with enum4linux-ng
+	
+	```bash
+	enum4linux-ng $TARGET -A
+	```
 
-##### NFS
+=== "NFS"
 
-|**Command**|**Description**|
-|---|---|
-|`showmount -e <FQDN/IP>`|Show available NFS shares.|
-|`mount -t nfs <FQDN/IP>:/<share> ./target-NFS/ -o nolock`|Mount the specific NFS share to ./target-NFS|
-|`umount ./target-NFS`|Unmount the specific NFS share.|
+	Show available NFS shares
+	
+	```bash
+	showmount -e $IP
+	```
+	
+	Mount the specified NFS share
+	
+	```bash
+	mount -t nfs $TARGET:/$SHARE ./target-NFS -o nolock
+	```
+	
+	Unmount the NFS share
+	
+	```bash
+	umount ./target-NFS
+	```
 
 ##### DNS
 
