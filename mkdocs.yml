@@ -1,7 +1,7 @@
 site_name: My Personal Site
 site_url: https://tomfieber.github.io
 repo_url: https://github.com/tomfieber/tomfieber.github.io
-repo_name: tomfieber.github.io
+repo_name: tomfieber/tomfieber.github.io
 copyright: Copyright © 2025 Tom Fieber
 
 # Theme settings
@@ -12,7 +12,7 @@ theme:
 
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: deep-purple
+      primary: green
       accent: purple
       toggle:
         icon: material/brightness-auto
@@ -21,7 +21,7 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep-purple
+      primary: green
       accent: purple 
       toggle:
         icon: material/brightness-7
@@ -30,7 +30,7 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep-purple
+      primary: green
       accent: purple
       toggle:
         icon: material/brightness-4
@@ -52,6 +52,10 @@ theme:
 # Extras
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
 
 extra:
   analytics:
@@ -88,9 +92,9 @@ plugins:
       blog_toc: true
   - meta
   - social
-  - git-committers:
-      repository: tomfieber/tomfieber.github.io
-      branch: main
+  # - git-committers:
+  #     repository: tomfieber/tomfieber.github.io
+  #     branch: main
   - offline
   - tags
 
@@ -109,5 +113,15 @@ markdown_extensions:
           case: lower
       alternate_style: true
   - pymdownx.tasklist:
+      clickable_checkbox: true
       custom_checkbox: true
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
