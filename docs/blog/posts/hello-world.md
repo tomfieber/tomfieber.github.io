@@ -7,8 +7,8 @@ categories:
 authors:
   - tomfieber
 comments: true
+cover_image: hello-word/tie-dye.png
+title: "Hello world!"
 ---
-
-# Hello world!
 
 This is a test <!-- more -->
