@@ -9,11 +9,12 @@
 
 - type: discord
   icon: "fa-brands fa-discord" # icons powered by <https://fontawesome.com/>
-  url: "https://discord.gg/u774mnNu" # Fill with your Linkedin homepage
+  url: "https://discord.gg/5FfPmtj9" # Fill with your Linkedin homepage
 
 - type: rss
   icon: "fas fa-rss"
   noblank: true
+  url: "https://feeds.feedburner.com/thomasfieber/7kh8acaiczd"
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
