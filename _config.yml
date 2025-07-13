@@ -120,9 +120,9 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: "tomfieber/tomfieber.github.io" # <gh-username>/<repo>
-    repo_id: "R_kgDONG8nCg"
-    category: "Announcements"
-    category_id: "DIC_kwDONG8nCs4CjyhG"
+    repo_id: "R_kgDOPLzO9Q"
+    category: "General"
+    category_id: "DIC_kwDOPLzO9c4Cs5Rs"
     mapping: "pathname" # optional, default to 'pathname'
     strict: "0" # optional, default to '0'
     input_position: "bottom" # optional, default to 'bottom'
