@@ -14,8 +14,6 @@ image: /images/vulnlab_escape/escape.png
 description: Easy rated Windows machine created by xct & kozie
 author: thomas
 ---
-## Summary
-
 Escape is an easy rated Windows box from [VulnLab](https://wiki.vulnlab.com/guidance/easy/escape). This box involved breaking out of a restricted kiosk environment, recovering an obfuscated RDP password, and finally bypassing UAC to escalate privilges. 
 
 ## Walkthrough

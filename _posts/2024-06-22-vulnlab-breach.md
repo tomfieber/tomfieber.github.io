@@ -13,8 +13,6 @@ categories:
   - vulnlab
 author: thomas
 ---
-## TL;DR
-
 Breach is a **MEDIUM** difficulty machine on [VulnLab](https://wiki.vulnlab.com/guidance/medium/breach). This machine involved abusing anonymous access to an SMB share to upload a URL link file to a specific directory to induce an authentication request from a user and cracking the resulting NetNTLMv2 hash. Using those credentials, we can kerberoast a service account and crack the krb5tgs hash to recover the password of the service, and then use that password to create a silver ticket impersonating the local administrator of the box. With that, we abuse the `xp_cmdshell` functionality on an MS-SQL service to get a shell on the box and capture the first flag. Finally, we can abuse the `SeImpersonatePrivilege` to escalate to SYSTEM and get the final flag.
 
 ## Walkthrough
