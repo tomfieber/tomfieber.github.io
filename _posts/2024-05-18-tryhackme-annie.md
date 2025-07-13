@@ -50,7 +50,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 After some research, I found that TCP port 7070 is commonly used with AnyDesk software. To test that theory, I checked online for exploits for AnyDesk and found one that looked promising. 
 
-![](images/tryhackme_annie/Pasted%20image%2020220704132548.png)
+![](images/tryhackme_annie/Pasted%20image%2020220704132548.png){: .shadow }
 
 I grabbed that exploit using `searchsploit`.
 
