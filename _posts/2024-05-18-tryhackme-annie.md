@@ -123,7 +123,7 @@ To make this code work, we need to update the following:
 
 After updating those values and running the exploit with `python2 49613.py` we get a connection back to our `netcat` listener. 
 
-![Testing](images/tryhackme_annie/Pasted%20image%2020220704133946.png)
+![Testing](images/tryhackme_annie/Pasted%20image%2020220704133946.png){: .shadow }
 
 ### Stabilize the shell
 Stablize the reverse shell with the following commands
@@ -154,7 +154,7 @@ $ chmod 600 annie.key
 
 As soon as we try to SSH into the machine as the `annie` user, we find that the key has a passphrase. 
 
-![](images/tryhackme_annie/Pasted%20image%2020220704135152.png)
+![](images/tryhackme_annie/Pasted%20image%2020220704135152.png){: .shadow }
 
 ## Cracking the passphrase
 To crack the passphrase for Annie's key, we need to use `ssh2john`. Depending on how you have `John the Ripper` installed, your installation location may be different, but you can find it with `locate ssh2john`. 
@@ -183,7 +183,7 @@ From here, you're free to use whatever privilege escalation enumeration script y
 ### Uncommon SetUID binary
 Looking through the output of LSE, there's an uncommon binary with the setuid bit set. 
 
-![](images/tryhackme_annie/Pasted%20image%2020220704141246.png)
+![](images/tryhackme_annie/Pasted%20image%2020220704141246.png){: .shadow }
 
 ### Setcap
 The `setcap` binary allows the user to set file capabilities. To exploit this, we can make a copy of the `python3` binary and modify the capabilities of that file as detailed [here](https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/). 
@@ -209,6 +209,6 @@ Now that we've set the capability on the local python binary, we can run the fol
 $ ./python3 -c 'import os;os.setuid(0);os.system("/bin/bash")'
 ```
 
-![](images/tryhackme_annie/Pasted%20image%2020220704142433.png)
+![](images/tryhackme_annie/Pasted%20image%2020220704142433.png){: .shadow }
 
 Now you grab the root flag and finsh the room. 
