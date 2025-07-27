@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/references/cheatsheets/NoSQL/labs/lab1-detecting-nosqli.md",
+                "file": "docs/references/cheatsheets/NoSQL/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lab1-detecting-nosqli"
+              "title": "index"
             }
           }
         ]
@@ -170,19 +170,19 @@
   },
   "active": "bcfb498542872276",
   "lastOpenFiles": [
-    "docs/references/cheatsheets/NoSQL/index.md",
     "docs/references/cheatsheets/NoSQL/labs/lab1-detecting-nosqli.md",
+    "docs/references/cheatsheets/NoSQL/index.md",
+    "docs/references/cheatsheets/NoSQL/labs/lab2-exploiting-operator-injection-auth-bypass.md",
+    "docs/assets/screenshots/nosql/Pasted image 20250727105503.png",
+    "docs/assets/screenshots/nosql/Pasted image 20250727105339.png",
+    "docs/assets/screenshots/nosql/Pasted image 20250727105229.png",
+    "docs/assets/screenshots/nosql/Pasted image 20250727105215.png",
+    "docs/assets/screenshots/nosql/Pasted image 20250727102840.png",
     "docs/assets/screenshots/nosql/Pasted image 20250727085130.png",
     "docs/assets/screenshots/nosql/Pasted image 20250727085117.png",
     "docs/assets/screenshots/nosql/Pasted image 20250727085044.png",
     "docs/assets/screenshots/nosql/Pasted image 20250727085026.png",
     "docs/assets/screenshots/nosql/Pasted image 20250727085013.png",
-    "docs/references/cheatsheets/NoSQL/labs/lab2-exploiting-operator-injection-auth-bypass.md",
-    "docs/assets/screenshots/nosql/Pasted image 20250727084944.png",
-    "docs/assets/screenshots/nosql/Pasted image 20250727084926.png",
-    "docs/assets/screenshots/nosql/Pasted image 20250727084914.png",
-    "docs/assets/screenshots/nosql/Pasted image 20250727084852.png",
-    "site/assets/images/social/index.png",
     "site/assets/images/screenshots/nosql",
     "site/assets/images/screenshots",
     "docs/references/methodologies/web-apps/owasp-wstg.md",
