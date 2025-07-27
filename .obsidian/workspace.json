@@ -1,0 +1,183 @@
+{
+  "main": {
+    "id": "7ac1e03d270efc79",
+    "type": "split",
+    "children": [
+      {
+        "id": "23e17b45f9ef0977",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bcfb498542872276",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "site/assets/images/social/index.png"
+              },
+              "icon": "lucide-image",
+              "title": "index"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "33de165a1c48d968",
+    "type": "split",
+    "children": [
+      {
+        "id": "d9e920b1a4ec86c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1fe7e1120a8b8bd0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e81eb5dd24ffba08",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "6ab4082a84eda80b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7c946a9dd26482d0",
+    "type": "split",
+    "children": [
+      {
+        "id": "7115d022bf6aaae8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "330f73af2e2cb04f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "site/assets/images/social/index.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for index"
+            }
+          },
+          {
+            "id": "1fb4f9dd31c6f9d2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "site/assets/images/social/index.png",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from index"
+            }
+          },
+          {
+            "id": "0a11c2e607187306",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "e3547b801a9b1481",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "site/assets/images/social/index.png",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of index"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "1fe7e1120a8b8bd0",
+  "lastOpenFiles": [
+    "site/assets/images/screenshots/nosql",
+    "site/assets/images/screenshots",
+    "site/assets/images/social/blog/index.png",
+    "site/assets/images/social/about-me/resume.png",
+    "site/assets/images/social/about-me/index.png",
+    "site/assets/images/social/blog/archive/2024.png",
+    "site/assets/images/favicon.png",
+    "docs/references/cheatsheets/NoSQL/labs/lab1-detecting-nosqli.md",
+    "docs/references/methodologies/web-apps/owasp-wstg.md",
+    "docs/references/methodologies/infrastructure/internal-network-pentesting.md",
+    "docs/references/methodologies/infrastructure/external-network-pentesting.md"
+  ]
+}

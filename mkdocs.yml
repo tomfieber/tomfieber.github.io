@@ -99,6 +99,7 @@ plugins:
   #     branch: main
   - offline
   - tags
+  - glightbox
 
 # Markdown extensions
 markdown_extensions:
