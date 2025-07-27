@@ -11,12 +11,14 @@
             "id": "bcfb498542872276",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "site/assets/images/social/index.png"
+                "file": "docs/references/cheatsheets/NoSQL/labs/lab1-detecting-nosqli.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "index"
+              "icon": "lucide-file",
+              "title": "lab1-detecting-nosqli"
             }
           }
         ]
@@ -166,16 +168,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1fe7e1120a8b8bd0",
+  "active": "bcfb498542872276",
   "lastOpenFiles": [
+    "docs/references/cheatsheets/NoSQL/index.md",
+    "docs/references/cheatsheets/NoSQL/labs/lab1-detecting-nosqli.md",
+    "docs/assets/screenshots/nosql/Pasted image 20250727085130.png",
+    "docs/assets/screenshots/nosql/Pasted image 20250727085117.png",
+    "docs/assets/screenshots/nosql/Pasted image 20250727085044.png",
+    "docs/assets/screenshots/nosql/Pasted image 20250727085026.png",
+    "docs/assets/screenshots/nosql/Pasted image 20250727085013.png",
+    "docs/references/cheatsheets/NoSQL/labs/lab2-exploiting-operator-injection-auth-bypass.md",
+    "docs/assets/screenshots/nosql/Pasted image 20250727084944.png",
+    "docs/assets/screenshots/nosql/Pasted image 20250727084926.png",
+    "docs/assets/screenshots/nosql/Pasted image 20250727084914.png",
+    "docs/assets/screenshots/nosql/Pasted image 20250727084852.png",
+    "site/assets/images/social/index.png",
     "site/assets/images/screenshots/nosql",
     "site/assets/images/screenshots",
-    "site/assets/images/social/blog/index.png",
-    "site/assets/images/social/about-me/resume.png",
-    "site/assets/images/social/about-me/index.png",
-    "site/assets/images/social/blog/archive/2024.png",
-    "site/assets/images/favicon.png",
-    "docs/references/cheatsheets/NoSQL/labs/lab1-detecting-nosqli.md",
     "docs/references/methodologies/web-apps/owasp-wstg.md",
     "docs/references/methodologies/infrastructure/internal-network-pentesting.md",
     "docs/references/methodologies/infrastructure/external-network-pentesting.md"

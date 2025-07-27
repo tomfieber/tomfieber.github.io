@@ -60,8 +60,8 @@ If injecting into the JSON context, it would be:
 '\"`{\r;$Foo}\n$Foo \\xYZ\u0000
 ```
 
-> [!tip] Figure out which characters are processed
-> Send individuals characters to see how the application responds
+!!! tip
+	To figure out which characters are processed, send individuals characters to see how the application responds.
 
 ### Confirm Conditional Behavior
 
@@ -87,8 +87,8 @@ Attempt to override existing conditions with custom javascript
 '||'1'=='1
 ```
 
-> [!warning] Be careful!
-> Take care when injecting a condition that always evaluates to true into a NoSQL query. Although this may be harmless in the initial context you're injecting into, it's common for applications to use data from a single request in multiple different queries. If an application uses it when updating or deleting data, for example, this can result in accidental data loss.
+!!! warning
+    Take care when injecting a condition that always evaluates to true into a NoSQL query. Although this may be harmless in the initial context you're injecting into, it's common for applications to use data from a single request in multiple different queries. If an application uses it when updating or deleting data, for example, this can result in accidental data loss.
 
 Try injecting a null character after the query
 

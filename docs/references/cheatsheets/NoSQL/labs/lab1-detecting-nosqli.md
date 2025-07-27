@@ -84,25 +84,26 @@ Content-Length: 2793
 
 Note that sending a `'` character results in an error
 
-![[attachments/Pasted image 20250726143846.png]]
+![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727085013.png)
 
 Sending a valid JS payload fixes the error
 
-![[attachments/Pasted image 20250726143937.png]]
+![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727085026.png)
 
 Check conditional behavior. Note that when we send a negative conditional, no products are shown
 
-![[attachments/Pasted image 20250726144101.png]]
+![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727085044.png)
 
-> [!warning] Make sure to URL encode this
+!!! warning
+    Make sure to URL encode this
 
 Now when we send a truthy value, products are returned.
 
-![[attachments/Pasted image 20250726144840.png]]
+![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727085117.png)
 
 Now sending an "or 1=1" payload we can get all products listed
 
-![[attachments/Pasted image 20250726145050.png]]
+![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727085130.png)
 
 Final payload
 
