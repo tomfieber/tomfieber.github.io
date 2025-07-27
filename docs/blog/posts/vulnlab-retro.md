@@ -12,11 +12,11 @@ comments: true
 ---
 # VulnLab: Retro
 
-![](../images/vulnlab_retro/retro.png)
 
 Retro is an **EASY** rated machine on [VulnLab](https://wiki.vulnlab.com/guidance/easy/retro). This machine involves abusing a flaw with pre-created computer accounts to change a password and take over control of the account. From there, abuse an AD CS misconfiguration to obtain a certificate as a domain administrator that can be used for authentication to the domain controller. 
 
 <!-- more -->
+![](../images/vulnlab_retro/retro.png)
 
 ## Enumeration
 ### Nmap

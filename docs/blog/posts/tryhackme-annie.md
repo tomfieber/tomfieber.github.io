@@ -12,11 +12,11 @@ comments: true
 ---
 # TryHackMe: Annie
 
-![](../images/tryhackme_annie/annie.png)
 
 Annie is a **medium** difficulty Linux box on [TryHackMe](https://tryhackme.com/room/annie). This machine involved compromising a vulnerable AnyDesk installation and then abusing an uncommon SetUID binary to elevate privileges to root. 
 
 <!-- more -->
+![](../images/tryhackme_annie/annie.png)
 
 ## Walkthrough
 ### Enumeration

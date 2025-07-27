@@ -12,7 +12,7 @@ theme:
 
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: purple
+      primary: deep-purple
       accent: orange
       toggle:
         icon: material/brightness-auto
@@ -21,7 +21,7 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: purple
+      primary: deep-purple
       accent: orange
       toggle:
         icon: material/brightness-7
@@ -30,7 +30,7 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: purple
+      primary: deep-purple
       accent: orange
       toggle:
         icon: material/brightness-4
