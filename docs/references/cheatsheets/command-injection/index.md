@@ -252,7 +252,7 @@ The example given on PortSwigger is
 & whoami > /var/www/static/whoami.txt &
 ```
 
-??? exmaple "PortSwigger OS Command Injection Lab 3: Blind OS command injection with output redirection"
+??? example "PortSwigger OS Command Injection Lab 3: Blind OS command injection with output redirection"
 
 	This lab has a writable folder at `/var/www/images/`.
 	
