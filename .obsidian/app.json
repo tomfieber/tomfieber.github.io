@@ -1,6 +1,6 @@
 {
   "newLinkFormat": "relative",
   "useMarkdownLinks": true,
-  "attachmentFolderPath": "docs/assets/screenshots/command-injection",
+  "attachmentFolderPath": "docs/assets/screenshots/cors",
   "alwaysUpdateLinks": true
 }
