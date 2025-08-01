@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/references/cheatsheets/injection-attacks/OS-command-injection/index.md",
+                "file": "docs/references/cheatsheets/CORS/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -142,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "site/assets/images/social/index.png",
+                "file": "docs/references/cheatsheets/CORS/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -162,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -182,6 +182,9 @@
   },
   "active": "bcfb498542872276",
   "lastOpenFiles": [
+    "docs/references/cheatsheets/injection-attacks/OS-command-injection/index.md",
+    "docs/references/cheatsheets/CORS/index.md",
+    "docs/references/cheatsheets/CORS",
     "docs/references/cheatsheets/injection-attacks",
     "docs/assets/screenshots/command-injection/Pasted image 20250801093834.png",
     "docs/assets/screenshots/command-injection/Pasted image 20250801093716.png",
@@ -195,7 +198,6 @@
     "docs/assets/screenshots/command-injection/Pasted image 20250801072745.png",
     "docs/assets/screenshots/command-injection",
     "docs/references/cheatsheets/injection-attacks/NoSQL/index.md",
-    "docs/references/cheatsheets/injection-attacks/OS-command-injection/index.md",
     "docs/references/cheatsheets/injection-attacks/OS-command-injection",
     "docs/references/cheatsheets/NoSQL/labs/lab1-detecting-nosqli.md",
     "docs/references/cheatsheets/NoSQL/labs/lab2-exploiting-operator-injection-auth-bypass.md",

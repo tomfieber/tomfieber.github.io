@@ -107,7 +107,7 @@ These can be useful for getting more information about the operating system and 
 	
 	```bash
 	ps -ef
-		```
+	```
 
 === "Windows"
 
@@ -534,7 +534,7 @@ Some shell characters function as command separators, including:
 |     AND      |     `&&`      |         `%26%26`          | Both (only if the first succeeds) |
 |      OR      |     \|\|      |         `%7c%7c`          | Second only (only if first fails) |
 
-The following work on \*nix only
+The following work on *nix only
 
 ```
 ;
@@ -542,7 +542,7 @@ The following work on \*nix only
 \n
 ```
 
-On Unix-based systems we can also use `$()` and backticks '\`\`' to execute inline commands.
+On Unix-based systems we can also use `$()` and backticks '``' to execute inline commands.
 
 ### Filtered character bypass
 
@@ -636,7 +636,7 @@ On Unix-based systems we can also use `$()` and backticks '\`\`' to execute inli
 
 	**Character insertion**
 	
-	Total of `'` and/or `"` must be even
+	Total of '`' and/or '"' must be even
 	
 	```
 	' or "
@@ -727,18 +727,14 @@ Several measures can be taken to mitigate the risk of OS Command Injection, incl
 	- Use whitelists
 	- Validate input on the server side, not just on the client side.
 	- Don't rely on simply escaping shell metacharacters.
-- Use the web server's built-in Web Application Firewall (e.g., in Apache `mod_security`), in addition to an external WAF (e.g. `Cloudflare`, `Fortinet`, `Imperva`..)
+- Use the web server's built-in Web Application Firewall (e.g., in Apache	`mod_security`), in addition to an external WAF (e.g.	`Cloudflare`,	`Fortinet`,	`Imperva`..)
     
-- Abide by the [Principle of Least Privilege (PoLP)](https://en.wikipedia.org/wiki/Principle_of_least_privilege) by running the web server as a low privileged user (e.g. `www-data`)
+- Abide by the	[Principle of Least Privilege (PoLP)](https://en.wikipedia.org/wiki/Principle_of_least_privilege)	by running the web server as a low privileged user (e.g.	`www-data`)
     
-- Prevent certain functions from being executed by the web server (e.g., in PHP `disable_functions=system,...`)
+- Prevent certain functions from being executed by the web server (e.g., in PHP	`disable_functions=system,...`)
     
-- Limit the scope accessible by the web application to its folder (e.g. in PHP `open_basedir = '/var/www/html'`)
+- Limit the scope accessible by the web application to its folder (e.g. in PHP	`open_basedir = '/var/www/html'`)
     
 - Reject double-encoded requests and non-ASCII characters in URLs
     
-- Avoid the use of sensitive/outdated libraries and modules (e.g. [PHP CGI](https://www.php.net/manual/en/install.unix.commandline.php))
-
-
-
-
+- Avoid the use of sensitive/outdated libraries and modules (e.g.	[PHP CGI](https://www.php.net/manual/en/install.unix.commandline.php))
