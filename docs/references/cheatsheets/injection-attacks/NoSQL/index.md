@@ -456,17 +456,17 @@ admin' && this.password.match(/\d/) || 'a'=='b
 	
 	Running this through automate (intruder, whatever) we see that we get the correct response with `this.password.length > 7`, but it fails with `> 8`, so we know the password has 8 characters. 
 	
-	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727102840.png)
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727102840.png)
 	
 	Now we can tweak the automate settings a bit
 	
-	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727105215.png)
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727105215.png)
 	
-	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727105229.png)
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727105229.png)
 	
 	Looking at the results we can see it **seems** to have worked...
 	
-	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727105339.png)
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727105339.png)
 	
 	```
 	ppycphbs
@@ -474,7 +474,7 @@ admin' && this.password.match(/\d/) || 'a'=='b
 	
 	That worked to log in as the administrator, and we solved the lab
 	
-	![](../../../assets/screenshots/nosql/Pasted%20image%2020250727105503.png)
+	![](../../../../assets/screenshots/nosql/Pasted%20image%2020250727105503.png)
 
 ### Advanced Operator Injection
 

