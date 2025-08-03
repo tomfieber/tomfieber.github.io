@@ -237,4 +237,3 @@ A powerful open-source tool that automates the entire process of detecting, expl
 	
 	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803134858.png)
 	
-
