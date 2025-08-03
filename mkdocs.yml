@@ -1,4 +1,4 @@
-site_name: The Okayest Pentester
+site_name: My Personal Site 
 site_url: https://tomfieber.github.io
 site_description: A blog about pentesting, security, and technology.
 repo_url: https://github.com/tomfieber/tomfieber.github.io
@@ -13,8 +13,7 @@ theme:
 
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: deep-purple
-      accent: orange
+      primary: blue-grey
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
@@ -22,8 +21,7 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep-purple
-      accent: orange
+      primary: blue-grey
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -31,8 +29,7 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep-purple
-      accent: orange
+      primary: blue-grey
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
