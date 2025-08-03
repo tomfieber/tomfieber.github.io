@@ -201,17 +201,17 @@ A powerful open-source tool that automates the entire process of detecting, expl
 
 ??? example "YesWeHack Dojo - SQL Injection"
 
-**Lab 1 - Simple Login Bypass**
-
-![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803122836.png)
-
-Payload:
-
-```
-pass' or '1'='1
-```
-
-![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803123043.png)
-
-![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803123055.png)
-
+	**Lab 1 - Simple Login Bypass**
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803122836.png)
+	
+	Payload:
+	
+	```
+	pass' or '1'='1
+	```
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803123043.png)
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803123055.png)
+	
