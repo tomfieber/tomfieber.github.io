@@ -215,3 +215,26 @@ A powerful open-source tool that automates the entire process of detecting, expl
 	
 	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803123055.png)
 	
+	**Lab 2: First Exfiltration**
+	
+	This level has a hint as follows 
+	
+> 	`UNION` can be used to combine the results from different queries.
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803134156.png)
+	
+	Sending "admin" gives us the email address for the admin user:
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803134253.png)
+	
+	Now we can try using a `UNION` to extract the password.
+	
+	This took a little bit of tinkering, but I eventually got the following payload working:
+	
+	```
+	admin%' UNION SELECT null,password FROM users WHERE email LIKE '%admin%'-- -
+	```
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803134858.png)
+	
+
