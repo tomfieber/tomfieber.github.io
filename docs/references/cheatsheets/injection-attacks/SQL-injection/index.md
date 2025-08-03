@@ -194,3 +194,24 @@ An exfiltration method where the attacker forces the database to make an externa
 
 ### Automation (SQLMap)
 A powerful open-source tool that automates the entire process of detecting, exploiting, and exfiltrating data via SQL injection.
+
+
+--- 
+## Other Labs
+
+??? example "YesWeHack Dojo - SQL Injection"
+
+**Lab 1 - Simple Login Bypass**
+
+![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803122836.png)
+
+Payload:
+
+```
+pass' or '1'='1
+```
+
+![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803123043.png)
+
+![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803123055.png)
+
