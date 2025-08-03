@@ -219,7 +219,7 @@ A powerful open-source tool that automates the entire process of detecting, expl
 	
 	This level has a hint as follows 
 	
-> 		`UNION` can be used to combine the results from different queries.
+	"`UNION` can be used to combine the results from different queries."
 	
 	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250803134156.png)
 	
