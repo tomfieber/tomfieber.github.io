@@ -153,16 +153,57 @@ Abusing the vulnerability
 
 ### `UNION`-Based SQLi
 
-- **Concept**: The `UNION` operator combines the results of the application's legitimate query with the results of a malicious query crafted by the attacker.
+**Concept**: The `UNION` operator combines the results of the application's legitimate query with the results of a malicious query crafted by the attacker.
     
-- **Process**:
+**Process**:
     
-    1. **Find Column Count**: Determine the number of columns in the original query using `ORDER BY n--` or `UNION SELECT NULL,NULL,...--`.
+1. **Find Column Count**: Determine the number of columns in the original query using `ORDER BY n--` or `UNION SELECT NULL,NULL,...--`.
+
+	!!! tip "Null"
+	
+		Using "NULL" is a good idea because it is convertible to every common data type, so we can use it to figure out columns without having to fight with the database about data types. In some cases, this may cause an error like a NullPointerException, which could make this method ineffective. 
+	
+2. **Extract Data**: Craft a `UNION SELECT` statement to pull data from other tables.
         
-    2. **Extract Data**: Craft a `UNION SELECT` statement to pull data from other tables.
-        
-- **Example Payload**: `' UNION SELECT username, password FROM users--`
-    
+**Example Payload**: `' UNION SELECT username, password FROM users--`
+
+For a `UNION` query to work, two key requirements must be met:
+
+- The individual queries must return the same number of columns.
+	- Figure out how many columns there are.
+- The data types in each column must be compatible between the individual queries.
+	- Which columns returned from the original query are of a suitable data type to host the payload?
+
+??? example "PortSwigger SQLi Lab 3: SQL injection UNION attack, determining the number of columns returned by the query"
+
+	**Instructions**
+	
+	This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application's response, so you can use a UNION attack to retrieve data from other tables. The first step of such an attack is to determine the number of columns that are being returned by the query. You will then use this technique in subsequent labs to construct the full attack.
+	
+	To solve the lab, determine the number of columns returned by the query by performing a SQL injection UNION attack that returns an additional row containing null values.
+	
+	The lab looks like this...with filtering options. 
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250804065416.png)
+	
+	Each row has a "View details" button which brings up the article, as shown below.
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250804065607.png)
+	
+	Adding a single quote in the category field causes an internal server error, and adding a second fixes the error, so that seems like a good place to start. 
+	
+	```
+	' UNION SELECT null-- -
+	```
+	
+	After a little bit of poking, we find that the table has 3 columns. The following payload worked to solve the lab:
+	
+	```
+	' UNION SELECT null,null,null-- - 
+	```
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250804070112.png)
+
 
 ### Advanced Exploitation
 
