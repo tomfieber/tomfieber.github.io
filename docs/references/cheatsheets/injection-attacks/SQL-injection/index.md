@@ -127,6 +127,22 @@ Used when no errors are returned. The attacker infers information based on the a
 	
 	Note that the official solution uses `OR 1=1-- -`, but this seemed to have worked for me. 
 
+??? example "PortSwigger SQL Injection Lab 2: SQL injection vulnerability allowing login bypass"
+
+	**Instructions**
+	
+	This lab contains a SQL injection vulnerability in the login function.
+	
+	To solve the lab, perform a SQL injection attack that logs in to the application as the `administrator` user.
+	
+	Trying to log in as the administrator with a random password predictably fails.
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250804063257.png)
+	
+	Closing out the quotes and adding a comment before the password parameter allows us to bypass the authentication mechanism and we can log in as the administrator to solve the lab. 
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250804063545.png)
+	
 
 
 ---
