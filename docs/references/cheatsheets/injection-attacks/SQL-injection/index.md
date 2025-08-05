@@ -204,6 +204,42 @@ For a `UNION` query to work, two key requirements must be met:
 	
 	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250804070112.png)
 
+!!! tip "Tip for Oracle databases"
+
+	With Oracle databases, every SELECT statement must use a FROM clause and specify the database. We can use the built-in `dual` database for this. The query would look like this:
+	
+	```
+	' UNION SELECT NULL FROM DUAL--
+	```
+
+??? example "PortSwigger SQL Injection Lab 4: SQL injection UNION attack, finding a column containing text"
+
+	This lab is very similar to the previous one, but instead of just needing to determine the right number of columns in a table, now we need to figure out which one of those columns contains text. 
+	
+	The start of the lab is the same. After a little bit of testing, we figure out there are three columns, as shown below:
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250805072620.png)
+	
+	```
+	' UNION SELECT null,null,null-- -
+	```
+	
+	Now we just need to test each of those columns with the data type we're looking for. Since we're trying to find the one that contains text, I just used `'a'` and looked for what DIDN'T cause an error. 
+	
+	Here, we can see that the second column works. 
+	
+	```
+	Gifts' UNION SELECT null,'a',null-- -
+	```
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250805072825.png)
+	
+	Now we just need to replace the `'a'` with whatever string the lab wants to print. In this case, it was `CtqSX7`. So I just dropped that in place of the `'a'` and solved the lab. 
+	
+
+
+
+
 
 ### Advanced Exploitation
 
@@ -218,9 +254,7 @@ These attacks depend on excessive database user privileges.
 
 ## Prevention Methods
 
-The best way to secure your applications.
-
-### The Gold Standard: Parameterized Queries
+### Parameterized Queries
 
 - **Also known as**: Prepared Statements.
     
