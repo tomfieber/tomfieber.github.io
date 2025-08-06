@@ -238,7 +238,29 @@ For a `UNION` query to work, two key requirements must be met:
 	
 
 
+??? example "PortSwigger Lab 5: SQL injection UNION attack, retrieving data from other tables"
 
+	**Instructions**
+	
+	This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application's response, so you can use a UNION attack to retrieve data from other tables. To construct such an attack, you need to combine some of the techniques you learned in previous labs.
+	
+	The database contains a different table called `users`, with columns called `username` and `password`.
+	
+	To solve the lab, perform a SQL injection UNION attack that retrieves all usernames and passwords, and use the information to log in as the `administrator` user.
+	
+	**Exploit**
+	
+	Given the hint the lab provides, we can start with this payload:
+	
+	```
+	' UNION SELECT username,password from users-- -
+	```
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250806072416.png)
+	
+	That works, now we can just log in as the administrator to solve the lab.
+
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250806073140.png)
 
 
 ### Advanced Exploitation
