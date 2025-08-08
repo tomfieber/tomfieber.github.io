@@ -321,6 +321,45 @@ It's probably pretty helpful to know what kind of database you're hacking on, so
 	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250807205112.png)
 	
 
+### Information Schema
+
+It's possible to extract information about the database from the Information Schema in most databases (except Oracle).
+
+??? example "PortSwigger SQL Injection Lab 8: SQL injection attack, listing the database contents on non-Oracle databases"
+
+	!!! info "Lab Instructions"
+	
+		This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application's response so you can use a UNION attack to retrieve data from other tables.
+		
+		The application has a login function, and the database contains a table that holds usernames and passwords. You need to determine the name of this table and the columns it contains, then retrieve the contents of the table to obtain the username and password of all users.
+		
+		To solve the lab, log in as the `administrator` user.
+	
+	Same sort of eCommerce site here as before. 
+	
+	Since the point off this lab is to extract information from the information schema, I'm going to try this payload first: `' UNION SELECT null,schema_name from information_schema.schemata-- -`
+	
+	After sending that, we get the following output:
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250808065135.png)
+	
+	I probably could have narrowed that down a bit by appending `where schema_name='pg_catalog'`, but oh well. Now we need to enumerate the tables. We can use `' UNION SELECT null,table_name from information_schema.tables-- -` to do that.
+	
+	Getting the user table
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250808065528.png)
+	
+	So now we can enumerate columns from that table. 
+	
+	Sending `' UNION SELECT null,column_name from information_schema.columns where table_name='users_ihlozl'-- -` gives the following results:
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250808065954.png)
+	
+	Now that we have the column names we can start trying to extract some data. I used the following query to get the usernames and passwords: `' UNION SELECT null,username_ewecsv || ' ' || password_ikgqwk FROM users_ybsfde-- -`.
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250808183852.png)
+	
+	Aaaaand...done.
 
 ### Advanced Exploitation
 
