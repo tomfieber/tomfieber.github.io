@@ -262,6 +262,65 @@ For a `UNION` query to work, two key requirements must be met:
 
 	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250806073140.png)
 
+It's also possible to extract multiple values in a single column with string concatenation. See the [PortSwigger SQL Injection Cheatsheet](https://portswigger.net/web-security/learning-paths/sql-injection/sql-injection-retrieving-multiple-values-within-a-single-column/sql-injection/union-attacks/retrieving-multiple-values-within-a-single-column)
+
+??? example "PortSwigger SQL Injection Lab 6: SQL injection UNION attack, retrieving multiple values in a single column"
+
+	!!! info "Lab instructions"
+	
+		This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application's response so you can use a UNION attack to retrieve data from other tables.
+		
+		The database contains a different table called `users`, with columns called `username` and `password`.
+		
+		To solve the lab, perform a SQL injection UNION attack that retrieves all usernames and passwords, and use the information to log in as the `administrator` user.
+	
+	We can start this one the same way as the other labs; first, figure out how many columns there are (2), and then figure out which column supports text. I'm using the second column. To figure out what database is in use, I used the `version()` command, and found that the DB was Postgres, as shown below.
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250807203420.png)
+	
+	According to the PortSwigger SQLi cheatsheet, the string concatenation operator in Postgres is `||`. 
+	
+	So since we know (they gave us the hint) that there is a table named `users` containing columns `username` and `password`, we can extract those with something like `username||'~'||password`.
+	
+	That worked, and we got the administrator password. 
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250807203938.png)
+	
+	Now we can just log in as the administrator to solve the lab.
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250807204020.png)
+	
+
+### Identifying the Database
+
+It's probably pretty helpful to know what kind of database you're hacking on, so we'll probably need to figure that out.
+
+| Database type    | Query                     |
+| ---------------- | ------------------------- |
+| Microsoft, MySQL | `SELECT @@version`        |
+| Oracle           | `SELECT * FROM v$version` |
+| PostgreSQL       | `SELECT version()`        |
+??? example "PortSwigger SQL Injection Lab 7: SQL injection attack, querying the database type and version on MySQL and Microsoft"
+
+	!!! info "Lab Instructions"
+	
+		This lab contains a SQL injection vulnerability in the product category filter. You can use a UNION attack to retrieve the results from an injected query.
+		
+		To solve the lab, display the database version string.
+	
+	This is the same style of app...basically a eCommerce site. The required string is shown at the top of the page:
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250807204725.png)
+	
+	Start the same way... number of columns > which one supports the correct data type > submit payload > profit. 
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250807205020.png)
+	
+	After we send the `@@version` string in the second column, we force the DB to print the correct string (its version information) and we solve the lab. 
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250807205112.png)
+	
+
 
 ### Advanced Exploitation
 
