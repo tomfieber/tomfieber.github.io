@@ -9,23 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  // Function to safely escape HTML to prevent XSS attacks
-  function escapeHtml(unsafe) {
-    return unsafe
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
-
   // Function to find and replace {TARGET} placeholders in code blocks
   function updateTargetPlaceholders() {
     // Get the current text from the input, trimming any whitespace
     const newText = inputElement.value.trim();
     
-    // Find all code blocks (both <code> and <pre><code> structures)
-    const codeContainers = document.querySelectorAll('div.highlight pre, code');
+    // Find all code blocks
+    const codeContainers = document.querySelectorAll('div.highlight pre code');
     
     codeContainers.forEach(container => {
       // Store original content if not already stored
@@ -38,27 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
       
       // Replace {TARGET} with the new text, or restore original if input is empty
       if (newText) {
-        // SECURITY: Escape user input to prevent XSS attacks
-        const safeText = escapeHtml(newText);
-        
-        // Use multiple replacement patterns to handle different syntax highlighting scenarios
-        let updatedHTML = originalHTML;
-        
-        // Pattern 1: Handle the most common case where {TARGET} is split across spans
-        updatedHTML = updatedHTML.replace(
-          /<span[^>]*class="o"[^>]*>\{<\/span>TARGET<span[^>]*class="o"[^>]*>\}<\/span>/g,
-          safeText
-        );
-        
-        // Pattern 2: Handle simple {TARGET} without spans
-        updatedHTML = updatedHTML.replace(/\{TARGET\}/g, safeText);
-        
-        // Pattern 3: Handle variations where there might be whitespace or other spans
-        updatedHTML = updatedHTML.replace(
-          /<span[^>]*>\{<\/span>\s*TARGET\s*<span[^>]*>\}<\/span>/g,
-          safeText
-        );
-        
+        // Simple text replacement - replace the literal string {TARGET}
+        let updatedHTML = originalHTML.replace(/{TARGET}/g, newText);
         container.innerHTML = updatedHTML;
       } else {
         container.innerHTML = originalHTML;
@@ -69,14 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Listen for input events (real-time updates)
   inputElement.addEventListener('input', updateTargetPlaceholders);
   
-  // Listen for Enter key press in the input field
-  inputElement.addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-      updateTargetPlaceholders();
-    }
-  });
-
   // Run initial replacement in case there's already content in the input box
-  // This handles cases where the input has a default value or browser autocomplete
   updateTargetPlaceholders();
 });
