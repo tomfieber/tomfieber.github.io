@@ -1665,6 +1665,9 @@
 <!-- Content -->
 <article class="md-content__inner md-typeset">
   
+  <!-- Dynamic target input for pages that have the dynamic_target metadata -->
+  
+
   <!-- Page content -->
   <h1 id="vulnlab-manage">VulnLab: Manage<a class="headerlink" href="#vulnlab-manage" title="Permanent link">&para;</a></h1>
 <p>Manage is an <strong>EASY</strong> machine on <a href="https://wiki.vulnlab.com/guidance/easy/manage">VulnLab</a>. This box involved abusing a Java JMX service to get command execution on the server. Once on the server, we find a backup archive that contains files from a user's home directory that we can use to move laterally. After moving to the second user, we find that we're able to run a command as root that we can use to add a new privileged user on the system. </p>
@@ -1952,9 +1955,6 @@
 <span class="go">drwx------  2 root root 4096 Jun 21 15:26 .ssh</span>
 <span class="go">-rw-r--r--  1 root root    0 Mar  1 04:35 .sudo_as_admin_successful</span>
 </code></pre></div>
-
-  <!-- Dynamic target input for pages that have the dynamic_target metadata -->
-  
   
   <!-- Source file information -->
   

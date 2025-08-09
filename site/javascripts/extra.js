@@ -1,28 +1,12 @@
 // Wait until the entire page content is loaded before running the script
 document.addEventListener('DOMContentLoaded', function () {
   
-  // Function to initialize the dynamic target functionality
-  function initializeDynamicTarget() {
-    // Find our input field and container
-    const inputElement = document.getElementById('target-input');
-    const containerElement = document.getElementById('dynamic-target-container');
+  // Find our input field
+  const inputElement = document.getElementById('target-input');
 
-    // If there's no input field on this page, do nothing.
-    if (!inputElement || !containerElement) {
-      return false;
-    }
-
-    // Move the input container to appear after the first H1 heading
-    const firstH1 = document.querySelector('h1');
-    if (firstH1 && containerElement.parentNode !== firstH1.parentNode) {
-      // Insert the container after the H1 element
-      firstH1.parentNode.insertBefore(containerElement, firstH1.nextSibling);
-      
-      // Make sure the container is visible
-      containerElement.style.display = 'block';
-    }
-
-    return true;
+  // If there's no input field on this page, do nothing.
+  if (!inputElement) {
+    return;
   }
 
   // Function to safely escape HTML to prevent XSS attacks
@@ -38,9 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to find and replace {TARGET} placeholders in code blocks
   function updateTargetPlaceholders() {
     // Get the current text from the input, trimming any whitespace
-    const inputElement = document.getElementById('target-input');
-    if (!inputElement) return;
-    
     const newText = inputElement.value.trim();
     
     // Find all code blocks (both <code> and <pre><code> structures)
@@ -75,38 +56,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Function to setup event listeners
-  function setupEventListeners() {
-    const inputElement = document.getElementById('target-input');
-    if (!inputElement) return;
-
-    // Listen for input events (real-time updates)
-    inputElement.addEventListener('input', updateTargetPlaceholders);
-    
-    // Listen for Enter key press in the input field
-    inputElement.addEventListener('keypress', function(event) {
-      if (event.key === 'Enter') {
-        updateTargetPlaceholders();
-      }
-    });
-  }
-
-  // Try to initialize immediately
-  if (initializeDynamicTarget()) {
-    setupEventListeners();
-  } else {
-    // If initialization failed, try again after a short delay
-    setTimeout(function() {
-      if (initializeDynamicTarget()) {
-        setupEventListeners();
-      }
-    }, 100);
-  }
-
-  // Also try again when the window is fully loaded (backup)
-  window.addEventListener('load', function() {
-    if (initializeDynamicTarget()) {
-      setupEventListeners();
+  // Listen for input events (real-time updates)
+  inputElement.addEventListener('input', updateTargetPlaceholders);
+  
+  // Listen for Enter key press in the input field
+  inputElement.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+      updateTargetPlaceholders();
     }
   });
 });

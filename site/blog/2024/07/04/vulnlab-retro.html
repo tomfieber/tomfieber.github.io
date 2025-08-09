@@ -1665,6 +1665,9 @@
 <!-- Content -->
 <article class="md-content__inner md-typeset">
   
+  <!-- Dynamic target input for pages that have the dynamic_target metadata -->
+  
+
   <!-- Page content -->
   <h1 id="vulnlab-retro">VulnLab: Retro<a class="headerlink" href="#vulnlab-retro" title="Permanent link">&para;</a></h1>
 <p>Retro is an <strong>EASY</strong> rated machine on <a href="https://wiki.vulnlab.com/guidance/easy/retro">VulnLab</a>. This machine involves abusing a flaw with pre-created computer accounts to change a password and take over control of the account. From there, abuse an AD CS misconfiguration to obtain a certificate as a domain administrator that can be used for authentication to the domain controller. </p>
@@ -2202,9 +2205,6 @@
 <span class="go">SMB         10.10.88.241    445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:retro.vl) (signing:True) (SMBv1:False)</span>
 <span class="go">SMB         10.10.88.241    445    DC               [+] retro.vl\administrator:252fac7066d93dd009d4fd2cd0368389 (Pwn3d!)</span>
 </code></pre></div>
-
-  <!-- Dynamic target input for pages that have the dynamic_target metadata -->
-  
   
   <!-- Source file information -->
   

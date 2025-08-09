@@ -1577,6 +1577,9 @@
 <!-- Content -->
 <article class="md-content__inner md-typeset">
   
+  <!-- Dynamic target input for pages that have the dynamic_target metadata -->
+  
+
   <!-- Page content -->
   <h1 id="cross-origin-resource-sharing-cors">Cross-Origin Resource Sharing (CORS)<a class="headerlink" href="#cross-origin-resource-sharing-cors" title="Permanent link">&para;</a></h1>
 <p>Cross-Origin Resource Sharing (CORS) is a browser security feature that allows a web page from one domain (the "origin") to access resources on another domain. It is an extension of the Same-Origin Policy (SOP) and provides a way to relax its restrictions in a controlled manner.</p>
@@ -1799,9 +1802,6 @@ document.location=&quot;http://stock.0a57008a0318110c80fb1cc3005200c7.web-securi
 <p class="admonition-title">Warning from PortSwigger</p>
 <p>CORS defines browser behaviors and is never a replacement for server-side protection of sensitive data - an attacker can directly forge a request from any trusted origin. Therefore, web servers should continue to apply protections over sensitive data, such as authentication and session management, in addition to properly configured CORS.</p>
 </div>
-
-  <!-- Dynamic target input for pages that have the dynamic_target metadata -->
-  
   
   <!-- Source file information -->
   

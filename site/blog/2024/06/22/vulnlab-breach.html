@@ -1707,6 +1707,9 @@
 <!-- Content -->
 <article class="md-content__inner md-typeset">
   
+  <!-- Dynamic target input for pages that have the dynamic_target metadata -->
+  
+
   <!-- Page content -->
   <h1 id="vulnlab-breach">VulnLab: Breach<a class="headerlink" href="#vulnlab-breach" title="Permanent link">&para;</a></h1>
 <p>Breach is a <strong>MEDIUM</strong> difficulty machine on <a href="https://wiki.vulnlab.com/guidance/medium/breach">VulnLab</a>. This machine involved abusing anonymous access to an SMB share to upload a URL link file to a specific directory to induce an authentication request from a user and cracking the resulting NetNTLMv2 hash. Using those credentials, we can kerberoast a service account and crack the krb5tgs hash to recover the password of the service, and then use that password to create a silver ticket impersonating the local administrator of the box. With that, we abuse the <code>xp_cmdshell</code> functionality on an MS-SQL service to get a shell on the box and capture the first flag. Finally, we can abuse the <code>SeImpersonatePrivilege</code> to escalate to SYSTEM and get the final flag.</p>
@@ -2044,9 +2047,6 @@ dir
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/BeichenDream/GodPotato">GodPotato</a></p>
-
-  <!-- Dynamic target input for pages that have the dynamic_target metadata -->
-  
   
   <!-- Source file information -->
   
