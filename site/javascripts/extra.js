@@ -75,4 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
       updateTargetPlaceholders();
     }
   });
+
+  // Run initial replacement in case there's already content in the input box
+  // This handles cases where the input has a default value or browser autocomplete
+  updateTargetPlaceholders();
 });
