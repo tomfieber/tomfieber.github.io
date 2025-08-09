@@ -25,7 +25,7 @@
   
   <!-- Dynamic target input for pages that have the dynamic_target metadata -->
   {% if page.meta.dynamic_target %}
-    <div id="dynamic-target-container" class="admonition danger">
+    <div id="dynamic-target-container" class="admonition danger" style="position: sticky; z-index: 1000; background: var(--md-default-bg-color, #fff); border-bottom: 1px solid var(--md-default-fg-color--lighter, #ddd); margin-bottom: 1rem;">
       <p class="admonition-title">🎯 Target Domain</p>
       <p>Enter a domain or IP below to populate all commands on this page.</p>
       <input type="text" id="target-input" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; margin-top: 8px;" placeholder="e.g., example.com">

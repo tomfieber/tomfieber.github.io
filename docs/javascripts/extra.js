@@ -41,14 +41,24 @@ document.addEventListener('DOMContentLoaded', function () {
         // SECURITY: Escape user input to prevent XSS attacks
         const safeText = escapeHtml(newText);
         
-        // Use a regex to replace {TARGET} even when it's split across syntax highlighting spans
-        const updatedHTML = originalHTML.replace(
+        // Use multiple replacement patterns to handle different syntax highlighting scenarios
+        let updatedHTML = originalHTML;
+        
+        // Pattern 1: Handle the most common case where {TARGET} is split across spans
+        updatedHTML = updatedHTML.replace(
           /<span[^>]*class="o"[^>]*>\{<\/span>TARGET<span[^>]*class="o"[^>]*>\}<\/span>/g,
           safeText
-        ).replace(
-          /\{TARGET\}/g,
+        );
+        
+        // Pattern 2: Handle simple {TARGET} without spans
+        updatedHTML = updatedHTML.replace(/\{TARGET\}/g, safeText);
+        
+        // Pattern 3: Handle variations where there might be whitespace or other spans
+        updatedHTML = updatedHTML.replace(
+          /<span[^>]*>\{<\/span>\s*TARGET\s*<span[^>]*>\}<\/span>/g,
           safeText
         );
+        
         container.innerHTML = updatedHTML;
       } else {
         container.innerHTML = originalHTML;
