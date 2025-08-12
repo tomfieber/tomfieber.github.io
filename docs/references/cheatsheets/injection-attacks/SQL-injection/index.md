@@ -361,6 +361,85 @@ It's possible to extract information about the database from the Information Sch
 	
 	Aaaaand...done.
 
+
+??? example "PortSwigger SQL Injection Lab 9: Lab: Blind SQL injection with conditional responses"
+
+	!!! info "Lab Instructions"
+	
+		This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.
+		
+		The results of the SQL query are not returned, and no error messages are displayed. But the application includes a `Welcome back` message in the page if the query returns any rows.
+		
+		The database contains a different table called `users`, with columns called `username` and `password`. You need to exploit the blind SQL injection vulnerability to find out the password of the `administrator` user.
+		
+		To solve the lab, log in as the `administrator` user
+	
+	Blind SQLi is an area that has never made a ton of sense to me, so I need to spend a bit of extra time on these. 
+	
+	**Attempting to confirm**
+	
+	We can use `' AND 1=1-- -` to try to confirm the vulnerability:
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250810180308.png)
+	
+	Now if we use 1=2, we SHOULD get a different result:
+	
+	Sure enough, we get no "Welcome back" message
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250810180439.png)
+	
+	So now we've confirmed that there is a SQL injection vulnerability in the tracking cookie.
+	
+	Now we can start trying to figure out how long the administrator's password is. 
+	
+	!!! alert "Skipping a step"
+	
+		Note that the official solution uses a step to confirm the existence of the `administrator` user. Since we're given that in the lab instructions, I didn't do that step, but the command they used was:
+		
+		```
+		TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator')='a
+		```
+		
+	To determine how long the password is, we can use a conditional leveraging the `>` symbol...basically, the condition is true if the password is longer than N.
+	
+	```
+	' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a
+	```
+	
+	Although it's certainly possible, it's probably unlikely that this password is longer than 30 characters, so I'm starting with that as the top end.
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250811182643.png)
+	
+	Note the change in content-length between 19 and 20. 
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250811182836.png)
+	
+	Since making the argument that the password is greater than 19 characters returns the "Welcome back!" message (implying true), but the argument "> 20" doesn't return the welcome back message (implying false) we can infer that the password is 20 characters long. 
+	
+	Now that we know how long the password is, we can start trying to figure out what characters belong where. 
+	
+	Using the following payload we can start enumerating the individual characters.
+	
+	```
+	' AND (SELECT 'a' FROM users WHERE username='administrator' AND SUBSTRING(password,1,1)='7')='a
+	```
+	
+	Note the different content length with `7`. Looking at the response we see we get the "Welcome back!" message, so we can conclude that the first character of the password is "7". Now we need to automate this a bit to get the rest of the password. 
+	
+	I ran a matrix scan and found the following password:
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250811190304.png)
+	
+	Administrator password:
+	
+	```
+	7f6u7x9cqygoeigltueb
+	```
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250811190429.png)
+	
+	Done. 
+
 ### Advanced Exploitation
 
 These attacks depend on excessive database user privileges.
