@@ -535,6 +535,63 @@ So in this case, when the condition is true, we should see a divide-by-zero erro
 	
 	Log in as the administrator to solve the lab. 
 
+It may also be possible to extract data through generating errors that contain information returned from the SQL query. 
+
+##### Cast
+
+It may be possible to trigger such an error by trying to cast the result of the query (probably a string) to an incompatible data type like an integer. 
+
+```
+CAST((SELECT example_column FROM example_table) AS int)
+```
+
+??? example "PortSwigger SQL Injection Lab: Visible error-based SQL injection"
+
+	!!! info "Lab Instructions"
+	
+		This lab contains a SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie. The results of the SQL query are not returned.
+		
+		The database contains a different table called `users`, with columns called `username` and `password`. To solve the lab, find a way to leak the password for the `administrator` user, then log in to their account.
+	
+	In this lab, we find that errors are returned, so we can see the output. Note the error returned from the following payload:
+	
+	```
+	' AND CAST((SELECT 1) AS int)--
+	```
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250813054527.png)
+	
+	We can just set that to evaluate to `1=1` as follows:
+	
+	```
+	' AND 1=CAST((SELECT 1) AS int)--
+	```
+	
+	Now we get a 200 OK. Now...we need to figure out how to get data out of this. 
+	
+	Send the following payload, and note that the output ("administrator") is shown in the error message.
+	
+	```
+	x' AND 1=CAST((SELECT username FROM users LIMIT 1) AS int)--
+	```
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250813055211.png)
+	
+	Cool...now we can start trying to extract some more valuable information. 
+	
+	Using the same general principle that we used to extract the first username, we can also extract the first password as follows:
+	
+	```
+	x' AND 1=CAST((SELECT password FROM users LIMIT 1) AS int)--
+	```
+	
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250813055810.png)
+	
+	Now we can log in as the administrator and complete the lab. 
+
+
+
 - **File System Access**: Using database functions like `LOAD_FILE()` to read sensitive files from the server (e.g., `/etc/passwd`).
     
 - **Remote Code Execution (RCE)**: Using database features like `xp_cmdshell` (MS-SQL) or user-defined functions to execute operating system commands on the server.
