@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "7c946a9dd26482d0",
@@ -182,6 +183,9 @@
   },
   "active": "bcfb498542872276",
   "lastOpenFiles": [
+    "docs/assets/screenshots/sqli/Pasted image 20250812203653.png",
+    "docs/assets/screenshots/sqli/Pasted image 20250812202453.png",
+    "docs/assets/screenshots/sqli/Pasted image 20250812195354.png",
     "docs/assets/screenshots/sqli/Pasted image 20250811190429.png",
     "docs/assets/screenshots/sqli/Pasted image 20250811190304.png",
     "docs/assets/screenshots/sqli/Pasted image 20250811182836.png",
@@ -190,9 +194,6 @@
     "docs/assets/screenshots/sqli/Pasted image 20250810180308.png",
     "docs/assets/screenshots/sqli/Pasted image 20250808183852.png",
     "docs/assets/screenshots/sqli/Pasted image 20250808065954.png",
-    "docs/assets/screenshots/sqli/Pasted image 20250808065528.png",
-    "docs/assets/screenshots/sqli/Pasted image 20250808065135.png",
-    "docs/assets/screenshots/sqli/Pasted image 20250807205112.png",
     "docs/assets/screenshots/sqli",
     "docs/references/cheatsheets/CORS/index.md",
     "docs/references/cheatsheets/injection-attacks/SQL-injection/index.md",

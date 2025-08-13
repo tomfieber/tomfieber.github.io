@@ -362,6 +362,10 @@ It's possible to extract information about the database from the Information Sch
 	Aaaaand...done.
 
 
+## Blind SQLi
+
+Blind SQLi exists when the application is vulnerable to SQL injection, but we (as the attacker) don't see any responses. Typically this means we'll have to infer the response by triggering certain error responses, time delays, or by finding some kind of oracle to determine the truth of our statements.
+
 ??? example "PortSwigger SQL Injection Lab 9: Lab: Blind SQL injection with conditional responses"
 
 	!!! info "Lab Instructions"
@@ -440,9 +444,96 @@ It's possible to extract information about the database from the Information Sch
 	
 	Done. 
 
-### Advanced Exploitation
+### Error-based SQLi
 
-These attacks depend on excessive database user privileges.
+This refers to cases where it's possible to use error messages to either view or infer sensitive data. 
+- We might be able to induce the application to return a specific error in response to a boolean expression...basically making this like the previous example. 
+- In some cases, it might be possible to trigger error messages that contain the output of our query. This basically turns a blind SQLi into a visible one.
+
+#### Exploiting blind SQLi by triggering conditional errors
+
+Some applications' behavior doesn't change when they perform SQL queries; however, it may be possible to get them to return different response based on if a SQL error occurs. 
+
+The following statements illustrate this:
+
+```
+xyz' AND (SELECT CASE WHEN (1=2) THEN 1/0 ELSE 'a' END)='a
+xyz' AND (SELECT CASE WHEN (1=1) THEN 1/0 ELSE 'a' END)='a
+```
+
+We can use this same technique to extract information just like we did in the previous step.
+
+```
+xyz' AND (SELECT CASE WHEN (Username = 'Administrator' AND SUBSTRING(Password, 1, 1) > 'm') THEN 1/0 ELSE 'a' END FROM Users)='a
+```
+
+So in this case, when the condition is true, we should see a divide-by-zero error of some sort. 
+
+??? example "PortSwigger SQL Injection Lab 10: Blind SQL injection with conditional errors"
+
+	!!! info "Lab Instructions"
+	
+		This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.
+		
+		The results of the SQL query are not returned, and the application does not respond any differently based on whether the query returns any rows. If the SQL query causes an error, then the application returns a custom error message.
+		
+		The database contains a different table called `users`, with columns called `username` and `password`. You need to exploit the blind SQL injection vulnerability to find out the password of the `administrator` user.
+		
+		To solve the lab, log in as the `administrator` user.
+		These attacks depend on excessive database user privileges.
+	
+		!!! alert "Hint"
+			We're also given a hint that this is an Oracle database.
+	
+	This lab is similar to the previous ones where the application is using a tracking cookie that we can inject into. 
+	
+	Using the following payload confirms that a) the database is Oracle, and b) the application is SQL injectable. 
+	
+	```
+	'||(SELECT '' FROM dual)||'
+	```
+	
+	We can use the following payload from the PortSwigger SQLi cheatsheet to test this a bit more:
+	
+	```
+	SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN TO_CHAR(1/0) ELSE NULL END FROM dual
+	```
+	
+	So the query looks like this:
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250812195354.png)
+	
+	Note the error message when using 1=1. This is because since the 1=1 statement always evaluates to true, the `1/0` gets evaluated which causes a divide by zero error. The 1=2 statement evaluates to false, so the `1/0` does NOT get evaluated, so we don't get an error.
+	
+	To figure out how many characters the password has, we can use the following payload:
+	
+	```
+	'||(SELECT CASE WHEN LENGTH(password)>1 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+	```
+	
+	Then we can use automate/intruder to make this a bit quicker.
+	
+	Note the error is triggered at payload 20...meaning that "password > 20" is false (since it returns a 200 -- no error). So we know the Administrator's password is 20 characters long.
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250812202453.png)
+	
+	Now we can start trying to figure out the password. I'm using the following payload for that:
+	
+	```
+	'||(SELECT CASE WHEN SUBSTR(password,1,1)='a' THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+	```
+	
+	After running it through intruder, the password is there (just not presented nicely like Caido does)
+	
+	![](../../../../assets/screenshots/sqli/Pasted%20image%2020250812203653.png)
+	
+	Administrator password
+	
+	```
+	zhm0aveqcwd1q2rzcxnq
+	```
+	
+	Log in as the administrator to solve the lab. 
 
 - **File System Access**: Using database functions like `LOAD_FILE()` to read sensitive files from the server (e.g., `/etc/passwd`).
     
