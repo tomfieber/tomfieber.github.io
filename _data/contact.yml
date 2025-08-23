@@ -2,13 +2,15 @@
 
 - type: github
   icon: "fab fa-github"
+  url: "https://github.com/tomfieber" # change to your GitHub homepage
 
 - type: twitter
   icon: "fa-brands fa-x-twitter"
+  url: "https://x.com/tomfieber" # change to your X (formerly Twitter) homepage
 
-- type: email
-  icon: "fas fa-envelope"
-  noblank: true # open link in current tab
+- type: Discord
+  icon: "fab fa-discord"
+  url: "https://discord.com/users/708504340083507253" # change to your Discord profile link
 
 - type: rss
   icon: "fas fa-rss"
