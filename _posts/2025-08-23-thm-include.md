@@ -153,49 +153,49 @@ After adding the IP to the `/etc/hosts` file with the command below we're able t
 $ echo -n '10.10.188.130\tinclude.thm' | sudo tee -a /etc/hosts
 ```
 
-![](../assets/images/Pasted%20image%2020250823163116.png)
+![](../assets/images/Pasted%20image%2020250823163116.png){: .w-95 .shadow .rounded-10 }
 _Login form_
 
 After logging in with `guest:guest` we're greeted with a "Review App". 
 
-![](../assets/images/Pasted%20image%2020250823163126.png)
+![](../assets/images/Pasted%20image%2020250823163126.png){: .w-95 .shadow .rounded-10 }
 _Review app main page_
 
 Looking at the "guest" profile, there are a number of different attributes, and it looks like we can recommend activities for the user.
 
-![](../assets/images/Pasted%20image%2020250823163137.png)
+![](../assets/images/Pasted%20image%2020250823163137.png){: .w-95 .shadow .rounded-10 }
 _Friend details_
 
 Under the "Recommend an Activity to guest" heading, it's possible to add a new activity type and name. To start, I entered `test:test`. As shown below, this gets added as a new attribute. 
 
-![](../assets/images/Pasted%20image%2020250823163152.png)
+![](../assets/images/Pasted%20image%2020250823163152.png){: .w-95 .shadow .rounded-10 }
 _Adding a new attribute_
 
 The attribute that sticks out the most is that `isAdmin: false`. It might be possible to overwrite the `isAdmin` value to give ourselves admin privileges.
 
 After entering `isAdmin:true` in the recommend an activity section, we can see that our user is now an admin and we have access to some new menu options. 
 
-![](../assets/images/Pasted%20image%2020250823163200.png)
+![](../assets/images/Pasted%20image%2020250823163200.png){: .w-95 .shadow .rounded-10 }
 _Setting isAdmin to "true"_
 
 Selecting the "API" option from the navigation bar brings up some API documentation listing endpoints on the localhost. 
 
-![](../assets/images/Pasted%20image%2020250823163211.png)
+![](../assets/images/Pasted%20image%2020250823163211.png){: .w-95 .shadow .rounded-10 }
 _API documentation_
 
 On the settings page, there's an option to update the profile banner. 
 
-![](../assets/images/Pasted%20image%2020250823163221.png)
+![](../assets/images/Pasted%20image%2020250823163221.png){: .w-95 .shadow .rounded-10 }
 _Profile update in the Admin settings_
 
 This accepts a URL as input. It might be possible to use this to reach those API endpoints. 
 
-![](../assets/images/Pasted%20image%2020250823163231.png)
+![](../assets/images/Pasted%20image%2020250823163231.png){: .w-95 .shadow .rounded-10 }
 _Updating the banner image URL_
 
 When we enter that and hit "Update Banner Image", we get back the following response:
 
-![](../assets/images/Pasted%20image%2020250823163240.png)
+![](../assets/images/Pasted%20image%2020250823163240.png){: .w-95 .shadow .rounded-10 }
 _Base64-encoded string is returned_
 
 
@@ -216,29 +216,29 @@ $ echo 'eyJSZXZpZXdBcHBVc2VybmFtZS[...SNIP...]N0cmF0b3IiLCJTeXNNb25BcHBQYXNzd29y
 
 Sweet. We've got a password that will allow us to log into the other web app on port 50000. 
 
-![](../assets/images/Pasted%20image%2020250823163305.png)
+![](../assets/images/Pasted%20image%2020250823163305.png){: .w-95 .shadow .rounded-10 }
 _Restricted portal_
 
 After using those credentials to log in, we land on a dashboard that contains the first flag.
 
-![](../assets/images/Pasted%20image%2020250823163317.png)
+![](../assets/images/Pasted%20image%2020250823163317.png){: .w-95 .shadow .rounded-10 }
 _Grab the first flag_
 
 Notice in the source code for `dashboard.php`, the profile picture is sourced from `profile.php` using an `img` parameter. 
 
-![](../assets/images/Pasted%20image%2020250823163340.png)
+![](../assets/images/Pasted%20image%2020250823163340.png){: .w-95 .shadow .rounded-10 }
 _Sourcing the profile image_
 
 In fact, we can see this request in Burp Suite.
 
-![](../assets/images/Pasted%20image%2020250823163350.png)
+![](../assets/images/Pasted%20image%2020250823163350.png){: .w-95 .shadow .rounded-10 }
 _Requesting the profile image _
 
 My first thought with this is testing for path traversal. Since I'm on Burp community edition with a significantly throttled intruder, I'm going to use `ffuf` for testing this quickly. Zapproxy, Caido, or other fuzzing tools will also probably work.
 
 To make this work with `ffuf` I saved the request to a file and then replaced "profile.png" with "FUZZ", as shown below:
 
-![](../assets/images/Pasted%20image%2020250823163400.png)
+![](../assets/images/Pasted%20image%2020250823163400.png){: .w-95 .shadow .rounded-10 }
 _Fuzzing for path traversal_
 
 Having configured the request file, we can run `ffuf` against it. 
@@ -320,22 +320,22 @@ Jun  7 13:09:01 mail CRON[2220]: pam_unix(cron:session): session closed for user
 
 After attempting to SSH into the server, we can check the log again to see if the new entry is there. 
 
-![](../assets/images/Pasted%20image%2020250823163429.png)
+![](../assets/images/Pasted%20image%2020250823163429.png){: .w-95 .shadow .rounded-10 }
 _Viewing log entries_
 
 Perfect. Let's see if we can inject a PHP web shell here. 
 
-![](../assets/images/Pasted%20image%2020250823163437.png)
+![](../assets/images/Pasted%20image%2020250823163437.png){: .w-95 .shadow .rounded-10 }
 _Adding PHP into the SSH username_
 
 Trying to use the standard SSH syntax doesn't work. However, it's possible to still poison the log using `NetExec` or `hydra`. Here, I used `NetExec`. 
 
-![](../assets/images/Pasted%20image%2020250823163446.png)
+![](../assets/images/Pasted%20image%2020250823163446.png){: .w-95 .shadow .rounded-10 }
 _Using NetExec to poison logs_
 
 After checking the log again along with the `id` command, we can see that we've got command execution. 
 
-![](../assets/images/Pasted%20image%2020250823163455.png)
+![](../assets/images/Pasted%20image%2020250823163455.png){: .w-95 .shadow .rounded-10 }
 _The poisoned log is shown_
 
 From here, you can either list the contents of the `/var/www/html/` directory from Burp repeater, or you can try to get a reverse shell and browse around a bit easier. The first time I did this room, I did it entirely in Burp, but for the purpose of this writeup, I'll test the reverse shell method.
@@ -362,12 +362,12 @@ Priority: u=4
 
 ```
 
-![](../assets/images/Pasted%20image%2020250823163507.png)
+![](../assets/images/Pasted%20image%2020250823163507.png){: .w-95 .shadow .rounded-10 }
 _Getting the initial shell_
 
 Here is the "mystery" text file that will give us flag 2.
 
-![](../assets/images/Pasted%20image%2020250823163516.png)
+![](../assets/images/Pasted%20image%2020250823163516.png){: .w-95 .shadow .rounded-10 }
 _Flag 2_
 
 ## Additional Digging
