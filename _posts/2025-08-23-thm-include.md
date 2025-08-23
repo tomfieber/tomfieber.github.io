@@ -76,7 +76,7 @@ RCPT TO: root
 
 We can use a tool like `smtp-user-enum` to try to gather a list of valid usernames. I ran this using the `john.txt` wordlist from [statistically-likely-usernames](https://github.com/insidetrust/statistically-likely-usernames). As shown below, the we've found two usernames: `joshua` and `charles`.
 
-![](../assets/images/Pasted%20image%2020250823163056.png)
+![](../assets/images/Pasted%20image%2020250823163056.png){: .w-95 .shadow .rounded-10 }
 _Initial username discovery_
 
 Let's hold onto this for now and come back to it later. 
