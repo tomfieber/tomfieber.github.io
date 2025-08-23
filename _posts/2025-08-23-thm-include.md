@@ -232,7 +232,7 @@ _Sourcing the profile image_
 In fact, we can see this request in Burp Suite.
 
 ![](../assets/images/Pasted%20image%2020250823163350.png){: .w-95 .shadow .rounded-10 }
-_Requesting the profile image _
+_Requesting the profile image_
 
 My first thought with this is testing for path traversal. Since I'm on Burp community edition with a significantly throttled intruder, I'm going to use `ffuf` for testing this quickly. Zapproxy, Caido, or other fuzzing tools will also probably work.
 
