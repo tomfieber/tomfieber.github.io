@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "1600956f28577651",
@@ -94,6 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "_posts/2025-08-23-thm-annie.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for 2025-08-23-thm-annie"
             }
           },
           {
@@ -140,20 +142,21 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "_posts/2025-08-23-thm-annie.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 2025-08-23-thm-annie"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -166,7 +169,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "9b8dff5bec510471",
+  "active": "c0041f8802badaef",
   "lastOpenFiles": [
     "assets/images/annie.png",
     "assets/images/Pasted image 20250823105414.png",
