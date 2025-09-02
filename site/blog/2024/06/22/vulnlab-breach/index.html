@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://eagle-rising-infosec.github.io/blog/2024/06/22/vulnlab-breach/">
+        <link rel="canonical" href="https://tomfieber.github.io/blog/2024/06/22/vulnlab-breach/">
       
       
         <link rel="prev" href="../../07/tryhackme-include/">
@@ -76,7 +76,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/vulnlab-breach.png" >
+        <meta  property="og:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/vl-breach/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -84,7 +84,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://eagle-rising-infosec.github.io/blog/2024/06/22/vulnlab-breach/" >
+        <meta  property="og:url"  content="https://tomfieber.github.io/blog/2024/06/22/vulnlab-breach/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -92,7 +92,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/vulnlab-breach.png" >
+        <meta  name="twitter:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/vl-breach/index.png" >
       
     
     
@@ -4117,7 +4117,7 @@
                         
                       </strong>
                       <br>
-                      Dad, husband, and Chief Learner
+                      Dad and husband. Chief Learning Officer.
                     </span>
                   </div>
                 
@@ -4212,7 +4212,7 @@
 
 <h1 id="vulnlab-breach">VulnLab: Breach<a class="headerlink" href="#vulnlab-breach" title="Permanent link">&para;</a></h1>
 <figure>
-<p><a class="glightbox" href="../../../../images/vulnlab_breach/breach.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../images/vulnlab_breach/breach.png" width="300" /></a></p>
+<p><a class="glightbox" href="../../../../vl-breach/attachments/breach.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../vl-breach/attachments/breach.png" width="300" /></a></p>
 <figcaption></figcaption>
 </figure>
 <p>Breach is a <strong>MEDIUM</strong> difficulty machine on <a href="https://wiki.vulnlab.com/guidance/medium/breach">VulnLab</a>. This machine involved abusing anonymous access to an SMB share to upload a URL link file to a specific directory to induce an authentication request from a user and cracking the resulting NetNTLMv2 hash. Using those credentials, we can kerberoast a service account and crack the krb5tgs hash to recover the password of the service, and then use that password to create a silver ticket impersonating the local administrator of the box. With that, we abuse the <code>xp_cmdshell</code> functionality on an MS-SQL service to get a shell on the box and capture the first flag. Finally, we can abuse the <code>SeImpersonatePrivilege</code> to escalate to SYSTEM and get the final flag.</p>
@@ -4529,7 +4529,7 @@ SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
 [*] process start with pid 740
 </code></pre></div>
 <p>After running <code>GodPotato</code>, we get another connection back to our machine as <code>nt authority\system</code>. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240621164514.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240621164514.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-breach/attachments/Pasted%20image%2020240621164514.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-breach/attachments/Pasted%20image%2020240621164514.png" /></a></p>
 <p>Now we can grab the root flag and finish the box! </p>
 <div class="highlight"><pre><span></span><code>C:\Windows\Tasks&gt;cd C:\users\administrator\desktop
 cd C:\users\administrator\desktop

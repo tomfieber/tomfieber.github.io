@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://eagle-rising-infosec.github.io/blog/2024/07/04/vulnlab-retro/">
+        <link rel="canonical" href="https://tomfieber.github.io/blog/2024/07/04/vulnlab-retro/">
       
       
         <link rel="prev" href="../../../06/29/vulnlab-baby/">
@@ -76,7 +76,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/vulnlab-retro.png" >
+        <meta  property="og:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/vl-retro/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -84,7 +84,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://eagle-rising-infosec.github.io/blog/2024/07/04/vulnlab-retro/" >
+        <meta  property="og:url"  content="https://tomfieber.github.io/blog/2024/07/04/vulnlab-retro/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -92,7 +92,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/vulnlab-retro.png" >
+        <meta  name="twitter:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/vl-retro/index.png" >
       
     
     
@@ -4075,7 +4075,7 @@
                         
                       </strong>
                       <br>
-                      Dad, husband, and Chief Learner
+                      Dad and husband. Chief Learning Officer.
                     </span>
                   </div>
                 
@@ -4158,7 +4158,7 @@
 
 <h1 id="vulnlab-retro">VulnLab: Retro<a class="headerlink" href="#vulnlab-retro" title="Permanent link">&para;</a></h1>
 <figure>
-<p><a class="glightbox" href="../../../../images/vulnlab_retro/retro.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../images/vulnlab_retro/retro.png" width="300" /></a></p>
+<p><a class="glightbox" href="../../../../vl-retro/attachments/retro.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../vl-retro/attachments/retro.png" width="300" /></a></p>
 <figcaption></figcaption>
 </figure>
 <p>Retro is an <strong>EASY</strong> rated machine on <a href="https://wiki.vulnlab.com/guidance/easy/retro">VulnLab</a>. This machine involves abusing a flaw with pre-created computer accounts to change a password and take over control of the account. From there, abuse an AD CS misconfiguration to obtain a certificate as a domain administrator that can be used for authentication to the domain controller. </p>
@@ -4536,7 +4536,7 @@
 <p><a href="https://www.trustedsec.com/blog/diving-into-pre-created-computer-accounts">TrustedSec: Diving Into Pre-Created Computer Accounts</a></p>
 <p>Essentially, if the computer account was created with the <code>Assign this computer account as a pre-Windows 2000 computer</code> option checked, the password will be the same as the computer name, except lowercase and without the "$" at the end.</p>
 <p>We also find some useful information in a <a href="https://web.archive.org/web/20080205233505/http://support.microsoft.com/kb/320187">Wayback archive</a>. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240704145857.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240704145857.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-retro/attachments/Pasted%20image%2020240704145857.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-retro/attachments/Pasted%20image%2020240704145857.png" /></a></p>
 <p>So in our case, we can test the <code>banking$</code> account with the password <code>banking</code>. Using <code>netexec</code>, I did get the <code>STATUS_NOLOGON_WORKSTATION_TRUST_ACCOUNT</code> error message described in the article. </p>
 <p>Working on the assumption that the <code>banking$</code> account was created as a pre-Windows 2000 computer, we can attempt to change the password for the <code>banking$</code> machine account</p>
 <div class="highlight"><pre><span></span><code><span class="go">➜  retro kpasswd banking$</span>

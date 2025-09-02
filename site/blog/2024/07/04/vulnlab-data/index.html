@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://eagle-rising-infosec.github.io/blog/2024/07/04/vulnlab-data/">
+        <link rel="canonical" href="https://tomfieber.github.io/blog/2024/07/04/vulnlab-data/">
       
       
         <link rel="prev" href="../vulnlab-retro/">
@@ -74,7 +74,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/vulnlab-data.png" >
+        <meta  property="og:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/vl-data/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -82,7 +82,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://eagle-rising-infosec.github.io/blog/2024/07/04/vulnlab-data/" >
+        <meta  property="og:url"  content="https://tomfieber.github.io/blog/2024/07/04/vulnlab-data/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -90,7 +90,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/vulnlab-data.png" >
+        <meta  name="twitter:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/vl-data/index.png" >
       
     
     
@@ -4073,7 +4073,7 @@
                         
                       </strong>
                       <br>
-                      Dad, husband, and Chief Learner
+                      Dad and husband. Chief Learning Officer.
                     </span>
                   </div>
                 
@@ -4168,7 +4168,7 @@
 
 <h1 id="vulnlab-data">VulnLab: Data<a class="headerlink" href="#vulnlab-data" title="Permanent link">&para;</a></h1>
 <figure>
-<p><a class="glightbox" href="../../../../images/vulnlab_data/data.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../images/vulnlab_data/data.png" width="300" /></a></p>
+<p><a class="glightbox" href="../../../../vl-data/attachments/data.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../vl-data/attachments/data.png" width="300" /></a></p>
 <figcaption></figcaption>
 </figure>
 <p>Data is an <strong>EASY</strong> rated machine on <a href="https://wiki.vulnlab.com/guidance/easy/data">VulnLab</a>. This machine involves abusing an unauthenticated path traversal/file read vulnerability in a Grafana instance to get access to a database file and recover hashed credentials. Using a custom script, we can get those hashes in a format suitable for performing an offline password cracking attack with Hashcat. After recovering a plaintext credential for one of the recovered users, abuse a case of password re-use to gain access to the box as the compromised user. From there, abuse a sudo permission to get a privileged shell in a Docker container running on the system. Once inside the Docker container, we can mount the underlying file system to access the root flag. </p>
@@ -4185,7 +4185,7 @@
 <h4 id="port-3000">Port 3000<a class="headerlink" href="#port-3000" title="Permanent link">&para;</a></h4>
 <p>Checking port 3000, we find a Grafana instance running on the box. </p>
 <figure>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240630135414.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240630135414.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-breach/attachments/Pasted%20image%2020240630135414.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-breach/attachments/Pasted%20image%2020240630135414.png" /></a></p>
 <figcaption>
 <p>Vulnerable Grafana instance</p>
 </figcaption>
@@ -4225,7 +4225,7 @@
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>curl<span class="w"> </span>--path-as-is<span class="w"> </span>http://data.vl:3000/public/plugins/alertlist/../../../../../../../../var/lib/grafana/grafana.db<span class="w"> </span>-o<span class="w"> </span>grafana.db
 </code></pre></div>
 <p>Looking through that database file, we find some hashes. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240630143459.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240630143459.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-breach/attachments/Pasted%20image%2020240630143459.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-breach/attachments/Pasted%20image%2020240630143459.png" /></a></p>
 <p>I found <a href="https://vulncheck.com/blog/grafana-cve-2021-43798">this article</a> with some details on cracking grafana hashes.</p>
 <p>I converted the script given in the article to (good enough) Python. </p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
@@ -4263,7 +4263,7 @@
 </code></pre></div>
 <h2 id="foothold">Foothold<a class="headerlink" href="#foothold" title="Permanent link">&para;</a></h2>
 <p>As shown below, we can use those credentials for logging into Grafana, but there's not much we can do there, so we can check for password re-use instead. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240630152210.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240630152210.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-breach/attachments/Pasted%20image%2020240630152210.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-breach/attachments/Pasted%20image%2020240630152210.png" /></a></p>
 <p>Sure enough, the password is reused on the SSH service, so we can use that password to gain access to the machine as <code>boris</code>. </p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>ssh<span class="w"> </span>boris@<span class="nv">$ip</span>
 <span class="go">The authenticity of host &#39;10.10.93.25 (10.10.93.25)&#39; can&#39;t be established.</span>

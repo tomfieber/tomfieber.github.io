@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://eagle-rising-infosec.github.io/blog/">
+        <link rel="canonical" href="https://tomfieber.github.io/blog/">
       
       
         <link rel="prev" href="..">
@@ -76,7 +76,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/index.png" >
+        <meta  property="og:image"  content="https://tomfieber.github.io/assets/images/social/blog/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -84,7 +84,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://eagle-rising-infosec.github.io/blog/" >
+        <meta  property="og:url"  content="https://tomfieber.github.io/blog/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -92,7 +92,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/index.png" >
+        <meta  name="twitter:image"  content="https://tomfieber.github.io/assets/images/social/blog/index.png" >
       
     
     
@@ -4011,7 +4011,7 @@
   <div class="md-post__content md-typeset">
     <h2 id="vulnlab-data"><a class="toclink" href="2024/07/04/vulnlab-data/">VulnLab: Data</a></h2>
 <figure>
-<p><img alt="" height="300" src="images/vulnlab_data/data.png" width="300" /></p>
+<p><img alt="" height="300" src="vl-data/attachments/data.png" width="300" /></p>
 <figcaption></figcaption>
 </figure>
 <p>Data is an <strong>EASY</strong> rated machine on <a href="https://wiki.vulnlab.com/guidance/easy/data">VulnLab</a>. This machine involves abusing an unauthenticated path traversal/file read vulnerability in a Grafana instance to get access to a database file and recover hashed credentials. Using a custom script, we can get those hashes in a format suitable for performing an offline password cracking attack with Hashcat. After recovering a plaintext credential for one of the recovered users, abuse a case of password re-use to gain access to the box as the compromised user. From there, abuse a sudo permission to get a privileged shell in a Docker container running on the system. Once inside the Docker container, we can mount the underlying file system to access the root flag. </p>
@@ -4063,7 +4063,7 @@
   <div class="md-post__content md-typeset">
     <h2 id="vulnlab-retro"><a class="toclink" href="2024/07/04/vulnlab-retro/">VulnLab: Retro</a></h2>
 <figure>
-<p><img alt="" height="300" src="images/vulnlab_retro/retro.png" width="300" /></p>
+<p><img alt="" height="300" src="vl-retro/attachments/retro.png" width="300" /></p>
 <figcaption></figcaption>
 </figure>
 <p>Retro is an <strong>EASY</strong> rated machine on <a href="https://wiki.vulnlab.com/guidance/easy/retro">VulnLab</a>. This machine involves abusing a flaw with pre-created computer accounts to change a password and take over control of the account. From there, abuse an AD CS misconfiguration to obtain a certificate as a domain administrator that can be used for authentication to the domain controller. </p>
@@ -4115,7 +4115,7 @@
   <div class="md-post__content md-typeset">
     <h2 id="vulnlab-baby"><a class="toclink" href="2024/06/29/vulnlab-baby/">VulnLab: Baby</a></h2>
 <figure>
-<p><img alt="" height="300" src="images/vulnlab_baby/baby.png" width="300" /></p>
+<p><img alt="" height="300" src="vl-baby/attachments/baby.png" width="300" /></p>
 <figcaption></figcaption>
 </figure>
 <p>Baby is an <strong>EASY</strong> difficulty machine on <a href="https://wiki.vulnlab.com/guidance/easy/baby">VulnLab</a>. This machine involved performing LDAP enumeration to identify valid domain users and locate a plaintext password in one of the user description fields. By spraying that password across all the identified users, we find one that requires a password change, which once complete gives us an initial shell on the box. Once on the box, we discover that the current user has backup privileges, which allow us to create a copy of the drive and extract the NTDS.dit. That, along with the SAM and SYSTEM hives, allow us to dump all domain credentials with <code>secretsdump.py</code>. </p>
@@ -4167,7 +4167,7 @@
   <div class="md-post__content md-typeset">
     <h2 id="vulnlab-manage"><a class="toclink" href="2024/06/28/vulnlab-manage/">VulnLab: Manage</a></h2>
 <figure>
-<p><img alt="" height="300" src="images/vulnlab_manage/manage.png" width="300" /></p>
+<p><img alt="" height="300" src="vl-manage/attachments/manage.png" width="300" /></p>
 <figcaption></figcaption>
 </figure>
 <p>Manage is an <strong>EASY</strong> machine on <a href="https://wiki.vulnlab.com/guidance/easy/manage">VulnLab</a>. This box involved abusing a Java JMX service to get command execution on the server. Once on the server, we find a backup archive that contains files from a user's home directory that we can use to move laterally. After moving to the second user, we find that we're able to run a command as root that we can use to add a new privileged user on the system. </p>
@@ -4219,7 +4219,7 @@
   <div class="md-post__content md-typeset">
     <h2 id="vulnlab-breach"><a class="toclink" href="2024/06/22/vulnlab-breach/">VulnLab: Breach</a></h2>
 <figure>
-<p><img alt="" height="300" src="images/vulnlab_breach/breach.png" width="300" /></p>
+<p><img alt="" height="300" src="vl-breach/attachments/breach.png" width="300" /></p>
 <figcaption></figcaption>
 </figure>
 <p>Breach is a <strong>MEDIUM</strong> difficulty machine on <a href="https://wiki.vulnlab.com/guidance/medium/breach">VulnLab</a>. This machine involved abusing anonymous access to an SMB share to upload a URL link file to a specific directory to induce an authentication request from a user and cracking the resulting NetNTLMv2 hash. Using those credentials, we can kerberoast a service account and crack the krb5tgs hash to recover the password of the service, and then use that password to create a silver ticket impersonating the local administrator of the box. With that, we abuse the <code>xp_cmdshell</code> functionality on an MS-SQL service to get a shell on the box and capture the first flag. Finally, we can abuse the <code>SeImpersonatePrivilege</code> to escalate to SYSTEM and get the final flag.</p>
@@ -4271,7 +4271,7 @@
   <div class="md-post__content md-typeset">
     <h2 id="tryhackme-include"><a class="toclink" href="2024/06/07/tryhackme-include/">TryHackMe: Include</a></h2>
 <figure>
-<p><img alt="" height="300" src="images/tryhackme_include/include.png" width="300" /></p>
+<p><img alt="" height="300" src="thm-include/attachments/include.png" width="300" /></p>
 <figcaption></figcaption>
 </figure>
 <p>Include is a <strong>MEDIUM</strong> difficulty room on <a href="https://tryhackme.com/r/room/include">TryHackMe</a> that involves abusing a logic flaw to get access to an admin panel, leveraging an internal API to obtain credentials for another service via a Server-Side Request Forgery (SSRF), and then combining a Local File Inclusion (LFI) vulnerability with log poisoning to achieve Remote Code Execution (RCE) on the web server. It should be noted that a subscription to TryHackMe is required to play this room. </p>
@@ -4323,7 +4323,7 @@
   <div class="md-post__content md-typeset">
     <h2 id="tryhackme-kenobi"><a class="toclink" href="2024/06/07/tryhackme-kenobi/">TryHackMe: Kenobi</a></h2>
 <figure>
-<p><img alt="" height="300" src="images/tryhackme_kenobi/kenobi.png" width="300" /></p>
+<p><img alt="" height="300" src="thm-kenobi/attachments/kenobi.png" width="300" /></p>
 <figcaption></figcaption>
 </figure>
 <p>Kenobi is an <strong>EASY</strong> room on <a href="https://tryhackme.com/r/room/kenobi">TryHackMe</a> that involves accessing an open Samba share, and then abusing a vulnerable version of ProFtpd to get a foothold on the machine, and then abusing a SUID binary to elevate privileges to root. </p>
@@ -4376,7 +4376,7 @@
   <div class="md-post__content md-typeset">
     <h2 id="tryhackme-annie"><a class="toclink" href="2024/05/18/tryhackme-annie/">TryHackMe: Annie</a></h2>
 <figure>
-<p><img alt="" height="300" src="images/tryhackme_annie/annie.png" width="300" /></p>
+<p><img alt="" height="300" src="thm-annie/attachments/annie.png" width="300" /></p>
 <figcaption></figcaption>
 </figure>
 <p>Annie is a <strong>medium</strong> difficulty Linux box on <a href="https://tryhackme.com/room/annie">TryHackMe</a>. This machine involved compromising a vulnerable AnyDesk installation and then abusing an uncommon SetUID binary to elevate privileges to root. </p>
@@ -4428,7 +4428,7 @@
   <div class="md-post__content md-typeset">
     <h2 id="vulnlab-escape"><a class="toclink" href="2024/05/18/vulnlab-escape/">VulnLab: Escape</a></h2>
 <figure>
-<p><img alt="" height="300" src="images/vulnlab_escape/escape.png" width="300" /></p>
+<p><img alt="" height="300" src="vl-escape/attachments/escape.png" width="300" /></p>
 <figcaption></figcaption>
 </figure>
 <p>Escape is an easy rated Windows box from <a href="https://wiki.vulnlab.com/guidance/easy/escape">VulnLab</a>. This box involved breaking out of a restricted kiosk environment, recovering an obfuscated RDP password, and finally bypassing UAC to escalate privilges. </p>

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://eagle-rising-infosec.github.io/blog/2024/05/18/tryhackme-annie/">
+        <link rel="canonical" href="https://tomfieber.github.io/blog/2024/05/18/tryhackme-annie/">
       
       
         <link rel="prev" href="../vulnlab-escape/">
@@ -76,7 +76,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/tryhackme-annie.png" >
+        <meta  property="og:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/thm-annie/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -84,7 +84,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://eagle-rising-infosec.github.io/blog/2024/05/18/tryhackme-annie/" >
+        <meta  property="og:url"  content="https://tomfieber.github.io/blog/2024/05/18/tryhackme-annie/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -92,7 +92,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/tryhackme-annie.png" >
+        <meta  name="twitter:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/thm-annie/index.png" >
       
     
     
@@ -4183,7 +4183,7 @@
                         
                       </strong>
                       <br>
-                      Dad, husband, and Chief Learner
+                      Dad and husband. Chief Learning Officer.
                     </span>
                   </div>
                 
@@ -4266,7 +4266,7 @@
 
 <h1 id="tryhackme-annie">TryHackMe: Annie<a class="headerlink" href="#tryhackme-annie" title="Permanent link">&para;</a></h1>
 <figure>
-<p><a class="glightbox" href="../../../../images/tryhackme_annie/annie.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../images/tryhackme_annie/annie.png" width="300" /></a></p>
+<p><a class="glightbox" href="../../../../thm-annie/attachments/annie.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../thm-annie/attachments/annie.png" width="300" /></a></p>
 <figcaption></figcaption>
 </figure>
 <p>Annie is a <strong>medium</strong> difficulty Linux box on <a href="https://tryhackme.com/room/annie">TryHackMe</a>. This machine involved compromising a vulnerable AnyDesk installation and then abusing an uncommon SetUID binary to elevate privileges to root. </p>
@@ -4300,7 +4300,7 @@
 </code></pre></div>
 <p>After some research, I found that TCP port 7070 is commonly used with AnyDesk software. To test that theory, I checked online for exploits for AnyDesk and found one that looked promising. </p>
 <figure>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020220704132548.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020220704132548.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-annie/attachments/Pasted%20image%2020220704132548.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-annie/attachments/Pasted%20image%2020220704132548.png" /></a></p>
 <figcaption>
 <p>Searching for a payload</p>
 </figcaption>
@@ -4369,7 +4369,7 @@
 - The 'ip' variable. This is the IP address of the THM machine. Leave the 'port' variable alone. 
 - The shellcode. You can run the provided command, substituting your own LHOST and LPORT values. </p>
 <p>After updating those values and running the exploit with <code>python2 49613.py</code> we get a connection back to our <code>netcat</code> listener. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020220704133946.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Testing" src="../../../../images/screenshots/Pasted%20image%2020220704133946.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-annie/attachments/Pasted%20image%2020220704133946.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Testing" src="../../../../thm-annie/attachments/Pasted%20image%2020220704133946.png" /></a></p>
 <h4 id="stabilize-the-shell">Stabilize the shell<a class="headerlink" href="#stabilize-the-shell" title="Permanent link">&para;</a></h4>
 <p>Stablize the reverse shell with the following commands
 <div class="highlight"><pre><span></span><code><span class="gp"># </span>Spawn<span class="w"> </span>a<span class="w"> </span>bash<span class="w"> </span>shell<span class="w"> </span>with<span class="w"> </span>Python
@@ -4393,7 +4393,7 @@
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>annie.key
 </code></pre></div>
 <p>As soon as we try to SSH into the machine as the <code>annie</code> user, we find that the key has a passphrase. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020220704135152.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020220704135152.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-annie/attachments/Pasted%20image%2020220704135152.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-annie/attachments/Pasted%20image%2020220704135152.png" /></a></p>
 <h3 id="cracking-the-passphrase">Cracking the passphrase<a class="headerlink" href="#cracking-the-passphrase" title="Permanent link">&para;</a></h3>
 <p>To crack the passphrase for Annie's key, we need to use <code>ssh2john</code>. Depending on how you have <code>John the Ripper</code> installed, your installation location may be different, but you can find it with <code>locate ssh2john</code>. </p>
 <h4 id="get-a-john-compatible-hash">Get a John-compatible hash<a class="headerlink" href="#get-a-john-compatible-hash" title="Permanent link">&para;</a></h4>
@@ -4410,7 +4410,7 @@
 <p>From here, you're free to use whatever privilege escalation enumeration script you like (i.e., LinEnum, LinPEAS, Linux-Smart-Enumeration). Personally, I prefer LSE. If you don't like any of those, feel free to enumerate manually. </p>
 <h4 id="uncommon-setuid-binary">Uncommon SetUID binary<a class="headerlink" href="#uncommon-setuid-binary" title="Permanent link">&para;</a></h4>
 <p>Looking through the output of LSE, there's an uncommon binary with the setuid bit set. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020220704141246.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020220704141246.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-annie/attachments/Pasted%20image%2020220704141246.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-annie/attachments/Pasted%20image%2020220704141246.png" /></a></p>
 <h4 id="setcap">Setcap<a class="headerlink" href="#setcap" title="Permanent link">&para;</a></h4>
 <p>The <code>setcap</code> binary allows the user to set file capabilities. To exploit this, we can make a copy of the <code>python3</code> binary and modify the capabilities of that file as detailed <a href="https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/">here</a>. </p>
 <h4 id="copy-the-python-binary">Copy the Python binary<a class="headerlink" href="#copy-the-python-binary" title="Permanent link">&para;</a></h4>
@@ -4425,7 +4425,7 @@
 <p>Now that we've set the capability on the local python binary, we can run the following command to escalate to root.</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>./python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import os;os.setuid(0);os.system(&quot;/bin/bash&quot;)&#39;</span>
 </code></pre></div>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020220704142433.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020220704142433.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-annie/attachments/Pasted%20image%2020220704142433.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-annie/attachments/Pasted%20image%2020220704142433.png" /></a></p>
 <p>Now you grab the root flag and finsh the room. </p>
 
 

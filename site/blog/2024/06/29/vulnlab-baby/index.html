@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://eagle-rising-infosec.github.io/blog/2024/06/29/vulnlab-baby/">
+        <link rel="canonical" href="https://tomfieber.github.io/blog/2024/06/29/vulnlab-baby/">
       
       
         <link rel="prev" href="../../28/vulnlab-manage/">
@@ -76,7 +76,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/vulnlab-baby.png" >
+        <meta  property="og:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/vl-baby/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -84,7 +84,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://eagle-rising-infosec.github.io/blog/2024/06/29/vulnlab-baby/" >
+        <meta  property="og:url"  content="https://tomfieber.github.io/blog/2024/06/29/vulnlab-baby/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -92,7 +92,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/vulnlab-baby.png" >
+        <meta  name="twitter:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/vl-baby/index.png" >
       
     
     
@@ -4075,7 +4075,7 @@
                         
                       </strong>
                       <br>
-                      Dad, husband, and Chief Learner
+                      Dad and husband. Chief Learning Officer.
                     </span>
                   </div>
                 
@@ -4164,7 +4164,7 @@
 
 <h1 id="vulnlab-baby">VulnLab: Baby<a class="headerlink" href="#vulnlab-baby" title="Permanent link">&para;</a></h1>
 <figure>
-<p><a class="glightbox" href="../../../../images/vulnlab_baby/baby.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../images/vulnlab_baby/baby.png" width="300" /></a></p>
+<p><a class="glightbox" href="../../../../vl-baby/attachments/baby.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../vl-baby/attachments/baby.png" width="300" /></a></p>
 <figcaption></figcaption>
 </figure>
 <p>Baby is an <strong>EASY</strong> difficulty machine on <a href="https://wiki.vulnlab.com/guidance/easy/baby">VulnLab</a>. This machine involved performing LDAP enumeration to identify valid domain users and locate a plaintext password in one of the user description fields. By spraying that password across all the identified users, we find one that requires a password change, which once complete gives us an initial shell on the box. Once on the box, we discover that the current user has backup privileges, which allow us to create a copy of the drive and extract the NTDS.dit. That, along with the SAM and SYSTEM hives, allow us to dump all domain credentials with <code>secretsdump.py</code>. </p>

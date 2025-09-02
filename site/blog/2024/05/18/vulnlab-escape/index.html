@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://eagle-rising-infosec.github.io/blog/2024/05/18/vulnlab-escape/">
+        <link rel="canonical" href="https://tomfieber.github.io/blog/2024/05/18/vulnlab-escape/">
       
       
       
@@ -74,7 +74,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/vulnlab-escape.png" >
+        <meta  property="og:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/vl-escape/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -82,7 +82,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://eagle-rising-infosec.github.io/blog/2024/05/18/vulnlab-escape/" >
+        <meta  property="og:url"  content="https://tomfieber.github.io/blog/2024/05/18/vulnlab-escape/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -90,7 +90,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/vulnlab-escape.png" >
+        <meta  name="twitter:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/vl-escape/index.png" >
       
     
     
@@ -4058,7 +4058,7 @@
                         
                       </strong>
                       <br>
-                      Dad, husband, and Chief Learner
+                      Dad and husband. Chief Learning Officer.
                     </span>
                   </div>
                 
@@ -4153,7 +4153,7 @@
 
 <h1 id="vulnlab-escape">VulnLab: Escape<a class="headerlink" href="#vulnlab-escape" title="Permanent link">&para;</a></h1>
 <figure>
-<p><a class="glightbox" href="../../../../images/vulnlab_escape/escape.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../images/vulnlab_escape/escape.png" width="300" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/escape.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../vl-escape/attachments/escape.png" width="300" /></a></p>
 <figcaption></figcaption>
 </figure>
 <p>Escape is an easy rated Windows box from <a href="https://wiki.vulnlab.com/guidance/easy/escape">VulnLab</a>. This box involved breaking out of a restricted kiosk environment, recovering an obfuscated RDP password, and finally bypassing UAC to escalate privilges. </p>
@@ -4214,47 +4214,47 @@
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>xfreerdp<span class="w"> </span>/v:<span class="nv">$ip</span><span class="w"> </span>/dynamic-resolution<span class="w"> </span>+clipboard<span class="w"> </span>-sec-nla
 </code></pre></div>
 <p>This brings up the following prompt. Looks like we can login as the <code>KioskUser0</code> without a password.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518153626.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518153626.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518153626.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518153626.png" /></a></p>
 <p>Once we're logged in, we are presented with sign for the <code>Busan Expo</code>. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518153903.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518153903.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518153903.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518153903.png" /></a></p>
 <h3 id="kiosk-breakout">Kiosk Breakout<a class="headerlink" href="#kiosk-breakout" title="Permanent link">&para;</a></h3>
 <p>Right click and most commands are restricted in kiosk mode; however, we can use the Windows key to bring up the menu and select Microsoft Edge from there to get a browser with a URL bar and most functionality enabled.</p>
 <p>Within Edge, we can use the following in the URL bar to get a directory listing of the <code>C:\</code> drive. </p>
 <div class="highlight"><pre><span></span><code><span class="go">file://c:\</span>
 </code></pre></div>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518154237.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518154237.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518154237.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518154237.png" /></a></p>
 <p>Within the <code>C:\_admin</code> directory, there are a couple files that look like they're associated with the remote desktop service.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518154403.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518154403.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518154403.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518154403.png" /></a></p>
 <p>The <code>profiles.xml</code> looks like it has an encrypted password in it. We'll need to figure out a way to decrypt that.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518155104.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518155104.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518155104.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518155104.png" /></a></p>
 <h3 id="user-flag">User Flag<a class="headerlink" href="#user-flag" title="Permanent link">&para;</a></h3>
 <p>We can just grab the user flag from here. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518155305.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518155305.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518155305.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518155305.png" /></a></p>
 <h3 id="privilege-escalation">Privilege Escalation<a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h3>
 <p>To proceed, we're going to need a proper shell. Since we're fairly restricted on what we can execute, we'll need to download <code>cmd.exe</code> and then rename it to <code>msedge</code> since that's one of the only things allowed in kiosk mode.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518160619.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518160619.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518160619.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518160619.png" /></a></p>
 <p>After checking around a little bit it seems like we're pretty much restricted to accessing the <code>Downloads</code> folder, so we can copy the <code>profiles.xml</code> file to the <code>C:\Users\KioskUser0\Downloads</code> folder and do everything from there. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518161024.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518161024.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518161024.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518161024.png" /></a></p>
 <p>Start up RDP plus from <code>C:\Program Files (x86)\Remote Desktop Plus\rdp.exe</code>. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518161251.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518161251.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518161251.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518161251.png" /></a></p>
 <p>From the <code>Manage profiles</code> menu, select <code>Import profile</code> from the <code>Import and export</code> menu.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518161405.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518161405.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518161405.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518161405.png" /></a></p>
 <p>Select the <code>profile.xml</code> file and notice that the password is obfuscated in the edit configuration menu.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518161612.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518161612.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518161612.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518161612.png" /></a></p>
 <p>We can use a tool called <a href="https://www.nirsoft.net/utils/bulletspassview-x64.zip">BulletsPassView</a> to read the obfuscated password.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518170437.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518170437.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518170437.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518170437.png" /></a></p>
 <p>When the tool detects an obfuscated password, it displays the plaintext password in the tool window. </p>
 <p>Since we've already got a shell we can just try <code>runas</code> with that password to see if it's possible to escalate to the admin user. We get a shell with the following command:</p>
 <div class="highlight"><pre><span></span><code>PS&gt; runas /user:ESCAPE\admin cmd
 </code></pre></div>
 <p>After getting the new shell, we can observe that the <code>admin</code> user is a member of the <code>Administrators</code> group, however this shell is running at a medium integrity level which means we'll need to bypass UAC to get a high integrity shell. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518171013.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518171013.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518171013.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518171013.png" /></a></p>
 <p>Something I learned doing this lab was that it wasn't necessary to use something like <code>fodhelper</code> to bypass UAC in this case. Using the following command brought up the UAC dialog and clicking on the "Yes" button brings up PowerShell running as a high integrity process. </p>
 <div class="highlight"><pre><span></span><code>PS&gt; Start-Process powershell -Verb runas
 </code></pre></div>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518171406.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518171406.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518171406.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518171406.png" /></a></p>
 <p>We can see that we now have all administrative privileges. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240518171447.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240518171447.png" /></a></p>
+<p><a class="glightbox" href="../../../../vl-escape/attachments/Pasted%20image%2020240518171447.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../vl-escape/attachments/Pasted%20image%2020240518171447.png" /></a></p>
 <p>Now, with the high integrity PowerShell go ahead and grab the <code>root.txt</code> from the <code>C:\Users\Administrator\Dekstop\</code> directory. </p>
 <p>That's it! Congrats on rooting the box.</p>
 

