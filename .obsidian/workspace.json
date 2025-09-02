@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/blog/posts/vl-data/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -171,7 +171,29 @@
   },
   "active": "098d7c47fa330bcd",
   "lastOpenFiles": [
-    "docs/assets/Pasted image 20250902133647.png",
-    "docs/assets/Pasted image 20250902133604.png"
+    "docs/blog/posts/vl-baby/index.md",
+    "docs/blog/posts/vl-retro/attachments/Pasted image 20240704145857.png",
+    "docs/blog/posts/vl-breach/attachments/Pasted image 20240621142209.png",
+    "docs/blog/posts/vl-breach/attachments/Pasted image 20240630152210.png",
+    "docs/blog/posts/vl-breach/attachments/Pasted image 20240630143459.png",
+    "docs/blog/posts/vl-breach/attachments/Pasted image 20240630135414.png",
+    "docs/blog/posts/vl-breach/attachments/Pasted image 20240621164514.png",
+    "docs/blog/posts/thm-kenobi/attachments/Pasted image 20240607140530.png",
+    "docs/blog/posts/thm-kenobi/attachments/Pasted image 20240607134822.png",
+    "docs/blog/posts/thm-kenobi/attachments/Pasted image 20240607134737.png",
+    "docs/blog/posts/thm-kenobi/attachments/Pasted image 20240607125757.png",
+    "docs/blog/posts/thm-annie/index.md",
+    "docs/blog/posts/vl-retro",
+    "docs/blog/posts/vl-manage",
+    "docs/blog/posts/vl-escape",
+    "docs/blog/posts/vl-data",
+    "docs/blog/posts/vl-breach",
+    "docs/blog/posts/vl-baby",
+    "docs/blog/posts/thm-kenobi",
+    "docs/blog/posts/thm-include",
+    "docs/blog/posts/thm-annie",
+    "docs/blog/posts/test/test-article.md",
+    "docs/blog/posts/test/attachments",
+    "docs/index.md"
   ]
 }
