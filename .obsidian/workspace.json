@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/posts/vl-data/index.md",
+                "file": "docs/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -169,8 +169,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "098d7c47fa330bcd",
+  "active": "60862129f2b47263",
   "lastOpenFiles": [
+    "hooks/__pycache__/socialmedia.cpython-313.pyc",
+    "hooks/__pycache__",
+    "docs/blog/posts/vl-data/index.md",
     "docs/blog/posts/vl-baby/index.md",
     "docs/blog/posts/vl-retro/attachments/Pasted image 20240704145857.png",
     "docs/blog/posts/vl-breach/attachments/Pasted image 20240621142209.png",
@@ -193,7 +196,6 @@
     "docs/blog/posts/thm-include",
     "docs/blog/posts/thm-annie",
     "docs/blog/posts/test/test-article.md",
-    "docs/blog/posts/test/attachments",
     "docs/index.md"
   ]
 }
