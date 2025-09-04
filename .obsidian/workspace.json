@@ -171,6 +171,9 @@
   },
   "active": "60862129f2b47263",
   "lastOpenFiles": [
+    "docs/references/index.md",
+    "docs/index.md",
+    "docs/methodologies/index.md",
     "hooks/__pycache__/socialmedia.cpython-313.pyc",
     "hooks/__pycache__",
     "docs/blog/posts/vl-data/index.md",
@@ -194,8 +197,6 @@
     "docs/blog/posts/vl-baby",
     "docs/blog/posts/thm-kenobi",
     "docs/blog/posts/thm-include",
-    "docs/blog/posts/thm-annie",
-    "docs/blog/posts/test/test-article.md",
-    "docs/index.md"
+    "docs/blog/posts/test/test-article.md"
   ]
 }
