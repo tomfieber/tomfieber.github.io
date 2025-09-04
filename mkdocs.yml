@@ -3,6 +3,7 @@ site_url: https://eaglerisinginfosec.com
 copyright: Copyright &copy; 2025 Eagle Rising Information Security LLC
 theme:
   name: material
+  custom_dir: overrides
   icon:
     repo: fontawesome/brands/github
   font:
