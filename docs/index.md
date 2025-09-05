@@ -25,8 +25,6 @@ I'm a slow learner. After spending years trying to cram myself into others' lear
 - Certifications have their place in this field, but they shouldn't be the end goal. If I never get another certification, nothing really changes in my life. Keep learning? Yes, absolutely! Keep chasing certs? Meh...I'm good.
 
 - Learning in public is a great way to stay focused and motivated. We all have different experiences and perspectives. Click the link below to join our Discord server. 
-
-[Join our Discord](https://discord.gg/4z7SPFh4){ .md-button .md-button--primary }
 ## Credential Stuff
 I earned a masters degree in Cybersecurity from Utica University in 2015. 
 

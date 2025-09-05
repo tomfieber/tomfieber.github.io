@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/references/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -171,8 +171,9 @@
   },
   "active": "60862129f2b47263",
   "lastOpenFiles": [
-    "docs/references/index.md",
+    "docs/resources/index.md",
     "docs/index.md",
+    "docs/references/index.md",
     "docs/methodologies/index.md",
     "hooks/__pycache__/socialmedia.cpython-313.pyc",
     "hooks/__pycache__",
