@@ -1,259 +1,299 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://tomfieber.github.io/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/blog/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/2024/05/18/tryhackme-annie/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/blog/2024/05/18/tryhackme-annie/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/2024/06/07/tryhackme-include/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/blog/2024/06/07/tryhackme-include/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/2024/06/07/tryhackme-kenobi/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/blog/2024/06/07/tryhackme-kenobi/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/2024/06/29/vulnlab-baby/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/blog/2024/06/29/vulnlab-baby/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/2024/06/22/vulnlab-breach/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/blog/2024/06/22/vulnlab-breach/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/2024/07/04/vulnlab-data/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/blog/2024/07/04/vulnlab-data/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/2024/05/18/vulnlab-escape/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/blog/2024/05/18/vulnlab-escape/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/2024/06/28/vulnlab-manage/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/blog/2024/06/28/vulnlab-manage/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/2024/07/04/vulnlab-retro/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/blog/2024/07/04/vulnlab-retro/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/methodologies/Web-Apps/owasp-wstg/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/methodologies/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/methodologies/Web-Apps/owasp-wstg/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/API/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Account-Takeover/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/How-To/Set-up-Ubuntu-VM/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Bash/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/API/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Business-Logic-Vulns/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Account-Takeover/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/CORS/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Active-Directory/AD-Recon/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/CSRF/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Bash/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Clickjacking/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Business-Logic-Vulns/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Command-Injections/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/CORS/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/DOM-Based-Attacks/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/CSRF/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/FFUF/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Clickjacking/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/GraphQL/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Command-Injections/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/HTTP-Host-Header-Attacks/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/DOM-Based-Attacks/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/HTTP-Request-Smuggling/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/FFUF/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/HTTP-TLS-Attacks/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/GraphQL/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/IDOR/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/HTTP-Host-Header-Attacks/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Insecure-Deserialization/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/HTTP-Request-Smuggling/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/JWT/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/HTTP-TLS-Attacks/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Local-File-Read/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/IDOR/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Login-Pages/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Insecure-Deserialization/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Networking/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/JWT/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/NoSQL-Injection/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Local-File-Read/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Oauth/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Login-Pages/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Open-Redirects/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Networking/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Parameter-Logic-Vulns/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/NoSQL-Injection/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Port-Scanning/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Oauth/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Postmessage/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Open-Redirects/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Prototype-Pollution/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Parameter-Logic-Vulns/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/RCE/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Port-Scanning/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Race-Conditions/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Postmessage/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Recon/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Prototype-Pollution/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Reverse-Proxies/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/RCE/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/SQL-Injection/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Race-Conditions/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/SSRF/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Recon/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/SSTI/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Reverse-Proxies/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Session-Security/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/SQL-Injection/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Upload-Vulnerabilities/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/SSRF/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Virtual-Hosts/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/SSTI/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/WAF-Bypass/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Services/FTP/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Web-Cache-Deception/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Services/IMAP/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Web-Cache-Poisoning/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Services/RDP/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Web-LLM-Attacks/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Services/SMB/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Web-Sockets/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Services/SMTP/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Whitebox-Testing/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Services/SNMP/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/XSS/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Services/SSH/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/XXE/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Session-Security/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/references/cheatsheets/Xpath-Injection/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Upload-Vulnerabilities/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/resources/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Virtual-Hosts/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/archive/2024/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/WAF-Bypass/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/category/writeups/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Web-Cache-Deception/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/category/vulnlab/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Web-Cache-Poisoning/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://tomfieber.github.io/blog/category/tryhackme/</loc>
-         <lastmod>2025-09-02</lastmod>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Web-LLM-Attacks/</loc>
+         <lastmod>2025-09-07</lastmod>
+    </url>
+    <url>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Web-Sockets/</loc>
+         <lastmod>2025-09-07</lastmod>
+    </url>
+    <url>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Whitebox-Testing/</loc>
+         <lastmod>2025-09-07</lastmod>
+    </url>
+    <url>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/XSS/</loc>
+         <lastmod>2025-09-07</lastmod>
+    </url>
+    <url>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/XXE/</loc>
+         <lastmod>2025-09-07</lastmod>
+    </url>
+    <url>
+         <loc>https://eaglerisinginfosec.com/references/cheatsheets/Xpath-Injection/</loc>
+         <lastmod>2025-09-07</lastmod>
+    </url>
+    <url>
+         <loc>https://eaglerisinginfosec.com/resources/</loc>
+         <lastmod>2025-09-07</lastmod>
+    </url>
+    <url>
+         <loc>https://eaglerisinginfosec.com/blog/archive/2024/</loc>
+         <lastmod>2025-09-07</lastmod>
+    </url>
+    <url>
+         <loc>https://eaglerisinginfosec.com/blog/category/writeups/</loc>
+         <lastmod>2025-09-07</lastmod>
+    </url>
+    <url>
+         <loc>https://eaglerisinginfosec.com/blog/category/vulnlab/</loc>
+         <lastmod>2025-09-07</lastmod>
+    </url>
+    <url>
+         <loc>https://eaglerisinginfosec.com/blog/category/tryhackme/</loc>
+         <lastmod>2025-09-07</lastmod>
     </url>
 </urlset>

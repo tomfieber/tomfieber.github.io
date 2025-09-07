@@ -12,3 +12,24 @@ img {
     height: 2.4rem;
     width: 2.4rem;
 }
+
+/* Better reading width for content */
+.md-content__inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Side by side blocks */
+.side-by-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+    .side-by-side {
+        grid-template-columns: 1fr;
+    }
+}

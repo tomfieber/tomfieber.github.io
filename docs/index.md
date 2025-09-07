@@ -1,48 +1,50 @@
 ---
 hide:
   - feedback
+  - navigation
+  - toc
+title: About Me
 ---
+!!! note ""
 
-# About Me
+	![](attachments/Pasted%20image%2020250907061612.png){ width="150" height="150" align="left" }
+	## My name is Tom. I'm a father of four and a retired Army veteran. After I retired from the Army in 2022, I worked as a penetration tester/security consultant for a few years before deciding what I really wanted to do was teach. I'm particularly interested in learning more about pedagogical approaches to make cybersecurity education accessible for everyone. 
 
-## Introduction
+!!! quote "My Philosophy"
 
-![](assets/Pasted%20image%2020250902133647.png){ height="150" width="150" align="left" }
+    - ### **This can be learned**. Nobody is born just knowing any of this. If the best in the field could do it, so can I/you. 
 
-My name is Tom. I'm a father, husband, and retired Army veteran. After retiring from the Army in 2022, I worked as a security consultant for a few years, and have recently started working on my own project...**Eagle Rising Information Security**. The goal is to provide high quality, accessible cybersecurity educational content for students in grades 6-12. 
+    - ### **Take your own path**. There's no **ONE** way to get into this field, and there's no **ONE** way to learn this stuff. Find what works for you and go with it!
 
-With that said, I hope anyone getting started with cybersecurity will find this content useful.
-## My Philosophy
+    - ### **We all have different experiences and perspectives**. Learning in public is a great way to stay focused and motivated. Consider documenting your journey with a blog or videos on YouTube. You could end up helping someone else!
 
-I'm a slow learner. After spending years trying to cram myself into others' learning styles/timelines, I figured out that some things just don't work for me. I doubt there's anything completely new here, but my learning philosophy is basically:
+    - ### Don't compare your knowledge or your progress to anyone else's. Try to get 1% better every day and **compare your skills today against your skills yesterday**.
 
-- This can be learned. Nobody is born just knowing any of this. If the best in the field could do it, so can I/you. 
+    - ### **Certifications have their place in this field, but they shouldn't be the end goal**. Focus on learning and understanding and the rest will fall into place. 
+    
+    - ### **Failure happens**. It's ok. 
 
-- Take your own path. There's no **ONE** way to get into this field, and there's no **ONE** way to learn this stuff. Find what works for you and go with it!
-
-- Don't compare your knowledge or your progress to anyone else's. Try to get 1% better every day and compare your skills today against your skills yesterday.
-
-- Certifications have their place in this field, but they shouldn't be the end goal. If I never get another certification, nothing really changes in my life. Keep learning? Yes, absolutely! Keep chasing certs? Meh...I'm good.
-
-- Learning in public is a great way to stay focused and motivated. We all have different experiences and perspectives. Click the link below to join our Discord server. 
-## Credential Stuff
-I earned a masters degree in Cybersecurity from Utica University in 2015. 
-
-I've also got a handful of cybersecurity certifications including:
-
-- Certified Information Systems Security Professional (CISSP)
-
-- OffSec Experienced Penetration Tester (OSEP)
-
-- OffSec Certified Professional (OSCP)
-
-- Security+
-
-- Network+
-
-This is kind of jargon, and isn't really all that important. 
+    - ### Don't dwell on past mistakes and don't stress about what you'll do in the future. **Just be present and focus on the now**.
 
 
-## Miscellaneous Stuff
+## Now what?
 
-Outside of cybersecurity, my interests include spending time with my family, hiking, and coaching my kids' sports teams. 
+<div class="grid cards" markdown>
+
+-   :material-book-open:{ .lg .middle } __Check out the blog__
+
+    ---
+
+    Check out the write-ups and articles on our blog. Let me know if there's content you'd like to see!
+
+    [:octicons-arrow-right-24: Start Reading](/blog)
+
+-   :fontawesome-brands-discord:{ .lg .middle } __Join our Discord server__
+
+    ---
+
+    Help build a thriving educational community on the Eagle Rising Infosec Discord server!
+
+    [:octicons-arrow-right-24: Join Discord](https://discord.gg/4z7SPFh4)
+
+</div>
