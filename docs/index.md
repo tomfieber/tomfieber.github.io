@@ -37,7 +37,7 @@ title: About Me
 
     Check out the write-ups and articles on our blog. Let me know if there's content you'd like to see!
 
-    [:octicons-arrow-right-24: Start Reading](/blog)
+    [:octicons-arrow-right-24: Start Reading](blog/index.md)
 
 -   :fontawesome-brands-discord:{ .lg .middle } __Join our Discord server__
 

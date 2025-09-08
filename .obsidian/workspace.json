@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/references/cheatsheets/Web/Recon/index.md",
+                "file": "docs/blog/posts/thm-annie/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -169,22 +169,26 @@
       "bases:Create new base": false
     }
   },
-  "active": "098d7c47fa330bcd",
+  "active": "60862129f2b47263",
   "lastOpenFiles": [
+    "docs/blog/posts/thm-annie/attachments/annie.png",
+    "docs/blog/posts/thm-annie/index.md",
+    "docs/methodologies/index.md",
+    "docs/resources/attachments/Pasted image 20250907070453.png",
+    "docs/resources/attachments/Pasted image 20250907070854.png",
+    "docs/resources/attachments/Pasted image 20250907072023.png",
+    "docs/resources/attachments/Pasted image 20250907073023.png",
+    "docs/resources/attachments/Pasted image 20250907074617.png",
+    "docs/resources/attachments/Pasted image 20250907075504.png",
+    "docs/resources/attachments/Pasted image 20250907080042.png",
+    "docs/resources/attachments/Pasted image 20250907081005.png",
+    "docs/resources/attachments/Pasted image 20250907082154.png",
+    "docs/resources/attachments/Pasted image 20250907082434.png",
     "docs/resources/index.md",
+    "docs/index.md",
+    "docs/references/cheatsheets/Web/Recon/index.md",
     "docs/references/cheatsheets/General",
     "docs/references/cheatsheets/Web",
-    "docs/resources/attachments/Pasted image 20250907082434.png",
-    "docs/resources/attachments/Pasted image 20250907082154.png",
-    "docs/resources/attachments/Pasted image 20250907081005.png",
-    "docs/resources/attachments/Pasted image 20250907080042.png",
-    "docs/resources/attachments/Pasted image 20250907075504.png",
-    "docs/resources/attachments/Pasted image 20250907074617.png",
-    "docs/resources/attachments/Pasted image 20250907073023.png",
-    "docs/resources/attachments/Pasted image 20250907072023.png",
-    "docs/resources/attachments/Pasted image 20250907070854.png",
-    "docs/index.md",
-    "docs/resources/attachments/Pasted image 20250907070453.png",
     "docs/resources/attachments",
     "docs/references/index.md",
     "docs/attachments",
@@ -206,10 +210,8 @@
     "docs/references/cheatsheets/index.md",
     "docs/references/How-To/index.md",
     "docs/references/cheatsheets/Active-Directory/AD-Recon/index.md",
-    "docs/methodologies/index.md",
     "docs/blog/posts/vl-data/index.md",
     "docs/blog/posts/vl-baby/index.md",
-    "docs/blog/posts/thm-annie/index.md",
     "docs/blog/posts/test/test-article.md"
   ]
 }
