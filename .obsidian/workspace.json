@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/posts/thm-annie/index.md",
+                "file": "docs/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -171,9 +171,11 @@
   },
   "active": "60862129f2b47263",
   "lastOpenFiles": [
-    "docs/blog/posts/thm-annie/attachments/annie.png",
     "docs/blog/posts/thm-annie/index.md",
-    "docs/methodologies/index.md",
+    "docs/index.md",
+    "docs/references/index.md",
+    "docs/blog/posts/thm-annie/attachments/annie.png",
+    "docs/references/methodologies/index.md",
     "docs/resources/attachments/Pasted image 20250907070453.png",
     "docs/resources/attachments/Pasted image 20250907070854.png",
     "docs/resources/attachments/Pasted image 20250907072023.png",
@@ -183,14 +185,11 @@
     "docs/resources/attachments/Pasted image 20250907080042.png",
     "docs/resources/attachments/Pasted image 20250907081005.png",
     "docs/resources/attachments/Pasted image 20250907082154.png",
-    "docs/resources/attachments/Pasted image 20250907082434.png",
     "docs/resources/index.md",
-    "docs/index.md",
     "docs/references/cheatsheets/Web/Recon/index.md",
     "docs/references/cheatsheets/General",
     "docs/references/cheatsheets/Web",
     "docs/resources/attachments",
-    "docs/references/index.md",
     "docs/attachments",
     "docs/references/cheatsheets/General/Services/SSH/index.md",
     "docs/references/cheatsheets/General/Services/SNMP/index.md",
