@@ -14,11 +14,6 @@ comments: true
 ---
 # VulnLab: Escape
 
-
-![](attachments/escape.png){ width="300" height="300" }
-/// caption
-/// 
-
 Escape is an easy rated Windows box from [VulnLab](https://wiki.vulnlab.com/guidance/easy/escape). This box involved breaking out of a restricted kiosk environment, recovering an obfuscated RDP password, and finally bypassing UAC to escalate privilges. 
 
 <!-- more -->

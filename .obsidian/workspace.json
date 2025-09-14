@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/references/cheatsheets/Web/Authentication/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -171,8 +171,11 @@
   },
   "active": "60862129f2b47263",
   "lastOpenFiles": [
-    "docs/blog/posts/thm-annie/index.md",
+    "docs/references/cheatsheets/Web/XSS/index.md",
+    "docs/references/cheatsheets/Web/Authentication/index.md",
+    "docs/references/cheatsheets/Web/Authentication",
     "docs/index.md",
+    "docs/blog/posts/thm-annie/index.md",
     "docs/references/index.md",
     "docs/blog/posts/thm-annie/attachments/annie.png",
     "docs/references/methodologies/index.md",
@@ -203,7 +206,6 @@
     "docs/references/cheatsheets/General/Services/SMB",
     "docs/references/cheatsheets/General/Services/IMAP",
     "docs/references/cheatsheets/General/Services/SNMP",
-    "docs/references/cheatsheets/General/Services/SMTP",
     "docs/references/cheatsheets/Services/index.md",
     "docs/references/How-To/Set-up-Ubuntu-VM/index.md",
     "docs/references/cheatsheets/index.md",

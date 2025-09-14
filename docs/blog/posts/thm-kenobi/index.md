@@ -14,13 +14,7 @@ comments: true
 # TryHackMe: Kenobi
 
 
-![](attachments/kenobi.png){ width="300" height="300" }
-/// caption
-///
-
 Kenobi is an **EASY** room on [TryHackMe](https://tryhackme.com/r/room/kenobi) that involves accessing an open Samba share, and then abusing a vulnerable version of ProFtpd to get a foothold on the machine, and then abusing a SUID binary to elevate privileges to root. 
-
-Please **NOTE**: The commands in this writeup vary slightly from the room walkthrough on THM. It's mostly down to personal preference, but with pentesting there are usually multiple ways to do something.
 
 <!-- more -->
 

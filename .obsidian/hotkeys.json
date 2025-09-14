@@ -14,5 +14,14 @@
       ],
       "key": "1"
     }
+  ],
+  "editor:cycle-list-checklist": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "1"
+    }
   ]
 }

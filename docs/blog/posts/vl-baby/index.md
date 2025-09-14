@@ -13,10 +13,6 @@ comments: true
 ---
 # VulnLab: Baby
 
-![](attachments/baby.png){ width="300" height="300" }
-/// caption
-///
-
 Baby is an **EASY** difficulty machine on [VulnLab](https://wiki.vulnlab.com/guidance/easy/baby). This machine involved performing LDAP enumeration to identify valid domain users and locate a plaintext password in one of the user description fields. By spraying that password across all the identified users, we find one that requires a password change, which once complete gives us an initial shell on the box. Once on the box, we discover that the current user has backup privileges, which allow us to create a copy of the drive and extract the NTDS.dit. That, along with the SAM and SYSTEM hives, allow us to dump all domain credentials with `secretsdump.py`. 
 
 <!-- more -->

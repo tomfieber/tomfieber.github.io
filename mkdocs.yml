@@ -80,10 +80,10 @@ extra:
             Thanks for your feedback! Help us improve this page by
             using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
   social:
-    - icon: fontawesome/brands/x-twitter
-      link: https://x.com/tomfieber
     - icon: fontawesome/brands/github
       link: https://github.com/tomfieber
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCCxiEvf8mgE141v2EJ0DeLA
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/thomasfieber/
     - icon: fontawesome/brands/discord

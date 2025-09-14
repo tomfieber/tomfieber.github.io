@@ -5,6 +5,11 @@ hide:
   - toc
 title: Home
 ---
+
+## Eagle Rising Information Security
+
+### Eagle Rising Information Security is an initiative to develop curriculum to bring cybersecurity education to students in grades 6-12. The main goal of this initiative is to make free and low-cost (pay what you can) material accessible to the most students possible. Although the goal of the initiative is to bring cybersecurity education into middle and high schools, I hope that anyone interested in cybersecurity will find value in this material as well. 
+
 <div class="grid" markdown>
 
 ![](attachments/Pasted%20image%2020250907061612.png){ width="90%"}
@@ -18,7 +23,7 @@ title: Home
 
 === "My Philosophy"
 
-    - **This can be learned**. Nobody is born just knowing any of this. If the best in the field could do it, so can we. 
+    - **Cybersecurity can be learned**. Nobody is born just knowing any of this. If the best in the field could do it, so can we. 
 
     - Don't feel the need to fit yourself into someone else's learning style. Find what works for **YOU** and stick with it!
 
