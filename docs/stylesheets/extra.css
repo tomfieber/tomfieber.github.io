@@ -3,6 +3,14 @@ img {
   border-radius: 10px;
 }
 
+h2 {
+    color: #c36501
+}
+
+h3 {
+    color: #902a02
+}
+
 strong {
   font-weight: bold;
 }

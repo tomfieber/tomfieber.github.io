@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/references/cheatsheets/Web/Authentication/index.md",
+                "file": "docs/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -166,13 +166,19 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "omnisearch:Omnisearch": false
     }
   },
   "active": "60862129f2b47263",
   "lastOpenFiles": [
-    "docs/references/cheatsheets/Web/XSS/index.md",
+    "docs/attachments/Pasted image 20250915071144.png",
+    "docs/attachments/Pasted image 20250915070137.png",
+    "docs/attachments/Pasted image 20250915063351.png",
+    "docs/attachments/Pasted image 20250915061414.png",
     "docs/references/cheatsheets/Web/Authentication/index.md",
+    "docs/references/cheatsheets/Web/XSS/index.md",
     "docs/references/cheatsheets/Web/Authentication",
     "docs/index.md",
     "docs/blog/posts/thm-annie/index.md",
@@ -185,9 +191,6 @@
     "docs/resources/attachments/Pasted image 20250907073023.png",
     "docs/resources/attachments/Pasted image 20250907074617.png",
     "docs/resources/attachments/Pasted image 20250907075504.png",
-    "docs/resources/attachments/Pasted image 20250907080042.png",
-    "docs/resources/attachments/Pasted image 20250907081005.png",
-    "docs/resources/attachments/Pasted image 20250907082154.png",
     "docs/resources/index.md",
     "docs/references/cheatsheets/Web/Recon/index.md",
     "docs/references/cheatsheets/General",

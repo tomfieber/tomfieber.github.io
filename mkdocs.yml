@@ -24,7 +24,6 @@ theme:
     - content.code.copy
 
   palette:
-
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
@@ -33,7 +32,9 @@ theme:
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      scheme: default 
+      scheme: default
+      primary: brown
+      accent: amber
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -41,6 +42,8 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: brown
+      accent: amber
       toggle:
         icon: material/brightness-4
         name: Switch to system preference

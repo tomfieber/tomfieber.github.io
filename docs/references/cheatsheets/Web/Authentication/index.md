@@ -5,5 +5,4 @@
 - [ ] Try to identify how values are compared. Different methods of string comparison can generate different results.
 	- [ ] Case insensitivity
 	- [ ] Leading or trailing spaces
-	- [ ] 
 
