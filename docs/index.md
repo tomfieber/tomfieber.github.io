@@ -20,7 +20,7 @@ Eagle Rising Information Security is an initiative to develop curriculum to help
 ![](attachments/Pasted%20image%2020250915070137.png){ width="90%"}
 
 
-My name is Tom. I'm a father of four and a retired Army veteran. After I retired from the Army in 2022, I worked as a penetration tester/security consultant for a few years before gravitating toward the study of learning and teaching. I'm particularly interested in learning more about pedagogical approaches to make cybersecurity education accessible for everyone. <br><br>I consider myself a life-long student and look forward to sharing my journey in cybersecurity, physical and mental health, and teaching. <br><br>Away from the computer I enjoy the outdoors (hiking, cycling), spending time with my family, and coaching my kids' sports teams. 
+My name is Tom. I'm a father of four and a retired Army veteran. After I retired from the Army in 2022, I worked as a penetration tester/security consultant for a few years before gravitating toward the study of learning and teaching. I'm particularly interested in learning more about pedagogical approaches to make cybersecurity education accessible for everyone. <br><br><strong>I consider myself a life-long student</strong> and look forward to sharing my journey in cybersecurity, physical and mental health, and teaching. <br><br>Away from the computer I enjoy the outdoors (hiking, cycling), spending time with my family, and coaching my kids' sports teams. 
 
 </div>
 
