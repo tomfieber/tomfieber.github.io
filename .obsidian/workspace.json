@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/writeups/VulnLab/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -171,8 +171,14 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "60862129f2b47263",
+  "active": "098d7c47fa330bcd",
   "lastOpenFiles": [
+    "docs/writeups/TryHackMe/index.md",
+    "docs/writeups/VulnLab/index.md",
+    "docs/index.md",
+    "docs/writeups/VulnLab",
+    "docs/writeups/TryHackMe",
+    "docs/writeups",
     "docs/attachments/Pasted image 20250915071144.png",
     "docs/attachments/Pasted image 20250915070137.png",
     "docs/attachments/Pasted image 20250915063351.png",
@@ -180,7 +186,6 @@
     "docs/references/cheatsheets/Web/Authentication/index.md",
     "docs/references/cheatsheets/Web/XSS/index.md",
     "docs/references/cheatsheets/Web/Authentication",
-    "docs/index.md",
     "docs/blog/posts/thm-annie/index.md",
     "docs/references/index.md",
     "docs/blog/posts/thm-annie/attachments/annie.png",
@@ -190,7 +195,6 @@
     "docs/resources/attachments/Pasted image 20250907072023.png",
     "docs/resources/attachments/Pasted image 20250907073023.png",
     "docs/resources/attachments/Pasted image 20250907074617.png",
-    "docs/resources/attachments/Pasted image 20250907075504.png",
     "docs/resources/index.md",
     "docs/references/cheatsheets/Web/Recon/index.md",
     "docs/references/cheatsheets/General",
@@ -206,16 +210,13 @@
     "docs/references/cheatsheets/General/Services/FTP/index.md",
     "docs/references/cheatsheets/General/Services/FTP",
     "docs/references/cheatsheets/General/Services/RDP",
-    "docs/references/cheatsheets/General/Services/SMB",
-    "docs/references/cheatsheets/General/Services/IMAP",
-    "docs/references/cheatsheets/General/Services/SNMP",
     "docs/references/cheatsheets/Services/index.md",
     "docs/references/How-To/Set-up-Ubuntu-VM/index.md",
     "docs/references/cheatsheets/index.md",
     "docs/references/How-To/index.md",
     "docs/references/cheatsheets/Active-Directory/AD-Recon/index.md",
-    "docs/blog/posts/vl-data/index.md",
-    "docs/blog/posts/vl-baby/index.md",
+    "docs/writeups/VulnLab/Data/index.md",
+    "docs/writeups/VulnLab/Baby/index.md",
     "docs/blog/posts/test/test-article.md"
   ]
 }
