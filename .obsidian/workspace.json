@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/references/cheatsheets/Web/CORS/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -173,12 +173,14 @@
   },
   "active": "60862129f2b47263",
   "lastOpenFiles": [
+    "docs/references/cheatsheets/Web/Prototype-Pollution/index.md",
+    "docs/references/cheatsheets/Web/Race-Conditions/index.md",
+    "docs/index.md",
     "docs/writeups/VulnLab/index.md",
     "docs/images/favicon.svg",
     "docs/assets/logo.png",
     "docs/assets/new-logo.png",
     "docs/writeups/TryHackMe/index.md",
-    "docs/index.md",
     "docs/writeups/VulnLab",
     "docs/writeups/TryHackMe",
     "docs/writeups",
@@ -216,7 +218,6 @@
     "docs/references/How-To/index.md",
     "docs/references/cheatsheets/Active-Directory/AD-Recon/index.md",
     "docs/writeups/VulnLab/Data/index.md",
-    "docs/writeups/VulnLab/Baby/index.md",
-    "docs/blog/posts/test/test-article.md"
+    "docs/writeups/VulnLab/Baby/index.md"
   ]
 }

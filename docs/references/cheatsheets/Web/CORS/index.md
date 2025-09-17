@@ -31,8 +31,8 @@ If a page is loaded from `https://www.example.com`, the following table shows wh
 | `https://store.example.com` | No | Different hostname (subdomain). |
 | `https://www.example.com:8080` | No | Different port. |
 
->[!tip]
->The SOP generally allows a domain to *send* requests to other domains, but it prevents the requesting domain from *reading* the responses.
+??? tip "What does the SOP do?"
+	The SOP generally allows a domain to *send* requests to other domains, but it prevents the requesting domain from *reading* the responses.
 
 ## How CORS Works
 
@@ -112,8 +112,8 @@ Be sure to check if CORS accepts insecure `http` sites.
 - Avoid whitelisting `null` origins. 
 - Avoid using wildcards on internal networks. Trusting network configuration alone to protect internal resources is not sufficient when internal browsers can access untrusted external domains.
 
->[!warning]
->CORS defines browser behaviors and is never a replacement for server-side protection of sensitive data - an attacker can directly forge a request from any trusted origin. Therefore, web servers should continue to apply protections over sensitive data, such as authentication and session management, in addition to properly configured CORS.
+??? warning "NOTE"
+	CORS defines browser behaviors and is never a replacement for server-side protection of sensitive data - an attacker can directly forge a request from any trusted origin. Therefore, web servers should continue to apply protections over sensitive data, such as authentication and session management, in addition to properly configured CORS.
 
 
 
