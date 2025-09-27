@@ -75,11 +75,11 @@ $ xfreerdp /v:$ip /dynamic-resolution +clipboard -sec-nla
 
 This brings up the following prompt. Looks like we can login as the `KioskUser0` without a password.
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518153626.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518153626.png)
 
 Once we're logged in, we are presented with sign for the `Busan Expo`. 
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518153903.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518153903.png)
 
 ### Kiosk Breakout
 Right click and most commands are restricted in kiosk mode; however, we can use the Windows key to bring up the menu and select Microsoft Edge from there to get a browser with a URL bar and most functionality enabled.
@@ -90,47 +90,47 @@ Within Edge, we can use the following in the URL bar to get a directory listing 
 file://c:\
 ```
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518154237.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518154237.png)
 
 Within the `C:\_admin` directory, there are a couple files that look like they're associated with the remote desktop service.
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518154403.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518154403.png)
 
 The `profiles.xml` looks like it has an encrypted password in it. We'll need to figure out a way to decrypt that.
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518155104.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518155104.png)
 
 ### User Flag
 
 We can just grab the user flag from here. 
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518155305.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518155305.png)
 
 ### Privilege Escalation
 
 To proceed, we're going to need a proper shell. Since we're fairly restricted on what we can execute, we'll need to download `cmd.exe` and then rename it to `msedge` since that's one of the only things allowed in kiosk mode.
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518160619.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518160619.png)
 
 After checking around a little bit it seems like we're pretty much restricted to accessing the `Downloads` folder, so we can copy the `profiles.xml` file to the `C:\Users\KioskUser0\Downloads` folder and do everything from there. 
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518161024.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518161024.png)
 
 Start up RDP plus from `C:\Program Files (x86)\Remote Desktop Plus\rdp.exe`. 
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518161251.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518161251.png)
 
 From the `Manage profiles` menu, select `Import profile` from the `Import and export` menu.
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518161405.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518161405.png)
 
 Select the `profile.xml` file and notice that the password is obfuscated in the edit configuration menu.
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518161612.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518161612.png)
 
 We can use a tool called [BulletsPassView](https://www.nirsoft.net/utils/bulletspassview-x64.zip) to read the obfuscated password.
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518170437.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518170437.png)
 
 When the tool detects an obfuscated password, it displays the plaintext password in the tool window. 
 
@@ -142,7 +142,7 @@ PS> runas /user:ESCAPE\admin cmd
 
 After getting the new shell, we can observe that the `admin` user is a member of the `Administrators` group, however this shell is running at a medium integrity level which means we'll need to bypass UAC to get a high integrity shell. 
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518171013.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518171013.png)
 
 Something I learned doing this lab was that it wasn't necessary to use something like `fodhelper` to bypass UAC in this case. Using the following command brought up the UAC dialog and clicking on the "Yes" button brings up PowerShell running as a high integrity process. 
 
@@ -150,11 +150,11 @@ Something I learned doing this lab was that it wasn't necessary to use something
 PS> Start-Process powershell -Verb runas
 ```
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518171406.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518171406.png)
 
 We can see that we now have all administrative privileges. 
 
-![](../../assets/img/posts/escape/Pasted%20image%2020240518171447.png)
+![](assets/img/posts/escape/Pasted%20image%2020240518171447.png)
 
 Now, with the high integrity PowerShell go ahead and grab the `root.txt` from the `C:\Users\Administrator\Dekstop\` directory. 
 

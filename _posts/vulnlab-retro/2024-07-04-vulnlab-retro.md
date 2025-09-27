@@ -425,7 +425,7 @@ Essentially, if the computer account was created with the `Assign this computer 
 
 We also find some useful information in a [Wayback archive](https://web.archive.org/web/20080205233505/http://support.microsoft.com/kb/320187). 
 
-![](../../assets/img/posts/retro/Pasted%20image%2020240704145857.png)
+![](assets/img/posts/retro/Pasted%20image%2020240704145857.png)
 
 So in our case, we can test the `banking$` account with the password `banking`. Using `netexec`, I did get the `STATUS_NOLOGON_WORKSTATION_TRUST_ACCOUNT` error message described in the article. 
 
