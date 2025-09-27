@@ -32,9 +32,7 @@ PORT     STATE SERVICE REASON         VERSION
 Checking port 3000, we find a Grafana instance running on the box. 
 
 ![](assets/img/posts/data/Pasted%20image%2020240630135414.png)
-/// caption
-Vulnerable Grafana instance
-///
+_Vulnerable Grafana instance_
 
 After a bit of research, we find that there is a pre-auth path traversal vulnerability in Grafana that allows arbitrary file read.
 
