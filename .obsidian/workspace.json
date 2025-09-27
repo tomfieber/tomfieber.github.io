@@ -1,0 +1,182 @@
+{
+  "main": {
+    "id": "296dcc7f77da988f",
+    "type": "split",
+    "children": [
+      {
+        "id": "43f6c1a5c407af8c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b9798666f1394ab1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/vulnlab-retro/2024-07-04-vulnlab-retro.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2024-07-04-vulnlab-retro"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "67320bf29943b039",
+    "type": "split",
+    "children": [
+      {
+        "id": "42b6b4c579ddd103",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "17c0975e4c8f7254",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "ebd9db71b216e8b7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "2faa86b574abe6a7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "82c75be40e00a456",
+    "type": "split",
+    "children": [
+      {
+        "id": "99ee2a9ce2a03c1d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e05d5df4b74f7f32",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/vulnlab-retro/2024-07-04-vulnlab-retro.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2024-07-04-vulnlab-retro"
+            }
+          },
+          {
+            "id": "cb407a2526fb27cf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_posts/vulnlab-retro/2024-07-04-vulnlab-retro.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2024-07-04-vulnlab-retro"
+            }
+          },
+          {
+            "id": "d1fc40ba9a36bbdd",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "72df6f8c957b03fe",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/vulnlab-retro/2024-07-04-vulnlab-retro.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2024-07-04-vulnlab-retro"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "b9798666f1394ab1",
+  "lastOpenFiles": [
+    "_posts/vulnlab-manage/2024-06-28-vulnlab-manage.md",
+    "_posts/vulnlab-retro/2024-07-04-vulnlab-retro.md",
+    "_posts/vulnlab-escape/2024-05-18-vulnlab-escape.md",
+    "_posts/vulnlab-data/2024-07-04-vulnlab-data.md",
+    "_posts/vulnlab-breach/2024-06-22-vulnlab-breach.md",
+    "_posts/vulnlab-baby/2024-06-29-vulnlab-baby.md"
+  ]
+}
