@@ -1,6 +1,8 @@
 site_name: Tom Fieber
 site_url: https://tomfieber.github.io
 copyright: Copyright &copy; 2025 Tom Fieber
+repo_url: https://github.com/tomfieber/tomfieber.github.io
+repo_name: tomfieber/tomfieber.github.io
 theme:
   name: material
   custom_dir: overrides
