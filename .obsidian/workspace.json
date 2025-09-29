@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/posts/vulnlab-data/index.md",
+                "file": "docs/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -170,8 +170,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "167c3647e8dc064b",
+  "active": "b4aacd30471a413d",
   "lastOpenFiles": [
+    "docs/blog/posts/vulnlab-data/index.md",
     "site/search/search_index.json",
     "site/search",
     "site/references/cheatsheets/General/Services/SSH/index.html",
@@ -182,7 +183,6 @@
     "site/references/cheatsheets/General/Services/IMAP/index.html",
     "site/references/cheatsheets/General/Services/FTP/index.html",
     "site/references/methodologies/Web-Apps/owasp-wstg/index.html",
-    "site/references/cheatsheets/Web/Xpath-Injection/index.html",
     "site/assets/images/favicon.png",
     "site/projects/attachments/Pasted image 20250925142245.png",
     "site/images/favicon.svg",
@@ -196,7 +196,6 @@
     "docs/blog/posts/vulnlab-retro/index.md",
     "docs/blog/posts/vulnlab-manage/index.md",
     "docs/blog/posts/vulnlab-escape/index.md",
-    "docs/blog/posts/vulnlab-data/index.md",
     "docs/blog/posts/vulnlab-baby/index.md",
     "docs/blog/posts/vulnlab-breach/index.md",
     "docs/index.md",

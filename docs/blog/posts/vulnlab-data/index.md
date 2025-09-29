@@ -9,7 +9,8 @@ tags:
   - sudo
   - docker
 title: "VulnLab: Data"
-author: tom
+authors: 
+  - tom
 ---
 Data is an **EASY** rated machine on [VulnLab](https://wiki.vulnlab.com/guidance/easy/data). This machine involves abusing an unauthenticated path traversal/file read vulnerability in a Grafana instance to get access to a database file and recover hashed credentials. Using a custom script, we can get those hashes in a format suitable for performing an offline password cracking attack with Hashcat. After recovering a plaintext credential for one of the recovered users, abuse a case of password re-use to gain access to the box as the compromised user. From there, abuse a sudo permission to get a privileged shell in a Docker container running on the system. Once inside the Docker container, we can mount the underlying file system to access the root flag. 
 

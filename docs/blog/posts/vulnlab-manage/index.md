@@ -8,7 +8,8 @@ tags:
   - linux
   - sudo
 title: "VulnLab: Manage"
-author: tom
+authors: 
+  - tom
 ---
 Manage is an **EASY** machine on [VulnLab](https://wiki.vulnlab.com/guidance/easy/manage). This box involved abusing a Java JMX service to get command execution on the server. Once on the server, we find a backup archive that contains files from a user's home directory that we can use to move laterally. After moving to the second user, we find that we're able to run a command as root that we can use to add a new privileged user on the system. 
 
