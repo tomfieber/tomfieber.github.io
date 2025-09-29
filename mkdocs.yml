@@ -1,0 +1,133 @@
+site_name: Tom Fieber
+site_url: https://tomfieber.github.io
+copyright: Copyright &copy; 2025 Tom Fieber
+theme:
+  name: material
+  custom_dir: overrides
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: assets/logo.png
+  favicon: images/favicon.svg
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - navigation.footer
+    - content.code.copy
+
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: brown
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: brown
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+plugins:
+  - search
+  - blog
+  - social
+  - tags
+  - glightbox
+
+
+
+extra:
+  analytics:
+    provider: google
+    property: G-KE1Q5R8N7P
+#    feedback:
+#      title: Was this page helpful?
+#      ratings:
+#        - icon: material/emoticon-happy-outline
+#          name: This page was helpful
+#          data: 1
+#          note: >-
+#            Thanks for your feedback!
+#        - icon: material/emoticon-sad-outline
+#          name: This page could be improved
+#          data: 0
+#          note: >- 
+#            Thanks for your feedback! Help us improve this page by
+#            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tomfieber
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCCxiEvf8mgE141v2EJ0DeLA
+    # - icon: fontawesome/brands/linkedin
+    #   link: https://www.linkedin.com/in/thomasfieber/
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/4z7SPFh4
+
+extra_css:
+  - stylesheets/extra.css
+  
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+
+markdown_extensions:
+
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.blocks.caption
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.tilde
+
+# hooks:
+#   - hooks/socialmedia.py
+
