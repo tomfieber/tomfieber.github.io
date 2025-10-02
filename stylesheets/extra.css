@@ -1,0 +1,28 @@
+img {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+
+strong {
+    color: #c36501
+}
+
+strong {
+  font-weight: bold;
+}
+
+.md-header__button.md-logo {
+    margin: 10px;
+    padding: 10px;
+}
+
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+    height: 2.4rem;
+    width: 2.4rem;
+}
+
+/* Better reading width for content */
+.md-content__inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
