@@ -31,5 +31,16 @@ This project was to get familiar with flexbox.
 
 </div>
 
+#### Rock-Paper-Scissors
+
+<div class="card-grid" markdown>
+
+![](attachments/Pasted%20image%2020251014091135.png)
+
+This was a fun project to practice manipulating the DOM with JavaScript. 
+
+[ :octicons-arrow-right-24: Check out Rock-Paper-Scissors](/top-rock-paper-scissors)
+
+</div>
 
 [^1]: https://www.theodinproject.com/about
