@@ -168,6 +168,7 @@
   },
   "active": "f80f4816cfc15e8b",
   "lastOpenFiles": [
+    "_site/CNAME",
     "_data/authors.yml",
     "_site/assets/js/dist/theme.min.js",
     "_site/assets/js/dist/post.min.js",
@@ -178,7 +179,6 @@
     "_site/assets/js/dist/categories.min.js",
     "_site/assets/js/data/swconf.js",
     "_site/assets/js/data/search.json",
-    "_site/assets/js/data/mathjax.js",
     "_site/assets/img/favicons/web-app-manifest-512x512.png",
     "_site/assets/img/favicons/web-app-manifest-192x192.png",
     "_site/assets/img/favicons/favicon.svg",
