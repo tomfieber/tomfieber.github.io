@@ -1,0 +1,23 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+.rounded-image {
+  border-radius: 15px;
+}
+
+.sidebar-bottom {
+  justify-content: center;
+}
+
+strong {
+  color: #d4682f;
+}

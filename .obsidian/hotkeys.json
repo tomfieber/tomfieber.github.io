@@ -1,0 +1,11 @@
+{
+  "attachment-management:attachment-management-rearrange-all-links": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "A"
+    }
+  ]
+}
