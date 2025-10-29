@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/cia-triad/2025-10-26-cia-triad.md",
+                "file": "_drafts/risk-management/2025-10-28-risk-management.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-10-26-cia-triad"
+              "title": "2025-10-28-risk-management"
             }
           }
         ]
@@ -168,6 +168,9 @@
   },
   "active": "f80f4816cfc15e8b",
   "lastOpenFiles": [
+    "_site/posts/risk-management/index.html",
+    "_site/posts/risk-management",
+    "_posts/cia-triad/2025-10-26-cia-triad.md",
     "_site/CNAME",
     "_data/authors.yml",
     "_site/assets/js/dist/theme.min.js",
@@ -177,8 +180,6 @@
     "_site/assets/js/dist/home.min.js",
     "_site/assets/js/dist/commons.min.js",
     "_site/assets/js/dist/categories.min.js",
-    "_site/assets/js/data/swconf.js",
-    "_site/assets/js/data/search.json",
     "_site/assets/img/favicons/web-app-manifest-512x512.png",
     "_site/assets/img/favicons/web-app-manifest-192x192.png",
     "_site/assets/img/favicons/favicon.svg",
@@ -188,7 +189,6 @@
     "_site/assets/img/about/IMG-20251028080955809.png",
     "_site/assets/img/about/IMG-20251028080955791.png",
     "_site/assets/img/2025-10-26-cia-triad/IMG-20251028080955874.png",
-    "_site/assets/img/2025-10-26-cia-triad/IMG-20251028080955861.png",
-    "_posts/cia-triad/2025-10-26-cia-triad.md"
+    "_site/assets/img/2025-10-26-cia-triad/IMG-20251028080955861.png"
   ]
 }
