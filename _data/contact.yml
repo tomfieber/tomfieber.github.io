@@ -13,7 +13,7 @@
 
 - type: youtube
   icon: "fab fa-youtube"
-  url: "https://www.youtube.com/@EagleRisingInfoSec"
+  url: "https://www.youtube.com/@EagleRisingInformationSecurity"
   noblank: false # open link in new tab
 
 - type: email
