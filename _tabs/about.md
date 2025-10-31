@@ -3,7 +3,7 @@
 icon: fas fa-info-circle
 order: 4
 ---
-![](assets/img/about/IMG-20251028080955791.png){: .shadow .rounded-image }
+![](assets/img/about/file-20251031104212550.png){: .shadow .rounded-image }
 
 My name is Tom. I'm a father, husband, and retired Army veteran. After I retired, I worked as a penetration tester for a few years before I started gravitating more towards teaching. 
 
@@ -14,7 +14,7 @@ Away from the computer, I enjoy hiking, playing with our pets, and coaching my k
 ---
 ## My Philosophy
 
-![](assets/img/about/IMG-20251028080955809.png){: .shadow .rounded-image }
+![](assets/img/about/file-20251031104212553.png){: .shadow .rounded-image }
 
 - **Cybersecurity can be learned**. Nobody is born just knowing any of this. If the best in the field could do it, so can we. 
 
