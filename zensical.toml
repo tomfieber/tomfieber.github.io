@@ -313,6 +313,5 @@ link = "https://github.com/user/repo"
 [project.extra.tags]
 
 # Plugins
-[project.markdown_extensions.superfences]
-[project.markdown_extensions.tabbed]
+[project.markdown_extensions.pymdownx.tabbed]
 alternate_style = true
