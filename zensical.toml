@@ -334,6 +334,5 @@ alternate_style = true
 [project.markdown_extensions.def_list]
 [project.markdown_extensions.pymdownx.tasklist]
 custom_checkbox = true
-[project.markdown_extensions.pymdownx.snippets]
 [project.markdown_extensions.abbr]
 
