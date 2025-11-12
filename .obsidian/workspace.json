@@ -181,11 +181,25 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f9c867a85da717f7",
+  "active": "5dc0f5d28688e2d6",
   "lastOpenFiles": [
+    "site/projects/courses/index.html",
+    "site/projects/courses",
+    "site/Interview-Questions/general/encryption-vs-encoding/index.html",
+    "site/Interview-Questions/general/encryption-vs-encoding",
+    "site/Interview-Questions/general",
+    "site/resources/PortSwigger/Authorization/authz-lab-13/index.html",
+    "site/resources/PortSwigger/Authorization/authz-lab-13",
+    "site/index.html",
+    "site/projects/Web-Development/index.html",
+    "site/projects/Web-Development",
+    "site/Interview-Questions/index.html",
+    "site/resources/PortSwigger/Authorization/attachments/authz-lab-13/file-20251112143648041.png",
+    "docs/resources/PortSwigger/Authorization/attachments/authz-lab-13/file-20251112143648041.png",
     "docs/resources/PortSwigger/Authorization/authz-lab-12.md",
     "docs/resources/PortSwigger/Authorization/authz-lab-13.md",
     "docs/resources/PortSwigger/Authentication/authn-lab-9.md",
