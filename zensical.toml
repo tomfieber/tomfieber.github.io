@@ -17,7 +17,7 @@ site_name = "pawpawhacks"
 # meaningful description of the site content for use by search engines.
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_description
-site_description = "My personal resource site."
+site_description = "My personal reference site"
 
 # The site_author attribute. This is used in the HTML head element.
 #
@@ -27,7 +27,7 @@ site_author = "Tom Fieber"
 # The site_url is the canonical URL for your site. When building online
 # documentation you should set this.
 # Read more: https://zensical.org/docs/setup/basics/#site_url
-site_url = "https://tomfieber.github.io/references/"
+#site_url = "https://www.example.com/"
 
 # The copyright notice appears in the page footer and can contain an HTML
 # fragment.
@@ -57,7 +57,7 @@ Copyright &copy; 2025 Tom Fieber
 #
 # Read more: https://zensical.org/docs/customization/#additional-css
 #
-#extra_css = ["assets/css/extra.css"]
+#extra_css = ["assets/stylesheets/extra.css"]
 
 # With the `extra_javascript` option you can add your own JavaScript to your
 # project to customize the behavior according to your needs.
@@ -299,8 +299,8 @@ toggle.name = "Switch to light mode"
 # ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.
 # ----------------------------------------------------------------------------
-[[project.extra.social]]
-icon = "fontawesome/brands/github"
-link = "https://github.com/tomfieber"
+#[[project.extra.social]]
+#icon = "fontawesome/brands/github"
+#link = "https://github.com/user/repo"
 
 
