@@ -8,6 +8,10 @@
 
 [project]
 
+# Repo
+repo_url = "https://github.com/tomfieber/references"
+repo_name = "pawpawhacks"
+
 # The site_name is shown in the page header and the browser window title
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_name
@@ -302,5 +306,11 @@ toggle.name = "Switch to light mode"
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
 link = "https://github.com/user/repo"
+
+
+
+# Tags
+[project.extra.tags]
+
 
 
