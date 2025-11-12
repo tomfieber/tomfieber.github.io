@@ -315,3 +315,6 @@ link = "https://github.com/user/repo"
 # Plugins
 [project.markdown_extensions.pymdownx.tabbed]
 alternate_style = true
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+clickable_checkbox = true
