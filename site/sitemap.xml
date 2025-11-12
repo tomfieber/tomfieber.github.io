@@ -81,4 +81,7 @@
       <url>
         <loc>https://tomfieber.github.io/resources/PortSwigger/SQL-Injection/sqli-lab-5/</loc>
       </url>
+      <url>
+        <loc>https://tomfieber.github.io/resources/PortSwigger/SSRF/ssrf-lab-1/</loc>
+      </url>
 </urlset>

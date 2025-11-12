@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/PortSwigger/Authorization/authz-lab-13.md",
+                "file": "docs/resources/PortSwigger/SSRF/ssrf-lab-1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "authz-lab-13"
+              "title": "ssrf-lab-1"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/resources/PortSwigger/Authorization/authz-lab-13.md",
+                "file": "docs/resources/PortSwigger/SSRF/ssrf-lab-1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for authz-lab-13"
+              "title": "Backlinks for ssrf-lab-1"
             }
           },
           {
@@ -128,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/resources/PortSwigger/Authorization/authz-lab-13.md",
+                "file": "docs/resources/PortSwigger/SSRF/ssrf-lab-1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from authz-lab-13"
+              "title": "Outgoing links from ssrf-lab-1"
             }
           },
           {
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/resources/PortSwigger/Authorization/authz-lab-13.md",
+                "file": "docs/resources/PortSwigger/SSRF/ssrf-lab-1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of authz-lab-13"
+              "title": "Outline of ssrf-lab-1"
             }
           }
         ]
@@ -187,21 +187,24 @@
   },
   "active": "5dc0f5d28688e2d6",
   "lastOpenFiles": [
+    "site/resources/PortSwigger/SSRF/ssrf-lab-1/index.html",
+    "site/resources/PortSwigger/SSRF/ssrf-lab-1",
+    "site/resources/PortSwigger/SSRF/attachments/ssrf-lab-1/file-20251112150733739.png",
+    "site/resources/PortSwigger/SSRF/attachments/ssrf-lab-1",
+    "site/resources/PortSwigger/SSRF/attachments",
+    "site/resources/PortSwigger/SSRF",
+    "docs/resources/PortSwigger/SSRF/attachments/ssrf-lab-1/file-20251112150733739.png",
+    "docs/resources/PortSwigger/SSRF/attachments/ssrf-lab-1",
+    "docs/resources/PortSwigger/SSRF/attachments",
+    "docs/resources/PortSwigger/Authorization/authz-lab-13.md",
+    "docs/resources/PortSwigger/SSRF/ssrf-lab-1.md",
+    "docs/resources/PortSwigger/SSRF",
     "site/projects/courses/index.html",
     "site/projects/courses",
     "site/Interview-Questions/general/encryption-vs-encoding/index.html",
-    "site/Interview-Questions/general/encryption-vs-encoding",
-    "site/Interview-Questions/general",
-    "site/resources/PortSwigger/Authorization/authz-lab-13/index.html",
-    "site/resources/PortSwigger/Authorization/authz-lab-13",
-    "site/index.html",
-    "site/projects/Web-Development/index.html",
-    "site/projects/Web-Development",
-    "site/Interview-Questions/index.html",
     "site/resources/PortSwigger/Authorization/attachments/authz-lab-13/file-20251112143648041.png",
     "docs/resources/PortSwigger/Authorization/attachments/authz-lab-13/file-20251112143648041.png",
     "docs/resources/PortSwigger/Authorization/authz-lab-12.md",
-    "docs/resources/PortSwigger/Authorization/authz-lab-13.md",
     "docs/resources/PortSwigger/Authentication/authn-lab-9.md",
     "docs/resources/PortSwigger/Authentication/authn-lab-8.md",
     "docs/resources/PortSwigger/Authentication/authn-lab-5.md",
