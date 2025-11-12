@@ -58,7 +58,6 @@ Copyright &copy; 2025 Tom Fieber
 # Read more: https://zensical.org/docs/customization/#additional-css
 #
 docs_dir = "docs"
-site_dir = "site"
 extra_css = ["stylesheets/extra.css"]
 
 # With the `extra_javascript` option you can add your own JavaScript to your
