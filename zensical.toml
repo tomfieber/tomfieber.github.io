@@ -307,6 +307,10 @@ toggle.name = "Switch to light mode"
 icon = "fontawesome/brands/github"
 link = "https://github.com/user/repo"
 
+[[project.extra.social]]
+icon = "fontawesome/brands/discord"
+link = "https://discord.gg/MbgZ6maHbR"
+
 
 
 # Tags
