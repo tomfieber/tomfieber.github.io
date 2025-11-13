@@ -311,7 +311,17 @@ link = "https://github.com/user/repo"
 icon = "fontawesome/brands/discord"
 link = "https://discord.gg/MbgZ6maHbR"
 
+[[project.extra.social]]
+icon = "fontawesome/brands/x-twitter"
+link = "https://twitter.com/pawpawhacks"
 
+[[project.extra.social]]
+icon = "fontawesome/brands/linkedin"
+link = "https://www.linkedin.com/in/thomasfieber"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/youtube"
+link = "https://www.youtube.com/@EagleRisingInformationSecurity"
 
 # Tags
 [project.extra.tags]
