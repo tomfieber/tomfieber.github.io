@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/PortSwigger/NoSQL-Injection/nosql-lab-2.md",
+                "file": "docs/Interview-Questions/general/general-interview-questions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "nosql-lab-2"
+              "title": "general-interview-questions"
             }
           }
         ],
@@ -229,11 +229,11 @@
   },
   "active": "c822e4b1173f4312",
   "lastOpenFiles": [
+    "docs/resources/PortSwigger/NoSQL-Injection/nosql-lab-2.md",
     "docs/resources/PortSwigger/NoSQL-Injection/attachments/nosql-lab-2/file-20251112172027648.png",
     "docs/resources/PortSwigger/NoSQL-Injection/attachments/nosql-lab-2",
     "docs/resources/PortSwigger/NoSQL-Injection/attachments",
     "docs/resources/PortSwigger/SSRF/ssrf-lab-6.md",
-    "docs/resources/PortSwigger/NoSQL-Injection/nosql-lab-2.md",
     "docs/resources/PortSwigger/NoSQL-Injection",
     "docs/resources/PortSwigger/SSRF/attachments/ssrf-lab-6/file-20251112165512236.png",
     "docs/resources/PortSwigger/SSRF/attachments/ssrf-lab-6/file-20251112164150160.png",
@@ -262,7 +262,7 @@
     "docs/resources/PortSwigger/Authentication/authn-lab-3.md",
     "docs/resources/PortSwigger/Authentication/authn-lab-2.md",
     "docs/resources/PortSwigger/Authentication/authn-lab-1.md",
-    "docs/Interview-Questions/general/encryption-vs-encoding.md",
+    "docs/Interview-Questions/general/general-interview-questions.md",
     "docs/Interview-Questions/index.md"
   ]
 }
