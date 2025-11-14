@@ -202,9 +202,23 @@
               "icon": "lucide-file",
               "title": "jwt-lab-2"
             }
+          },
+          {
+            "id": "58017e1f6d9fe093",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Resources/PortSwigger/JWT/jwt-lab-3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "jwt-lab-3"
+            }
           }
         ],
-        "currentTab": 13
+        "currentTab": 14
       }
     ],
     "direction": "vertical"
@@ -353,10 +367,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "8eaabf4b9fce855c",
+  "active": "58017e1f6d9fe093",
   "lastOpenFiles": [
-    "docs/Resources/PortSwigger/JWT/jwt-lab-1.md",
+    "docs/Resources/PortSwigger/JWT/attachments/jwt-lab-3/file-20251114142345113.png",
+    "docs/Resources/PortSwigger/JWT/attachments/jwt-lab-3/file-20251114142153849.png",
+    "docs/Resources/PortSwigger/JWT/attachments/jwt-lab-3",
     "docs/Resources/PortSwigger/JWT/jwt-lab-2.md",
+    "docs/Resources/PortSwigger/JWT/jwt-lab-3.md",
+    "docs/Resources/PortSwigger/JWT/jwt-lab-1.md",
     "docs/Resources/PortSwigger/JWT/attachments/jwt-lab-1/file-20251114134320434.png",
     "docs/Resources/PortSwigger/JWT/attachments/jwt-lab-1/file-20251114134138217.png",
     "docs/Resources/PortSwigger/JWT/attachments/jwt-lab-1/file-20251114133828147.png",
@@ -374,7 +392,6 @@
     "docs/Resources/PortSwigger/XSS/xss-lab-10.md",
     "docs/Resources/PortSwigger/XSS/attachments/xss-lab-10/file-20251114104112558.png",
     "docs/Resources/PortSwigger/XSS/attachments/xss-lab-10/file-20251114103803190.png",
-    "docs/Resources/PortSwigger/XSS/attachments/xss-lab-10/file-20251114103350138.png",
     "docs/Resources/PortSwigger/XSS/attachments/xss-lab-10",
     "docs/Resources/PortSwigger/XSS/xss-lab-03.md",
     "docs/Resources/PortSwigger/XSS/xss-lab-09.md",
@@ -384,7 +401,6 @@
     "docs/Resources/PortSwigger/XSS/attachments/xss-lab-07",
     "docs/Resources/PortSwigger/XSS/xss-lab-14.md",
     "docs/Writeups-&-Reviews/index.md",
-    "site/Resources/PortSwigger/Authentication/authn-lab-9/index.html",
     "docs/Resources/PortSwigger/XSS/xss-lab-02.md",
     "docs/Resources/PortSwigger/XSS/xss-lab-01.md",
     "docs/Resources/PortSwigger/XXE/xxe-lab-7.md",
@@ -398,8 +414,6 @@
     "docs/Interview-Questions/index.md",
     "docs/Resources/PortSwigger/SSRF/ssrf-lab-1.md",
     "docs/Resources/PortSwigger/SSRF/ssrf-lab-2.md",
-    "docs/Resources/PortSwigger/SSRF/ssrf-lab-3.md",
-    "docs/Interview-Questions/general/general-interview-questions.md",
-    "docs/Resources/PortSwigger/NoSQL-Injection/nosql-lab-2.md"
+    "docs/Resources/PortSwigger/SSRF/ssrf-lab-3.md"
   ]
 }
