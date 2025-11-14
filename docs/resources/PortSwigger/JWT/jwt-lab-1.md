@@ -14,6 +14,9 @@ You can log in to your own account using the following credentials: `wiener:pet
 
 ## Solution
 
+!!! note "Oops"
+	I didn't actually need to do a "none" attack for this lab. I could have just modified the claim and it would have worked. My bad.
+
 Note that when we log in, the application response sets a session cookie containing a JWT.
 
 ```text title="Initial login"
@@ -91,4 +94,4 @@ This solves the lab.
 
 ## Lesson learned
 
-Always check if the application will accept a JWT that is not signed.
+Always check if the application is validating the JWT signature. Can we modify claims without having a valid signing key?
