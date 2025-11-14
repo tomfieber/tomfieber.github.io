@@ -9,7 +9,7 @@
 [project]
 
 # Repo
-repo_url = "https://github.com/tomfieber/references"
+repo_url = "https://github.com/tomfieber/tomfieber.github.io"
 repo_name = "pawpawhacks"
 
 # The site_name is shown in the page header and the browser window title
@@ -356,3 +356,4 @@ danger = "octicons/zap-16"
 bug = "octicons/bug-16"
 example = "octicons/beaker-16"
 quote = "octicons/quote-16"
+[project.markdown_extensions.footnotes]
