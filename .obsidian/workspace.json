@@ -13,212 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-1.md",
+                "file": "docs/Resources/PortSwigger/API/api-lab-4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "path-traversal-lab-1"
-            }
-          },
-          {
-            "id": "50edee72bd354418",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "path-traversal-lab-2"
-            }
-          },
-          {
-            "id": "3fffa2d83f122ec8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/XXE/xxe-lab-1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "xxe-lab-1"
-            }
-          },
-          {
-            "id": "8875ac8532b21e9c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/XXE/xxe-lab-8.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "xxe-lab-8"
-            }
-          },
-          {
-            "id": "c437fd63b5be7f91",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/XXE/xxe-lab-3.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "xxe-lab-3"
-            }
-          },
-          {
-            "id": "0c7f6796aecfe611",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/XSS/xss-lab-14.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "xss-lab-14"
-            }
-          },
-          {
-            "id": "bb6bf53215dcf847",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/XSS/xss-lab-01.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "xss-lab-01"
-            }
-          },
-          {
-            "id": "d53433df74c8893b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/XSS/xss-lab-02.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "xss-lab-02"
-            }
-          },
-          {
-            "id": "e37469f5ed13f130",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/XSS/xss-lab-14.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "xss-lab-14"
-            }
-          },
-          {
-            "id": "c4418bd7a8b6ba02",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/XSS/xss-lab-08.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "xss-lab-08"
-            }
-          },
-          {
-            "id": "48b65defa0679886",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/XSS/xss-lab-03.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "xss-lab-03"
-            }
-          },
-          {
-            "id": "cd6027aeb9db5bc7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/XSS/_xss-cheatsheet.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "_xss-cheatsheet"
-            }
-          },
-          {
-            "id": "2af1452906ec5d3f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/JWT/jwt-lab-1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "jwt-lab-1"
-            }
-          },
-          {
-            "id": "8eaabf4b9fce855c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/JWT/jwt-lab-2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "jwt-lab-2"
-            }
-          },
-          {
-            "id": "58017e1f6d9fe093",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/PortSwigger/JWT/jwt-lab-3.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "jwt-lab-3"
+              "title": "api-lab-4"
             }
           }
-        ],
-        "currentTab": 14
+        ]
       }
     ],
     "direction": "vertical"
@@ -367,14 +170,30 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "58017e1f6d9fe093",
+  "active": "203deb1315365e3c",
   "lastOpenFiles": [
+    "docs/Resources/PortSwigger/API/attachments/api-lab-4/file-20251114143913763.png",
+    "docs/Resources/PortSwigger/API/attachments/api-lab-4",
+    "docs/Resources/PortSwigger/API/attachments",
+    "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-1.md",
+    "docs/Resources/PortSwigger/API/api-lab-4.md",
+    "docs/Resources/PortSwigger/API",
+    "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-2.md",
+    "docs/Resources/PortSwigger/XXE/xxe-lab-1.md",
+    "docs/Resources/PortSwigger/XXE/xxe-lab-8.md",
+    "docs/Resources/PortSwigger/XXE/xxe-lab-3.md",
+    "docs/Resources/PortSwigger/XSS/xss-lab-14.md",
+    "docs/Resources/PortSwigger/XSS/xss-lab-01.md",
+    "docs/Resources/PortSwigger/XSS/xss-lab-02.md",
+    "docs/Resources/PortSwigger/XSS/xss-lab-08.md",
+    "docs/Resources/PortSwigger/XSS/xss-lab-03.md",
+    "docs/Resources/PortSwigger/XSS/_xss-cheatsheet.md",
+    "docs/Resources/PortSwigger/JWT/jwt-lab-1.md",
+    "docs/Resources/PortSwigger/JWT/jwt-lab-2.md",
+    "docs/Resources/PortSwigger/JWT/jwt-lab-3.md",
     "docs/Resources/PortSwigger/JWT/attachments/jwt-lab-3/file-20251114142345113.png",
     "docs/Resources/PortSwigger/JWT/attachments/jwt-lab-3/file-20251114142153849.png",
     "docs/Resources/PortSwigger/JWT/attachments/jwt-lab-3",
-    "docs/Resources/PortSwigger/JWT/jwt-lab-2.md",
-    "docs/Resources/PortSwigger/JWT/jwt-lab-3.md",
-    "docs/Resources/PortSwigger/JWT/jwt-lab-1.md",
     "docs/Resources/PortSwigger/JWT/attachments/jwt-lab-1/file-20251114134320434.png",
     "docs/Resources/PortSwigger/JWT/attachments/jwt-lab-1/file-20251114134138217.png",
     "docs/Resources/PortSwigger/JWT/attachments/jwt-lab-1/file-20251114133828147.png",
@@ -388,32 +207,16 @@
     "docs/Resources/PortSwigger/XSS/newFetch.js",
     "docs/Resources/PortSwigger/XSS/attachments/xss-lab-22/file-20251114124924762.png",
     "docs/Resources/PortSwigger/XSS/attachments/xss-lab-22",
-    "docs/Resources/PortSwigger/XSS/_xss-cheatsheet.md",
     "docs/Resources/PortSwigger/XSS/xss-lab-10.md",
     "docs/Resources/PortSwigger/XSS/attachments/xss-lab-10/file-20251114104112558.png",
-    "docs/Resources/PortSwigger/XSS/attachments/xss-lab-10/file-20251114103803190.png",
     "docs/Resources/PortSwigger/XSS/attachments/xss-lab-10",
-    "docs/Resources/PortSwigger/XSS/xss-lab-03.md",
     "docs/Resources/PortSwigger/XSS/xss-lab-09.md",
-    "docs/Resources/PortSwigger/XSS/attachments/xss-lab-09",
-    "docs/Resources/PortSwigger/XSS/xss-lab-08.md",
-    "docs/Resources/PortSwigger/XSS/attachments/xss-lab-08",
-    "docs/Resources/PortSwigger/XSS/attachments/xss-lab-07",
-    "docs/Resources/PortSwigger/XSS/xss-lab-14.md",
     "docs/Writeups-&-Reviews/index.md",
-    "docs/Resources/PortSwigger/XSS/xss-lab-02.md",
-    "docs/Resources/PortSwigger/XSS/xss-lab-01.md",
     "docs/Resources/PortSwigger/XXE/xxe-lab-7.md",
-    "docs/Resources/PortSwigger/XXE/xxe-lab-3.md",
-    "docs/Resources/PortSwigger/XXE/xxe-lab-8.md",
-    "docs/Resources/PortSwigger/XXE/xxe-lab-1.md",
     "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-3.md",
-    "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-2.md",
-    "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-1.md",
     "docs/Resources/PortSwigger/Authorization/authz-lab-12.md",
     "docs/Interview-Questions/index.md",
     "docs/Resources/PortSwigger/SSRF/ssrf-lab-1.md",
-    "docs/Resources/PortSwigger/SSRF/ssrf-lab-2.md",
-    "docs/Resources/PortSwigger/SSRF/ssrf-lab-3.md"
+    "docs/Resources/PortSwigger/SSRF/ssrf-lab-2.md"
   ]
 }
