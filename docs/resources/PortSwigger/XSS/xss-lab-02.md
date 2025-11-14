@@ -15,7 +15,7 @@ To solve this lab, submit a comment that calls the `alert` function when the b
 
 Each blog post has a comment functionality.
 
-![](attachments/xss-lab-2/file-20251113181009926.png)
+![](attachments/xss-lab-02/file-20251113185404281.png)
 
 Looks like the comment and name are reflected.
 
@@ -45,7 +45,7 @@ Priority: u=0, i
 csrf=E8ExWUxE9oTs3LBObfSW4eH6HNyZi1bQ&postId=1&comment=%3Ch1%3Etest123comment%3C%2Fh1%3E&name=test123name&email=test123email%40test.com&website=
 ```
 
-![](attachments/xss-lab-2/file-20251113181448742.png)
+![](attachments/xss-lab-02/file-20251113185404280%201.png)
 
 Note that the h1 is rendered on the page, so we know there is HTML injection. 
 
@@ -57,7 +57,7 @@ test123<script>alert(document.domain)</script>
 
 Then observe that the alert triggers when we navigate back to the blog page. 
 
-![](attachments/xss-lab-2/file-20251113181720935.png)
+![](attachments/xss-lab-02/file-20251113185404280.png)
 
 This solves the lab. 
 

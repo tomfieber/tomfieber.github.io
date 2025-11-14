@@ -15,7 +15,7 @@ To solve this lab, perform a cross-site scripting attack that calls the `alert`
 
 What we enter in the search box is reflected in an `<h1>` tag.
 
-![](attachments/xss-lab-3/file-20251113182417437.png)
+![](attachments/xss-lab-03/file-20251113185408723%201.png)
 
 Note the script on the page:
 
@@ -33,7 +33,7 @@ On line 2, we can see that the `trackSearch` function directly concatenates the 
 
 Here we can see what we pass to the `search` parameter is reflected in the img tag in the DOM.
 
-![](attachments/xss-lab-3/file-20251113183517671.png)
+![](attachments/xss-lab-03/file-20251113185408722.png)
 
 The following payload breaks out of the img tag and triggers the alert box to complete this lab. 
 
@@ -43,7 +43,7 @@ The following payload breaks out of the img tag and triggers the alert box to co
 
 
 
-![](attachments/xss-lab-3/file-20251113183248022.png)
+![](attachments/xss-lab-03/file-20251113185408723.png)
 
 ## Lesson learned
 

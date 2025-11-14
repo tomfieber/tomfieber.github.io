@@ -27,13 +27,24 @@ Here we see that `<body>` and custom tags are allowed.
 
 ![](attachments/xss-lab-14/file-20251113115626060.png)
 
-Trying the `<xss>` tag works and we can see that it is not blocked. 
+Trying the `<body>` tag we see that it is not blocked.
 
-![](attachments/xss-lab-14/file-20251113120115390.png)
+![](attachments/xss-lab-14/file-20251113190501392.png)
 
-Now we need to figure out what event handlers might be allowed. Add one and check in replay.
+Repeating a similar process with the attributes, we find that several are allowed, however many require user interaction. One that does not is `onresize`.
 
-Using `onerror` we get the "Attribute not allowed" error
+![](attachments/xss-lab-14/file-20251113190638444.png)
 
-![](attachments/xss-lab-14/file-20251113120235016.png)
+Now that we have a tag and attribute that are allowed, we can create a payload to deliver to the victim.
 
+The following payload works.
+
+```html title="Working payload that triggers the print() function"
+<iframe src="https://0a3f00c7035f099b809903b40067002e.web-security-academy.net/?search=test123<body%20onresize=print()>" onload=this.document.style.width="1em">
+```
+
+This calls the print() function on resize, and then automatically sets the iframe width to "1em", thereby triggering the print function and solving the lab.
+
+## Lesson learned
+
+If common payloads are not working, try fuzzing for other tags and/or attributes that might not be blocked. 

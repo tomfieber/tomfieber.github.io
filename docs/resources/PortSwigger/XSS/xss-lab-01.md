@@ -15,7 +15,7 @@ To solve the lab, perform a cross-site scripting attack that calls theÂ `alert`Â
 
 Whatever we enter into the search box is reflected in an `<h1>` tag with nothing escaped. 
 
-![](attachments/xss-lab-1/file-20251113175957394.png)
+![](attachments/xss-lab-01/file-20251113185400507.png)
 
 If we send the following payload, we get an alert triggered showing the domain from which the payload executed.
 
@@ -23,7 +23,7 @@ If we send the following payload, we get an alert triggered showing the domain f
 ?search=test123<script>alert(document.domain)</script>
 ```
 
-![](attachments/xss-lab-1/file-20251113180148475.png)
+![](attachments/xss-lab-01/file-20251113185400505.png)
 
 This solves the lab.
 

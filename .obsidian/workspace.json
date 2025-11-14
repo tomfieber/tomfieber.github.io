@@ -97,12 +97,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/PortSwigger/XSS/xss-lab-1.md",
+                "file": "docs/resources/PortSwigger/XSS/xss-lab-01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "xss-lab-1"
+              "title": "xss-lab-01"
             }
           },
           {
@@ -111,12 +111,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/PortSwigger/XSS/xss-lab-2.md",
+                "file": "docs/resources/PortSwigger/XSS/xss-lab-02.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "xss-lab-2"
+              "title": "xss-lab-02"
             }
           },
           {
@@ -125,12 +125,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/PortSwigger/XSS/xss-lab-3.md",
+                "file": "docs/resources/PortSwigger/XSS/xss-lab-14.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "xss-lab-3"
+              "title": "xss-lab-14"
             }
           }
         ],
@@ -285,34 +285,35 @@
   },
   "active": "e37469f5ed13f130",
   "lastOpenFiles": [
-    "docs/resources/PortSwigger/XSS/xss-lab-2.md",
-    "docs/resources/PortSwigger/XSS/xss-lab-1.md",
-    "docs/resources/PortSwigger/XSS/xss-lab-3.md",
-    "docs/resources/PortSwigger/XSS/attachments/xss-lab-3/file-20251113183517671.png",
-    "docs/resources/PortSwigger/XSS/attachments/xss-lab-3/file-20251113183248022.png",
-    "docs/resources/PortSwigger/XSS/attachments/xss-lab-3/file-20251113182417437.png",
-    "docs/resources/PortSwigger/XSS/attachments/xss-lab-3",
-    "docs/resources/PortSwigger/XSS/attachments/xss-lab-2/file-20251113181720935.png",
-    "docs/resources/PortSwigger/XSS/attachments/xss-lab-2/file-20251113181448742.png",
-    "docs/resources/PortSwigger/XSS/attachments/xss-lab-2/file-20251113181009926.png",
-    "docs/resources/PortSwigger/XSS/attachments/xss-lab-2",
-    "docs/resources/PortSwigger/XSS/attachments/xss-lab-1/file-20251113180148475.png",
-    "docs/resources/PortSwigger/XSS/attachments/xss-lab-1/file-20251113175957394.png",
-    "docs/resources/PortSwigger/XSS/attachments/xss-lab-1",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-14/file-20251113190638444.png",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-14/file-20251113190501392.png",
+    "docs/resources/PortSwigger/XSS/xss-lab-03.md",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-03",
+    "docs/resources/PortSwigger/XSS/xss-lab-02.md",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-02",
+    "docs/resources/PortSwigger/XSS/xss-lab-01.md",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-01",
     "docs/resources/PortSwigger/XSS/xss-lab-14.md",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-03/file-20251113185408722.png",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-03/file-20251113185408723.png",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-03/file-20251113185408723 1.png",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-3",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-02/file-20251113185404280.png",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-02/file-20251113185404280 1.png",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-02/file-20251113185404281.png",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-2",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-01/file-20251113185400505.png",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-01/file-20251113185400507.png",
+    "docs/resources/PortSwigger/XSS/attachments/xss-lab-1",
     "docs/resources/PortSwigger/XSS/attachments/xss-lab-14/file-20251113120235016.png",
-    "docs/resources/PortSwigger/XSS/attachments/xss-lab-14/file-20251113120115390.png",
     "docs/resources/PortSwigger/XSS/attachments/xss-lab-14",
     "docs/resources/PortSwigger/XSS/attachments",
     "docs/resources/PortSwigger/XXE/xxe-lab-7.md",
     "docs/resources/PortSwigger/XSS",
     "docs/resources/PortSwigger/XXE/attachments/xxe-lab-7",
     "docs/resources/PortSwigger/XXE/xxe-lab-3.md",
-    "docs/resources/PortSwigger/XXE/attachments/xxe-lab-3",
     "docs/resources/PortSwigger/XXE/xxe-lab-8.md",
-    "docs/resources/PortSwigger/XXE/attachments/xxe-lab-8",
     "docs/resources/PortSwigger/XXE/xxe-lab-1.md",
-    "docs/resources/PortSwigger/XXE/attachments/xxe-lab-1",
     "docs/resources/PortSwigger/Path-Traversal/path-traversal-lab-3.md",
     "docs/resources/PortSwigger/Path-Traversal/path-traversal-lab-2.md",
     "docs/resources/PortSwigger/Path-Traversal/path-traversal-lab-1.md",
