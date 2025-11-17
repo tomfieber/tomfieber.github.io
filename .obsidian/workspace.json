@@ -41,16 +41,44 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Resources/Methodology/Cheatsheets/xss-cheatsheet.md",
+                "file": "docs/Resources/PortSwigger/Race-Conditions/race-lab-1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "xss-cheatsheet"
+              "title": "race-lab-1"
+            }
+          },
+          {
+            "id": "e62c25d0edc03df5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Resources/PortSwigger/SQL-Injection/sqli-lab-5.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "sqli-lab-5"
+            }
+          },
+          {
+            "id": "5b2f62d74da51e01",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Resources/PortSwigger/SQL-Injection/sqli-lab-6.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "sqli-lab-6"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -199,11 +227,23 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "91937022e85a49ac",
+  "active": "5b2f62d74da51e01",
   "lastOpenFiles": [
-    "docs/Resources/Methodology/Cheatsheets/sqli-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/xss-cheatsheet.md",
+    "docs/Resources/PortSwigger/SQL-Injection/attachments/sqli-lab-6/file-20251117131406048.png",
+    "docs/Resources/PortSwigger/SQL-Injection/attachments/sqli-lab-6/file-20251117113011002.png",
+    "docs/Resources/PortSwigger/SQL-Injection/attachments/sqli-lab-6/file-20251117112924684.png",
+    "docs/Resources/PortSwigger/SQL-Injection/attachments/sqli-lab-6",
+    "docs/Resources/PortSwigger/SQL-Injection/sqli-lab-5.md",
+    "docs/Resources/PortSwigger/SQL-Injection/sqli-lab-6.md",
+    "docs/Resources/PortSwigger/Race-Conditions/race-lab-2.md",
+    "docs/Resources/PortSwigger/Race-Conditions/attachments/race-lab-2/file-20251117100547641.png",
+    "docs/Resources/PortSwigger/Race-Conditions/attachments/race-lab-2/file-20251117100447656.png",
+    "docs/Resources/PortSwigger/Race-Conditions/attachments/race-lab-2/file-20251117100418143.png",
+    "docs/Resources/PortSwigger/Race-Conditions/attachments/race-lab-2/file-20251117100315252.png",
+    "docs/Resources/PortSwigger/Race-Conditions/attachments/race-lab-2",
     "docs/Resources/PortSwigger/Race-Conditions/race-lab-1.md",
+    "docs/Resources/Methodology/Cheatsheets/xss-cheatsheet.md",
+    "docs/Resources/Methodology/Cheatsheets/sqli-cheatsheet.md",
     "docs/Resources/Methodology/Cheatsheets",
     "docs/Resources/PortSwigger/Race-Conditions/attachments/race-lab-1/file-20251116080851420.png",
     "docs/Resources/PortSwigger/Race-Conditions/attachments/race-lab-1/file-20251116080749720.png",
@@ -213,21 +253,13 @@
     "docs/Resources/PortSwigger/DOM-Based/dom-lab-4.md",
     "docs/Resources/PortSwigger/Race-Conditions",
     "docs/Resources/PortSwigger/DOM-Based/attachments/dom-lab-4/file-20251116074552022.png",
-    "docs/Resources/PortSwigger/DOM-Based/attachments/dom-lab-4/file-20251116074417673.png",
-    "docs/Resources/PortSwigger/DOM-Based/attachments/dom-lab-4/file-20251116074257333.png",
     "docs/Resources/PortSwigger/DOM-Based/attachments/dom-lab-4",
     "docs/Resources/PortSwigger/DOM-Based/attachments",
     "docs/Resources/PortSwigger/WebSockets/websockets-lab-3.md",
     "docs/Resources/PortSwigger/DOM-Based",
-    "docs/Resources/PortSwigger/WebSockets/attachments/websockets-lab-3/file-20251116070512121.png",
-    "docs/Resources/PortSwigger/WebSockets/attachments/websockets-lab-3/file-20251116070410328.png",
-    "docs/Resources/PortSwigger/WebSockets/attachments/websockets-lab-3/file-20251116070311836.png",
     "docs/Resources/PortSwigger/WebSockets/attachments/websockets-lab-3",
     "docs/Resources/PortSwigger/WebSockets/websockets-lab-2.md",
     "docs/Resources/PortSwigger/WebSockets/websocket-lab-1.md",
-    "docs/Resources/PortSwigger/WebSockets/attachments/websockets-lab-2/file-20251115154458928.png",
-    "docs/Resources/PortSwigger/WebSockets/attachments/websockets-lab-2",
-    "docs/Resources/PortSwigger/WebSockets/attachments/websocket-lab-1",
     "docs/Resources/PortSwigger/API/api-lab-4.md",
     "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-1.md",
     "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-2.md",
@@ -242,10 +274,6 @@
     "docs/Resources/PortSwigger/JWT/jwt-lab-1.md",
     "docs/Resources/PortSwigger/JWT/jwt-lab-2.md",
     "docs/Resources/PortSwigger/JWT/jwt-lab-3.md",
-    "docs/Resources/PortSwigger/XSS/xss-lab-22.md",
-    "docs/Resources/PortSwigger/XSS/xss-lab-10.md",
-    "docs/Resources/PortSwigger/XSS/xss-lab-09.md",
-    "docs/Writeups-&-Reviews/index.md",
-    "docs/Resources/PortSwigger/XXE/xxe-lab-7.md"
+    "docs/Resources/PortSwigger/XSS/xss-lab-22.md"
   ]
 }
