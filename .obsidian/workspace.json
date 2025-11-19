@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet.md",
+                "file": "docs/Resources/Methodology/Cheatsheets/broken-access-control.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "open-redirect-cheatsheet"
+              "title": "broken-access-control"
             }
           }
         ]
@@ -172,8 +172,13 @@
   },
   "active": "452c38b0ceec73ae",
   "lastOpenFiles": [
-    "docs/Resources/Methodology/Cheatsheets/xss-cheatsheet.md",
+    "docs/Resources/Methodology/Cheatsheets/local-file-read.md",
+    "docs/Resources/Methodology/Cheatsheets/broken-access-control.md",
+    "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-3.md",
+    "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-2.md",
+    "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-1.md",
     "docs/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet.md",
+    "docs/Resources/Methodology/Cheatsheets/xss-cheatsheet.md",
     "site/Resources/Methodology/Cheatsheets/attachments/xss-cheatsheet/file-20251119150122338.png",
     "docs/Resources/Methodology/Cheatsheets/attachments/xss-cheatsheet/file-20251119150122338.png",
     "docs/Resources/Methodology/Cheatsheets/cors-cheatsheet.md",
@@ -208,15 +213,10 @@
     "docs/Resources/PortSwigger/DOM-Based/dom-lab-4.md",
     "docs/Resources/PortSwigger/WebSockets/websockets-lab-3.md",
     "docs/Resources/PortSwigger/API/api-lab-4.md",
-    "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-1.md",
-    "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-2.md",
     "docs/Resources/PortSwigger/XXE/xxe-lab-1.md",
     "docs/Resources/PortSwigger/XXE/xxe-lab-8.md",
     "docs/Resources/PortSwigger/XXE/xxe-lab-3.md",
     "docs/Resources/PortSwigger/XSS/xss-lab-14.md",
-    "docs/Resources/PortSwigger/XSS/xss-lab-01.md",
-    "docs/Resources/PortSwigger/XSS/xss-lab-02.md",
-    "docs/Resources/PortSwigger/XSS/xss-lab-08.md",
-    "docs/Resources/PortSwigger/XSS/xss-lab-03.md"
+    "docs/Resources/PortSwigger/XSS/xss-lab-01.md"
   ]
 }

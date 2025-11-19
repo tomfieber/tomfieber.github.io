@@ -1,13 +1,4 @@
 {
-  "editor:cycle-list-checklist": [
-    {
-      "modifiers": [
-        "Alt",
-        "Mod"
-      ],
-      "key": "1"
-    }
-  ],
   "editor:swap-line-down": [
     {
       "modifiers": [
@@ -24,6 +15,15 @@
         "Ctrl"
       ],
       "key": "ArrowUp"
+    }
+  ],
+  "editor:cycle-list-checklist": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "B"
     }
   ]
 }
