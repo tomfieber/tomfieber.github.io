@@ -22,6 +22,12 @@
         <loc>https://tomfieber.github.io/Resources/How-To/Create-an-Ubuntu-VM/</loc>
       </url>
       <url>
+        <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/cors-cheatsheet/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/csrf-cheatsheet/</loc>
+      </url>
+      <url>
         <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/sqli-cheatsheet/</loc>
       </url>
       <url>
@@ -119,9 +125,6 @@
       </url>
       <url>
         <loc>https://tomfieber.github.io/Resources/PortSwigger/SQL-Injection/sqli-lab-6/</loc>
-      </url>
-      <url>
-        <loc>https://tomfieber.github.io/Resources/PortSwigger/SQL-Injection/sqli-lab-7/</loc>
       </url>
       <url>
         <loc>https://tomfieber.github.io/Resources/PortSwigger/SSRF/ssrf-lab-1/</loc>
