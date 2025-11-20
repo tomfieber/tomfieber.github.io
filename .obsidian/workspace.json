@@ -172,6 +172,8 @@
   },
   "active": "452c38b0ceec73ae",
   "lastOpenFiles": [
+    "docs/assets/kittyhacker.jpg",
+    "docs/assets",
     "docs/Resources/Methodology/Cheatsheets/local-file-read.md",
     "docs/Resources/Methodology/Cheatsheets/broken-access-control.md",
     "docs/Resources/PortSwigger/Path-Traversal/path-traversal-lab-3.md",
@@ -193,7 +195,6 @@
     "site/Resources/Methodology/Cheatsheets/Untitled",
     "site/Resources/Methodology/Cheatsheets/xss-cheatsheet/index.html",
     "site/Resources/Methodology/Cheatsheets/xss-cheatsheet",
-    "site/Resources/PortSwigger/SQL-Injection/sqli-lab-6/index.html",
     "docs/Resources/PortSwigger/SQL-Injection/sqli-lab-6.md",
     "docs/Resources/PortSwigger/SQL-Injection/sqli-lab-7.md",
     "site/Resources/PortSwigger/SQL-Injection/attachments/sqli-lab-7/file-20251117155023472.png",
@@ -216,7 +217,6 @@
     "docs/Resources/PortSwigger/XXE/xxe-lab-1.md",
     "docs/Resources/PortSwigger/XXE/xxe-lab-8.md",
     "docs/Resources/PortSwigger/XXE/xxe-lab-3.md",
-    "docs/Resources/PortSwigger/XSS/xss-lab-14.md",
-    "docs/Resources/PortSwigger/XSS/xss-lab-01.md"
+    "docs/Resources/PortSwigger/XSS/xss-lab-14.md"
   ]
 }

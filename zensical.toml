@@ -307,7 +307,7 @@ code = "Jetbrains Mono"
 # - https://zensical.org/docs/authoring/icons-emojis/#search
 # ----------------------------------------------------------------------------
 [project.theme.icon]
-logo = "https://avatars.githubusercontent.com/u/108031577?s=400&u=3579f8891903055cd9e81e7088e6f3c30e1495de&v=4"
+logo = "assets/kittyhacker.jpg"
 #repo = "lucide/smile"
 
 # ----------------------------------------------------------------------------
