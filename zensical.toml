@@ -367,3 +367,4 @@ bug = "octicons/bug-16"
 example = "octicons/beaker-16"
 quote = "octicons/quote-16"
 [project.markdown_extensions.footnotes]
+[project.markdown_extensions.def_list]
