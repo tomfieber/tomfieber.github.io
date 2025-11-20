@@ -318,7 +318,7 @@ code = "Jetbrains Mono"
 # ----------------------------------------------------------------------------
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://github.com/user/repo"
+link = "https://github.com/tomfieber"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/discord"
