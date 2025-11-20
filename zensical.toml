@@ -10,12 +10,12 @@
 
 # Repo
 repo_url = "https://github.com/tomfieber/tomfieber.github.io"
-repo_name = "pawpawhacks"
+repo_name = "tomfieber/tomfieber.github.io"
 
 # The site_name is shown in the page header and the browser window title
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_name
-site_name = "pawpawhacks"
+site_name = "Tom Fieber (@pawpawhacks)"
 
 # The site_description is included in the HTML head and should contain a
 # meaningful description of the site content for use by search engines.
