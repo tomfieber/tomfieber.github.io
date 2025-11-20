@@ -114,6 +114,9 @@ extra_css = ["stylesheets/extra.css"]
 #
 language = "en"
 
+# Logo
+logo = "assets/kittyhacker.jpg"
+
 # Zensical provides a number of feature toggles that change the behavior
 # of the documentation site.
 features = [
@@ -307,7 +310,7 @@ code = "Jetbrains Mono"
 # - https://zensical.org/docs/authoring/icons-emojis/#search
 # ----------------------------------------------------------------------------
 #[project.theme.icon]
-logo = "assets/kittyhacker.jpg"
+#logo = "assets/kittyhacker.jpg"
 #repo = "lucide/smile"
 
 # ----------------------------------------------------------------------------
