@@ -18,7 +18,7 @@ So with that we can get started on the [challenge](https://challenge-1125.intigr
 
 When navigating to the challenge page, we see an “AquaCommerce” e-commerce website.
 
-![](attachments/1125-challenge/file-20251121082956064.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956064.png)
 
 We’re able to self-register an account on this site, and when doing so, we see that the site issues a JSON Web Token (JWT), as shown in the following HTTP request and response:
 
@@ -70,33 +70,33 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains
 
 Decoding this token shows that the role is declared in one of the JWT claims, as shown below:
 
-![](attachments/1125-challenge/file-20251121082956065.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956065.png)
 
 If we’re able to tamper with this claim, it may be possible to grant ourselves an admin role.
 
 In this case, we’re able to use a “none” algorithm attack to modify the JWT in such a way that a) we’re saying there is no signing algorithm in use, and b) that we have the “admin” role.
 
-![](attachments/1125-challenge/file-20251121082956068.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956068.png)
 
 Note the changes to the header and the claims sections after applying the “none” attack.
 
-![](attachments/1125-challenge/file-20251121082956069.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956069.png)
 
 After modifying the JWT, I checked that the application accepted the new JWT without a signature, and found that it did. After confirming this, I set a match and replace rule in Caido so that any subsequent requests in the browser would automatically have the new JWT value applied.
 
-![](attachments/1125-challenge/file-20251121082956070.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956070.png)
 
 After plugging in the modified JWT, we can now access the Admin Panel.
 
-![](attachments/1125-challenge/file-20251121082956072.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956072.png)
 
 Poking around on the admin panel for a bit doesn’t reveal too much functionality that can be abused, but the “My Profile” section looks interesting.
 
-![](attachments/1125-challenge/file-20251121082956073.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956073.png)
 
 The admin profile page has a functionality to update the username, which is then displayed to everyone across the entire application.
 
-![](attachments/1125-challenge/file-20251121082956077.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956077.png)
 
 Since the objective of this challenge is to achieve RCE, I tried to determine if the application was vulnerable to Server-Side Template Injection. The following request shows sending a new name of `{{7*7}}`.
 
@@ -126,11 +126,11 @@ display_name={{7*7}}
 
 Now we see that the name is reflected as `49`, indicating that SSTI was successful.
 
-![](attachments/1125-challenge/file-20251121082956078.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956078.png)
 
 Following the flowchart on [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection)shows that the templating engine is likely Jinja2 since the payload `{{7*'7'}}` results in `7777777`.
 
-![](attachments/1125-challenge/file-20251121082956079.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956079.png)
 
 By sending the following payload in the `displayname` parameter of the POST body, we are able to execute the `id` command and get the output back in the HTTP response.
 
@@ -138,17 +138,17 @@ By sending the following payload in the `displayname` parameter of the POST body
 {{self.__init__.__globals__["__builtins__"]["__import__"]("os").popen("id").read()}}
 ```
 
-![](attachments/1125-challenge/file-20251121082956080.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956080.png)
 
 Now that we have remote code execution (RCE) and we can start enumerating. Running the `ls -la` command shows the contents of the current working directory.
 
-![](attachments/1125-challenge/file-20251121082956081.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956081.png)
 
 The `.aquacommerce` directory looks interesting.
 
 Running the `ls -la` command on that directory shows an oddly named text file.
 
-![](attachments/1125-challenge/file-20251121082956085.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956085.png)
 
 We’re able to read the contents of that file with the following command:
 
@@ -158,7 +158,7 @@ We’re able to read the contents of that file with the following command:
 
 And we get the flag.
 
-![](attachments/1125-challenge/file-20251121082956086.png)
+![](../../../../site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956086.png)
 
 ## Impact
 
