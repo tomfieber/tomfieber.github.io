@@ -17,7 +17,7 @@
   "shouldDeleteOrphanAttachments": true,
   "shouldRenameAttachmentFiles": true,
   "shouldRenameAttachmentFolder": true,
-  "shouldRenameCollectedAttachments": false,
+  "shouldRenameCollectedAttachments": true,
   "specialCharacters": "#^[]|*\\<>:?/",
   "specialCharactersReplacement": "-",
   "timeoutInSeconds": 5,

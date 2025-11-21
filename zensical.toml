@@ -371,3 +371,7 @@ example = "octicons/beaker-16"
 quote = "octicons/quote-16"
 [project.markdown_extensions.footnotes]
 [project.markdown_extensions.def_list]
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.keys]
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.tilde]
