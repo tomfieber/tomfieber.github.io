@@ -1,3 +1,7 @@
+---
+draft: "true"
+---
+
 # Intigriti November 2025 Challenge
 
 ## Overview and Rules
