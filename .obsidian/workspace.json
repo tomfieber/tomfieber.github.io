@@ -13,15 +13,100 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Writeups/index.md",
+                "file": "docs/Resources/Labs/YesWeHack/SQL-Injection/1-simple-login-bypass.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "1-simple-login-bypass"
+            }
+          },
+          {
+            "id": "52bd90894475d4ad",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Resources/Labs/YesWeHack/SQL-Injection/2-first-exfiltration.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2-first-exfiltration"
+            }
+          },
+          {
+            "id": "489f7e5fc0c7d3eb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Resources/Labs/YesWeHack/SQL-Injection/3-no-limit.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3-no-limit"
+            }
+          },
+          {
+            "id": "2f75626a9d036d26",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Resources/Labs/YesWeHack/SQL-Injection/4-exploration.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "4-exploration"
+            }
+          },
+          {
+            "id": "43be19ca1091102c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Resources/Labs/YesWeHack/SQL-Injection/5-injection-in-insert.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5-injection-in-insert"
+            }
+          },
+          {
+            "id": "de40d985deaf1007",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Resources/Methodology/Cheatsheets/xss-cheatsheet.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "xss-cheatsheet"
+            }
+          },
+          {
+            "id": "59337b4bf1add3aa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Resources/Methodology/Cheatsheets/upload-cheatsheet.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "upload-cheatsheet"
             }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -170,50 +255,52 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "452c38b0ceec73ae",
+  "active": "59337b4bf1add3aa",
   "lastOpenFiles": [
-    "docs/Writeups/intigriti/challenges/1125-challenge.md",
+    "docs/Resources/Methodology/Cheatsheets/xpath-injection.md",
+    "docs/Resources/Labs/YesWeHack/XPath-Injection/1-simple-login-bypass.md",
+    "site/Resources/Labs/YesWeHack/XPath-Injection/attachments/1-simple-login-bypass/file-20251121181035341.png",
+    "site/Resources/Labs/YesWeHack/XPath-Injection/attachments/1-simple-login-bypass",
+    "site/Resources/Labs/YesWeHack/XPath-Injection/attachments",
+    "docs/Resources/Labs/YesWeHack/XPath-Injection/attachments/1-simple-login-bypass/file-20251121181035341.png",
+    "docs/Resources/Labs/YesWeHack/XPath-Injection/attachments/1-simple-login-bypass",
+    "docs/Resources/Labs/YesWeHack/XPath-Injection/attachments",
+    "site/Resources/Labs/YesWeHack/XPath-Injection/1-simple-login-bypass/index.html",
+    "site/Resources/Labs/YesWeHack/XPath-Injection/1-simple-login-bypass",
+    "site/Resources/Labs/YesWeHack/XPath-Injection/1-/index.html",
+    "site/Resources/Labs/YesWeHack/XPath-Injection/1-",
+    "site/Resources/Labs/YesWeHack/XPath-Injection/Untitled/index.html",
+    "site/Resources/Labs/YesWeHack/XPath-Injection/Untitled",
+    "docs/Resources/Methodology/Cheatsheets/xss-cheatsheet.md",
+    "docs/Resources/Methodology/Cheatsheets/upload-cheatsheet.md",
+    "docs/Resources/Labs/YesWeHack/SQL-Injection/6-filter-bypass.md",
+    "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/6-filter-bypass/file-20251121142912889.png",
+    "docs/Resources/Labs/YesWeHack/SQL-Injection/attachments/6-filter-bypass/file-20251121142912889.png",
+    "docs/Resources/Labs/YesWeHack/SQL-Injection/5-injection-in-insert.md",
+    "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/5-injection-in-insert/file-20251121141013458.png",
+    "docs/Resources/Labs/YesWeHack/SQL-Injection/attachments/5-injection-in-insert/file-20251121141013458.png",
+    "docs/Resources/Labs/YesWeHack/SQL-Injection/1-simple-login-bypass.md",
+    "docs/Resources/Labs/YesWeHack/SQL-Injection/4-exploration.md",
+    "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/4-exploration/file-20251121135146378.png",
+    "docs/Resources/Labs/YesWeHack/SQL-Injection/attachments/4-exploration/file-20251121135146378.png",
+    "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/4-exploration/file-20251121134745771.png",
+    "docs/Resources/Labs/YesWeHack/SQL-Injection/attachments/4-exploration/file-20251121134745771.png",
+    "docs/Resources/Labs/YesWeHack/SQL-Injection/3-no-limit.md",
+    "docs/Resources/Labs/YesWeHack/SQL-Injection/2-first-exfiltration.md",
+    "docs/Resources/Methodology/Cheatsheets/sqli-cheatsheet.md",
     "docs/Writeups/index.md",
-    "docs/Writeups/intigriti/challenges",
-    "docs/Untitled",
-    "site/Resources/Labs/PortSwigger/SSRF/ssrf-lab-2/index.html",
-    "site/Resources/Labs/PortSwigger/SSRF/ssrf-lab-2",
-    "site/Resources/Labs/PortSwigger/JWT/jwt-lab-1/index.html",
-    "site/Resources/Labs/PortSwigger/JWT/jwt-lab-1",
-    "site/Resources/Labs/PortSwigger/XXE/xxe-lab-8/index.html",
-    "site/Resources/Labs/PortSwigger/XXE/xxe-lab-8",
-    "site/index.html",
-    "site/Projects/index.html",
-    "site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956086.png",
-    "site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956085.png",
-    "site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956081.png",
-    "site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956080.png",
-    "site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956079.png",
-    "site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956078.png",
-    "site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956077.png",
-    "site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956073.png",
-    "site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956072.png",
-    "site/_drafts/intigriti/attachments/1125-challenge/file-20251121082956070.png",
+    "docs/Writeups/intigriti/challenges/1125-challenge.md",
     "docs/Resources/Labs/PortSwigger/Authentication/authn-lab-1.md",
     "docs/Resources/Labs/PortSwigger/WebSockets/websockets-lab-3.md",
     "docs/Resources/Labs/PortSwigger/WebSockets/websockets-lab-2.md",
     "docs/Resources/Labs/PortSwigger/WebSockets/websocket-lab-1.md",
     "docs/index.md",
-    "docs/Resources/Methodology/Cheatsheets/sqli-cheatsheet.md",
     "docs/Resources/Methodology/Cheatsheets/broken-access-control.md",
     "docs/Resources/Methodology/Cheatsheets/local-file-read.md",
     "docs/Resources/Labs/PortSwigger/Path-Traversal/path-traversal-lab-3.md",
     "docs/Resources/Labs/PortSwigger/Path-Traversal/path-traversal-lab-2.md",
     "docs/Resources/Labs/PortSwigger/Path-Traversal/path-traversal-lab-1.md",
     "docs/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/xss-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/cors-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/csrf-cheatsheet.md",
-    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-6.md",
-    "docs/Resources/PortSwigger/SQL-Injection/sqli-lab-7.md",
-    "docs/Resources/Labs/PortSwigger/Race-Conditions/race-lab-1.md",
-    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-5.md",
-    "docs/Resources/Labs/PortSwigger/SQL-Injection/slqi-lab-7.md",
-    "docs/Resources/Labs/PortSwigger/Race-Conditions/race-lab-2.md"
+    "docs/Resources/Methodology/Cheatsheets/cors-cheatsheet.md"
   ]
 }

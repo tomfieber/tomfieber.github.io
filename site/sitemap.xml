@@ -169,6 +169,36 @@
         <loc>https://tomfieber.github.io/Resources/Labs/PortSwigger/XXE/xxe-lab-8/</loc>
       </url>
       <url>
+        <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/SQL-Injection/1-simple-login-bypass/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/SQL-Injection/2-first-exfiltration/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/SQL-Injection/3-no-limit/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/SQL-Injection/4-exploration/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/SQL-Injection/5-injection-in-insert/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/SQL-Injection/6-filter-bypass/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/XPath-Injection/1-/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/XPath-Injection/1-simple-login-bypass/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/XPath-Injection/Untitled/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/Untitled/</loc>
+      </url>
+      <url>
         <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/broken-access-control/</loc>
       </url>
       <url>
@@ -187,6 +217,12 @@
         <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/sqli-cheatsheet/</loc>
       </url>
       <url>
+        <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/upload-cheatsheet/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/xpath-injection/</loc>
+      </url>
+      <url>
         <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/xss-cheatsheet/</loc>
       </url>
       <url>
@@ -194,8 +230,5 @@
       </url>
       <url>
         <loc>https://tomfieber.github.io/Writeups/</loc>
-      </url>
-      <url>
-        <loc>https://tomfieber.github.io/_drafts/intigriti/1125-challenge/</loc>
       </url>
 </urlset>
