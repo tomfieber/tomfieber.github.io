@@ -50,6 +50,6 @@ In this case, we can use the following payload to get the contents of the `/etc/
 ```
 
 
-![](attachments/xxe-lab-1/file-20251121082956028.png)
+![](attachments/xxe-lab-1/file-20251124113610741.png)
 
 This solves the lab.

@@ -11,6 +11,6 @@ To solve this lab we need to abuse an input that is being placed directly into a
 test@test.com', (SELECT password FROM users WHERE username = 'admin'));-- -
 ```
 
-![](attachments/5-injection-in-insert/file-20251121141013458.png)
+![](attachments/5-injection-in-insert/file-20251124113610778.png)
 
 

@@ -13,7 +13,7 @@ To solve the lab, find and exploit a mass assignment vulnerability to buy a **L
 
 Notice what happens if we try to check out normally without having sufficient store credit:
 
-![](attachments/api-lab-4/file-20251121082955688.png)
+![](attachments/api-lab-4/file-20251124113610415.png)
 
 The /api/checkout endpoint returns some useful information. 
 

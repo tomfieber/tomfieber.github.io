@@ -44,7 +44,7 @@ Change the body of the POST request to `stockApi=http://localhost/admin`. Be sur
 
 When we send this we see the endpoints to delete the users.
 
-![](attachments/ssrf-lab-1/file-20251121082955910.png)
+![](attachments/ssrf-lab-1/file-20251124113610631.png)
 
 Send the following POST request to solve the lab.
 

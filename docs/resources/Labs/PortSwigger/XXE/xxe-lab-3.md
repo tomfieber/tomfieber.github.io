@@ -47,9 +47,9 @@ Since all we want to do is trigger a DNS lookup, we can use the following payloa
 
 If we include that in the request and place the `&test;` in the storeId parameter, then we get a DNS lookup to our collaborator instance. 
 
-![](attachments/xxe-lab-3/file-20251121082956030.png)
+![](attachments/xxe-lab-3/file-20251124113610743.png)
 
-![](attachments/xxe-lab-3/file-20251121082956032.png)
+![](attachments/xxe-lab-3/file-20251124113610744.png)
 
 That solves this lab.
 

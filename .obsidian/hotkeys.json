@@ -25,5 +25,14 @@
       ],
       "key": "B"
     }
+  ],
+  "table-editor-obsidian:escape-table": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "Enter"
+    }
   ]
 }

@@ -23,19 +23,19 @@ You can log in to your own account with the following credentials: `wiener:pete
 
 Notice that the application has a feature that allows you to change your email. We also have access to an email client where the confirmation link will be sent. 
 
-![](attachments/race-lab-2/file-20251121082955853.png)
+![](attachments/race-lab-2/file-20251124113610577.png)
 
 In repeater, we can create a tab group with one tab containing an email belonging to our own email server, as shown below:
 
-![](attachments/race-lab-2/file-20251121082955860.png)
+![](attachments/race-lab-2/file-20251124113610582.png)
 
 And the second tab containing the target email address, as shown below:
 
-![](attachments/race-lab-2/file-20251121082955861.png)
+![](attachments/race-lab-2/file-20251124113610583.png)
 
 Then send the requests in parallel to try to exploit the race window. I needed to do this several times before I got a confirmation email to change my email address to carlos. 
 
-![](attachments/race-lab-2/file-20251121082955862.png)
+![](attachments/race-lab-2/file-20251124113610584.png)
 
 Confirm the change and then delete carlos from the admin panel to complete the lab.
 

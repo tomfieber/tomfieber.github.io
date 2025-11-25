@@ -12,7 +12,7 @@ This lab contains a reflected cross-site scripting vulnerability in the search q
 
 Note that when we enter a term in the search bar, that term is reflected inside of a `<script>` tag. 
 
-![](attachments/xss-lab-09/file-20251121082955982.png)
+![](attachments/xss-lab-09/file-20251124113610695.png)
 
 Since this is being reflected inside of JavaScript already, it is not necessary to add another script tag, we can just try to break out of the current context and add a new argument to the existing tag. 
 
@@ -22,7 +22,7 @@ Try the following string:
 test123';alert(document.domain);//
 ```
 
-![](attachments/xss-lab-09/file-20251121082955984.png)
+![](attachments/xss-lab-09/file-20251124113610698.png)
 
 This triggers our alert and solves the lab. 
 

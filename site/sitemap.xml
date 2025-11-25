@@ -187,16 +187,10 @@
         <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/SQL-Injection/6-filter-bypass/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/XPath-Injection/1-/</loc>
-      </url>
-      <url>
         <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/XPath-Injection/1-simple-login-bypass/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.github.io/Resources/Labs/YesWeHack/XPath-Injection/Untitled/</loc>
-      </url>
-      <url>
-        <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/Untitled/</loc>
+        <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/authentication-cheatsheet/</loc>
       </url>
       <url>
         <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/broken-access-control/</loc>
@@ -214,7 +208,13 @@
         <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet/</loc>
       </url>
       <url>
+        <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/recon-cheatsheet/</loc>
+      </url>
+      <url>
         <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/sqli-cheatsheet/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/ssrf-cheatsheet/</loc>
       </url>
       <url>
         <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/upload-cheatsheet/</loc>
@@ -226,9 +226,15 @@
         <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/xss-cheatsheet/</loc>
       </url>
       <url>
+        <loc>https://tomfieber.github.io/Resources/Methodology/Cheatsheets/xxe-injection/</loc>
+      </url>
+      <url>
         <loc>https://tomfieber.github.io/Resources/Methodology/OWASP-WSTG/wstg/</loc>
       </url>
       <url>
         <loc>https://tomfieber.github.io/Writeups/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.github.io/Writeups/intigriti/challenges/1125-challenge/</loc>
       </url>
 </urlset>

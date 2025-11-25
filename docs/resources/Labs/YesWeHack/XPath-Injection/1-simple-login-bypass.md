@@ -13,5 +13,5 @@ The following payload bypasses the login form:
 pass' or 'a'='a
 ```
 
-![](attachments/1-simple-login-bypass/file-20251121181035341.png)
+![](attachments/1-simple-login-bypass/file-20251124113610785.png)
 

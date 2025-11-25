@@ -39,7 +39,7 @@ Te: trailers
 csrf=3t9HKniXOqfQheHTknXahYTSjzQyYXj6&postId=6&comment=test123comment%3Cscript%3Ealert%281%29%3C%2Fscript%3E&name=test123name&email=test123email%40test.com&website=https%3A%2F%2Ftest123site.net
 ```
 
-![](attachments/xss-lab-22/file-20251121082956014.png)
+![](attachments/xss-lab-22/file-20251124113610719.png)
 
 We can use the following JS to try to trigger a POST request from any victim who visits this page to our collaborator, containing their cookie in the POST body.
 
@@ -49,13 +49,13 @@ We can use the following JS to try to trigger a POST request from any victim who
 
 After posting a comment with that payload in the comment field, we get a POST request to collaborator with the session cookie in the body.
 
-![](attachments/xss-lab-22/file-20251121082956016.png)
+![](attachments/xss-lab-22/file-20251124113610725.png)
 
 There might be several requests depending on how much you had to tinker with this (a lot for me), but you're looking for the one with the secret cookie in it. 
 
 Send a previous request from burp to repeater and replace the old cookie with this entire string and send the request to solve the lab. 
 
-![](attachments/xss-lab-22/file-20251121082956018.png)
+![](attachments/xss-lab-22/file-20251124113610726.png)
 
 ## Lesson learned
 

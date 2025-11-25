@@ -47,15 +47,15 @@ Remove the coupon and then send this request (the one where we're adding the cou
 
 In repeater (Burp Pro), select "Custom actions"
 
-![](attachments/race-lab-1/file-20251121082955847.png)
+![](attachments/race-lab-1/file-20251124113610568.png)
 
 Select **New -> From Template** and then select **Trigger race condition**.
 
-![](attachments/race-lab-1/file-20251121082955848.png)
+![](attachments/race-lab-1/file-20251124113610573.png)
 
 Once that's done, click the "play" icon back in repeater. 
 
-![](attachments/race-lab-1/file-20251121082955851.png)
+![](attachments/race-lab-1/file-20251124113610575.png)
 
 You'll find that the coupon has been applied many times, and you're able to purchase the jacket with your available store credit. 
 

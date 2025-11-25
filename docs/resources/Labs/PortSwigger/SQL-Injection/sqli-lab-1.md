@@ -42,7 +42,7 @@ Priority: u=0, i
 
 Adding a single quote after the query results in an error.
 
-![](attachments/sqli-lab-1/file-20251121082955866.png)
+![](attachments/sqli-lab-1/file-20251124113610587.png)
 
 Adding a second single quote resolves the error. We can add an always true condition to display all products.
 
@@ -50,4 +50,4 @@ Adding a second single quote resolves the error. We can add an always true condi
 ' OR 1=1-- -
 ```
 
-![](attachments/sqli-lab-1/file-20251121082955868.png)
+![](attachments/sqli-lab-1/file-20251124113610590.png)

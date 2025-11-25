@@ -19,7 +19,7 @@ Note that chat messages are viewed by support in real time.
 
 Intercept or send a WS request to repeater and modify it as follows:
 
-![](attachments/websocket-lab-1/file-20251121082955927.png)
+![](attachments/websocket-lab-1/file-20251124113610649.png)
 
 This will trigger the alert and solve the lab. 
 

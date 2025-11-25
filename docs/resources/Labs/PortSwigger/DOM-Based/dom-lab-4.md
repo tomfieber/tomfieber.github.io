@@ -13,15 +13,15 @@ This lab contains a DOM-based open-redirection vulnerability. To solve this lab,
 
 On any blog post, notice that there is a link on the bottom of the page to navigate "Back to Blog".
 
-![](attachments/dom-lab-4/file-20251121082955795.png)
+![](attachments/dom-lab-4/file-20251124113610526.png)
 
 Clicking that link and reviewing the response shows the following in the "onclick" attribute of the anchor tag:
 
-![](attachments/dom-lab-4/file-20251121082955802.png)
+![](attachments/dom-lab-4/file-20251124113610527.png)
 
 So we can potentially add a `url` parameter to the request pointing to an address under our control. To solve this lab, point to the exploit server URL.
 
-![](attachments/dom-lab-4/file-20251121082955805.png)
+![](attachments/dom-lab-4/file-20251124113610528.png)
 
 This solves the lab.
 

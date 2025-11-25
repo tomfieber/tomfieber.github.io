@@ -68,4 +68,4 @@ Priority: u=0, i
 
 ```
 
-![](attachments/sqli-lab-3/file-20251121082955889.png)
+![](attachments/sqli-lab-3/file-20251124113610603.png)

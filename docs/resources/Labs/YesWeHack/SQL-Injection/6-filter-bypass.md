@@ -21,5 +21,5 @@ According to PortSwigger [research](https://portswigger.net/support/sql-injectio
 
 Then, the word "password" is filtered. However, it's not being filtered recursively, so we can add "password" in the middle of the word. That way, when the filter strips out the first "password" it finds, the rest of the string will collapse and we will have bypassed the filter. 
 
-![](attachments/6-filter-bypass/file-20251121142912889.png)
+![](attachments/6-filter-bypass/file-20251124113610781.png)
 

@@ -29,12 +29,12 @@ Could allow an attacker to include a file by exploiting a dynamic file read mech
 ---
 ## References
 
-### PayloadsAllTheThings
-https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Directory%20Traversal
+[PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Directory%20Traversal)
 
-### HackTricks
-https://angelica.gitbook.io/hacktricks/pentesting-web/file-inclusion
 
-### AppSecExplained
-https://appsecexplained.gitbook.io/appsecexplained/common-vulns/file-inclusion/local-file-inclusion
+[HackTricks](https://angelica.gitbook.io/hacktricks/pentesting-web/file-inclusion)
+
+
+[AppSecExplained](https://appsecexplained.gitbook.io/appsecexplained/common-vulns/file-inclusion/local-file-inclusion)
+
 

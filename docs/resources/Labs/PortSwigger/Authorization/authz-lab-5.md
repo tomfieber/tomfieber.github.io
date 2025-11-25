@@ -41,5 +41,5 @@ To solve this lab, send this request to repeater, change the value of the `id` p
 
 Note that we get a 200 status code and Carlos' API key is disclosed. 
 
-![](attachments/authz-lab-5/file-20251121082955788.png)
+![](attachments/authz-lab-5/file-20251124113610519.png)
 

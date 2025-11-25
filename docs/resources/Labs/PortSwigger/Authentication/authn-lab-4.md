@@ -18,13 +18,13 @@ To solve the lab, enumerate a valid username, brute-force this user's password, 
 
 Upon trying to log in with invalid credentials, we get the following error message:
 
-![](attachments/authn-lab-4/file-20251121082955726.png)
+![](attachments/authn-lab-4/file-20251124113610457.png)
 
 Note the period at the end of the message.
 
 Run this through intruder with the username list provided and filter on the previous error message. One username results in a request that is slightly different (no period at the end). 
 
-![](attachments/authn-lab-4/file-20251121082955736.png)
+![](attachments/authn-lab-4/file-20251124113610466.png)
 
 Send that request back to intruder and brute force the correct password with the list of passwords provided. 
 

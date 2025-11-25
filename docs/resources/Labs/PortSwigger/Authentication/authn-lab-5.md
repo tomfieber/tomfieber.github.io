@@ -22,15 +22,15 @@ This lab is vulnerable to username enumeration using its response times. To solv
 
 Log in with the credentials provided and note the response time. 
 
-![](attachments/authn-lab-5/file-20251121082955738.png)
+![](attachments/authn-lab-5/file-20251124113610468.png)
 
 Also note the response time when using an invalid username and a long, complex password. 
 
-![](attachments/authn-lab-5/file-20251121082955743.png)
+![](attachments/authn-lab-5/file-20251124113610474.png)
 
 The round-trip response time when trying to log in with a valid username and a long password is significantly longer. 
 
-![](attachments/authn-lab-5/file-20251121082955745.png)
+![](attachments/authn-lab-5/file-20251124113610475.png)
 
 We can use this to filter in intruder. 
 
@@ -38,7 +38,7 @@ Remember that there is a IP block in place, so in the intruder request, add an `
 
 Start the pitchfork/parallel attack, and look for round trip time around what we noticed before for a valid username. 
 
-![](attachments/authn-lab-5/file-20251121082955746.png)
+![](attachments/authn-lab-5/file-20251124113610477.png)
 
 So we have a username -- `app`. Send this login request back to intruder and set the placeholders on the last octet of the X-Forwarded-For host and the password.
 
@@ -46,7 +46,7 @@ Run the next parallel attack and look for a response that stands out from the re
 
 There is one request that is a 302 status code, showing the correct password is `summer`. 
 
-![](attachments/authn-lab-5/file-20251121082955752.png)
+![](attachments/authn-lab-5/file-20251124113610481.png)
 
 Log in as the `app` user to solve the lab.
 

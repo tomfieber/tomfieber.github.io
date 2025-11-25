@@ -89,11 +89,11 @@ jwttool_f67b9f83be144cd371df2f15d45a01c9 - EXPLOIT: injected JWKS
 
 The new JWT looks like this:
 
-![](attachments/jwt-lab-3/file-20251121082955818.png)
+![](attachments/jwt-lab-3/file-20251124113610539.png)
 
 Pasting that new JWT into a previous request works and we can access the /admin/delete endpoint and delete the carlos user.
 
-![](attachments/jwt-lab-3/file-20251121082955820.png)
+![](attachments/jwt-lab-3/file-20251124113610541.png)
 
 ## Lesson learned
 

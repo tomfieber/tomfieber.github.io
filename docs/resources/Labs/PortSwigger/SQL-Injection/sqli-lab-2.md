@@ -42,7 +42,7 @@ csrf=YvvJHYFQ9kAjzWNBu9gaWBatg2bYar9n&username=administrator&password=password
 
 ```
 
-![](attachments/sqli-lab-2/file-20251121082955885.png)
+![](attachments/sqli-lab-2/file-20251124113610600.png)
 
 If we just comment out the password field, we can bypass the authentication check and just log in with the username.
 
@@ -74,5 +74,5 @@ csrf=ftR0shmzbkLwCvuHdiNgunnZso1OGD1X&username=administrator%27--+-&password=pas
 ```
 
 
-![](attachments/sqli-lab-2/file-20251121082955887.png)
+![](attachments/sqli-lab-2/file-20251124113610601.png)
 
