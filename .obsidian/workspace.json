@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Writeups/index.md",
+                "file": "docs/Resources/Methodology/Cheatsheets/cors-cheatsheet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "cors-cheatsheet"
             }
           }
         ]
@@ -172,6 +172,9 @@
   },
   "active": "52bd90894475d4ad",
   "lastOpenFiles": [
+    "docs/Resources/Methodology/Cheatsheets/ssrf-cheatsheet.md",
+    "docs/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet.md",
+    "docs/Writeups/index.md",
     "docs/Resources/Labs/PortSwigger/XSS/xss-lab-01.md",
     "site/Resources/Labs/PortSwigger/Authorization/authz-lab-9/index.html",
     "site/Resources/Labs/PortSwigger/Authorization/authz-lab-9",
@@ -205,8 +208,6 @@
     "docs/Resources/Labs/PortSwigger/Path-Traversal/path-traversal-lab-1.md",
     "docs/Resources/Labs/PortSwigger/NoSQL-Injection/nosql-lab-2.md",
     "docs/Resources/Labs/PortSwigger/JWT/jwt-lab-3.md",
-    "docs/Resources/Labs/PortSwigger/JWT/jwt-lab-2.md",
-    "docs/Resources/Labs/PortSwigger/JWT/jwt-lab-1.md",
     "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/6-filter-bypass/file-20251124113610781.png",
     "site/Resources/Labs/YesWeHack/XPath-Injection/attachments/1-simple-login-bypass/file-20251124113610785.png",
     "site/Resources/Methodology/Cheatsheets/attachments/xss-cheatsheet/file-20251124113610807.png",

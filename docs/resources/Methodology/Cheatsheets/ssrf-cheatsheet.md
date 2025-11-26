@@ -70,6 +70,11 @@ Example exploit script
 </script>
 ```
 
+---
+## References
+
+- [PortSwigger URL Validation Bypass Cheatsheet](https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet)
+
 
 
 

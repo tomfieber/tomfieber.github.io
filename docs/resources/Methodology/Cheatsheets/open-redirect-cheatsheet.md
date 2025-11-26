@@ -40,11 +40,8 @@ But if we plug that into the `redirect_url` parameter of the SSO auth request, t
 ---
 ## Resources
 
-### PayloadsAllTheThings
-https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Open%20Redirect
+- [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Open%20Redirect)
+- [HackTricks](https://angelica.gitbook.io/hacktricks/pentesting-web/open-redirect)
+- [AppSecExplained](https://appsecexplained.gitbook.io/appsecexplained/common-vulns/open-redirect)
+- [PortSwigger URL Validation Bypass Cheatsheet](https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet)
 
-### HackTricks
-https://angelica.gitbook.io/hacktricks/pentesting-web/open-redirect
-
-### AppSecExplained
-https://appsecexplained.gitbook.io/appsecexplained/common-vulns/open-redirect

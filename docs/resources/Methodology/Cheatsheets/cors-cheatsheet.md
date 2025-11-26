@@ -52,3 +52,9 @@ Browser mechanism that allows controlled relaxation of the Same Origin Policy (S
 	- [ ] Don't dynamically reflect origins in the ACAO header
 - [ ] Avoid whitelisting NULL origins
 - [ ] Avoid wildcards on internal networks
+
+---
+## References
+
+- [PortSwigger URL Validation Bypass Cheatsheet](https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet)
+
