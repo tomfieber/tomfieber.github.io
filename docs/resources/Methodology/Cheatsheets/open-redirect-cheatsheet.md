@@ -38,7 +38,7 @@ But if we plug that into the `redirect_url` parameter of the SSO auth request, t
 	- `https://auth.bismuth.ctfio.com/auth?client_id=1&redirect_url=https://bismuth.ctfio.com@tomfieber.github.io/&response_type=token`
 
 ---
-## Resources
+## References
 
 - [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Open%20Redirect)
 - [HackTricks](https://angelica.gitbook.io/hacktricks/pentesting-web/open-redirect)
