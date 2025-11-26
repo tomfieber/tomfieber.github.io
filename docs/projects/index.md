@@ -1,3 +1,0 @@
-# Personal Projects
-
-🚧 Coming Soon 🚧

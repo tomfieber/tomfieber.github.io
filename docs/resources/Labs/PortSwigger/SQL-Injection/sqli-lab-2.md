@@ -3,8 +3,6 @@ tags:
   - sql
   - injection
 ---
-# SQL injection vulnerability allowing login bypass
-
 ## Instructions
 
 This lab contains a SQL injection vulnerability in the login function.

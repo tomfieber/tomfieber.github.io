@@ -8,35 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "452c38b0ceec73ae",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/Labs/YesWeHack/SQL-Injection/1-simple-login-bypass.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1-simple-login-bypass"
-            }
-          },
-          {
             "id": "52bd90894475d4ad",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Resources/Methodology/Cheatsheets/authentication-cheatsheet.md",
+                "file": "docs/Writeups/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "authentication-cheatsheet"
+              "title": "index"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -187,13 +172,41 @@
   },
   "active": "52bd90894475d4ad",
   "lastOpenFiles": [
-    "docs/Resources/Labs/YesWeHack/SQL-Injection/2-first-exfiltration.md",
-    "docs/Resources/Methodology/Cheatsheets/local-file-read.md",
-    "docs/Resources/Methodology/Cheatsheets/csrf-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/cors-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/broken-access-control.md",
-    "docs/Resources/Methodology/Cheatsheets/authentication-cheatsheet.md",
-    "docs/Writeups/intigriti/challenges/1125-challenge.md",
+    "docs/Resources/Labs/PortSwigger/XSS/xss-lab-01.md",
+    "site/Resources/Labs/PortSwigger/Authorization/authz-lab-9/index.html",
+    "site/Resources/Labs/PortSwigger/Authorization/authz-lab-9",
+    "site/Resources/Labs/PortSwigger/Race-Conditions/race-lab-1/index.html",
+    "site/Resources/Labs/PortSwigger/Race-Conditions/race-lab-1",
+    "site/Resources/Labs/PortSwigger/Authentication/authn-lab-1/index.html",
+    "site/Resources/Labs/PortSwigger/Authentication/authn-lab-1",
+    "site/Resources/Labs/PortSwigger/API/api-lab-4/index.html",
+    "site/Resources/Labs/PortSwigger/API/api-lab-4",
+    "site/Resources/Labs/PortSwigger/DOM-Based/dom-lab-4/index.html",
+    "site/Resources/Labs/PortSwigger/DOM-Based/dom-lab-4",
+    "docs/Resources/Labs/YesWeHack/SQL-Injection/1-simple-login-bypass.md",
+    "docs/Resources/Labs/PortSwigger/WebSockets/websockets-lab-3.md",
+    "docs/Resources/Labs/PortSwigger/WebSockets/websockets-lab-2.md",
+    "docs/Resources/Labs/PortSwigger/WebSockets/websocket-lab-1.md",
+    "docs/Resources/Labs/PortSwigger/SSRF/ssrf-lab-6.md",
+    "docs/Resources/Labs/PortSwigger/SSRF/ssrf-lab-3.md",
+    "docs/Resources/Labs/PortSwigger/SSRF/ssrf-lab-2.md",
+    "docs/Resources/Labs/PortSwigger/SSRF/ssrf-lab-1.md",
+    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-6.md",
+    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-5.md",
+    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-4.md",
+    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-3.md",
+    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-2.md",
+    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-1.md",
+    "docs/Resources/Labs/PortSwigger/SQL-Injection/slqi-lab-7.md",
+    "docs/Resources/Labs/PortSwigger/Race-Conditions/race-lab-2.md",
+    "docs/Resources/Labs/PortSwigger/Race-Conditions/race-lab-1.md",
+    "docs/Resources/Labs/PortSwigger/Path-Traversal/path-traversal-lab-3.md",
+    "docs/Resources/Labs/PortSwigger/Path-Traversal/path-traversal-lab-2.md",
+    "docs/Resources/Labs/PortSwigger/Path-Traversal/path-traversal-lab-1.md",
+    "docs/Resources/Labs/PortSwigger/NoSQL-Injection/nosql-lab-2.md",
+    "docs/Resources/Labs/PortSwigger/JWT/jwt-lab-3.md",
+    "docs/Resources/Labs/PortSwigger/JWT/jwt-lab-2.md",
+    "docs/Resources/Labs/PortSwigger/JWT/jwt-lab-1.md",
     "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/6-filter-bypass/file-20251124113610781.png",
     "site/Resources/Labs/YesWeHack/XPath-Injection/attachments/1-simple-login-bypass/file-20251124113610785.png",
     "site/Resources/Methodology/Cheatsheets/attachments/xss-cheatsheet/file-20251124113610807.png",
@@ -203,35 +216,6 @@
     "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/4-exploration/file-20251124113610776.png",
     "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/2-first-exfiltration/file-20251124113610765.png",
     "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/5-injection-in-insert/file-20251124113610778.png",
-    "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/1-simple-login-bypass/file-20251124113610761.png",
-    "site/Writeups/attachments/1125-challenge",
-    "site/Writeups/attachments",
-    "site/Writeups/intigriti/attachments/1125-challenge",
-    "site/Writeups/intigriti/attachments",
-    "site/Resources/Methodology/Cheatsheets/xxe-injection/index.html",
-    "site/Resources/Methodology/Cheatsheets/xxe-injection",
-    "site/Resources/Methodology/Cheatsheets/recon-cheatsheet/index.html",
-    "site/Resources/Methodology/Cheatsheets/recon-cheatsheet",
-    "site/Writeups/intigriti/challenges/1125-challenge/index.html",
-    "site/Writeups/intigriti/challenges/1125-challenge",
-    "docs/Resources/Methodology/Cheatsheets/recon-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/xxe-injection.md",
-    "docs/Resources/Methodology/Cheatsheets/xss-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/ssrf-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/upload-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/xpath-injection.md",
-    "docs/Resources/Labs/YesWeHack/XPath-Injection/1-simple-login-bypass.md",
-    "docs/Resources/Labs/YesWeHack/SQL-Injection/6-filter-bypass.md",
-    "docs/Resources/Labs/YesWeHack/SQL-Injection/5-injection-in-insert.md",
-    "docs/Resources/Labs/YesWeHack/SQL-Injection/1-simple-login-bypass.md",
-    "docs/Resources/Labs/YesWeHack/SQL-Injection/4-exploration.md",
-    "docs/Resources/Labs/YesWeHack/SQL-Injection/3-no-limit.md",
-    "docs/Resources/Methodology/Cheatsheets/sqli-cheatsheet.md",
-    "docs/Writeups/index.md",
-    "docs/Resources/Labs/PortSwigger/Authentication/authn-lab-1.md",
-    "docs/Resources/Labs/PortSwigger/WebSockets/websockets-lab-3.md",
-    "docs/Resources/Labs/PortSwigger/WebSockets/websockets-lab-2.md",
-    "docs/Resources/Labs/PortSwigger/WebSockets/websocket-lab-1.md",
-    "docs/index.md"
+    "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/1-simple-login-bypass/file-20251124113610761.png"
   ]
 }

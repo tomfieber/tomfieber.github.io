@@ -16,7 +16,7 @@ This lab is vulnerable to username enumeration using its response times. To solv
 
 ??? warning "Hint"
 
-	To add to the challenge, the lab also implements a form of IP-based brute-force protection. However, this can be easily bypassed by manipulating HTTP request headers.
+To add to the challenge, the lab also implements a form of IP-based brute-force protection. However, this can be easily bypassed by manipulating HTTP request headers.
 
 ## Solution
 
