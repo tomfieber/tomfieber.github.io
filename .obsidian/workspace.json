@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Resources/Methodology/Cheatsheets/ssrf-cheatsheet.md",
+                "file": "docs/Resources/Methodology/Cheatsheets/xpath-injection.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ssrf-cheatsheet"
+              "title": "xpath-injection"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "0446df4f3f481ed6",
@@ -172,23 +173,24 @@
   },
   "active": "52bd90894475d4ad",
   "lastOpenFiles": [
+    "site/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet/index.html",
+    "site/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet",
+    "site/Resources/Methodology/Cheatsheets/xpath-injection/index.html",
+    "site/Resources/Methodology/Cheatsheets/xpath-injection",
+    "site/Resources/Methodology/Cheatsheets/cors-cheatsheet/index.html",
+    "site/Resources/Methodology/Cheatsheets/cors-cheatsheet",
+    "site/404.html",
+    "site/index.html",
+    "site/Resources/Methodology/Cheatsheets/upload-cheatsheet/index.html",
+    "site/Resources/Methodology/Cheatsheets/upload-cheatsheet",
+    "site/Resources/Labs/PortSwigger/Authentication/authn-lab-1/index.html",
+    "docs/Resources/Methodology/Cheatsheets/ssrf-cheatsheet.md",
     "docs/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet.md",
     "docs/Resources/Methodology/Cheatsheets/local-file-read.md",
     "docs/Resources/Methodology/Cheatsheets/csrf-cheatsheet.md",
     "docs/Resources/Methodology/Cheatsheets/cors-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/ssrf-cheatsheet.md",
     "docs/Writeups/index.md",
     "docs/Resources/Labs/PortSwigger/XSS/xss-lab-01.md",
-    "site/Resources/Labs/PortSwigger/Authorization/authz-lab-9/index.html",
-    "site/Resources/Labs/PortSwigger/Authorization/authz-lab-9",
-    "site/Resources/Labs/PortSwigger/Race-Conditions/race-lab-1/index.html",
-    "site/Resources/Labs/PortSwigger/Race-Conditions/race-lab-1",
-    "site/Resources/Labs/PortSwigger/Authentication/authn-lab-1/index.html",
-    "site/Resources/Labs/PortSwigger/Authentication/authn-lab-1",
-    "site/Resources/Labs/PortSwigger/API/api-lab-4/index.html",
-    "site/Resources/Labs/PortSwigger/API/api-lab-4",
-    "site/Resources/Labs/PortSwigger/DOM-Based/dom-lab-4/index.html",
-    "site/Resources/Labs/PortSwigger/DOM-Based/dom-lab-4",
     "docs/Resources/Labs/YesWeHack/SQL-Injection/1-simple-login-bypass.md",
     "docs/Resources/Labs/PortSwigger/WebSockets/websockets-lab-3.md",
     "docs/Resources/Labs/PortSwigger/WebSockets/websockets-lab-2.md",
@@ -207,7 +209,6 @@
     "docs/Resources/Labs/PortSwigger/Race-Conditions/race-lab-2.md",
     "docs/Resources/Labs/PortSwigger/Race-Conditions/race-lab-1.md",
     "docs/Resources/Labs/PortSwigger/Path-Traversal/path-traversal-lab-3.md",
-    "docs/Resources/Labs/PortSwigger/Path-Traversal/path-traversal-lab-2.md",
     "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/6-filter-bypass/file-20251124113610781.png",
     "site/Resources/Labs/YesWeHack/XPath-Injection/attachments/1-simple-login-bypass/file-20251124113610785.png",
     "site/Resources/Methodology/Cheatsheets/attachments/xss-cheatsheet/file-20251124113610807.png",

