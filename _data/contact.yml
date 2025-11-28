@@ -15,13 +15,18 @@
   url: "https://discord.gg/U8g6gQtYYq"
   noblank: true
 
-- type: rss
-  icon: "fas fa-rss"
-  noblank: true
-
 - type: references
   icon: "fas fa-book-open"
   url: "https://tomfieber.github.io/references/"
+  noblank: true
+
+- type: youtube
+  icon: "fab fa-youtube"
+  url: "https://www.youtube.com/@EagleRisingInformationSecurity"
+  noblank: true
+
+- type: rss
+  icon: "fas fa-rss"
   noblank: true
 # Uncomment and complete the url below to enable more contact options
 #
