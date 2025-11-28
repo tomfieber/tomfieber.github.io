@@ -316,6 +316,9 @@ code = "Jetbrains Mono"
 # ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.
 # ----------------------------------------------------------------------------
+[project.extra]
+homepage = "https://tomfieber.github.io/"
+
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
 link = "https://github.com/tomfieber"
