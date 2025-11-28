@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Resources/Methodology/Cheatsheets/xpath-injection.md",
+                "file": "docs/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "xpath-injection"
+              "title": "index"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "0446df4f3f481ed6",
@@ -173,6 +172,7 @@
   },
   "active": "52bd90894475d4ad",
   "lastOpenFiles": [
+    "index.md",
     "site/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet/index.html",
     "site/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet",
     "site/Resources/Methodology/Cheatsheets/xpath-injection/index.html",
@@ -183,7 +183,6 @@
     "site/index.html",
     "site/Resources/Methodology/Cheatsheets/upload-cheatsheet/index.html",
     "site/Resources/Methodology/Cheatsheets/upload-cheatsheet",
-    "site/Resources/Labs/PortSwigger/Authentication/authn-lab-1/index.html",
     "docs/Resources/Methodology/Cheatsheets/ssrf-cheatsheet.md",
     "docs/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet.md",
     "docs/Resources/Methodology/Cheatsheets/local-file-read.md",
