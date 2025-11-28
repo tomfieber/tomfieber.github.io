@@ -6,9 +6,14 @@
 - type: twitter
   icon: "fa-brands fa-x-twitter"
 
-- type: email
-  icon: "fas fa-envelope"
-  noblank: true # open link in current tab
+# - type: email
+#   icon: "fas fa-envelope"
+#   noblank: true # open link in current tab
+
+- type: discord
+  icon: "fab fa-discord"
+  url: "https://discord.gg/U8g6gQtYYq"
+  noblank: true
 
 - type: rss
   icon: "fas fa-rss"
