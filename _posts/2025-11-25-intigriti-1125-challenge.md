@@ -114,7 +114,7 @@ The admin profile page has a functionality to update the username, which is then
 ![](assets/img/2025-11-25-intigriti-1125-challenge/file-20251121082956077.png){: .shadow .rounded-corners }
 _Testing for SSTI on the admin profile page_
 
-Since the objective of this challenge is to achieve RCE, I tried to determine if the application was vulnerable to Server-Side Template Injection. The following request shows sending a new name of `{{7*7}}`.
+Since the objective of this challenge is to achieve RCE, I tried to determine if the application was vulnerable to Server-Side Template Injection. The following request shows sending a new name of `{% raw %}{{7*7}}{% endraw %}`
 
 ```
 POST /admin/profile HTTP/1.1
@@ -137,7 +137,7 @@ Sec-Fetch-User: ?1
 X-PwnFox-Color: magenta
 Priority: u=0, i
 
-display_name={{7*7}}
+display_name={% raw %}{{7*7}}{% endraw %}
 ```
 
 Now we see that the name is reflected as `49`, indicating that SSTI was successful.
@@ -145,7 +145,7 @@ Now we see that the name is reflected as `49`, indicating that SSTI was successf
 ![](assets/img/2025-11-25-intigriti-1125-challenge/file-20251121082956078.png){: .shadow .rounded-corners }
 _Confirming SSTI_
 
-Following the flowchart on [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection)shows that the templating engine is likely Jinja2 since the payload `{{7*'7'}}` results in `7777777`.
+Following the flowchart on [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection)shows that the templating engine is likely Jinja2 since the payload `{% raw %}{{7*'7'}}{% endraw %}` results in `7777777`.
 
 ![](assets/img/2025-11-25-intigriti-1125-challenge/file-20251121082956079.png){: .shadow .rounded-corners }
 _Confirming the Jinja2 templating engine_

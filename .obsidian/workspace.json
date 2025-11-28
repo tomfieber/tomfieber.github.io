@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2025-11-28-ottergram-004.md",
+                "file": "_posts/2025-11-25-intigriti-1125-challenge.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-11-28-ottergram-004"
+              "title": "2025-11-25-intigriti-1125-challenge"
             }
           }
         ]
@@ -184,30 +184,31 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "835266474e152444",
+  "active": "3d797a8f35200023",
   "lastOpenFiles": [
+    "_site/posts/ottergram-004/index.html",
+    "_site/posts/ottergram-004",
+    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825490.png",
+    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825490 1.png",
+    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825489.png",
+    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825489 1.png",
+    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825488.png",
+    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825487.png",
+    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825487 1.png",
+    "_site/categories/bugforge/index.html",
+    "_site/categories/bugforge",
+    "_site/tags/sqli/index.html",
+    "_site/tags/sqli",
+    "_posts/2025-11-28-ottergram-004.md",
     "_posts/2025-11-25-intigriti-1125-challenge.md",
     "_tabs/about.md",
     "_site/assets/img/2025-11-25-intigriti-1125-challenge/file-20251128103810031.png",
     "assets/img/2025-11-25-intigriti-1125-challenge/file-20251128103810031.png",
     "_site/assets/img/2025-11-25-intigriti-1125-challenge/file-20251128102028263.png",
-    "assets/img/2025-11-25-intigriti-1125-challenge/file-20251128102028263.png",
     "_site/assets/css/jekyll-theme-chirpy.scss",
     "assets/css/jekyll-theme-chirpy.scss",
     "assets/css",
     "assets/img/1125-thumbnail.jpeg.sb-8fc79366-U4fixD",
-    "_site/assets/img/2025-11-25-intigriti-1125-challenge/file-20251121082956086.png",
-    "_site/assets/img/2025-11-25-intigriti-1125-challenge/file-20251121082956085.png",
-    "_site/assets/img/2025-11-25-intigriti-1125-challenge/file-20251121082956081.png",
-    "_site/assets/img/2025-11-25-intigriti-1125-challenge/file-20251121082956080.png",
-    "_site/assets/img/2025-11-25-intigriti-1125-challenge/file-20251121082956079.png",
-    "_site/assets/img/2025-11-25-intigriti-1125-challenge/file-20251121082956078.png",
-    "_site/assets/img/2025-11-25-intigriti-1125-challenge",
-    "assets/img/2025-11-25-intigriti-1125-challenge",
-    "_site/assets/js/dist/theme.min.js",
-    "_site/assets/js/dist/post.min.js",
-    "_site/assets/js/dist/page.min.js",
-    "_site/assets/js/dist/misc.min.js",
-    "_posts/2025-11-28-ottergram-004.md"
+    "_site/assets/img/2025-11-25-intigriti-1125-challenge"
   ]
 }
