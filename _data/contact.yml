@@ -18,6 +18,11 @@
 - type: rss
   icon: "fas fa-rss"
   noblank: true
+
+- type: references
+  icon: "fas fa-book-open"
+  url: "/references/"
+  noblank: true
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
