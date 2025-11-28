@@ -17,7 +17,7 @@
 
 - type: references
   icon: "fas fa-book-open"
-  url: "https://tomfieber.github.io/references/"
+  url: "https://tomfieber.github.io/references/resources/"
   noblank: true
 
 - type: youtube
