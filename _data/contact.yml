@@ -21,7 +21,7 @@
 
 - type: references
   icon: "fas fa-book-open"
-  url: "/references/"
+  url: "https://tomfieber.github.io/references/"
   noblank: true
 # Uncomment and complete the url below to enable more contact options
 #
