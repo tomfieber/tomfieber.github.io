@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2025-11-28-ottergram-004.md",
+                "file": "_drafts/2025-11-28-ottergram-004.md",
                 "mode": "source",
                 "source": false
               },
@@ -184,19 +184,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3d797a8f35200023",
+  "active": "835266474e152444",
   "lastOpenFiles": [
+    "_drafts",
     "_site/assets/img/2025-11-28-ottergram-004/file-20251128082836744.png",
-    "assets/img/2025-11-28-ottergram-004/file-20251128082836744.png",
+    "assets/img/2025-11-28-ottergram-004/file-20251128090138992.png",
     "_site/assets/img/2025-11-28-ottergram-004/file-20251128082424351.png",
-    "assets/img/2025-11-28-ottergram-004/file-20251128082424351.png",
+    "assets/img/2025-11-28-ottergram-004/file-20251128090138992 1.png",
     "_site/assets/img/2025-11-28-ottergram-004/file-20251128082156441.png",
-    "assets/img/2025-11-28-ottergram-004/file-20251128082156441.png",
+    "assets/img/2025-11-28-ottergram-004/file-20251128090138993.png",
     "_site/assets/img/2025-11-28-ottergram-004/file-20251128081710364.png",
-    "assets/img/2025-11-28-ottergram-004/file-20251128081710364.png",
+    "assets/img/2025-11-28-ottergram-004/file-20251128090138994.png",
     "_site/assets/img/2025-11-28-ottergram-004/file-20251128081527601.png",
-    "assets/img/2025-11-28-ottergram-004/file-20251128081527601.png",
-    "_site/assets/img/2025-11-28-ottergram-004/file-20251128080502047.png",
+    "assets/img/2025-11-28-ottergram-004/file-20251128090138994 1.png",
     "_site/assets/img/2025-11-28-ottergram-004",
     "assets/img/2025-11-28-ottergram-004",
     "_site/tags/sqli/index.html",
@@ -207,6 +207,6 @@
     "_site/categories/writeups",
     "_site/posts/ottergram-004/index.html",
     "_site/posts/ottergram-004",
-    "_posts/2025-11-28-ottergram-004.md"
+    "_drafts/2025-11-28-ottergram-004.md"
   ]
 }
