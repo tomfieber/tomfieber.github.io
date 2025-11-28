@@ -142,9 +142,8 @@ Following the flowchart on [PayloadsAllTheThings](https://github.com/swisskyrepo
 
 By sending the following payload in the `displayname` parameter of the POST body, we are able to execute the `id` command and get the output back in the HTTP response.
 
-```
-{{self.__init__.__globals__["__builtins__"]["__import__"]("os").popen("id").read()}}
-```
+![](assets/img/2025-11-25-intigriti-1125-challenge/file-20251128103810031.png){: .shadow .rounded-corners }
+
 
 ![](assets/img/2025-11-25-intigriti-1125-challenge/file-20251121082956080.png){: .shadow .rounded-corners }
 
