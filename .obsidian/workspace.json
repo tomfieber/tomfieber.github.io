@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2025-11-25-intigriti-1125-challenge.md",
+                "file": "_posts/2025-11-29-sokudo-001.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-11-25-intigriti-1125-challenge"
+              "title": "2025-11-29-sokudo-001"
             }
           }
         ]
@@ -184,31 +184,32 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3d797a8f35200023",
+  "active": "835266474e152444",
   "lastOpenFiles": [
+    "_site/posts/sokudo-001/index.html",
+    "_site/posts/sokudo-001",
+    "_site/assets/img/sokudo-thumbnail.png",
+    "_site/assets/img/2025-11-29-sokudo-001/file-20251129095443094.png",
+    "_site/assets/img/2025-11-29-sokudo-001/file-20251129095334762.png",
+    "_site/assets/img/2025-11-29-sokudo-001/file-20251129095315447.png",
+    "_site/assets/img/2025-11-29-sokudo-001",
+    "_site/tags/bac/index.html",
+    "_site/tags/bac",
+    "assets/img/2025-11-29-sokudo-001/file-20251129103746423.png",
+    "assets/img/2025-11-29-sokudo-001/file-20251129103746425.png",
+    "assets/img/2025-11-29-sokudo-001/file-20251129103746425 1.png",
+    "assets/img/2025-11-29-sokudo-001",
+    "assets/img/sokudo-thumbnail.png",
+    "assets/sokudo-thumbnail.png",
+    "_posts/2025-11-25-intigriti-1125-challenge.md",
+    "_posts/2025-11-29-sokudo-001.md",
     "_site/posts/ottergram-004/index.html",
     "_site/posts/ottergram-004",
     "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825490.png",
-    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825490 1.png",
-    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825489.png",
-    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825489 1.png",
-    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825488.png",
-    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825487.png",
-    "_site/assets/img/2025-11-28-ottergram-004/file-20251128111825487 1.png",
     "_site/categories/bugforge/index.html",
     "_site/categories/bugforge",
     "_site/tags/sqli/index.html",
-    "_site/tags/sqli",
     "_posts/2025-11-28-ottergram-004.md",
-    "_posts/2025-11-25-intigriti-1125-challenge.md",
-    "_tabs/about.md",
-    "_site/assets/img/2025-11-25-intigriti-1125-challenge/file-20251128103810031.png",
-    "assets/img/2025-11-25-intigriti-1125-challenge/file-20251128103810031.png",
-    "_site/assets/img/2025-11-25-intigriti-1125-challenge/file-20251128102028263.png",
-    "_site/assets/css/jekyll-theme-chirpy.scss",
-    "assets/css/jekyll-theme-chirpy.scss",
-    "assets/css",
-    "assets/img/1125-thumbnail.jpeg.sb-8fc79366-U4fixD",
-    "_site/assets/img/2025-11-25-intigriti-1125-challenge"
+    "_tabs/about.md"
   ]
 }
