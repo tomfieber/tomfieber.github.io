@@ -55,7 +55,8 @@ I used a “Fullwidth Apostrophe” (U+FF07) **instead** of a normal apostrophe 
 
 Here we can see that sending the fullwidth apostrophe does, in fact, bypass the filter and is rendered in the UI.
 
-![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904703%201.png)
+![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904703%201.png){: .shadow .rounded-corners}
+_Bypassing the filter on single quotes_
 
 Notice how the challenge code is handling our input, specifically this part:
 
@@ -76,11 +77,13 @@ To confirm OS command injection, we can use the following string:
 
 Which gives us the ID of the current user (`nobody`).
 
-![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904703.png)
+![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904703.png){: .shadow .rounded-corners }
+_Confirming OS command injection_
 
 Looking back at the setup code, we can see that the flag is being stored in an environment variable named `FLAG`.
 
-![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904702.png)
+![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904702.png){: .shadow .rounded-corners }
+_Reviewing the code to find where the flag is stored_
 
 So back in our input field we can just echo the value of that environment variable with the following command:
 
@@ -90,7 +93,8 @@ So back in our input field we can just echo the value of that environment variab
 
 And we get the flag!
 
-![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904700.png)
+![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904700.png){: .shadow .rounded-corners }
+_Grabbing the flag_
 
 ## Flag
 
