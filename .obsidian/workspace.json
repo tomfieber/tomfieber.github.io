@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2025-11-30-cheesy-002.md",
+                "file": "_posts/2025-12-01-sp00ky-ghost-whisper.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-11-30-cheesy-002"
+              "title": "2025-12-01-sp00ky-ghost-whisper"
             }
           }
         ]
@@ -184,9 +184,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3d797a8f35200023",
+  "active": "835266474e152444",
   "lastOpenFiles": [
-    "_drafts/2025-12-01-sp00ky-ghost-whisper.md",
+    "_posts/2025-11-30-cheesy-002.md",
+    "_posts/2025-12-01-sp00ky-ghost-whisper.md",
     "_site/posts/sp00ky-ghost-whisper/index.html",
     "_site/posts/sp00ky-ghost-whisper",
     "_site/assets/img/sp00ky-thumbnail.jpeg",
@@ -202,15 +203,14 @@
     "_site/tags/python/index.html",
     "_site/tags/python",
     "_site/tags/ywh/index.html",
-    "assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251129170602089.png",
-    "assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251129170539057.png",
-    "assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251129170526028.png",
-    "assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251129170513125.png",
+    "assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904700.png",
+    "assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904702.png",
+    "assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904703.png",
+    "assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904703 1.png",
     "_posts/2025-11-25-intigriti-1125-challenge.md",
     "assets/img/sp00ky-thumbnail.jpeg",
     "_posts/2025-11-28-ottergram-004.md",
     "_posts/2025-11-29-sokudo-001.md",
-    "_posts/2025-11-30-cheesy-002.md",
     "_tabs/about.md"
   ]
 }

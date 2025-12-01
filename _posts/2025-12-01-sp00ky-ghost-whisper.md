@@ -6,7 +6,7 @@ tags:
   - code-review
 title: YesWeHack - November Challenge - Sp00ky Ghost Whisper
 author: tom
-date: 2025-11-29T16:59:00
+date: 2025-12-01T09:00:00
 description: A mysterious website lets you whisper to ghosts. But can you shatter the veil of silence and make your own voice heard?
 categories:
   - writeups
@@ -16,6 +16,8 @@ image: /assets/img/sp00ky-thumbnail.jpeg
 ## **Description**
 
 A mysterious website lets you whisper to ghosts. But can you shatter the veil of silence and make your own voice heard?
+
+This writeup is for the November challenge on [YesWeHack](https://yeswehack.com). This was my first monthly challenge on YesWeHack, but I found it to be really fun, and I definitely learned something new!
 
 ## Code
 
@@ -55,9 +57,20 @@ I used a “Fullwidth Apostrophe” (U+FF07) **instead** of a normal apostrophe 
 
 Here we can see that sending the fullwidth apostrophe does, in fact, bypass the filter and is rendered in the UI.
 
-![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251129170513125.png)
+![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904703%201.png)
 
-To confirm RCE, we can use the following string:
+Notice how the challenge code is handling our input, specifically this part:
+
+```python
+ # Run a command and capture its output
+    with os.popen(f"echo -n '{whisperMsg}' | hexdump") as stream:
+        hextext = f"{stream.read()} | {whisperMsg}"
+        print( template.render(msg=whisperMsg, hextext=hextext) )
+```
+
+Since we can now bypass the filter and inject a single quote, we can likely use that to inject arbitrary OS commands as well. 
+
+To confirm OS command injection, we can use the following string:
 
 ```
 ＇; id; #
@@ -65,11 +78,11 @@ To confirm RCE, we can use the following string:
 
 Which gives us the ID of the current user (`nobody`).
 
-![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251129170526028.png)
+![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904703.png)
 
 Looking back at the setup code, we can see that the flag is being stored in an environment variable named `FLAG`.
 
-![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251129170539057.png)
+![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904702.png)
 
 So back in our input field we can just echo the value of that environment variable with the following command:
 
@@ -79,7 +92,7 @@ So back in our input field we can just echo the value of that environment variab
 
 And we get the flag!
 
-![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251129170602089.png)
+![](assets/img/2025-12-01-sp00ky-ghost-whisper/file-20251201085904700.png)
 
 ## Flag
 
