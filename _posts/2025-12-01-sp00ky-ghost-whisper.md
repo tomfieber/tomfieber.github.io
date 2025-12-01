@@ -13,9 +13,7 @@ categories:
   - yeswehack
 image: /assets/img/sp00ky-thumbnail.jpeg
 ---
-## **Description**
-
-A mysterious website lets you whisper to ghosts. But can you shatter the veil of silence and make your own voice heard?
+## Description
 
 This writeup is for the November challenge on [YesWeHack](https://yeswehack.com). This was my first monthly challenge on YesWeHack, but I found it to be really fun, and I definitely learned something new!
 
