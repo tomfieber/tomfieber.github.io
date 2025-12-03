@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2025-12-02-ottergram-stored-xss.md",
+                "file": "_posts/2025-12-03-copypasta-idor.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-12-02-ottergram-stored-xss"
+              "title": "2025-12-03-copypasta-idor"
             }
           }
         ]
@@ -186,6 +186,13 @@
   },
   "active": "3d797a8f35200023",
   "lastOpenFiles": [
+    "assets/img/2025-12-03-copypasta-idor/file-20251203083323991.png",
+    "assets/img/2025-12-03-copypasta-idor/file-20251203083243618.png",
+    "assets/img/2025-12-03-copypasta-idor/file-20251203083213188.png",
+    "assets/img/2025-12-03-copypasta-idor/file-20251203083141967.png",
+    "assets/img/2025-12-03-copypasta-idor",
+    "_posts/2025-12-02-ottergram-stored-xss.md",
+    "_posts/2025-12-03-copypasta-idor.md",
     "_site/posts/ottergram-stored-xss/index.html",
     "_site/posts/ottergram-stored-xss",
     "_site/assets/img/ottergram-xss-thumbnail.png",
@@ -198,18 +205,12 @@
     "_site/assets/img/2025-12-02-ottergram-stored-xss",
     "_site/tags/xss/index.html",
     "_site/tags/xss",
-    "assets/img/2025-12-02-ottergram-stored-xss/file-20251202170222409.png",
-    "assets/img/2025-12-02-ottergram-stored-xss/file-20251202170131769.png",
-    "assets/img/2025-12-02-ottergram-stored-xss/file-20251202170038870.png",
     "assets/img/2025-12-02-ottergram-stored-xss",
     "assets/img/ottergram-xss-thumbnail.png.download",
     "_posts/2025-12-01-tanuki-004.md",
-    "_posts/2025-12-02-ottergram-stored-xss.md",
     "_posts/2025-12-01-sp00ky-ghost-whisper.md",
     "_site/posts/tanuki-004/index.html",
     "_site/posts/tanuki-004",
-    "_site/assets/img/2025-12-01-tanuki-004",
-    "_site/tags/bola/index.html",
     "_posts/2025-11-30-cheesy-002.md",
     "_posts/2025-11-25-intigriti-1125-challenge.md",
     "_posts/2025-11-28-ottergram-004.md",
