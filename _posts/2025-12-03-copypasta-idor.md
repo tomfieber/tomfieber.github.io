@@ -77,6 +77,10 @@ Consider implementing server-side checks to ensure that the authenticated user h
 
 Finally, ensure that access control checks are implemented on every API endpoint; removing the option for viewing data or performing an action from the UI is not sufficient to protect against unauthorized disclosure and/or malicious activity.
 
+## Key Takeaway
+
+Always be sure to test any request that is using IDs for IDOR vulnerabilities. Walk the app thoroughly to identify any endpoints that use an ID to access an resource. Once you've identified one, test for Broken Object Level Authorization and/or Broken Functional Level Authorization as another user. 
+
 ## References
 
 - [PortSwigger - IDOR](https://portswigger.net/web-security/access-control/idor)
