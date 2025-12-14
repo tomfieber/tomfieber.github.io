@@ -11,10 +11,14 @@
             "id": "52bd90894475d4ad",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "docs/resources/Methodology/Cheatsheets/xpath-injection.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "xpath-injection"
             }
           }
         ]
@@ -166,8 +170,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f9c867a85da717f7",
+  "active": "52bd90894475d4ad",
   "lastOpenFiles": [
+    "docs/resources/Methodology/Cheatsheets/upload-cheatsheet.md",
+    "docs/resources/Methodology/Cheatsheets/ssrf-cheatsheet.md",
+    "docs/resources/Methodology/Cheatsheets/sqli-cheatsheet.md",
+    "docs/resources/Methodology/Cheatsheets/recon-cheatsheet.md",
+    "docs/resources/Methodology/Cheatsheets/open-redirect-cheatsheet.md",
+    "docs/resources/Methodology/Cheatsheets/local-file-read.md",
+    "docs/resources/Methodology/Cheatsheets/csrf-cheatsheet.md",
+    "docs/resources/Methodology/Cheatsheets/cors-cheatsheet.md",
+    "docs/resources/Methodology/Cheatsheets/broken-access-control.md",
+    "docs/resources/Methodology/Cheatsheets/authentication-cheatsheet.md",
+    "docs/resources/Methodology/Cheatsheets/xxe-injection.md",
+    "docs/resources/Methodology/Cheatsheets/xss-cheatsheet.md",
+    "docs/resources/Methodology/OWASP-WSTG/wstg.md",
     "index.md",
     "site/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet/index.html",
     "site/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet",
@@ -191,19 +208,6 @@
     "docs/Resources/Labs/PortSwigger/WebSockets/websockets-lab-2.md",
     "docs/Resources/Labs/PortSwigger/WebSockets/websocket-lab-1.md",
     "docs/Resources/Labs/PortSwigger/SSRF/ssrf-lab-6.md",
-    "docs/Resources/Labs/PortSwigger/SSRF/ssrf-lab-3.md",
-    "docs/Resources/Labs/PortSwigger/SSRF/ssrf-lab-2.md",
-    "docs/Resources/Labs/PortSwigger/SSRF/ssrf-lab-1.md",
-    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-6.md",
-    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-5.md",
-    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-4.md",
-    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-3.md",
-    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-2.md",
-    "docs/Resources/Labs/PortSwigger/SQL-Injection/sqli-lab-1.md",
-    "docs/Resources/Labs/PortSwigger/SQL-Injection/slqi-lab-7.md",
-    "docs/Resources/Labs/PortSwigger/Race-Conditions/race-lab-2.md",
-    "docs/Resources/Labs/PortSwigger/Race-Conditions/race-lab-1.md",
-    "docs/Resources/Labs/PortSwigger/Path-Traversal/path-traversal-lab-3.md",
     "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/6-filter-bypass/file-20251124113610781.png",
     "site/Resources/Labs/YesWeHack/XPath-Injection/attachments/1-simple-login-bypass/file-20251124113610785.png",
     "site/Resources/Methodology/Cheatsheets/attachments/xss-cheatsheet/file-20251124113610807.png",

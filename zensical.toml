@@ -115,7 +115,7 @@ extra_css = ["stylesheets/extra.css"]
 language = "en"
 
 # Logo
-logo = "assets/kittyhacker.jpg"
+logo = "assets/kittyhacker-holiday.png"
 
 # Zensical provides a number of feature toggles that change the behavior
 # of the documentation site.

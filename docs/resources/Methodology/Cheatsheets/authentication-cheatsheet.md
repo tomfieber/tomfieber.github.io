@@ -28,4 +28,3 @@ tags:
 - [ ] Check for mass assignment vulnerabilities
 - [ ] Check SSO
 - [ ] Carefully review SAML/OAuth2
-- [ ] 
