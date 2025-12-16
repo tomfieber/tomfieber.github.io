@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/Methodology/Cheatsheets/xpath-injection.md",
+                "file": "docs/resources/writeups/bugforge/shady-oaks-tampering/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "xpath-injection"
+              "title": "index"
             }
           }
         ]
@@ -172,6 +172,17 @@
   },
   "active": "52bd90894475d4ad",
   "lastOpenFiles": [
+    "docs/resources/writeups/bugforge/shady-oaks-tampering/attachments/index/shady-oaks-walkthrough.mp4",
+    "docs/resources/writeups/bugforge/shady-oaks-tampering/attachments/index/file-20251216170042240.png",
+    "docs/resources/writeups/bugforge/shady-oaks-tampering/attachments/index/file-20251216170022640.png",
+    "docs/resources/writeups/bugforge/shady-oaks-tampering/attachments/index",
+    "docs/resources/writeups/bugforge/shady-oaks-tampering/attachments",
+    "docs/resources/writeups/bugforge/shady-oaks-tampering/shady-oaks-tampering.mov",
+    "docs/resources/writeups/bugforge/shady-oaks-tampering/Screen Recording 2025-12-16 at 8.19.30 AM.mov",
+    "docs/resources/Methodology/Cheatsheets/authentication-cheatsheet.md",
+    "docs/resources/writeups/bugforge/shady-oaks-tampering/index.md",
+    "docs/resources/writeups/bugforge/shady-oaks-tampering",
+    "docs/resources/Methodology/Cheatsheets/xpath-injection.md",
     "docs/resources/Methodology/Cheatsheets/upload-cheatsheet.md",
     "docs/resources/Methodology/Cheatsheets/ssrf-cheatsheet.md",
     "docs/resources/Methodology/Cheatsheets/sqli-cheatsheet.md",
@@ -181,7 +192,6 @@
     "docs/resources/Methodology/Cheatsheets/csrf-cheatsheet.md",
     "docs/resources/Methodology/Cheatsheets/cors-cheatsheet.md",
     "docs/resources/Methodology/Cheatsheets/broken-access-control.md",
-    "docs/resources/Methodology/Cheatsheets/authentication-cheatsheet.md",
     "docs/resources/Methodology/Cheatsheets/xxe-injection.md",
     "docs/resources/Methodology/Cheatsheets/xss-cheatsheet.md",
     "docs/resources/Methodology/OWASP-WSTG/wstg.md",
@@ -191,11 +201,6 @@
     "site/Resources/Methodology/Cheatsheets/xpath-injection/index.html",
     "site/Resources/Methodology/Cheatsheets/xpath-injection",
     "site/Resources/Methodology/Cheatsheets/cors-cheatsheet/index.html",
-    "site/Resources/Methodology/Cheatsheets/cors-cheatsheet",
-    "site/404.html",
-    "site/index.html",
-    "site/Resources/Methodology/Cheatsheets/upload-cheatsheet/index.html",
-    "site/Resources/Methodology/Cheatsheets/upload-cheatsheet",
     "docs/Resources/Methodology/Cheatsheets/ssrf-cheatsheet.md",
     "docs/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet.md",
     "docs/Resources/Methodology/Cheatsheets/local-file-read.md",
@@ -205,9 +210,6 @@
     "docs/Resources/Labs/PortSwigger/XSS/xss-lab-01.md",
     "docs/Resources/Labs/YesWeHack/SQL-Injection/1-simple-login-bypass.md",
     "docs/Resources/Labs/PortSwigger/WebSockets/websockets-lab-3.md",
-    "docs/Resources/Labs/PortSwigger/WebSockets/websockets-lab-2.md",
-    "docs/Resources/Labs/PortSwigger/WebSockets/websocket-lab-1.md",
-    "docs/Resources/Labs/PortSwigger/SSRF/ssrf-lab-6.md",
     "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/6-filter-bypass/file-20251124113610781.png",
     "site/Resources/Labs/YesWeHack/XPath-Injection/attachments/1-simple-login-bypass/file-20251124113610785.png",
     "site/Resources/Methodology/Cheatsheets/attachments/xss-cheatsheet/file-20251124113610807.png",
@@ -215,8 +217,6 @@
     "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/4-exploration/file-20251124113610775.png",
     "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/3-no-limit/file-20251124113610768.png",
     "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/4-exploration/file-20251124113610776.png",
-    "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/2-first-exfiltration/file-20251124113610765.png",
-    "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/5-injection-in-insert/file-20251124113610778.png",
-    "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/1-simple-login-bypass/file-20251124113610761.png"
+    "site/Resources/Labs/YesWeHack/SQL-Injection/attachments/2-first-exfiltration/file-20251124113610765.png"
   ]
 }
