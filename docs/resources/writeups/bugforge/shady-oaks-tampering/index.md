@@ -26,7 +26,7 @@ The Shady Oaks API uses the `role` parameter on the `/api/upgrade` endpoint to i
 
 Here is a short screen recording showing the exploitation steps:
 
-![type:video](attachments/index/shady-oaks-walkthrough.mp4)
+{% include embed/video.html src='attachments/index/shady-oaks-walkthrough.mp4' %}
 
 ## Impact
 

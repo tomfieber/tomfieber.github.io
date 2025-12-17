@@ -173,6 +173,7 @@
   "active": "52bd90894475d4ad",
   "lastOpenFiles": [
     "docs/resources/writeups/bugforge/shady-oaks-tampering/attachments/index/shady-oaks-walkthrough.mp4",
+    "docs/resources/writeups/bugforge/shady-oaks-tampering/index.md",
     "docs/resources/writeups/bugforge/shady-oaks-tampering/attachments/index/file-20251216170042240.png",
     "docs/resources/writeups/bugforge/shady-oaks-tampering/attachments/index/file-20251216170022640.png",
     "docs/resources/writeups/bugforge/shady-oaks-tampering/attachments/index",
@@ -180,7 +181,6 @@
     "docs/resources/writeups/bugforge/shady-oaks-tampering/shady-oaks-tampering.mov",
     "docs/resources/writeups/bugforge/shady-oaks-tampering/Screen Recording 2025-12-16 at 8.19.30 AM.mov",
     "docs/resources/Methodology/Cheatsheets/authentication-cheatsheet.md",
-    "docs/resources/writeups/bugforge/shady-oaks-tampering/index.md",
     "docs/resources/writeups/bugforge/shady-oaks-tampering",
     "docs/resources/Methodology/Cheatsheets/xpath-injection.md",
     "docs/resources/Methodology/Cheatsheets/upload-cheatsheet.md",
@@ -200,7 +200,6 @@
     "site/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet",
     "site/Resources/Methodology/Cheatsheets/xpath-injection/index.html",
     "site/Resources/Methodology/Cheatsheets/xpath-injection",
-    "site/Resources/Methodology/Cheatsheets/cors-cheatsheet/index.html",
     "docs/Resources/Methodology/Cheatsheets/ssrf-cheatsheet.md",
     "docs/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet.md",
     "docs/Resources/Methodology/Cheatsheets/local-file-read.md",
