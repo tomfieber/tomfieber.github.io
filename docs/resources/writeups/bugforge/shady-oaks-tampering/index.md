@@ -1,5 +1,11 @@
 # Shady Oaks Financial
 
+| **Lab Information** |                                    |
+| :------------------ | ---------------------------------- |
+| **Platform**        | [bugforge.io](https://bugforge.io) |
+| **Difficulty**      | Easy                               |
+| **Category**        | Tampering                          |
+
 ## Summary
 
 A tampering vulnerability exists in the `/api/upgrade` endpoint. By modifying the value of the `role` parameter from `insider` to `administrator` an authenticated user can elevate their own privileges to gain access to administrative functionality.
