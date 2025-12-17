@@ -26,7 +26,7 @@ The Shady Oaks API uses the `role` parameter on the `/api/upgrade` endpoint to i
 
 Here is a short screen recording showing the exploitation steps:
 
-<iframe width="auto" height="auto" src="https://www.youtube.com/embed/ploI9dFwXe8?si=_Qff1MD8t-MfI1tN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="468" src="https://www.youtube.com/embed/ploI9dFwXe8?si=_Qff1MD8t-MfI1tN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Impact
 
