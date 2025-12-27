@@ -37,7 +37,7 @@ Send this request to repeater.
 
 We can use a basic path traversal sequence (`../`) to navigate "up" out of the current directory to the root of the file system and access the `/etc/passwd` file as shown below. In this case, there are no filters in place to prevent this.
 
-![](attachments/path-traversal-lab-1/file-20251124113610552.png)
+![](attachments/path-traversal-lab-1/file-20251124113610552.webp)
 
 This solves the lab.
 

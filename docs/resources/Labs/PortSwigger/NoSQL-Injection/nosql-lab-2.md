@@ -44,5 +44,5 @@ Priority: u=0
 
 This works and we're able to get into the admin account.
 
-![](attachments/nosql-lab-2/file-20251124113610550.png)
+![](attachments/nosql-lab-2/file-20251124113610550.webp)
 

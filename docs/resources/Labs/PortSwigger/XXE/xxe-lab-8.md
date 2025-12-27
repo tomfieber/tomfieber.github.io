@@ -15,7 +15,7 @@ To solve the lab, upload an image that displays the contents of the `/etc/hostn
 
 Note that on this lab, each blog post has a file upload functionality in the comments section where a user can upload an avatar image. 
 
-![](attachments/xxe-lab-8/file-20251124113610751.png)
+![](attachments/xxe-lab-8/file-20251124113610751.webp)
 
 We can use the following payload to create an svg image the will include the content of the /etc/hostname file as text in the image. Put this in a file and name it image.svg
 
@@ -90,11 +90,11 @@ Content-Disposition: form-data; name="website"
 
 Going back to the post, we see that our image has been uploaded successfully, and there is indeed text in the image. 
 
-![](attachments/xxe-lab-8/file-20251124113610757.png)
+![](attachments/xxe-lab-8/file-20251124113610757.webp)
 
 Open the avatar image in a new tab to read the hostname.
 
-![](attachments/xxe-lab-8/file-20251124113610759.png)
+![](attachments/xxe-lab-8/file-20251124113610759.webp)
 
 In this case, the hostname is 
 

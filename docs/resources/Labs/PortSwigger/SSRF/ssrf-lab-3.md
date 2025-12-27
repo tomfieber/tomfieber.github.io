@@ -43,6 +43,6 @@ Te: trailers
 
 Note that after sending this request we get a hit in collaborator.
 
-![](attachments/ssrf-lab-3/file-20251124113610641.png)
+![](attachments/ssrf-lab-3/file-20251124113610641.webp)
 
 This solves the lab. 

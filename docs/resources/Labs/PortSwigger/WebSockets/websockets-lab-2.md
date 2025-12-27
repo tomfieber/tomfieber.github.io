@@ -14,15 +14,15 @@ To solve the lab, use the exploit server to host an HTML/JavaScript payload that
 
 Note that the application has a live chat functionality.
 
-![](attachments/websockets-lab-2/file-20251124113610652.png)
+![](attachments/websockets-lab-2/file-20251124113610652.webp)
 
 The websockets history in Burp shows the flow of the application. It looks like a READY message is sent from the client to the server before the server returns the chat history to the client.
 
-![](attachments/websockets-lab-2/file-20251124113610657.png)
+![](attachments/websockets-lab-2/file-20251124113610657.webp)
 
 Additionally, it's important to note that the application uses a session cookie with the SameSite attribute set to None. 
 
-![](attachments/websockets-lab-2/file-20251124113610658.png)
+![](attachments/websockets-lab-2/file-20251124113610658.webp)
 
 We can create some JavaScript that will establish a websocket connection and automatically send a "READY" message whenever a victim visits our site. This JS will also exfiltrate the victim's chat history to our collaborator server.
 
@@ -46,7 +46,7 @@ We can create some JavaScript that will establish a websocket connection and aut
 
 After delivering this to the victim, we get a series of POST requests to our collaborator; one of which contains carlos' password.
 
-![](attachments/websockets-lab-2/file-20251124113610659.png)
+![](attachments/websockets-lab-2/file-20251124113610659.webp)
 
 ## Lesson learned
 

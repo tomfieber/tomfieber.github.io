@@ -1,5 +1,8 @@
 [
   "obsidian-custom-attachment-location",
   "table-editor-obsidian",
-  "obsidian-image-toolkit"
+  "obsidian-image-toolkit",
+  "templater-obsidian",
+  "image-converter",
+  "obsidian-git"
 ]

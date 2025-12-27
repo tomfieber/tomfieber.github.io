@@ -37,11 +37,11 @@ Priority: u=5, i
 
 However, this time if we try the same basic path traversal sequence we're blocked.
 
-![](attachments/path-traversal-lab-2/file-20251124113610556.png)
+![](attachments/path-traversal-lab-2/file-20251124113610556.webp)
 
 Since this lab treats the provided file name as being relative to a default working directory, we can just replace the filename with `/etc/passwd` to get the contents of the passwd file and solve the lab. 
 
-![](attachments/path-traversal-lab-2/file-20251124113610557.png)
+![](attachments/path-traversal-lab-2/file-20251124113610557.webp)
 
 ## Lesson learned
 

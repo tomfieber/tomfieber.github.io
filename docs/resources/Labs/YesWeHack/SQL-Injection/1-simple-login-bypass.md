@@ -11,4 +11,4 @@ This one is very simple. The payload is:
 pass' or '1'='1
 ```
 
-![](attachments/1-simple-login-bypass/file-20251124113610761.png)
+![](attachments/1-simple-login-bypass/file-20251124113610761.webp)

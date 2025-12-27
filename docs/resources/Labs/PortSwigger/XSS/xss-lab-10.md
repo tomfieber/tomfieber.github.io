@@ -21,11 +21,11 @@ https://0a38004604c0bef0826597e1003e0010.web-security-academy.net/product?produc
 
 Note that our input is reflected inside of a `<option>` tag.
 
-![](attachments/xss-lab-10/file-20251124113610700.png)
+![](attachments/xss-lab-10/file-20251124113610700.webp)
 
 Also observe the following JavaScript:
 
-![](attachments/xss-lab-10/file-20251124113610706.png)
+![](attachments/xss-lab-10/file-20251124113610706.webp)
 
 This is taking input from the `storeId` parameter, and is writing it to the page inside of an option tag using the `document.write` function. 
 
@@ -37,7 +37,7 @@ https://0a38004604c0bef0826597e1003e0010.web-security-academy.net/product?produc
 
 Our alert fires and the lab is solved. 
 
-![](attachments/xss-lab-10/file-20251124113610707.png)
+![](attachments/xss-lab-10/file-20251124113610707.webp)
 
 ## Lesson learned
 

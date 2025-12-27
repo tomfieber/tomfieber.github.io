@@ -13,11 +13,11 @@ This lab contains a stored cross-site scripting vulnerability in the comment fun
 
 Go to a blog post and fill out a comment. Use unique strings so it's easy to search for your string. Note that your website input is reflected in an `<a>` tag in the `href` attribute.
 
-![](attachments/xss-lab-08/file-20251124113610689.png)
+![](attachments/xss-lab-08/file-20251124113610689.webp)
 
 However, notice that if we try to escape that context, it doesn't work because double quotes and angle brackets are output encoded.
 
-![](attachments/xss-lab-08/file-20251124113610691.png)
+![](attachments/xss-lab-08/file-20251124113610691.webp)
 
 We can use the `javascript` scheme to bypass this restriction and get our alert function to trigger by entering the following payload in the website field:
 
@@ -26,7 +26,7 @@ javascript:alert(document.domain)
 ```
 
 
-![](attachments/xss-lab-08/file-20251124113610692.png)
+![](attachments/xss-lab-08/file-20251124113610692.webp)
 
 ## Lesson learned
 

@@ -20,11 +20,11 @@ To solve the lab, log in as the `administrator` user.
 
 Note that if we inject an always true condition in the tracking cookie, we get the "Welcome back" message.
 
-![](attachments/sqli-lab-6/file-20251124113610625.png)
+![](attachments/sqli-lab-6/file-20251124113610625.webp)
 
 If we change it to 1=2, then the message disappears. 
 
-![](attachments/sqli-lab-6/file-20251124113610627.png)
+![](attachments/sqli-lab-6/file-20251124113610627.webp)
 
 We can confirm the presence of the 'users' table with the following:
 
@@ -46,6 +46,6 @@ Cookie: TrackingId=DEJ3vcjdRcpt0BQs' AND (SELECT SUBSTRING(password,1,1) FROM us
 
 Add placeholders on the first 1 and the final character:
 
-![](attachments/sqli-lab-6/file-20251124113610628.png)
+![](attachments/sqli-lab-6/file-20251124113610628.webp)
 
 Running this in intruder and filtering by which responses display the "Welcome back" message will give us the administrator's password. Then we can log in as the admin and solve the lab.

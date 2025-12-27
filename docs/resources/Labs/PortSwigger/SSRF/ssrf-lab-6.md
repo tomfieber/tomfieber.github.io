@@ -15,7 +15,7 @@ To solve the lab, use this functionality to perform a blind SSRF attack against 
 
 Note that adding a collaborator payload in the referer header results in a request to our collaborator instance that contains a user-agent string.
 
-![](attachments/ssrf-lab-6/file-20251124113610644.png)
+![](attachments/ssrf-lab-6/file-20251124113610644.webp)
 
 Send this request to intruder.
 
@@ -49,7 +49,7 @@ Te: trailers
 
 After running this attack through intruder, notice that we get a DNS lookup to collaborator with the username as a subdomain.
 
-![](attachments/ssrf-lab-6/file-20251124113610645.png)
+![](attachments/ssrf-lab-6/file-20251124113610645.webp)
 
 Submit the username to solve the lab.
 

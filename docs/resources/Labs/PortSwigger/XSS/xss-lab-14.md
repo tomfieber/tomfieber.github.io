@@ -15,25 +15,25 @@ To solve the lab, perform a cross-site scripting attack that bypasses the WAF an
 
 Note that our search term is reflected in an `<h1>` tag.
 
-![](attachments/xss-lab-14/file-20251124113610709.png)
+![](attachments/xss-lab-14/file-20251124113610709.webp)
 
 If we try to break out of that h1 tag and use an img tag to trigger the print() function, then we get "Tag is not allowed".
 
-![](attachments/xss-lab-14/file-20251124113610711.png)
+![](attachments/xss-lab-14/file-20251124113610711.webp)
 
 Here, we can use PortSwigger's XSS cheatsheet to copy a list of all tags over to automate/intruder to see what tags might bypass this filter. 
 
 Here we see that `<body>` and custom tags are allowed. 
 
-![](attachments/xss-lab-14/file-20251124113610712.png)
+![](attachments/xss-lab-14/file-20251124113610712.webp)
 
 Trying the `<body>` tag we see that it is not blocked.
 
-![](attachments/xss-lab-14/file-20251124113610715.png)
+![](attachments/xss-lab-14/file-20251124113610715.webp)
 
 Repeating a similar process with the attributes, we find that several are allowed, however many require user interaction. One that does not is `onresize`.
 
-![](attachments/xss-lab-14/file-20251124113610716.png)
+![](attachments/xss-lab-14/file-20251124113610716.webp)
 
 Now that we have a tag and attribute that are allowed, we can create a payload to deliver to the victim.
 

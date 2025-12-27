@@ -38,7 +38,7 @@ stockApi=http%3A%2F%2F192.168.0.1%3A8080%2Fadmin
 
 Set a placeholder on the last octet and launch the attack. Most of the responses returned a 500 status code, so filter on the one(s) that are not 500s. 
 
-![](attachments/ssrf-lab-2/file-20251124113610633.png)
+![](attachments/ssrf-lab-2/file-20251124113610633.webp)
 
 We find that /admin is hosted on 192.168.0.112. Now we can send this to repeater and change the endpoint to `/admin/delete?username=carlos`. 
 

@@ -14,7 +14,7 @@ An SSRF vulnerability allows an attacker to make requests originating from the w
 - [ ] Check to see if the server can communicate with any other servers on the internal network
 - [ ] Try to get an external interaction to a server we control. Collaborator, interactsh, etc.
 
-![](attachments/ssrf-cheatsheet/file-20251124113610801.png)
+![](attachments/ssrf-cheatsheet/file-20251124113610801.webp)
 
 - [ ] Try other URI schemes, `file://`, etc.
 - [ ] Try looking for common images like `favicon.ico`

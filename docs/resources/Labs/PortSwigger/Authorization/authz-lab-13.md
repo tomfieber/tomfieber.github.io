@@ -39,7 +39,7 @@ Priority: u=0, i
 
 Also note that when we try to access the /admin endpoint while logged in as wiener, we get a 401 status code. 
 
-![](attachments/authz-lab-13/file-20251124113610516.png)
+![](attachments/authz-lab-13/file-20251124113610516.webp)
 
 Changing the URL here didn't work, so looking back at the request to upgrade a user, we see that the referer header indicates coming from the /admin endpoint itself. 
 

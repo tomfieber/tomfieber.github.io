@@ -14,7 +14,7 @@ Solve the lab by deleting the user `carlos`.
 
 Check the `robots.txt` file to find the location of the `/administrator-panel`.
 
-![](attachments/authz-lab-1/file-20251124113610506.png)
+![](attachments/authz-lab-1/file-20251124113610506.webp)
 
 Once there, just delete carlos and solve the lab.
 

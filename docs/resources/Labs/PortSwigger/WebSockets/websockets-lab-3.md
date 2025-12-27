@@ -21,14 +21,14 @@ I added a rule to add an `X-Forwarded-For: 1.1.1.1` header to all my requests to
 
 Also notice that if we try to enter our XSS payload directly in the chat window that it is properly output encoded, thereby causing the payload to not fire. 
 
-![](attachments/websockets-lab-3/file-20251124113610662.png)
+![](attachments/websockets-lab-3/file-20251124113610662.webp)
 
 Now, if we intercept the websocket chat request and modify it in the proxy, we get our alert box.
 
-![](attachments/websockets-lab-3/file-20251124113610664.png)
+![](attachments/websockets-lab-3/file-20251124113610664.webp)
 
 
-![](attachments/websockets-lab-3/file-20251124113610665.png)
+![](attachments/websockets-lab-3/file-20251124113610665.webp)
 
 And the lab is solved.
 

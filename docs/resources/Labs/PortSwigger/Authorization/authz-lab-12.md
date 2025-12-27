@@ -14,7 +14,7 @@ To solve the lab, log in using the credentials `wiener:peter` and exploit the 
 
 Logging in with the provided administrator credentials shows an option to upgrade a user. 
 
-![](attachments/authz-lab-12/file-20251124113610509.png)Upgrading the user is a two step process:
+![](attachments/authz-lab-12/file-20251124113610509.webp)Upgrading the user is a two step process:
 
 1. Select upgrade user
 2. Confirm the choice
@@ -69,5 +69,5 @@ Cookie: session=IYwt1ciNjesw8A5ooVXww8B8CzMJfaIu
 
 ```
 
-![](attachments/authz-lab-12/file-20251124113610510.png)
+![](attachments/authz-lab-12/file-20251124113610510.webp)
 

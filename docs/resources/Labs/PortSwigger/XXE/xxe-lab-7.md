@@ -26,7 +26,7 @@ We can use the following xinclude payload to retrieve the contents of the `/etc/
 
 In repeater, place that payload as the value of the `productId` parameter and send the request. 
 
-![](attachments/xxe-lab-7/file-20251124113610747.png)
+![](attachments/xxe-lab-7/file-20251124113610747.webp)
 
 This gets the `/etc/passwd` contents and solves the lab.
 

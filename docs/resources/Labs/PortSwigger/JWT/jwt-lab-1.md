@@ -55,17 +55,17 @@ Content-Length: 0
 
 The following shows the decoded JWT:
 
-![](attachments/jwt-lab-1/file-20251124113610533.png)
+![](attachments/jwt-lab-1/file-20251124113610533.webp)
 
 We can use a "none" algorithm attack to see if the application will accept a JWT with no signature. 
 
 The following shows the updated token. Note that I changed the user from "wiener" to "administrator".
 
-![](attachments/jwt-lab-1/file-20251124113610534.png)
+![](attachments/jwt-lab-1/file-20251124113610534.webp)
 
 Swapping out that new token in replay and changing the account id from "wiener" to "administrator" in the query string works for accessing the administrator's account. 
 
-![](attachments/jwt-lab-1/file-20251124113610535.png)
+![](attachments/jwt-lab-1/file-20251124113610535.webp)
 
 Now we can access the /admin/delete endpoint, and can delete carlos to solve the lab. 
 

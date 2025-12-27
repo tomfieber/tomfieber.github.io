@@ -37,13 +37,13 @@ Priority: u=5, i
 
 Notice that if we try to replace the entire path with only the path traversal sequences and the target file name, the application complains about it.
 
-![](attachments/path-traversal-lab-3/file-20251124113610563.png)
+![](attachments/path-traversal-lab-3/file-20251124113610563.webp)
 
 This suggests that we probably need the full path there.
 
 Since the application is validating that the start of the path, we know that we need to navigate back up three directories to the root directory to access the `/etc/passwd` file. 
 
-![](attachments/path-traversal-lab-3/file-20251124113610566.png)
+![](attachments/path-traversal-lab-3/file-20251124113610566.webp)
 
 This solves the lab. 
 

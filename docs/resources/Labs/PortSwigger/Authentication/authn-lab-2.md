@@ -18,11 +18,11 @@ First, we can log into our own account and see how the login flow works.
 
 After entering our credentials, we're presented a form to submit our MFA code. 
 
-![](attachments/authn-lab-2/file-20251124113610435.png)
+![](attachments/authn-lab-2/file-20251124113610435.webp)
 
 We can check the email for the MFA code.
 
-![](attachments/authn-lab-2/file-20251124113610436.png)
+![](attachments/authn-lab-2/file-20251124113610436.webp)
 The following request sends the MFA code
 
 ```text title="Sending the MFA code"
@@ -74,9 +74,9 @@ What happens if we try to bypass the second login request where we send the MFA 
 
 Note there is no POST request to the /login2 endpoint.
 
-![](attachments/authn-lab-2/file-20251124113610439.png)
+![](attachments/authn-lab-2/file-20251124113610439.webp)
 
 We're able to navigate directly past the MFA prompt and solve the lab.
 
-![](attachments/authn-lab-2/file-20251124113610441.png)
+![](attachments/authn-lab-2/file-20251124113610441.webp)
 
