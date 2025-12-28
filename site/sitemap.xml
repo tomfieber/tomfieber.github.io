@@ -220,6 +220,12 @@
         <loc>https://tomfieber.dev/resources/methodology/cheatsheets/xxe/</loc>
       </url>
       <url>
+        <loc>https://tomfieber.dev/resources/wordlists/general/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.dev/writeups/</loc>
+      </url>
+      <url>
         <loc>https://tomfieber.dev/writeups/bugforge/Shady-Oaks-(Tampering)/</loc>
       </url>
 </urlset>

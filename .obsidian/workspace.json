@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/writeups/index.md",
+                "file": "docs/resources/wordlists/general/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -172,19 +172,27 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "52bd90894475d4ad",
+  "active": "f9c867a85da717f7",
   "lastOpenFiles": [
-    "docs/resources/index.md",
+    "site/resources/wordlists/general/index.html",
+    "site/resources/wordlists/general",
+    "docs/resources/wordlists/general",
+    "site/resources/labs/YesWeHack/SQL-Injection/4-exploration/index.html",
+    "site/resources/labs/YesWeHack/SQL-Injection/4-exploration",
+    "site/resources/labs/YesWeHack/SQL-Injection/2-first-exfiltration/index.html",
+    "site/resources/labs/YesWeHack/SQL-Injection/2-first-exfiltration",
+    "site/resources/methodology/cheatsheets/csrf/index.html",
+    "site/resources/methodology/cheatsheets/csrf",
+    "site/resources/labs/PortSwigger/SQL-Injection/sqli-lab-2/index.html",
+    "site/resources/labs/PortSwigger/SQL-Injection/sqli-lab-2",
     "docs/writeups/index.md",
-    "docs/resources/methodology/cheatsheets/SQLi",
+    "docs/resources/wordlists/general/index.md",
+    "docs/resources/index.md",
     "docs/resources/methodology/cheatsheets/local-file-read.md",
     "docs/resources/methodology/cheatsheets/sqli.md",
     "docs/index.md",
     "site/attachments/index/image.png",
-    "site/attachments/index",
-    "site/attachments",
     "docs/attachments/index/image.png",
-    "docs/attachments/index",
     "docs/resources/methodology/cheatsheets/jwt.md",
     "docs/resources/methodology/cheatsheets/csrf.md",
     "docs/resources/methodology/cheatsheets/xxe.md",
@@ -198,12 +206,6 @@
     "docs/resources/methodology/cheatsheets/cors.md",
     "docs/resources/methodology/cheatsheets/xpath-injection.md",
     "docs/resources/methodology/cheatsheets/broken-access-control.md",
-    "site/resources/labs/YesWeHack/XPath-Injection/1-simple-login-bypass/index.html",
-    "site/resources/labs/YesWeHack/XPath-Injection/1-simple-login-bypass",
-    "site/resources/labs/YesWeHack/SQL-Injection/1-simple-login-bypass/index.html",
-    "site/resources/labs/YesWeHack/SQL-Injection/1-simple-login-bypass",
-    "site/resources/labs/YesWeHack/SQL-Injection/3-no-limit/index.html",
-    "site/resources/labs/YesWeHack/SQL-Injection/3-no-limit",
     "site/resources/methodology/cheatsheets/attachments/ssrf/file-20251228133155626.webp",
     "site/resources/methodology/cheatsheets/attachments/xss/file-20251228133208358.webp",
     "site/resources/methodology/cheatsheets/attachments/xss/file-20251228133208358 4.webp",
@@ -217,8 +219,6 @@
     "index.md",
     "docs/Resources/Methodology/Cheatsheets/ssrf-cheatsheet.md",
     "docs/Resources/Methodology/Cheatsheets/open-redirect-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/local-file-read.md",
-    "docs/Resources/Methodology/Cheatsheets/csrf-cheatsheet.md",
-    "docs/Resources/Methodology/Cheatsheets/cors-cheatsheet.md"
+    "docs/Resources/Methodology/Cheatsheets/local-file-read.md"
   ]
 }
