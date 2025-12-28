@@ -12,7 +12,7 @@ Multiple resources, how-tos, and methodologies. Constantly updated.
 - [ ] Check for default credentials
 - [ ] Check for rate limiting
 - [ ] Check for account lockout
-- [ ] Test for [SQLi](methodology/cheatsheets/sqli.md){ data-==previ==ew }
+- [ ] Test for [sqli](docs/resources/methodology/cheatsheets/sqli.md){ data-preview }
 - [ ] Test for NoSQLi
 - [ ] Check for username enumeration
 	- [ ] Error messages
