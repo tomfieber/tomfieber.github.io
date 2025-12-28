@@ -3,7 +3,7 @@ tags:
   - file-read
   - LFR
 ---
-# Local File Disclosure Cheatsheet
+# Local File Read
 
 Could allow an attacker to include a file by exploiting a dynamic file read mechanism. This occurs due to the use of user-supplied input without proper sanitization. 
 

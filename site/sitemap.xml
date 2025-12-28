@@ -1,222 +1,225 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://tomfieber.dev/references/</loc>
+        <loc>https://tomfieber.dev/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/</loc>
+        <loc>https://tomfieber.dev/resources/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/API/api-lab-4/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/API/api-lab-4/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Authentication/authn-lab-1/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Authentication/authn-lab-1/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Authentication/authn-lab-2/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Authentication/authn-lab-2/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Authentication/authn-lab-3/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Authentication/authn-lab-3/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Authentication/authn-lab-4/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Authentication/authn-lab-4/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Authentication/authn-lab-5/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Authentication/authn-lab-5/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Authentication/authn-lab-8/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Authentication/authn-lab-8/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Authentication/authn-lab-9/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Authentication/authn-lab-9/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Authorization/authz-lab-1/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Authorization/authz-lab-1/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Authorization/authz-lab-12/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Authorization/authz-lab-12/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Authorization/authz-lab-13/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Authorization/authz-lab-13/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Authorization/authz-lab-5/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Authorization/authz-lab-5/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Authorization/authz-lab-9/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Authorization/authz-lab-9/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/DOM-Based/dom-lab-4/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/DOM-Based/dom-lab-4/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/JWT/jwt-lab-1/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/JWT/jwt-lab-1/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/JWT/jwt-lab-2/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/JWT/jwt-lab-2/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/JWT/jwt-lab-3/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/JWT/jwt-lab-3/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/NoSQL-Injection/nosql-lab-2/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/NoSQL-Injection/nosql-lab-2/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Path-Traversal/path-traversal-lab-1/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Path-Traversal/path-traversal-lab-1/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Path-Traversal/path-traversal-lab-2/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Path-Traversal/path-traversal-lab-2/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Path-Traversal/path-traversal-lab-3/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Path-Traversal/path-traversal-lab-3/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Race-Conditions/race-lab-1/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Race-Conditions/race-lab-1/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/Race-Conditions/race-lab-2/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/Race-Conditions/race-lab-2/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/SQL-Injection/slqi-lab-7/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/SQL-Injection/slqi-lab-7/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/SQL-Injection/sqli-lab-1/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/SQL-Injection/sqli-lab-1/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/SQL-Injection/sqli-lab-2/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/SQL-Injection/sqli-lab-2/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/SQL-Injection/sqli-lab-3/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/SQL-Injection/sqli-lab-3/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/SQL-Injection/sqli-lab-4/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/SQL-Injection/sqli-lab-4/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/SQL-Injection/sqli-lab-5/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/SQL-Injection/sqli-lab-5/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/SQL-Injection/sqli-lab-6/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/SQL-Injection/sqli-lab-6/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/SSRF/ssrf-lab-1/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/SSRF/ssrf-lab-1/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/SSRF/ssrf-lab-2/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/SSRF/ssrf-lab-2/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/SSRF/ssrf-lab-3/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/SSRF/ssrf-lab-3/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/SSRF/ssrf-lab-6/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/SSRF/ssrf-lab-6/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/WebSockets/websocket-lab-1/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/WebSockets/websocket-lab-1/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/WebSockets/websockets-lab-2/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/WebSockets/websockets-lab-2/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/WebSockets/websockets-lab-3/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/WebSockets/websockets-lab-3/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/XSS/xss-lab-01/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/XSS/xss-lab-01/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/XSS/xss-lab-02/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/XSS/xss-lab-02/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/XSS/xss-lab-03/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/XSS/xss-lab-03/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/XSS/xss-lab-08/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/XSS/xss-lab-08/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/XSS/xss-lab-09/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/XSS/xss-lab-09/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/XSS/xss-lab-10/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/XSS/xss-lab-10/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/XSS/xss-lab-14/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/XSS/xss-lab-14/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/XSS/xss-lab-22/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/XSS/xss-lab-22/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/XXE/xxe-lab-1/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/XXE/xxe-lab-1/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/XXE/xxe-lab-3/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/XXE/xxe-lab-3/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/XXE/xxe-lab-7/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/XXE/xxe-lab-7/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/PortSwigger/XXE/xxe-lab-8/</loc>
+        <loc>https://tomfieber.dev/resources/labs/PortSwigger/XXE/xxe-lab-8/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/YesWeHack/SQL-Injection/1-simple-login-bypass/</loc>
+        <loc>https://tomfieber.dev/resources/labs/YesWeHack/SQL-Injection/1-simple-login-bypass/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/YesWeHack/SQL-Injection/2-first-exfiltration/</loc>
+        <loc>https://tomfieber.dev/resources/labs/YesWeHack/SQL-Injection/2-first-exfiltration/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/YesWeHack/SQL-Injection/3-no-limit/</loc>
+        <loc>https://tomfieber.dev/resources/labs/YesWeHack/SQL-Injection/3-no-limit/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/YesWeHack/SQL-Injection/4-exploration/</loc>
+        <loc>https://tomfieber.dev/resources/labs/YesWeHack/SQL-Injection/4-exploration/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/YesWeHack/SQL-Injection/5-injection-in-insert/</loc>
+        <loc>https://tomfieber.dev/resources/labs/YesWeHack/SQL-Injection/5-injection-in-insert/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/YesWeHack/SQL-Injection/6-filter-bypass/</loc>
+        <loc>https://tomfieber.dev/resources/labs/YesWeHack/SQL-Injection/6-filter-bypass/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/labs/YesWeHack/XPath-Injection/1-simple-login-bypass/</loc>
+        <loc>https://tomfieber.dev/resources/labs/YesWeHack/XPath-Injection/1-simple-login-bypass/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/OWASP-WSTG/wstg/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/OWASP-WSTG/wstg/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/authentication-cheatsheet/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/authentication/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/broken-access-control/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/broken-access-control/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/cors-cheatsheet/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/cors/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/csrf-cheatsheet/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/csrf/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/local-file-read/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/file-uploads/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/open-redirect-cheatsheet/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/jwt/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/recon-cheatsheet/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/local-file-read/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/sqli-cheatsheet/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/open-redirects/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/ssrf-cheatsheet/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/recon/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/upload-cheatsheet/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/sqli/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/xpath-injection/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/ssrf/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/xss-cheatsheet/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/xpath-injection/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/resources/methodology/cheatsheets/xxe-injection/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/xss/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/references/writeups/bugforge/shady-oaks-tampering/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/xxe/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.dev/writeups/bugforge/Shady-Oaks-(Tampering)/</loc>
       </url>
 </urlset>

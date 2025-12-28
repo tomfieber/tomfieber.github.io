@@ -382,3 +382,11 @@ quote = "octicons/quote-16"
 [project.markdown_extensions.pymdownx.keys]
 [project.markdown_extensions.pymdownx.mark]
 [project.markdown_extensions.pymdownx.tilde]
+
+[project.markdown_extensions.zensical.extensions.preview]
+configurations = [
+    { targets.include = [
+        "customization.md",
+        "setup/extensions/*"
+    ]}
+]
