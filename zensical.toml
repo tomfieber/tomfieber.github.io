@@ -9,8 +9,8 @@
 [project]
 
 # Repo
-repo_url = "https://github.com/tomfieber/tomfieber.github.io"
-repo_name = "tomfieber/tomfieber.github.io"
+repo_url = "https://github.com/tomfieber/references"
+repo_name = "tomfieber/references"
 
 # The site_name is shown in the page header and the browser window title
 #
