@@ -12,7 +12,7 @@ Multiple resources, how-tos, and methodologies. Constantly updated.
 - [ ] Check for default credentials
 - [ ] Check for rate limiting
 - [ ] Check for account lockout
-- [ ] Test for [SQLi](Methodology/Cheatsheets/sqli.md){ data-preview }
+- [ ] Test for [SQLi](methodology/cheatsheets/sqli.md){ data-preview }
 - [ ] Test for NoSQLi
 - [ ] Check for username enumeration
 	- [ ] Error messages
@@ -33,7 +33,7 @@ Multiple resources, how-tos, and methodologies. Constantly updated.
 - [ ] Is it using SAML/OAUTH?
 - [ ] Check for issues in client-side JS
 - [ ] Can we bypass auth with IP spoofing?
-- [ ] Check for [open redirects](Methodology/Cheatsheets/open-redirects.md){ data-preview }
+- [ ] Check for [open redirects](methodology/cheatsheets/open-redirects.md){ data-preview }
 
 ## Registration
 
@@ -47,26 +47,26 @@ Multiple resources, how-tos, and methodologies. Constantly updated.
 
 - [ ] Is the input reflected anywhere on the page?
 	- [ ] What is the context?
-- [ ] Check for [XSS](Methodology/Cheatsheets/xss.md){ data-preview }
-- [ ] Check for [SQLi](Methodology/Cheatsheets/sqli.md){ data-preview }
+- [ ] Check for [XSS](methodology/cheatsheets/xss.md){ data-preview }
+- [ ] Check for [SQLi](methodology/cheatsheets/sqli.md){ data-preview }
 - [ ] Check for SSTI
 - [ ] What is the content-type of the request?
-	- [ ] Check for [XXE](Methodology/Cheatsheets/xxe.md){ data-preview }
+	- [ ] Check for [XXE](methodology/cheatsheets/xxe.md){ data-preview }
 	- [ ] Try converting JSON to XML
 
 ## State-Changing Actions
 
-- [ ] Check for [CSRF](Methodology/Cheatsheets/csrf.md){ data-preview }
-- [ ] Check for [broken access control](Methodology/Cheatsheets/broken-access-control.md){ data-preview }
+- [ ] Check for [CSRF](methodology/cheatsheets/csrf.md){ data-preview }
+- [ ] Check for [broken access control](methodology/cheatsheets/broken-access-control.md){ data-preview }
 
 ## Sensitive data returned
 
-- [ ] Check [CORS](Methodology/Cheatsheets/cors.md){ data-preview }
+- [ ] Check [CORS](methodology/cheatsheets/cors.md){ data-preview }
 - [ ] Try to send a `POST` or `PUT` request with the data in the body to see if it's possible to update
 
 ## Query strings
 
-- [ ] Check for [local file read](Methodology/Cheatsheets/local-file-read.md){ data-preview } or file inclusion
+- [ ] Check for [local file read](methodology/cheatsheets/local-file-read.md){ data-preview } or file inclusion
 - [ ] Check for SQLi
 
 ## File Upload
