@@ -172,11 +172,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "52bd90894475d4ad",
+  "active": "f9c867a85da717f7",
   "lastOpenFiles": [
+    "docs/resources/methodology/cheatsheets/sqli",
     "docs/resources/methodology/cheatsheets/local-file-read.md",
     "docs/resources/index.md",
-    "docs/resources/methodology/cheatsheets/sqli.md",
+    "docs/resources/methodology/cheatsheets/sqli/index.md",
     "docs/index.md",
     "site/attachments/index/image.png",
     "site/attachments/index",

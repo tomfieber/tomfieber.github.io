@@ -12,7 +12,7 @@ Multiple resources, how-tos, and methodologies. Constantly updated.
 - [ ] Check for default credentials
 - [ ] Check for rate limiting
 - [ ] Check for account lockout
-- [ ] Test for [SQLi](methodology/cheatsheets/sqli.md){ data-preview }
+- [ ] Test for [SQLi](methodology/cheatsheets/sqli/index.md){ data-preview }
 - [ ] Test for NoSQLi
 - [ ] Check for username enumeration
 	- [ ] Error messages
@@ -48,7 +48,7 @@ Multiple resources, how-tos, and methodologies. Constantly updated.
 - [ ] Is the input reflected anywhere on the page?
 	- [ ] What is the context?
 - [ ] Check for [XSS](methodology/cheatsheets/xss.md){ data-preview }
-- [ ] Check for [SQLi](methodology/cheatsheets/sqli.md){ data-preview }
+- [ ] Check for [SQLi](methodology/cheatsheets/sqli/index.md){ data-preview }
 - [ ] Check for SSTI
 - [ ] What is the content-type of the request?
 	- [ ] Check for [XXE](methodology/cheatsheets/xxe.md){ data-preview }
