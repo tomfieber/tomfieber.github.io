@@ -316,8 +316,8 @@ code = "Jetbrains Mono"
 # ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.
 # ----------------------------------------------------------------------------
-[project.extra]
-homepage = "https://tomfieber.dev/"
+# [project.extra]
+# homepage = "https://tomfieber.dev/"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
@@ -337,7 +337,11 @@ link = "https://www.linkedin.com/in/thomasfieber"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/youtube"
-link = "https://www.youtube.com/@EagleRisingInformationSecurity"
+link = "https://www.youtube.com/@pawpawhacks"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/discord"
+link = "https://discord.gg/7zsQHWU6wy"
 
 # Tags
 [project.extra.tags]
