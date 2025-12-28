@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/index.md",
+                "file": "docs/writeups/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -172,11 +172,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f9c867a85da717f7",
+  "active": "52bd90894475d4ad",
   "lastOpenFiles": [
+    "docs/resources/index.md",
+    "docs/writeups/index.md",
     "docs/resources/methodology/cheatsheets/SQLi",
     "docs/resources/methodology/cheatsheets/local-file-read.md",
-    "docs/resources/index.md",
     "docs/resources/methodology/cheatsheets/sqli.md",
     "docs/index.md",
     "site/attachments/index/image.png",
@@ -203,7 +204,6 @@
     "site/resources/labs/YesWeHack/SQL-Injection/1-simple-login-bypass",
     "site/resources/labs/YesWeHack/SQL-Injection/3-no-limit/index.html",
     "site/resources/labs/YesWeHack/SQL-Injection/3-no-limit",
-    "site/resources/methodology/cheatsheets/sqli/index.html",
     "site/resources/methodology/cheatsheets/attachments/ssrf/file-20251228133155626.webp",
     "site/resources/methodology/cheatsheets/attachments/xss/file-20251228133208358.webp",
     "site/resources/methodology/cheatsheets/attachments/xss/file-20251228133208358 4.webp",
