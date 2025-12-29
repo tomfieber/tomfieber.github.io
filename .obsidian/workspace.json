@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/writeups/bugforge/Cheesy-Does-It-(IDOR)/index.md",
+                "file": "docs/resources/methodology/cheatsheets/recon.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "recon"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "0446df4f3f481ed6",
@@ -174,8 +175,8 @@
   },
   "active": "52bd90894475d4ad",
   "lastOpenFiles": [
-    "docs/writeups/bugforge/Shady-Oaks-(Tampering)/index.md",
     "docs/writeups/bugforge/Cheesy-Does-It-(IDOR)/index.md",
+    "docs/writeups/bugforge/Shady-Oaks-(Tampering)/index.md",
     "docs/resources/methodology/cheatsheets/broken-access-control.md",
     "docs/writeups/bugforge/Cheesy-Does-It-(IDOR)",
     "docs/writeups/index.md",
