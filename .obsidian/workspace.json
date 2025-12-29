@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/writeups/index.md",
+                "file": "docs/resources/methodology/cheatsheets/broken-access-control.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "broken-access-control"
             }
           }
         ]
@@ -174,6 +174,7 @@
   },
   "active": "52bd90894475d4ad",
   "lastOpenFiles": [
+    "docs/writeups/index.md",
     "docs/resources/index.md",
     "docs/resources/methodology/cheatsheets/sqli.md",
     "docs/resources/wordlists/general/index.md",
@@ -187,7 +188,6 @@
     "site/resources/methodology/cheatsheets/csrf/index.html",
     "site/resources/methodology/cheatsheets/csrf",
     "site/resources/labs/PortSwigger/SQL-Injection/sqli-lab-2/index.html",
-    "docs/writeups/index.md",
     "docs/resources/methodology/cheatsheets/local-file-read.md",
     "docs/index.md",
     "site/attachments/index/image.png",

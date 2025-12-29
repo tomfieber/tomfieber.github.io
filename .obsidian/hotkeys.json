@@ -17,15 +17,6 @@
       "key": "ArrowUp"
     }
   ],
-  "editor:cycle-list-checklist": [
-    {
-      "modifiers": [
-        "Alt",
-        "Mod"
-      ],
-      "key": "B"
-    }
-  ],
   "table-editor-obsidian:escape-table": [
     {
       "modifiers": [
@@ -33,6 +24,15 @@
         "Shift"
       ],
       "key": "Enter"
+    }
+  ],
+  "editor:cycle-list-checklist": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "1"
     }
   ]
 }
