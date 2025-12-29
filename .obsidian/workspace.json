@@ -151,8 +151,19 @@
               "icon": "lucide-list",
               "title": "Outline of ssrf-lab-1"
             }
+          },
+          {
+            "id": "e8a7daf7cddc5cb6",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",

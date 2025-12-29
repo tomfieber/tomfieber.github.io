@@ -28,6 +28,7 @@ tags:
 ### Shodan
 
 - [ ] Resources
+
     [GitHub - Dheerajmadhukar/karma_v2: ⡷⠂𝚔𝚊𝚛𝚖𝚊 𝚟𝟸⠐⢾ is a Passive Open Source Intelligence (OSINT) Automated Reconnaissance (framework)](https://github.com/Dheerajmadhukar/karma_v2)
     
     [GitHub - pirxthepilot/wtfis: Passive hostname, domain and IP lookup tool for non-robots](https://github.com/pirxthepilot/wtfis)
@@ -48,6 +49,7 @@ tags:
 ## Acquisitions
 
 - [ ] Resources
+
     [Technology & Data for Venture Capital, Corp Dev, Investment Banks](https://tracxn.com)
 
 !!! tip
@@ -67,18 +69,23 @@ tags:
     [EC2 Reachability Test](http://ec2-reachability.amazonaws.com/)
     
 - [ ] Check lordalfred’s IP ranges
+
     [GitHub - lord-alfred/ipranges: 🔨 List all IP ranges from: Google (Cloud & GoogleBot), Bing (Bingbot), Amazon (AWS), Microsoft, Oracle (Cloud), GitHub, Facebook (Meta), OpenAI (GPTBot) and other with daily updates.](https://github.com/lord-alfred/ipranges)
     
 - [ ] Use `caduceous` to scan all IP ranges for certificate information
+
     [GitHub - g0ldencybersec/Caduceus](https://github.com/g0ldencybersec/Caduceus)
     
 - [ ] Check `kaeferjaeger.gay`
+
     [Home • Directory Lister](https://kaeferjaeger.gay/)
     
 - [ ] Merklemap is good
+
     [Subdomain Search: Search, lookup and find subdomains | Merklemap](https://www.merklemap.com/)
     
 - [ ] Continuously monitoring certs
+
     [GitHub - g0ldencybersec/gungnir: CT Log Scanner](https://github.com/g0ldencybersec/gungnir)
     
 
@@ -98,11 +105,11 @@ What other domains use this DNS server?
     - Requires a sub
 - [ ] hakrevdns
 
-[GitHub - hakluke/hakrevdns: Small, fast tool for performing reverse DNS lookups en masse.](https://github.com/hakluke/hakrevdns)
+	[GitHub - hakluke/hakrevdns: Small, fast tool for performing reverse DNS lookups en masse.](https://github.com/hakluke/hakrevdns)
 
 - [ ] zdns is faster, but not as user friendly
 
-[GitHub - zmap/zdns: Fast DNS Lookup Library and CLI Tool](https://github.com/zmap/zdns)
+	[GitHub - zmap/zdns: Fast DNS Lookup Library and CLI Tool](https://github.com/zmap/zdns)
 
 - [ ] whoisxml
     
