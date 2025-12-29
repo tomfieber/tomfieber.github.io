@@ -46,7 +46,7 @@ tags:
     [GitHub - incogbyte/shosubgo: Small tool to Grab subdomains using Shodan api.](https://github.com/incogbyte/shosubgo)
     
 
-## Acquisitions
+### Acquisitions
 
 - [ ] Resources
 
@@ -58,7 +58,7 @@ tags:
 - [ ] Check `tracxn.com`
 - [ ] Check `pitchbook.com`
 
-## Cloud Recon ++
+### Cloud Recon ++
 
 - [ ] Connect to an IP and ask for the SSL cert
     - [ ] Parse the CN, OU, and SAN domains out of the certificate
@@ -89,7 +89,7 @@ tags:
     [GitHub - g0ldencybersec/gungnir: CT Log Scanner](https://github.com/g0ldencybersec/gungnir)
     
 
-## Reverse WHOIS
+### Reverse WHOIS
 
 Basically searching for any other sites that an org name or registrant email is listed on
 
@@ -97,7 +97,7 @@ Basically searching for any other sites that an org name or registrant email is 
 
 Flow might be **Reverse Whois → httpx**
 
-## Reverse DNS
+### Reverse DNS
 
 What other domains use this DNS server?
 
@@ -119,18 +119,18 @@ What other domains use this DNS server?
     ```html
     dig +short ns fisglobal.com
     ```
-## DMARC Analysis
+### DMARC Analysis
 
 - [ ] csprecon
 - [ ] crossdomain.xml
 - [ ] Historical JS/HTML
     - [ ] Waymore
 
-## Ad and Analytics relationships
+### Ad and Analytics relationships
 
 - [ ] Use builtwith and check relationships
 
-## Subdomain Scraping
+### Subdomain Scraping
 
 - [ ] Use `subfinder`
     
@@ -174,11 +174,11 @@ What other domains use this DNS server?
 
 [Bountycatch.py](http://Bountycatch.py) - Use for filtering out dupes.
 
-## Github Enumeration
+### Github Enumeration
 
 - [ ] git-subdomains
 
-[GitHub - gwen001/github-subdomains: Find subdomains on GitHub.](https://github.com/gwen001/github-subdomains)
+	[GitHub - gwen001/github-subdomains: Find subdomains on GitHub.](https://github.com/gwen001/github-subdomains)
 
 - [ ] Use multiple API keys/tokens for this
 	- [ ] Probably remove from subfinder if running with this.
@@ -191,7 +191,7 @@ Apexes → github-subdomains → trufflehog
 - [ ] Github dorking
 	- [ ] jhaddix github dorking list
 
-## Subdomain brute forcing
+### Subdomain brute forcing
 
 - [ ] puredns
 
@@ -202,7 +202,7 @@ Apexes → github-subdomains → trufflehog
 
 	[GitHub - trickest/resolvers: The most exhaustive list of reliable DNS resolvers.](https://github.com/trickest/resolvers)
 
-### Alteration and permutation BF
+#### Alteration and permutation BF
 
 - [ ] dnsgen
 
@@ -217,7 +217,7 @@ Apexes → github-subdomains → trufflehog
 	cat subdomains.txt | dnsgen - | puredns resolve --resolvers resolvers.txt
 	```
 
-## Vhost scanning
+### Vhost scanning
 
 - [ ] One IP hosting many web apps
 - [ ] Based on subdomain name and host header
