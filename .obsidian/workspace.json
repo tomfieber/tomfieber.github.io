@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/methodology/cheatsheets/broken-access-control.md",
+                "file": "docs/writeups/bugforge/Cheesy-Does-It-(IDOR)/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "broken-access-control"
+              "title": "index"
             }
           }
         ]
@@ -174,6 +174,10 @@
   },
   "active": "52bd90894475d4ad",
   "lastOpenFiles": [
+    "docs/writeups/bugforge/Shady-Oaks-(Tampering)/index.md",
+    "docs/writeups/bugforge/Cheesy-Does-It-(IDOR)/index.md",
+    "docs/resources/methodology/cheatsheets/broken-access-control.md",
+    "docs/writeups/bugforge/Cheesy-Does-It-(IDOR)",
     "docs/writeups/index.md",
     "docs/resources/index.md",
     "docs/resources/methodology/cheatsheets/sqli.md",
@@ -187,7 +191,6 @@
     "site/resources/labs/YesWeHack/SQL-Injection/2-first-exfiltration",
     "site/resources/methodology/cheatsheets/csrf/index.html",
     "site/resources/methodology/cheatsheets/csrf",
-    "site/resources/labs/PortSwigger/SQL-Injection/sqli-lab-2/index.html",
     "docs/resources/methodology/cheatsheets/local-file-read.md",
     "docs/index.md",
     "site/attachments/index/image.png",
@@ -204,7 +207,6 @@
     "docs/resources/methodology/cheatsheets/file-uploads.md",
     "docs/resources/methodology/cheatsheets/cors.md",
     "docs/resources/methodology/cheatsheets/xpath-injection.md",
-    "docs/resources/methodology/cheatsheets/broken-access-control.md",
     "site/resources/methodology/cheatsheets/attachments/ssrf/file-20251228133155626.webp",
     "site/resources/methodology/cheatsheets/attachments/xss/file-20251228133208358.webp",
     "site/resources/methodology/cheatsheets/attachments/xss/file-20251228133208358 4.webp",
@@ -212,7 +214,6 @@
     "site/resources/methodology/cheatsheets/attachments/xss/file-20251228133208358 2.webp",
     "site/resources/methodology/cheatsheets/attachments/xss/file-20251228133208358 1.webp",
     "docs/resources/methodology/cheatsheets/authentication.md",
-    "docs/writeups/bugforge/Shady-Oaks-(Tampering)/index.md",
     "docs/resources/labs/YesWeHack/test.md",
     "docs/resources/methodology/OWASP-WSTG/wstg.md",
     "index.md",
