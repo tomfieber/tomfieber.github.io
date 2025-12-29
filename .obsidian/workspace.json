@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/methodology/cheatsheets/sqli.md",
+                "file": "docs/writeups/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "sqli"
+              "title": "index"
             }
           }
         ]
@@ -174,6 +174,8 @@
   },
   "active": "52bd90894475d4ad",
   "lastOpenFiles": [
+    "docs/resources/index.md",
+    "docs/resources/methodology/cheatsheets/sqli.md",
     "docs/resources/wordlists/general/index.md",
     "site/resources/wordlists/general/index.html",
     "site/resources/wordlists/general",
@@ -186,9 +188,7 @@
     "site/resources/methodology/cheatsheets/csrf",
     "site/resources/labs/PortSwigger/SQL-Injection/sqli-lab-2/index.html",
     "docs/writeups/index.md",
-    "docs/resources/index.md",
     "docs/resources/methodology/cheatsheets/local-file-read.md",
-    "docs/resources/methodology/cheatsheets/sqli.md",
     "docs/index.md",
     "site/attachments/index/image.png",
     "docs/attachments/index/image.png",
