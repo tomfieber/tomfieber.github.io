@@ -162,12 +162,9 @@ What other domains use this DNS server?
 	!!! tip
 		Check [https://openintel.nl/news/20190115-umbrella/](https://openintel.nl/news/20190115-umbrella/)
 
-    <aside> 💡
-    
-    Make sure to use `-stats` with subfinder
-    
-    </aside>
-    
+	!!! tip
+		Make sure to use `-stats` with subfinder
+
 - [ ] One liner
     
     ```bash
