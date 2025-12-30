@@ -178,6 +178,9 @@
         <loc>https://tomfieber.dev/resources/methodology/OWASP-WSTG/wstg/</loc>
       </url>
       <url>
+        <loc>https://tomfieber.dev/resources/methodology/cheatsheets/api/</loc>
+      </url>
+      <url>
         <loc>https://tomfieber.dev/resources/methodology/cheatsheets/authentication/</loc>
       </url>
       <url>
@@ -224,6 +227,9 @@
       </url>
       <url>
         <loc>https://tomfieber.dev/writeups/</loc>
+      </url>
+      <url>
+        <loc>https://tomfieber.dev/writeups/bugforge/Cheesy-Does-It-(IDOR)/</loc>
       </url>
       <url>
         <loc>https://tomfieber.dev/writeups/bugforge/Shady-Oaks-(Tampering)/</loc>
