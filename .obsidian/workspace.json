@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/methodology/cheatsheets/api.md",
+                "file": "docs/resources/methodology/cheatsheets/broken-access-control.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "api"
+              "title": "broken-access-control"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "0446df4f3f481ed6",
@@ -186,6 +185,21 @@
   },
   "active": "52bd90894475d4ad",
   "lastOpenFiles": [
+    "docs/resources/methodology/cheatsheets/recon.md",
+    "docs/resources/methodology/cheatsheets/api.md",
+    "docs/resources/methodology/cheatsheets/Mobile-Testing/android.md",
+    "site/resources/methodology/cheatsheets/local-file-read/index.html",
+    "site/resources/methodology/cheatsheets/local-file-read",
+    "site/resources/methodology/cheatsheets/authentication/index.html",
+    "site/resources/methodology/cheatsheets/authentication",
+    "site/resources/labs/PortSwigger/Authorization/authz-lab-1/index.html",
+    "site/resources/labs/PortSwigger/Authorization/authz-lab-1",
+    "site/resources/labs/PortSwigger/JWT/jwt-lab-1/index.html",
+    "site/resources/labs/PortSwigger/JWT/jwt-lab-1",
+    "site/resources/labs/PortSwigger/Authorization/authz-lab-13/index.html",
+    "site/resources/labs/PortSwigger/Authorization/authz-lab-13",
+    "site/resources/methodology/cheatsheets/attachments/api/image-12.png",
+    "docs/resources/methodology/cheatsheets/attachments/api/image-12.png",
     "site/resources/methodology/cheatsheets/attachments/api/image-11.png",
     "docs/resources/methodology/cheatsheets/attachments/api/image-11.png",
     "site/resources/methodology/cheatsheets/attachments/api/image-10.png",
@@ -194,21 +208,6 @@
     "docs/resources/methodology/cheatsheets/attachments/api/image-9.png",
     "site/resources/methodology/cheatsheets/attachments/api/image-8.png",
     "docs/resources/methodology/cheatsheets/attachments/api/image-8.png",
-    "site/resources/methodology/cheatsheets/attachments/api/image-7.png",
-    "docs/resources/methodology/cheatsheets/attachments/api/image-7.png",
-    "site/resources/methodology/cheatsheets/attachments/api/image-6.png",
-    "site/resources/methodology/cheatsheets/attachments/api",
-    "docs/resources/methodology/cheatsheets/attachments/api",
-    "site/writeups/bugforge/Cheesy-Does-It-(IDOR)/index.html",
-    "site/writeups/bugforge/Cheesy-Does-It-(IDOR)",
-    "site/index.html",
-    "site/search.json",
-    "site/writeups/index.html",
-    "site/writeups/bugforge/Shady-Oaks-(Tampering)/index.html",
-    "site/resources/methodology/cheatsheets/api/index.html",
-    "site/resources/methodology/cheatsheets/api",
-    "docs/resources/methodology/cheatsheets/recon.md",
-    "docs/resources/methodology/cheatsheets/api.md",
     "docs/writeups/bugforge/Cheesy-Does-It-(IDOR)/index.md",
     "docs/writeups/bugforge/Shady-Oaks-(Tampering)/index.md",
     "docs/resources/methodology/cheatsheets/broken-access-control.md",
@@ -230,7 +229,6 @@
     "docs/resources/methodology/cheatsheets/authentication.md",
     "docs/resources/labs/YesWeHack/test.md",
     "docs/resources/methodology/OWASP-WSTG/wstg.md",
-    "index.md",
-    "docs/Resources/Methodology/Cheatsheets/ssrf-cheatsheet.md"
+    "index.md"
   ]
 }

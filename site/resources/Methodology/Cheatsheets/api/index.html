@@ -3509,6 +3509,8 @@
       
         
       
+        
+      
     
     
     
@@ -3812,6 +3814,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="OAuth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oauth-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAuth Flows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4216,6 +4235,98 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_2_16" id="__nav_2_3_2_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_3_2_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mobile Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mobile-Testing/android/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4882,6 +4993,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="OAuth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oauth-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAuth Flows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -5090,6 +5218,53 @@
 </ul>
 </details>
 <h3 id="oauth">OAuth</h3>
+<p>OAuth is a delegation protocol</p>
+<p>4 actors</p>
+<ul class="task-list">
+<li>Resource Owner<ul>
+<li>"The user"</li>
+</ul>
+</li>
+<li>Client<ul>
+<li>3rd party application</li>
+</ul>
+</li>
+<li>Authorization Server<ul>
+<li>The server that handles the delegation auth</li>
+</ul>
+</li>
+<li>
+<p>Resource Server</p>
+<ul>
+<li>Stores the resource owner's data - "the API"</li>
+</ul>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> OAuth delegates access to applications on a user's behalf</p>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Delegation != authorization</li>
+</ul>
+<h4 id="oauth-flows">OAuth Flows</h4>
+<p>OAuth Code Flow</p>
+<p><img alt="" src=".././attachments/api/image-12.png" /></p>
+<ol>
+<li>Client sends a <code>GET</code> request to the <code>/authorize</code> endpoint of the AS</li>
+<li>The AS redirects to an authentication service (e.g., Google)</li>
+<li>The authentication service redirects back to the AS after the user has authenticated using a pre-defined callback on the <strong>CLIENT</strong>. Request to <code>/callback</code> will contain <code>?code=1234&amp;state=MY_RANDOM_STATE</code>.</li>
+<li>Client makes a back-channel call to the <code>/token</code> endpoint on the AS<ol>
+<li>Contains:<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> grant_type</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> client_id</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> client_secret</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> code_verifier</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> code</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>AS checks all the values, and then returns a token to the client.</li>
+<li></li>
+</ol>
 
 
 

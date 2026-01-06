@@ -81,3 +81,29 @@
 
 ### OAuth
 
+OAuth is a delegation protocol
+
+4 actors
+
+- Resource Owner
+	- "The user"
+- Client
+	- 3rd party application
+- Authorization Server
+	- The server that handles the delegation auth
+- Resource Server
+	- Stores the resource owner's data - "the API"
+
+- [ ] OAuth delegates access to applications on a user's behalf
+- [ ] Delegation != authorization
+
+## API Recon
+
+Check for:
+
+- [ ] URL naming schemes
+- [ ] Look for the use of JSON or XML
+	- [ ] `/application/json`, `/application/xml`
+- [ ] Watch responses
+	- [ ] `{something}`
+- [ ] 
