@@ -28,3 +28,26 @@ tags:
 - [ ] Check for mass assignment vulnerabilities
 - [ ] Check SSO
 - [ ] Carefully review SAML/OAuth2
+
+## OAuth 2.0
+
+Enables applications to request limited access to a user's account on another application (e.g., log in with Google)
+
+- User does not need to give their credentials to the requesting application
+
+From PortSwigger
+
+- **Client application** - The website or web application that wants to access the user's data.
+- **Resource owner** - The user whose data the client application wants to access.
+- **OAuth service provider** - The website or application that controls the user's data and access to it. They support OAuth by providing an API for interacting with both an authorization server and a resource server.
+
+### Checks
+
+- [ ] Look for requests to `/authorization` in a web proxy
+	- [ ] Specifically look for `client_id`, `redirect_uri`, and `response_type` parameters
+- [ ] Check for:
+	- [ ] `/.well-known/oauth-authorization-server`
+	- [ ] `/well-known/openid-configuration`
+- [ ] Check for CSRF protection
+	- [ ] Make sure the request contains a `state` parameter
+	- [ ] 
