@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/resources/cheatsheets/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -185,6 +185,8 @@
   },
   "active": "c93b9868e062c61a",
   "lastOpenFiles": [
+    "docs/index.md",
+    "docs/resources/cheatsheets/index.md",
     "docs/resources/index.md",
     "docs/resources/cheatsheets/recon.md",
     "docs/resources/methodology/index.md",
@@ -228,8 +230,6 @@
     "docs/resources/labs/YesWeHack/SQL-Injection/4-exploration.md",
     "docs/resources/labs/YesWeHack/SQL-Injection/3-no-limit.md",
     "docs/resources/labs/YesWeHack/SQL-Injection/2-first-exfiltration.md",
-    "docs/resources/labs/YesWeHack/SQL-Injection/1-simple-login-bypass.md",
-    "docs/resources/labs/PortSwigger/SSRF/ssrf-lab-6.md",
-    "docs/resources/labs/PortSwigger/SSRF/ssrf-lab-3.md"
+    "docs/resources/labs/YesWeHack/SQL-Injection/1-simple-login-bypass.md"
   ]
 }
