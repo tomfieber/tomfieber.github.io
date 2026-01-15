@@ -7,6 +7,9 @@
         <loc>https://tomfieber.dev/resources/</loc>
       </url>
       <url>
+        <loc>https://tomfieber.dev/resources/OWASP-WSTG/</loc>
+      </url>
+      <url>
         <loc>https://tomfieber.dev/resources/labs/PortSwigger/API/api-lab-4/</loc>
       </url>
       <url>
@@ -175,7 +178,7 @@
         <loc>https://tomfieber.dev/resources/labs/YesWeHack/XPath-Injection/1-simple-login-bypass/</loc>
       </url>
       <url>
-        <loc>https://tomfieber.dev/resources/methodology/OWASP-WSTG/wstg/</loc>
+        <loc>https://tomfieber.dev/resources/methodology/</loc>
       </url>
       <url>
         <loc>https://tomfieber.dev/resources/methodology/cheatsheets/api/</loc>
