@@ -121,7 +121,7 @@ Note the mistake in the regex. The `.` character matches any character except fo
 
 https://regex101.com
 
-![](attachments/xss/file-20251228133208358.webp)
+![](../../../../site/resources/methodology/cheatsheets/attachments/xss/file-20251228133208358.webp)
 
 Additionally, there's nothing to indicate that the `ctfio.com` is the end of the string, so something like `test.ctfio.com.hacker.com` would also work.
 

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/cheatsheets/index.md",
+                "file": "docs/resources/methodology/cheatsheets/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -183,27 +183,28 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c93b9868e062c61a",
+  "active": "f9c867a85da717f7",
   "lastOpenFiles": [
+    "docs/resources/methodology",
     "docs/index.md",
-    "docs/resources/cheatsheets/index.md",
+    "docs/resources/methodology/cheatsheets/index.md",
     "docs/resources/index.md",
-    "docs/resources/cheatsheets/recon.md",
+    "docs/resources/methodology/cheatsheets/recon.md",
     "docs/resources/methodology/index.md",
-    "docs/resources/cheatsheets/xpath-injection.md",
-    "docs/resources/cheatsheets/ssrf.md",
-    "docs/resources/cheatsheets/sqli.md",
-    "docs/resources/cheatsheets/open-redirects.md",
-    "docs/resources/cheatsheets/local-file-read.md",
-    "docs/resources/cheatsheets/jwt.md",
-    "docs/resources/cheatsheets/file-uploads.md",
-    "docs/resources/cheatsheets/csrf.md",
-    "docs/resources/cheatsheets/cors.md",
-    "docs/resources/cheatsheets/broken-access-control.md",
-    "docs/resources/cheatsheets/authentication.md",
-    "docs/resources/cheatsheets/api.md",
-    "docs/resources/cheatsheets/xss.md",
-    "docs/resources/cheatsheets/xxe.md",
+    "docs/resources/methodology/cheatsheets/xpath-injection.md",
+    "docs/resources/methodology/cheatsheets/ssrf.md",
+    "docs/resources/methodology/cheatsheets/sqli.md",
+    "docs/resources/methodology/cheatsheets/open-redirects.md",
+    "docs/resources/methodology/cheatsheets/local-file-read.md",
+    "docs/resources/methodology/cheatsheets/jwt.md",
+    "docs/resources/methodology/cheatsheets/file-uploads.md",
+    "docs/resources/methodology/cheatsheets/csrf.md",
+    "docs/resources/methodology/cheatsheets/cors.md",
+    "docs/resources/methodology/cheatsheets/broken-access-control.md",
+    "docs/resources/methodology/cheatsheets/authentication.md",
+    "docs/resources/methodology/cheatsheets/api.md",
+    "docs/resources/methodology/cheatsheets/xss.md",
+    "docs/resources/methodology/cheatsheets/xxe.md",
     "docs/resources/labs/PortSwigger/DOM-Based/dom-lab-4.md",
     "docs/resources/labs/YesWeHack/SQL-Injection/6-filter-bypass.md",
     "site/resources/labs/PortSwigger/Authentication/authn-lab-1/index.html",
@@ -229,7 +230,6 @@
     "docs/resources/labs/YesWeHack/SQL-Injection/5-injection-in-insert.md",
     "docs/resources/labs/YesWeHack/SQL-Injection/4-exploration.md",
     "docs/resources/labs/YesWeHack/SQL-Injection/3-no-limit.md",
-    "docs/resources/labs/YesWeHack/SQL-Injection/2-first-exfiltration.md",
-    "docs/resources/labs/YesWeHack/SQL-Injection/1-simple-login-bypass.md"
+    "docs/resources/labs/YesWeHack/SQL-Injection/2-first-exfiltration.md"
   ]
 }
