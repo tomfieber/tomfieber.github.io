@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/methodology/cheatsheets/index.md",
+                "file": "docs/resources/methodology/cheatsheets/recon.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "recon"
             }
           }
         ]
@@ -183,11 +183,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f9c867a85da717f7",
+  "active": "c93b9868e062c61a",
   "lastOpenFiles": [
+    "docs/resources/methodology/cheatsheets/broken-access-control.md",
+    "docs/resources/methodology/cheatsheets/authentication.md",
+    "docs/resources/methodology/cheatsheets/api.md",
+    "docs/resources/methodology/_OWASP-WSTG/index.md",
+    "docs/resources/methodology/cheatsheets/index.md",
     "docs/resources/methodology",
     "docs/index.md",
-    "docs/resources/methodology/cheatsheets/index.md",
     "docs/resources/index.md",
     "docs/resources/methodology/cheatsheets/recon.md",
     "docs/resources/methodology/index.md",
@@ -200,9 +204,6 @@
     "docs/resources/methodology/cheatsheets/file-uploads.md",
     "docs/resources/methodology/cheatsheets/csrf.md",
     "docs/resources/methodology/cheatsheets/cors.md",
-    "docs/resources/methodology/cheatsheets/broken-access-control.md",
-    "docs/resources/methodology/cheatsheets/authentication.md",
-    "docs/resources/methodology/cheatsheets/api.md",
     "docs/resources/methodology/cheatsheets/xss.md",
     "docs/resources/methodology/cheatsheets/xxe.md",
     "docs/resources/labs/PortSwigger/DOM-Based/dom-lab-4.md",
@@ -216,7 +217,6 @@
     "site/resources/labs/YesWeHack/XPath-Injection/1-simple-login-bypass/index.html",
     "site/resources/labs/YesWeHack/XPath-Injection/1-simple-login-bypass",
     "site/resources/labs/PortSwigger/SQL-Injection/sqli-lab-2/index.html",
-    "site/resources/labs/PortSwigger/SQL-Injection/sqli-lab-2",
     "site/resources/labs/PortSwigger/Authentication/attachments/authn-lab-5/file-20251124113610481.webp",
     "site/resources/labs/PortSwigger/Authentication/attachments/authn-lab-5/file-20251124113610477.webp",
     "site/resources/labs/PortSwigger/Authentication/attachments/authn-lab-5/file-20251124113610475.webp",
