@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "methodology/cheatsheets/client-side-path-traversal.md",
+                "file": "methodology/cheatsheets/sqli.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "client-side-path-traversal"
+              "title": "sqli"
             }
           }
         ],
@@ -207,6 +207,7 @@
   "active": "0640297f3c82c72a",
   "lastOpenFiles": [
     "index.md",
+    "methodology/cheatsheets/client-side-path-traversal.md",
     "methodology/cheatsheets/prototype-pollution.md",
     "methodology/cheatsheets/xxe.md",
     "methodology/cheatsheets/tls.md",
@@ -224,7 +225,6 @@
     "methodology/cheatsheets/csrf.md",
     "methodology/cheatsheets/cors.md",
     "methodology/cheatsheets/command-injection.md",
-    "methodology/cheatsheets/client-side-path-traversal.md",
     "methodology/cheatsheets/broken-access-control.md",
     "methodology/cheatsheets/authentication.md",
     "methodology/cheatsheets/api.md"

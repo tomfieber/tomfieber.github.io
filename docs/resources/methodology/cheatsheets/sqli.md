@@ -192,7 +192,7 @@ test',sleep(5),'');-- -
 	
 	```
 
-??? "SQL injection attack, querying the database type and version on MySQL and Microsoft"
+??? example "SQL injection attack, querying the database type and version on MySQL and Microsoft"
 
 	1. Select a category and observe the request
 	2. Send the following request to get the version and solve the lab
