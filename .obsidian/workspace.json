@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/methodology/cheatsheets/oauth.md",
+                "file": "docs/resources/methodology/cheatsheets/local-file-read.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "oauth"
+              "title": "local-file-read"
             }
           }
         ],
@@ -200,13 +200,14 @@
   },
   "active": "17e5d1f77446fdce",
   "lastOpenFiles": [
-    "docs/resources/methodology/cheatsheets/jwt.md",
+    "docs/resources/methodology/cheatsheets/cors.md",
+    "docs/resources/methodology/cheatsheets/api.md",
+    "docs/resources/methodology/cheatsheets/authentication.md",
+    "docs/resources/methodology/cheatsheets/broken-access-control.md",
     "docs/resources/methodology/cheatsheets/oauth.md",
+    "docs/resources/methodology/cheatsheets/jwt.md",
     "docs/resources/methodology/_OWASP-WSTG/index.md",
     "docs/resources/methodology/cheatsheets/recon.md",
-    "docs/resources/methodology/cheatsheets/broken-access-control.md",
-    "docs/resources/methodology/cheatsheets/authentication.md",
-    "docs/resources/methodology/cheatsheets/api.md",
     "docs/resources/methodology/cheatsheets/index.md",
     "docs/resources/methodology",
     "docs/index.md",
@@ -219,7 +220,6 @@
     "docs/resources/methodology/cheatsheets/local-file-read.md",
     "docs/resources/methodology/cheatsheets/file-uploads.md",
     "docs/resources/methodology/cheatsheets/csrf.md",
-    "docs/resources/methodology/cheatsheets/cors.md",
     "docs/resources/methodology/cheatsheets/xss.md",
     "docs/resources/methodology/cheatsheets/xxe.md",
     "docs/resources/labs/PortSwigger/DOM-Based/dom-lab-4.md",
