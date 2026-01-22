@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "methodology/cheatsheets/sqli.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "sqli"
+              "title": "index"
             }
           }
         ],
@@ -206,6 +206,7 @@
   },
   "active": "0640297f3c82c72a",
   "lastOpenFiles": [
+    "methodology/cheatsheets/sqli.md",
     "index.md",
     "methodology/cheatsheets/client-side-path-traversal.md",
     "methodology/cheatsheets/prototype-pollution.md",
@@ -215,7 +216,6 @@
     "methodology/cheatsheets/xss.md",
     "methodology/cheatsheets/xpath-injection.md",
     "methodology/cheatsheets/ssrf.md",
-    "methodology/cheatsheets/sqli.md",
     "methodology/cheatsheets/recon.md",
     "methodology/cheatsheets/open-redirects.md",
     "methodology/cheatsheets/local-file-read.md",

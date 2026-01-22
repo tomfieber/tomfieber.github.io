@@ -1,4 +1,7 @@
-# Login page
+# General Checks
+
+These are just high-level reminders for different web app features. 
+## Login page
 
 - [ ] Does the app allow self-registration
 	- [ ] Two accounts with the same name
@@ -30,7 +33,7 @@
 - [ ] Can we bypass auth with IP spoofing?
 - [ ] Check for [open redirects](methodology/cheatsheets/open-redirects.md)
 
-# Registration
+## Registration
 
 - [ ] Can anyone register? 
 - [ ] What is required for registration?
@@ -40,7 +43,7 @@
 - [ ] Check for unicode normalization issues
 - [ ] Registration via API endpoints
 
-# User input
+## User input
 
 - [ ] Is the input reflected anywhere on the page?
 	- [ ] What is the context?
@@ -51,24 +54,24 @@
 	- [ ] Check for [XXE](methodology/cheatsheets/xxe.md)
 	- [ ] Try converting JSON to XML
 
-# State-Changing Actions
+## State-Changing Actions
 
 - [ ] Check for [CSRF](methodology/cheatsheets/csrf.md)
 - [ ] Check for [broken access control](methodology/cheatsheets/broken-access-control.md)
 
-# Sensitive data returned
+## Sensitive data returned
 
 - [ ] Check [CORS](methodology/cheatsheets/cors.md)
 - [ ] Try to send a `POST` or `PUT` request with the data in the body to see if it's possible to update
 
-# Query strings
+## Query strings
 
 - [ ] Check for file inclusion/[local file read](methodology/cheatsheets/local-file-read.md)
 - [ ] Check for SQLi
 - [ ] Check the network tab to see if the application is sending a secondary request to an internal API: `?user=123` --> `/api/user/123`
 	- [ ] Check for [client-side path traversal](methodology/cheatsheets/client-side-path-traversal.md)
 
-# File Upload
+## File Upload
 
 - [ ] What technologies are in use?
     - Important to note to understand what type of web shell might work.
