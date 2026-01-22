@@ -38,7 +38,7 @@ site_url = "https://tomfieber.dev"
 #
 # Read more: https://zensical.org/docs/setup/basics/#copyright
 copyright = """
-Copyright &copy; 2025 Tom Fieber
+Copyright &copy; 2026 Tom Fieber
 """
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
@@ -115,7 +115,7 @@ extra_css = ["stylesheets/extra.css"]
 language = "en"
 
 # Logo
-logo = "assets/kittyhacker-holiday.webp"
+logo = "assets/kittyhacker.webp"
 
 # Zensical provides a number of feature toggles that change the behavior
 # of the documentation site.
@@ -341,7 +341,7 @@ link = "https://www.youtube.com/@pawpawhacks"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/discord"
-link = "https://discord.gg/7zsQHWU6wy"
+link = "https://discord.gg/pjUUkw38mC"
 
 # Tags
 [project.extra.tags]
