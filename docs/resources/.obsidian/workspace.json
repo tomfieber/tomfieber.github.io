@@ -1,0 +1,301 @@
+{
+  "main": {
+    "id": "5324373015726ba8",
+    "type": "split",
+    "children": [
+      {
+        "id": "4509724f8bf84da7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          },
+          {
+            "id": "11ecf42c4c1d57da",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "methodology/cheatsheets/authentication.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "authentication"
+            }
+          },
+          {
+            "id": "54594431c8fb49c8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "methodology/cheatsheets/client-side-path-traversal.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "client-side-path-traversal"
+            }
+          },
+          {
+            "id": "ef301042f001f053",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "methodology/cheatsheets/xss.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "xss"
+            }
+          },
+          {
+            "id": "7fd0c515c4becada",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "methodology/cheatsheets/ssti.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ssti"
+            }
+          },
+          {
+            "id": "179bc886ebc8019d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "methodology/cheatsheets/xxe.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "xxe"
+            }
+          },
+          {
+            "id": "e0911ff2cb2d0fc6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          }
+        ],
+        "currentTab": 6
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "56d3082ee03c4375",
+    "type": "split",
+    "children": [
+      {
+        "id": "d8c30177d06589a6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ebb93cf66ff8027b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "a661910933c334f5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9f25ce7402de1a30",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "52e32e7888aad541",
+    "type": "split",
+    "children": [
+      {
+        "id": "6fc814371147cac0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0d66a10d53adcb35",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for index"
+            }
+          },
+          {
+            "id": "9d4952c9c73554ac",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from index"
+            }
+          },
+          {
+            "id": "c317deadca6a62bb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "57f2087684ee6c2d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "ec999e9992410bc7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "index.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of index"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "omnisearch:Omnisearch": false,
+      "homepage:Open homepage": false
+    }
+  },
+  "active": "e0911ff2cb2d0fc6",
+  "lastOpenFiles": [
+    "methodology/cheatsheets/prototype-pollution.md",
+    "methodology/cheatsheets/xxe.md",
+    "methodology/cheatsheets/tls.md",
+    "methodology/cheatsheets/ssti.md",
+    "methodology/cheatsheets/xss.md",
+    "methodology/cheatsheets/xpath-injection.md",
+    "methodology/cheatsheets/ssrf.md",
+    "methodology/cheatsheets/sqli.md",
+    "methodology/cheatsheets/recon.md",
+    "methodology/cheatsheets/open-redirects.md",
+    "methodology/cheatsheets/local-file-read.md",
+    "methodology/cheatsheets/jwt.md",
+    "methodology/cheatsheets/index.md",
+    "methodology/cheatsheets/file-uploads.md",
+    "methodology/cheatsheets/csrf.md",
+    "methodology/cheatsheets/cors.md",
+    "methodology/cheatsheets/command-injection.md",
+    "methodology/cheatsheets/client-side-path-traversal.md",
+    "methodology/cheatsheets/broken-access-control.md",
+    "methodology/cheatsheets/authentication.md",
+    "methodology/cheatsheets/api.md",
+    "index.md"
+  ]
+}

@@ -5,57 +5,108 @@ tags:
   - BOLA
   - IDOR
 ---
-# Broken Access Control
-## Definition of Terms
+# Broken Access Control/IDOR
 
-## Checks
-
-- [ ] What is in scope?
-- [ ] Subdomain recon
-	- [ ] What is Internet facing?
-- [ ] What is on each subdomain
-	- [ ] Search engine dorking
-	- [ ] gau/waymore
-	- [ ] GitHub
-	- [ ] Fuzzing - can we fuzz URI paths?
-- [ ] Manually walk the application
-	- [ ] Web browser
-	- [ ] Load JS files
-	- [ ] Find hidden pages/endpoints
-- [ ] How can I register?
-	- [ ] Create an account or sign up for service
-	- [ ] Are you willing to buy things?
-	- [ ] Make transactions
-		- Can I make transactions for other users? 
-		- Can I see previous orders/payment details/etc.?
-- [ ] Understand how the application works
-    - [ ] How does it fetch/create/modify/delete data?
-- [ ] Read JS until your eyes bleed
+- [ ] Understand the context of the app
+- [ ] Read all client-side JS; check for:
 	- [ ] Passwords, credentials, secrets
 	- [ ] API keys
 	- [ ] Paths, URIs, API structure
 	- [ ] Object identifiers
-- [ ] Look for numerical id's in requests
-    - [ ] URL query string
-    - [ ] POST body
-    - [ ] etc.
-- [ ] Create a list of interesting object ID
+- [ ] Find the JSON/API endpoints (not the rendered HTML)
+- [ ] Create a list of interesting object IDs
 	- [ ] Request params
 	- [ ] Response params
 	- [ ] URI path params
 	- [ ] Headers
-- [ ] Try object IDs as params
-	- [ ] Swap values
-- [ ] Test with two users and swap ids to see if you can access the other user's data
-- [ ] Look for any encrypted/encoded data that may be used to fetch data.
-    - [ ] Try to understand how it's created and see if we can spoof it
-- [ ] Check to see if there is a way to leak the UUID of the other user, if used.
-    - [ ] Report a user
-    - [ ] Look at the profile image
-    - [ ] Any other way of interacting with a user
-- [ ] Find the open windows if the front door is shut
+- [ ] Test for type confusion -- int --> str, str --> int, etc.
+- [ ] Try quiet tweaks first: trailing slash, double slash, subpaths, query params.
+- [ ] Test version downgrades - old APIs are gold.
+- [ ] Try type/format tricks: strings, leading zeros, hex.
+- [ ] Try encoding tricks: `%00`, `%20`, control chars.
+- [ ] Combine tricks when single tests fail.
+	- [ ] Downgrade + encoded char + path tweak
+	- [ ] Try something like `/api/v2/users/5%20/`
+- [ ] Log request + response (status + body snippet) - that becomes your PoC.
+- [ ] If UUIDs are used, check if they're leaked in other parts of the app or online (e.g., GitHub, etc.)
 
-!!! warning 
-	Not every IDOR/BAC constitutes a security vulnerability. If the only thing leaked is information that is already accessible on the site, then it's not a valid vulnerability. Be sure to carefully review the impact for any IDOR/BAC you identify to make sure that it's an actual vulnerability.
+## Trailing slashes
 
+```
+/api/v3/users/5/
+```
+
+## Double slashes
+
+```
+/api/v3//users//5
+```
+
+## Version downgrade
+
+If the original request is using `v3` try downgrading to `v2`
+
+```
+/api/v3/users/5
+/api/v2/users/5
+```
+
+## Subpath/Endpoint variations
+
+Try adding other endpoints like `/profile` `/account`, `/details`, etc.
+
+## Try adding additional users
+
+```
+/api/v3/users?id=5,6
+```
+
+## Query vs. Param
+
+```
+/api/v3/users/5
+/api/v3/users?id=5
+```
+
+## Type confusion
+
+Check if there are differences in the parsing engine
+
+```
+/api/v3/users/5
+/api/v3/users/"5"
+/api/v3/users/abc5
+```
+
+## Leading zeros / Hex / other formats
+
+Check if different numeric formats bypass the 403
+
+```
+/api/v3/users/025
+/api/v3/users/0x19
+```
+
+## NULL / termination / control characters
+
+Check to see if control characters can bypass checks
+
+```
+/api/v3/users/5%00
+```
+
+## Header / proxy-based bypass
+
+```
+GET /api/v3/users/5
+Host: target 
+X-Original-URL: /api/v3/users/4
+```
+
+## Unicode  / encoded space
+
+```
+/api/v3/users/5
+/api/v3/users/5%20
+```
 

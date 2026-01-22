@@ -1,0 +1,8 @@
+{
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "methodology/cheatsheets",
+  "attachmentFolderPath": "methodology/cheatsheets/attachments",
+  "alwaysUpdateLinks": true
+}

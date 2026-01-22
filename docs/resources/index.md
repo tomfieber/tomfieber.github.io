@@ -1,9 +1,4 @@
-# Resources
-
-Multiple resources, how-tos, and methodologies. Constantly updated.
-
-
-## Login page
+# Login page
 
 - [ ] Does the app allow self-registration
 	- [ ] Two accounts with the same name
@@ -12,7 +7,7 @@ Multiple resources, how-tos, and methodologies. Constantly updated.
 - [ ] Check for default credentials
 - [ ] Check for rate limiting
 - [ ] Check for account lockout
-- [ ] Test for [SQLi](methodology/cheatsheets/sqli.md){ data-preview }
+- [ ] Test for [SQLi](methodology/cheatsheets/sqli.md)
 - [ ] Test for NoSQLi
 - [ ] Check for username enumeration
 	- [ ] Error messages
@@ -33,43 +28,47 @@ Multiple resources, how-tos, and methodologies. Constantly updated.
 - [ ] Is it using SAML/OAUTH?
 - [ ] Check for issues in client-side JS
 - [ ] Can we bypass auth with IP spoofing?
-- [ ] Check for [open redirects](methodology/cheatsheets/open-redirects.md){ data-preview }
+- [ ] Check for [open redirects](methodology/cheatsheets/open-redirects.md)
 
-## Registration
+# Registration
 
 - [ ] Can anyone register? 
 - [ ] What is required for registration?
+	- [ ] email, phone number, etc.
+	- [ ] Is it strictly enforced?
 - [ ] Check for mass assignment
 - [ ] Check for unicode normalization issues
 - [ ] Registration via API endpoints
 
-## User input
+# User input
 
 - [ ] Is the input reflected anywhere on the page?
 	- [ ] What is the context?
-- [ ] Check for [XSS](methodology/cheatsheets/xss.md){ data-preview }
-- [ ] Check for [SQLi](methodology/cheatsheets/sqli.md){ data-preview }
-- [ ] Check for SSTI
+- [ ] Check for [XSS](methodology/cheatsheets/xss.md)
+- [ ] Check for [SQLi](methodology/cheatsheets/sqli.md)
+- [ ] Check for [SSTI](methodology/cheatsheets/ssti.md)
 - [ ] What is the content-type of the request?
-	- [ ] Check for [XXE](methodology/cheatsheets/xxe.md){ data-preview }
+	- [ ] Check for [XXE](methodology/cheatsheets/xxe.md)
 	- [ ] Try converting JSON to XML
 
-## State-Changing Actions
+# State-Changing Actions
 
-- [ ] Check for [CSRF](methodology/cheatsheets/csrf.md){ data-preview }
-- [ ] Check for [broken access control](methodology/cheatsheets/broken-access-control.md){ data-preview }
+- [ ] Check for [CSRF](methodology/cheatsheets/csrf.md)
+- [ ] Check for [broken access control](methodology/cheatsheets/broken-access-control.md)
 
-## Sensitive data returned
+# Sensitive data returned
 
-- [ ] Check [CORS](methodology/cheatsheets/cors.md){ data-preview }
+- [ ] Check [CORS](methodology/cheatsheets/cors.md)
 - [ ] Try to send a `POST` or `PUT` request with the data in the body to see if it's possible to update
 
-## Query strings
+# Query strings
 
-- [ ] Check for [local file read](methodology/cheatsheets/local-file-read.md){ data-preview } or file inclusion
+- [ ] Check for file inclusion/[local file read](methodology/cheatsheets/local-file-read.md)
 - [ ] Check for SQLi
+- [ ] Check the network tab to see if the application is sending a secondary request to an internal API: `?user=123` --> `/api/user/123`
+	- [ ] Check for [client-side path traversal](methodology/cheatsheets/client-side-path-traversal.md)
 
-## File Upload
+# File Upload
 
 - [ ] What technologies are in use?
     - Important to note to understand what type of web shell might work.
