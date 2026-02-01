@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/methodology/cheatsheets/local-file-read.md",
+                "file": "docs/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "local-file-read"
+              "title": "index"
             }
           }
         ],
@@ -172,8 +172,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           }
         ],
@@ -200,6 +200,9 @@
   },
   "active": "17e5d1f77446fdce",
   "lastOpenFiles": [
+    "docs/resources/index.md",
+    "docs/index.md",
+    "docs/resources/methodology/cheatsheets/local-file-read.md",
     "docs/resources/methodology/cheatsheets/cors.md",
     "docs/resources/methodology/cheatsheets/api.md",
     "docs/resources/methodology/cheatsheets/authentication.md",
@@ -210,14 +213,11 @@
     "docs/resources/methodology/cheatsheets/recon.md",
     "docs/resources/methodology/cheatsheets/index.md",
     "docs/resources/methodology",
-    "docs/index.md",
-    "docs/resources/index.md",
     "docs/resources/methodology/index.md",
     "docs/resources/methodology/cheatsheets/xpath-injection.md",
     "docs/resources/methodology/cheatsheets/ssrf.md",
     "docs/resources/methodology/cheatsheets/sqli.md",
     "docs/resources/methodology/cheatsheets/open-redirects.md",
-    "docs/resources/methodology/cheatsheets/local-file-read.md",
     "docs/resources/methodology/cheatsheets/file-uploads.md",
     "docs/resources/methodology/cheatsheets/csrf.md",
     "docs/resources/methodology/cheatsheets/xss.md",
