@@ -198,13 +198,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "17e5d1f77446fdce",
+  "active": "f9c867a85da717f7",
   "lastOpenFiles": [
-    "docs/resources/index.md",
     "docs/index.md",
+    "docs/index.md",
+    "docs/resources/methodology/cheatsheets/api.md",
+    "docs/resources/methodology/cheatsheets/xxe.md",
     "docs/resources/methodology/cheatsheets/local-file-read.md",
     "docs/resources/methodology/cheatsheets/cors.md",
-    "docs/resources/methodology/cheatsheets/api.md",
     "docs/resources/methodology/cheatsheets/authentication.md",
     "docs/resources/methodology/cheatsheets/broken-access-control.md",
     "docs/resources/methodology/cheatsheets/oauth.md",
@@ -221,7 +222,6 @@
     "docs/resources/methodology/cheatsheets/file-uploads.md",
     "docs/resources/methodology/cheatsheets/csrf.md",
     "docs/resources/methodology/cheatsheets/xss.md",
-    "docs/resources/methodology/cheatsheets/xxe.md",
     "docs/resources/labs/PortSwigger/DOM-Based/dom-lab-4.md",
     "docs/resources/labs/YesWeHack/SQL-Injection/6-filter-bypass.md",
     "site/resources/labs/PortSwigger/Authentication/authn-lab-1/index.html",
