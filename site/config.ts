@@ -57,7 +57,7 @@ export const SITE: SiteConfig = {
   ogImage: 'opImage.png', // Path to your default OG image in the public directory
   lang: 'en-US',
   base: '/',
-  website: 'https://tomfieber.github.io',
+  website: 'https://tomfieber.dev',
   social: {
     x: 'https://x.com/pawpawhacks',
     github: 'https://github.com/tomfieber',
