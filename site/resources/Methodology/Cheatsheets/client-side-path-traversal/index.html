@@ -12,13 +12,13 @@
         <meta name="author" content="Tom Fieber">
       
       
-        <link rel="canonical" href="https://tomfieber.dev/resources/methodology/cheatsheets/xpath-injection/">
+        <link rel="canonical" href="https://tomfieber.dev/resources/methodology/cheatsheets/client-side-path-traversal/">
       
       
-        <link rel="prev" href="../tls/">
+        <link rel="prev" href="../broken-access-control/">
       
       
-        <link rel="next" href="../xss/">
+        <link rel="next" href="../command-injection/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>XPath Injection - Tom Fieber (@pawpawhacks)</title>
+        <title>Client-Side Path Traversal - Tom Fieber (@pawpawhacks)</title>
       
     
     
@@ -152,7 +152,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#xpath-injection" class="md-skip">
+        <a href="#client-side-path-traversal" class="md-skip">
           Skip to content
         </a>
       
@@ -185,7 +185,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              XPath Injection
+              Client-Side Path Traversal
             
           </span>
         </div>
@@ -778,10 +778,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../client-side-path-traversal/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client-Side Path Traversal
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -797,6 +824,38 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cspt-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSPT Checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1198,19 +1257,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xpath-injection/" class="md-nav__link">
         
   
   
@@ -1226,7 +1276,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1469,6 +1518,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cspt-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSPT Checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1577,41 +1645,25 @@
   
 
 
-<h1 id="xpath-injection">XPath Injection</h1>
-<p>XPath injection is similar to SQL injection except for:</p>
-<ul>
-<li>It can only be used to read data, not to insert data</li>
-<li>It does not implement any access control, so if you find an injection point it's likely possible to get the whole document.</li>
+<h1 id="client-side-path-traversal">Client-Side Path Traversal</h1>
+<h2 id="cspt-checks">CSPT Checks</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Check the network tab for requests to API endpoints</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Carefully review the client-side code and AJAX requests to identify other endpoints that may be useful</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Check to see what other methods are being used with endpoints</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Check for chains with other vulns --<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Is anything reflected on other endpoints? Try <a href="../xss/">XSS</a></li>
+</ul>
+</li>
 </ul>
 
 
-  <nav class="md-tags" >
-    
-      
-      
-      
-      
-        <span class="md-tag">xpath</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">injection</span>
-      
-    
-  </nav>
 
 
 
 
 
 
-
-
-  
-  
 
 
 
@@ -1643,7 +1695,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../tls/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TLS Handshake">
+          <a href="../broken-access-control/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Broken Access Control&#x2f;IDOR">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
@@ -1653,20 +1705,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                TLS Handshake
+                Broken Access Control/IDOR
               </div>
             </div>
           </a>
         
         
           
-          <a href="../xss/" class="md-footer__link md-footer__link--next" aria-label="Next: Cross-Site Scripting (XSS)">
+          <a href="../command-injection/" class="md-footer__link md-footer__link--next" aria-label="Next: Command Injection">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Cross-Site Scripting (XSS)
+                Command Injection
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -12,13 +12,13 @@
         <meta name="author" content="Tom Fieber">
       
       
-        <link rel="canonical" href="https://tomfieber.dev/resources/methodology/cheatsheets/xpath-injection/">
+        <link rel="canonical" href="https://tomfieber.dev/resources/methodology/cheatsheets/oauth/">
       
       
-        <link rel="prev" href="../tls/">
+        <link rel="prev" href="../local-file-read/">
       
       
-        <link rel="next" href="../xss/">
+        <link rel="next" href="../open-redirects/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>XPath Injection - Tom Fieber (@pawpawhacks)</title>
+        <title>OAuth 2.0 - Tom Fieber (@pawpawhacks)</title>
       
     
     
@@ -152,7 +152,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#xpath-injection" class="md-skip">
+        <a href="#oauth-20" class="md-skip">
           Skip to content
         </a>
       
@@ -185,7 +185,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              XPath Injection
+              OAuth 2.0
             
           </span>
         </div>
@@ -974,10 +974,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../oauth/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAuth 2.0
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -993,6 +1020,143 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reconnaissance-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reconnaissance &amp; Discovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization-request-manipulation-authorize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Request Manipulation (/authorize)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization Request Manipulation (&#x2f;authorize)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseline-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Baseline Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-logic-bypasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain &amp; Logic Bypasses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntactic-manipulation-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntactic Manipulation &amp; Encoding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-pollution-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter Pollution &amp; Chaining
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-exchange-handling-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token Exchange &amp; Handling (/token)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-validation-session-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token Validation &amp; Session Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-takeover-pre-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Takeover (Pre-Authentication)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pkce-downgrade-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The PKCE Downgrade Attack
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1198,19 +1362,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xpath-injection/" class="md-nav__link">
         
   
   
@@ -1226,7 +1381,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1469,6 +1623,130 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reconnaissance-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reconnaissance &amp; Discovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization-request-manipulation-authorize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Request Manipulation (/authorize)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization Request Manipulation (&#x2f;authorize)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseline-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Baseline Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-logic-bypasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain &amp; Logic Bypasses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntactic-manipulation-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntactic Manipulation &amp; Encoding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-pollution-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter Pollution &amp; Chaining
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-exchange-handling-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token Exchange &amp; Handling (/token)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-validation-session-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token Validation &amp; Session Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-takeover-pre-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Takeover (Pre-Authentication)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pkce-downgrade-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The PKCE Downgrade Attack
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1577,11 +1855,166 @@
   
 
 
-<h1 id="xpath-injection">XPath Injection</h1>
-<p>XPath injection is similar to SQL injection except for:</p>
+<h1 id="oauth-20">OAuth 2.0</h1>
+<h2 id="reconnaissance-discovery">Reconnaissance &amp; Discovery</h2>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Identify the Grant Type:</strong> Determine if the application uses Authorization Code, Implicit (legacy), Client Credentials, or Resource Owner Password Credentials.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Map Endpoints:</strong> Locate the Authorization Endpoint (<code>/authorize</code>), Token Endpoint (<code>/token</code>), and UserInfo Endpoint (<code>/userinfo</code>).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Analyze Client Parameters:</strong> Identify the <code>client_id</code> and check if <code>client_secret</code> is visible in client-side code (mobile/SPA).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Review Discovery Document:</strong> Check <code>/.well-known/openid-configuration</code> or <code>/.well-known/oauth-authorization-server</code> for supported scopes, claims, and endpoints.</p>
+</li>
+</ul>
+<h2 id="authorization-request-manipulation-authorize">Authorization Request Manipulation (<code>/authorize</code>)</h2>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Test <code>redirect_uri</code> Validation (Exact Match):</strong> Modify the <code>redirect_uri</code> to a domain you control.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Test <code>redirect_uri</code> Traversal:</strong> Attempt path traversal (e.g., <code>https://site.com/callback/../../attacker.com</code>).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Test <code>redirect_uri</code> Fuzzy Matching:</strong> Check if subdomains or related domains are accepted (e.g., <code>https://attacker.site.com</code> or <code>https://site.com.attacker.com</code>).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Check for Open Redirects:</strong> Use an open redirect on the trusted domain in the <code>redirect_uri</code> parameter (e.g., <code>https://site.com/logout?next=https://attacker.com</code>).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Test for CSRF (Missing <code>state</code>):</strong> Remove the <code>state</code> parameter and replay the flow.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Test for CSRF (Static <code>state</code>):</strong> Verify if the <code>state</code> parameter is random and unique per session.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Scope Escalation:</strong> Manually add privileged scopes (e.g., <code>admin</code>, <code>write</code>, <code>all</code>) to the authorization request.</p>
+</li>
+</ul>
+<details class="example">
+<summary>Testing redirect_uri</summary>
+<h3 id="baseline-validation">Baseline Validation</h3>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Identify the Allowed URI:</strong> Capture a legitimate authorization request and note the exact <code>redirect_uri</code> value.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Verify Exact Match Enforcement:</strong> Change a single character in the path or subdomain to see if the server rejects it (e.g., change <code>/callback</code> to <code>/callbac</code>).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Check HTTP vs. HTTPS:</strong> Change the protocol to <code>http://</code> to see if the server allows downgrades (unless <code>localhost</code> is used).</p>
+</li>
+</ul>
+<h3 id="domain-logic-bypasses">Domain &amp; Logic Bypasses</h3>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Test Subdomain Wildcards:</strong> Attempt to use a different subdomain on the trusted domain (e.g., <code>api.target.com</code> instead of <code>app.target.com</code>).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Test "Ends With" Logic:</strong> Register a domain that ends with the target's name (e.g., <code>target.com.attacker.com</code>) and test it.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Test "Contains" Logic:</strong> Create a directory structure that mimics the target domain (e.g., <code>attacker.com/target.com/callback</code>).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Test IPv6/IP Decimal:</strong> Replace the domain name with its IP address, decimal IP representation, or IPv6 literal <code>[::1]</code>.</p>
+</li>
+</ul>
+<h3 id="syntactic-manipulation-encoding">Syntactic Manipulation &amp; Encoding</h3>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>The "@" Bypass (Authority Confusion):</strong> Inject <code>target.com@attacker.com</code> to treat the target domain as a username credential for the attacker's site.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Double URL Encoding:</strong> Encode characters like <code>.</code> (%252E) and <code>/</code> (%252F) to bypass filters that decode only once.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Null Byte Injection:</strong> Append <code>%00</code> to the end of a valid domain followed by your payload (e.g., <code>target.com%00.attacker.com</code>).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Whitespace Injection:</strong> Append tabs (<code>%09</code>), newlines (<code>%0a</code>), or spaces (<code>%20</code>) to the URI.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Backslash Conversion:</strong> Replace forward slashes <code>/</code> with backslashes <code>\</code> (common bypass for Windows-based servers).</p>
+</li>
+</ul>
+<h3 id="parameter-pollution-chaining">Parameter Pollution &amp; Chaining</h3>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Parameter Pollution (HPP):</strong> Add a second <code>redirect_uri</code> parameter (e.g., <code>?redirect_uri=VALID&amp;redirect_uri=ATTACKER</code>).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Chained Open Redirect:</strong> Identify an open redirect vulnerability on the <em>trusted</em> domain (e.g., <code>target.com/logout?next=...</code>) and use it as the <code>redirect_uri</code> value.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Fragment Injection:</strong> Append <code>#</code> to truncate the path if the server validation is loose (e.g., <code>target.com#attacker.com</code>).</p>
+</li>
+</ul>
+</details>
+<h2 id="token-exchange-handling-token">Token Exchange &amp; Handling (<code>/token</code>)</h2>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Authorization Code Replay:</strong> Attempt to exchange the same Authorization Code for an access token more than once.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>PKCE Downgrade:</strong> If PKCE is used, remove the <code>code_challenge</code> and <code>code_challenge_method</code> from the authorization request.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>PKCE Method S256 vs plain:</strong> Force the method to <code>plain</code> if the server supports it, to bypass hashing requirements.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Client Secret Leakage:</strong> Check if the <code>client_secret</code> is leaked in JS files, GitHub repos, or mobile app binaries.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Token Injection via Implicit Flow:</strong> If the app supports <code>response_type=token</code>, try to force this flow even if the app defaults to <code>code</code>.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Referer Header Leakage:</strong> Check if the Authorization Code or Access Token leaks in the <code>Referer</code> header when linking to external sites.</p>
+</li>
+</ul>
+<h2 id="token-validation-session-management">Token Validation &amp; Session Management</h2>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>JWT Analysis (Algorithm Confusion):</strong> If the token is a JWT, test changing the algorithm from <code>RS256</code> to <code>HS256</code> (HMAC) using the public key as the secret.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>JWT "None" Algorithm:</strong> Change the algorithm header to <code>none</code> and remove the signature.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Token Expiration:</strong> Verify that Access Tokens expire within a reasonable timeframe (e.g., 1 hour).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Refresh Token Rotation:</strong> Ensure that using a Refresh Token invalidates the previous one (if rotation is enabled) or that they are securely bound.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Session Fixation:</strong> Check if the user's session ID changes after a successful OAuth login.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>IDOR on UserInfo:</strong> Use an Access Token from User A to request <code>/userinfo</code> data for User B (if the endpoint accepts a user identifier).</p>
+</li>
+</ul>
+<h2 id="account-takeover-pre-authentication">Account Takeover (Pre-Authentication)</h2>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Pre-Auth Account Takeover:</strong> Create an account with an email address (e.g., <code>victim@company.com</code>) manually, then sign in with OAuth using the same email. Check if the accounts merge without verification.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Duplicate Email Registration:</strong> Register a manual account with the same email <em>after</em> an OAuth account exists to see if it overwrites the OAuth link.</p>
+</li>
+</ul>
+<h2 id="the-pkce-downgrade-attack">The PKCE Downgrade Attack</h2>
+<p>Proof Key for Code Exchange (PKCE) protects public clients (like mobile apps) that cannot safely store a client secret. It works by hashing a secret code_verifier into a code_challenge.</p>
 <ul>
-<li>It can only be used to read data, not to insert data</li>
-<li>It does not implement any access control, so if you find an injection point it's likely possible to get the whole document.</li>
+<li>
+<p><strong>The Vulnerability:</strong> Many servers support PKCE but do not <em>enforce</em> it for all clients.</p>
+</li>
+<li>
+<p><strong>The Attack:</strong> An attacker intercepts the initial <code>/authorize</code> request and strips out the <code>code_challenge</code>. If the server is not configured to mandate PKCE, it will fall back to the standard flow. The attacker can then use the intercepted Authorization Code to get a token without needing the <code>code_verifier</code>.</p>
+</li>
 </ul>
 
 
@@ -1591,14 +2024,7 @@
       
       
       
-        <span class="md-tag">xpath</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">injection</span>
+        <span class="md-tag">oauth</span>
       
     
   </nav>
@@ -1643,7 +2069,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../tls/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TLS Handshake">
+          <a href="../local-file-read/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Local File Read">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
@@ -1653,20 +2079,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                TLS Handshake
+                Local File Read
               </div>
             </div>
           </a>
         
         
           
-          <a href="../xss/" class="md-footer__link md-footer__link--next" aria-label="Next: Cross-Site Scripting (XSS)">
+          <a href="../open-redirects/" class="md-footer__link md-footer__link--next" aria-label="Next: Open redirects">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Cross-Site Scripting (XSS)
+                Open redirects
               </div>
             </div>
             <div class="md-footer__button md-icon">

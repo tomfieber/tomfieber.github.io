@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/resources/wordlists/general/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -185,10 +185,10 @@
   },
   "active": "17e5d1f77446fdce",
   "lastOpenFiles": [
+    "docs/index.md",
     "docs/resources/index.md",
     "docs/resources/methodology/cheatsheets/command-injection.md",
     "docs/resources/methodology/cheatsheets/jwt.md",
-    "docs/index.md",
     "docs/resources/methodology/cheatsheets/SQL Injection.md",
     "docs/resources/methodology/cheatsheets/sqli.md",
     "docs/resources/methodology/cheatsheets/api.md",

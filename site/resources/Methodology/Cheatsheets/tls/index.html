@@ -12,13 +12,13 @@
         <meta name="author" content="Tom Fieber">
       
       
-        <link rel="canonical" href="https://tomfieber.dev/resources/methodology/cheatsheets/xpath-injection/">
+        <link rel="canonical" href="https://tomfieber.dev/resources/methodology/cheatsheets/tls/">
       
       
-        <link rel="prev" href="../tls/">
+        <link rel="prev" href="../ssti/">
       
       
-        <link rel="next" href="../xss/">
+        <link rel="next" href="../xpath-injection/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>XPath Injection - Tom Fieber (@pawpawhacks)</title>
+        <title>TLS Handshake - Tom Fieber (@pawpawhacks)</title>
       
     
     
@@ -152,7 +152,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#xpath-injection" class="md-skip">
+        <a href="#tls-handshake" class="md-skip">
           Skip to content
         </a>
       
@@ -185,7 +185,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              XPath Injection
+              TLS Handshake
             
           </span>
         </div>
@@ -1170,10 +1170,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tls/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS Handshake
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1189,6 +1216,88 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tls-handshake-cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS Handshake Cheat Sheet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TLS Handshake Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-goals-cia-triad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Core Goals (CIA Triad)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-handshake-flow-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS Handshake Flow (Step-by-Step)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-12-vs-tls-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS 1.2 vs. TLS 1.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1198,19 +1307,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xpath-injection/" class="md-nav__link">
         
   
   
@@ -1226,7 +1326,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1469,6 +1568,75 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tls-handshake-cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS Handshake Cheat Sheet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TLS Handshake Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-goals-cia-triad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Core Goals (CIA Triad)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-handshake-flow-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS Handshake Flow (Step-by-Step)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-12-vs-tls-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS 1.2 vs. TLS 1.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1577,11 +1745,88 @@
   
 
 
-<h1 id="xpath-injection">XPath Injection</h1>
-<p>XPath injection is similar to SQL injection except for:</p>
+<h1 id="tls-handshake">TLS Handshake</h1>
+<h2 id="tls-handshake-cheat-sheet">TLS Handshake Cheat Sheet</h2>
+<h3 id="the-core-goals-cia-triad">The Core Goals (CIA Triad)</h3>
 <ul>
-<li>It can only be used to read data, not to insert data</li>
-<li>It does not implement any access control, so if you find an injection point it's likely possible to get the whole document.</li>
+<li>
+<p><strong>Confidentiality:</strong> No snooping (Encryption).</p>
+</li>
+<li>
+<p><strong>Integrity:</strong> No tampering (Hashing).</p>
+</li>
+<li>
+<p><strong>Authentication:</strong> No imposters (Certificates).</p>
+</li>
+</ul>
+<h3 id="the-strategy">The Strategy</h3>
+<ul>
+<li>
+<p><strong>Asymmetric Encryption (Public/Private Key):</strong> Slow but safe. Used <em>only</em> during the handshake to exchange secrets.</p>
+</li>
+<li>
+<p><strong>Symmetric Encryption (Shared Key):</strong> Fast and efficient. Used for the actual data transfer once the handshake is done.</p>
+</li>
+</ul>
+<hr />
+<h3 id="tls-handshake-flow-step-by-step">TLS Handshake Flow (Step-by-Step)</h3>
+<p><strong>Phase 1: The Greeting (Negotiation)</strong></p>
+<ul>
+<li>
+<p><strong>ClientHello:</strong> "Here are the TLS versions and Cipher Suites I support. Here is my <strong>Client Random</strong> number."</p>
+</li>
+<li>
+<p><strong>ServerHello:</strong> "I choose <em>this</em> TLS version and <em>this</em> Cipher Suite. Here is my <strong>Server Random</strong> number."</p>
+</li>
+</ul>
+<p><strong>Phase 2: Authentication (Trust)</strong></p>
+<ul>
+<li>
+<p><strong>Certificate Exchange:</strong> Server sends its <strong>Digital Certificate</strong> (ID card).</p>
+</li>
+<li>
+<p><strong>Validation:</strong> Client validates the certificate by checking the digital signature against the <strong>Certificate Authority's (CA)</strong> public key (Chain of Trust).</p>
+</li>
+</ul>
+<p><strong>Phase 3: Key Exchange (The Secret)</strong></p>
+<ul>
+<li>
+<p><strong>The Method:</strong> Uses <strong>ECDHE</strong> (Elliptic Curve Diffie-Hellman Ephemeral).</p>
+</li>
+<li>
+<p><strong>The Process:</strong></p>
+<ul>
+<li>
+<p>Client and Server exchange public parameters ("Paint Buckets").</p>
+</li>
+<li>
+<p>They combine these with their private secrets to calculate the <strong>Pre-Master Secret</strong>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The Calculation:
+    $$Session Keys = Function(PreMasterSecret + ClientRandom + ServerRandom)$$</p>
+</li>
+</ul>
+<p><strong>Phase 4: Finishing (Locking it Down)</strong></p>
+<ul>
+<li>
+<p><strong>ChangeCipherSpec:</strong> "Switching to encrypted mode now!"</p>
+</li>
+<li>
+<p><strong>Finished:</strong> The first encrypted message. Contains a hash of the entire conversation to prove no one tampered with the handshake.</p>
+</li>
+</ul>
+<hr />
+<h3 id="tls-12-vs-tls-13">TLS 1.2 vs. TLS 1.3</h3>
+<ul>
+<li>
+<p><strong>TLS 1.2:</strong> Requires <strong>2 Round Trips (2-RTT)</strong>. "Hello" -&gt; "Wait" -&gt; "Key Exchange" -&gt; "Wait" -&gt; "Keys".</p>
+</li>
+<li>
+<p><strong>TLS 1.3:</strong> Requires <strong>1 Round Trip (1-RTT)</strong>. The Client <em>guesses</em> the key exchange method and sends its key share immediately in the <em>ClientHello</em>. Faster and more secure.</p>
+</li>
 </ul>
 
 
@@ -1591,14 +1836,7 @@
       
       
       
-        <span class="md-tag">xpath</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">injection</span>
+        <span class="md-tag">tls</span>
       
     
   </nav>
@@ -1643,7 +1881,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../tls/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TLS Handshake">
+          <a href="../ssti/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SSTI Testing Methodology">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
@@ -1653,20 +1891,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                TLS Handshake
+                SSTI Testing Methodology
               </div>
             </div>
           </a>
         
         
           
-          <a href="../xss/" class="md-footer__link md-footer__link--next" aria-label="Next: Cross-Site Scripting (XSS)">
+          <a href="../xpath-injection/" class="md-footer__link md-footer__link--next" aria-label="Next: XPath Injection">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Cross-Site Scripting (XSS)
+                XPath Injection
               </div>
             </div>
             <div class="md-footer__button md-icon">
