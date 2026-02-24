@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/wordlists/general/index.md",
+                "file": "docs/writeups/bugforge/weekly/Fur-Hire-4/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -185,6 +185,12 @@
   },
   "active": "17e5d1f77446fdce",
   "lastOpenFiles": [
+    "docs/resources/wordlists/general/index.md",
+    "docs/writeups/bugforge/weekly/Fur-Hire-4/index.md",
+    "docs/writeups/bugforge/weekly/Fur-Hire-4",
+    "docs/writeups/bugforge/weekly",
+    "docs/writeups/bugforge",
+    "docs/writeups",
     "docs/index.md",
     "docs/resources/index.md",
     "docs/resources/methodology/cheatsheets/command-injection.md",
@@ -210,16 +216,11 @@
     "docs/resources/methodology/cheatsheets/csrf.md",
     "docs/resources/methodology/cheatsheets/xss.md",
     "docs/resources/labs/PortSwigger/DOM-Based/dom-lab-4.md",
-    "docs/resources/labs/YesWeHack/SQL-Injection/6-filter-bypass.md",
     "site/resources/labs/PortSwigger/Authentication/authn-lab-1/index.html",
     "site/resources/labs/PortSwigger/Authentication/authn-lab-1",
     "site/resources/labs/PortSwigger/SQL-Injection/sqli-lab-5/index.html",
     "site/resources/labs/PortSwigger/SQL-Injection/sqli-lab-5",
     "site/resources/labs/PortSwigger/XSS/xss-lab-02/index.html",
-    "site/resources/labs/PortSwigger/XSS/xss-lab-02",
-    "site/resources/labs/YesWeHack/XPath-Injection/1-simple-login-bypass/index.html",
-    "site/resources/labs/YesWeHack/XPath-Injection/1-simple-login-bypass",
-    "site/resources/labs/PortSwigger/SQL-Injection/sqli-lab-2/index.html",
     "site/resources/labs/PortSwigger/Authentication/attachments/authn-lab-5/file-20251124113610481.webp",
     "site/resources/labs/PortSwigger/Authentication/attachments/authn-lab-5/file-20251124113610477.webp",
     "site/resources/labs/PortSwigger/Authentication/attachments/authn-lab-5/file-20251124113610475.webp",
@@ -229,7 +230,6 @@
     "site/resources/labs/PortSwigger/Authentication/attachments/authn-lab-5/file-20251111064415030.webp",
     "site/resources/labs/PortSwigger/Authentication/attachments/authn-lab-5/file-20251111063207677.webp",
     "site/resources/labs/PortSwigger/Authentication/attachments/authn-lab-5/file-20251111063002009.webp",
-    "site/resources/labs/PortSwigger/Authentication/attachments/authn-lab-5/file-20251111062747449.webp",
-    "docs/resources/labs/YesWeHack/SQL-Injection/5-injection-in-insert.md"
+    "site/resources/labs/PortSwigger/Authentication/attachments/authn-lab-5/file-20251111062747449.webp"
   ]
 }
