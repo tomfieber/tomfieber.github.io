@@ -59,10 +59,3 @@ Browser mechanism that allows controlled relaxation of the Same Origin Policy (S
 ## References
 
 - [PortSwigger URL Validation Bypass Cheatsheet](https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet)
-
-## Query
-
-```
-select * from users where username = '{username}' and password = '{password}'
-```
-

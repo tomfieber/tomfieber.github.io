@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/writeups/bugforge/weekly/Fur-Hire-4/index.md",
+                "file": "docs/resources/methodology/cheatsheets/cors.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "cors"
             }
           }
         ]
@@ -185,8 +185,8 @@
   },
   "active": "17e5d1f77446fdce",
   "lastOpenFiles": [
-    "docs/resources/wordlists/general/index.md",
     "docs/writeups/bugforge/weekly/Fur-Hire-4/index.md",
+    "docs/resources/wordlists/general/index.md",
     "docs/writeups/bugforge/weekly/Fur-Hire-4",
     "docs/writeups/bugforge/weekly",
     "docs/writeups/bugforge",
