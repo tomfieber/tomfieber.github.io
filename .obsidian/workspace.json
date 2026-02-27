@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/resources/methodology/cheatsheets/api.md",
+                "file": "docs/resources/methodology/cheatsheets/broken-access-control.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "api"
+              "title": "broken-access-control"
             }
           }
         ]
@@ -185,6 +185,8 @@
   },
   "active": "17e5d1f77446fdce",
   "lastOpenFiles": [
+    "docs/resources/methodology/cheatsheets/authentication.md",
+    "docs/resources/methodology/cheatsheets/api.md",
     "docs/resources/methodology/cheatsheets/cors.md",
     "docs/writeups/bugforge/weekly/Fur-Hire-4/index.md",
     "docs/resources/wordlists/general/index.md",
@@ -198,10 +200,8 @@
     "docs/resources/methodology/cheatsheets/jwt.md",
     "docs/resources/methodology/cheatsheets/SQL Injection.md",
     "docs/resources/methodology/cheatsheets/sqli.md",
-    "docs/resources/methodology/cheatsheets/api.md",
     "docs/resources/methodology/cheatsheets/xxe.md",
     "docs/resources/methodology/cheatsheets/local-file-read.md",
-    "docs/resources/methodology/cheatsheets/authentication.md",
     "docs/resources/methodology/cheatsheets/broken-access-control.md",
     "docs/resources/methodology/cheatsheets/oauth.md",
     "docs/resources/methodology/_OWASP-WSTG/index.md",
