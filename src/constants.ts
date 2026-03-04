@@ -42,6 +42,12 @@ export const SOCIALS: Social[] = [
     linkTitle: `Join ${SITE.title} on Discord`,
     icon: IconDiscord,
   },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@pawpawhacks",
+    linkTitle: `${SITE.title} on YouTube`,
+    icon: IconYoutube,
+  },
 ] as const;
 
 export const SHARE_LINKS: Social[] = [
