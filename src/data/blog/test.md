@@ -1,7 +1,7 @@
 ---
 title: "Test post"
 description: "This is a test post"
-pubDatetime: 2026-03-03 1800
+pubDatetime: 2026-03-03T18:00:00Z
 ---
 
 Test page
