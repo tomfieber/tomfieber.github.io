@@ -154,5 +154,8 @@ Awesome, we've effectively taken over Jeremy's account and can log in to his acc
 
 ## Remediation
 
-
+There's a few things the development team can implement to make this application more secure.
+- Use an allow list to define acceptable values for the `/api/applications/:id/status` endpoint. For example, anything that is not the string "accepted" or "rejected" should be...rejected. In the current instance, the developers appear to be using a deny list to block certain words to prevent XSS attacks. Deny lists are generally less secure than allow lists, since it's difficult to include all possible abuse cases in the deny list and they can usually be circumvented.
+- Send a CSRF token with every state-changing HTTP request and ensure that it is validated on the server-side.
+- Ensure the change password functionality is implemented securely by requiring the current password as well as the new password. 
 
