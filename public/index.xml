@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pawpawhacks</title>
-    <link>https://tomfieber.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on pawpawhacks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Tom Fieber</copyright>
-    <lastBuildDate>Sun, 08 Mar 2026 11:58:02 +0000</lastBuildDate><atom:link href="https://tomfieber.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Mar 2026 11:58:02 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Fur Hire (WAF Bypass)</title>
-      <link>https://tomfieber.github.io/posts/fur-hire-5/</link>
+      <link>http://localhost:1313/posts/fur-hire-5/</link>
       <pubDate>Sun, 08 Mar 2026 11:58:02 +0000</pubDate>
       
-      <guid>https://tomfieber.github.io/posts/fur-hire-5/</guid>
+      <guid>http://localhost:1313/posts/fur-hire-5/</guid>
       <description>Bypass a WAF blocklist to achieve cross-site scripting and account takeover</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://tomfieber.github.io/posts/fur-hire-5/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/fur-hire-5/featured.png" />
     </item>
     
     <item>
       <title>About Me</title>
-      <link>https://tomfieber.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tomfieber.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;My name is Tom. I am a husband, father, grandfather, and retired Army veteran. I&amp;rsquo;ve been working as a penetration tester/security consultant since I retired from the Army in 2022. I&amp;rsquo;m currently focused on web application security.&lt;/p&gt;</description>
       
     </item>

@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on pawpawhacks</title>
-    <link>https://tomfieber.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on pawpawhacks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Tom Fieber</copyright>
-    <lastBuildDate>Sun, 08 Mar 2026 11:58:02 +0000</lastBuildDate><atom:link href="https://tomfieber.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Mar 2026 11:58:02 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>CSRF</title>
-      <link>https://tomfieber.github.io/tags/csrf/</link>
+      <link>http://localhost:1313/tags/csrf/</link>
       <pubDate>Sun, 08 Mar 2026 11:58:02 +0000</pubDate>
       
-      <guid>https://tomfieber.github.io/tags/csrf/</guid>
+      <guid>http://localhost:1313/tags/csrf/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>WAF</title>
-      <link>https://tomfieber.github.io/tags/waf/</link>
+      <link>http://localhost:1313/tags/waf/</link>
       <pubDate>Sun, 08 Mar 2026 11:58:02 +0000</pubDate>
       
-      <guid>https://tomfieber.github.io/tags/waf/</guid>
+      <guid>http://localhost:1313/tags/waf/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>XSS</title>
-      <link>https://tomfieber.github.io/tags/xss/</link>
+      <link>http://localhost:1313/tags/xss/</link>
       <pubDate>Sun, 08 Mar 2026 11:58:02 +0000</pubDate>
       
-      <guid>https://tomfieber.github.io/tags/xss/</guid>
+      <guid>http://localhost:1313/tags/xss/</guid>
       <description></description>
       
     </item>
