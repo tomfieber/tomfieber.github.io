@@ -162,6 +162,7 @@ There's a few things the development team can implement to make this application
 ## References
 
 [Intigriti: Cross-Site Request Forgery](https://www.intigriti.com/researchers/hackademy/cross-site-request-forgery-csrf)
+
 [PortSwigger XSS Cheatsheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
 
 
