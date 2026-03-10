@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Tom Fieber</copyright>
-    <lastBuildDate>Sun, 08 Mar 2026 11:58:02 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/xss/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Mar 2026 16:45:02 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/xss/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Fur Hire (WAF Bypass)</title>
       <link>http://localhost:1313/posts/fur-hire-5/</link>
-      <pubDate>Sun, 08 Mar 2026 11:58:02 +0000</pubDate>
+      <pubDate>Tue, 10 Mar 2026 16:45:02 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/fur-hire-5/</guid>
       <description>Bypass a WAF blocklist to achieve cross-site scripting and account takeover</description>
