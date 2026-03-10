@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on pawpawhacks</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://tomfieber.github.io/categories/</link>
     <description>Recent content in Categories on pawpawhacks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Tom Fieber</copyright>
-    <lastBuildDate>Fri, 06 Mar 2026 11:58:02 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Mar 2026 11:58:02 +0000</lastBuildDate><atom:link href="https://tomfieber.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Bugforge</title>
-      <link>http://localhost:1313/categories/bugforge/</link>
-      <pubDate>Fri, 06 Mar 2026 11:58:02 +0000</pubDate>
+      <link>https://tomfieber.github.io/categories/bugforge/</link>
+      <pubDate>Sun, 08 Mar 2026 11:58:02 +0000</pubDate>
       
-      <guid>http://localhost:1313/categories/bugforge/</guid>
+      <guid>https://tomfieber.github.io/categories/bugforge/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Writeups</title>
-      <link>http://localhost:1313/categories/writeups/</link>
-      <pubDate>Fri, 06 Mar 2026 11:58:02 +0000</pubDate>
+      <link>https://tomfieber.github.io/categories/writeups/</link>
+      <pubDate>Sun, 08 Mar 2026 11:58:02 +0000</pubDate>
       
-      <guid>http://localhost:1313/categories/writeups/</guid>
+      <guid>https://tomfieber.github.io/categories/writeups/</guid>
       <description></description>
       
     </item>
