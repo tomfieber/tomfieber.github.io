@@ -180,11 +180,13 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "e6a8010b122c789c",
   "lastOpenFiles": [
+    "public/js/firebase.min.cad74e0625f72f359ec6d6fed579b87733749de70400e7614048050ed08832ee3f58983d5d139fb1ddc5f7f2f5047d45ed80ec923534a3660fc3a7965f936866.js",
     "public/posts/fur-hire-5/Pasted image 20260310145910.png",
     "content/posts/fur-hire-5/Pasted image 20260310145910.png",
     "public/posts/fur-hire-5/Pasted image 20260310145736.png",
@@ -195,7 +197,6 @@
     "content/posts/fur-hire-5/Pasted image 20260310142845.png",
     "public/posts/fur-hire-5/Pasted image 20260310141828.png",
     "content/posts/fur-hire-5/Pasted image 20260310141828.png",
-    "public/posts/fur-hire-5/Pasted image 20260310141640.png",
     "public/css/main.bundle.min.98da46ecfb9bd858aaf70e10db6128a3534b49a490517bfaf3047216eacc5f7ce7cf074ebe2e1454c2d68f00a4c2877458372465549b4280e841e01793d61c07.css",
     "public/css/main.bundle.min.76eb3b790359f86947f3b193e8566131f2d9efd34f19d92c0f5f9a9766d6eed451f53a69adabe7fd2e292a7d870963ee6341b125197fb8ba42441c9d7a30b0aa.css",
     "public/css/main.bundle.min.6dd6ee346eba4d0ed84d3073d80b4b7530e67e2bbb16caa304f95f3692c14f323e73af9cad73ec4f7b2215c1933146f2dc5d13d5417b4622ff31cb8d20a14b9e.css",

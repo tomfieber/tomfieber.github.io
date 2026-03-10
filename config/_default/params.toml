@@ -13,7 +13,6 @@ hotlinkFeatureImage = false
 fingerprintAlgorithm = "sha512"
 giteaDefaultServer = "https://git.fsfe.org"
 forgejoDefaultServer = "https://v11.next.forgejo.org"
-firebase = { }
 fathomAnalytics = { }
 umamiAnalytics = { }
 selineAnalytics = { }
@@ -24,6 +23,15 @@ advertisement = { }
 smartTOC = true
 defaultBackgroundImage = "tie-dye-background.png"
 defaultSocialImage = "morning-coffee.png"
+
+[firebase]
+apiKey = "AIzaSyARKk9W0yHKqxPgF5ZFwzaDbphW3GVsYic"
+authDomain = "blowfish-5869c.firebaseapp.com"
+projectId = "blowfish-5869c"
+storageBucket = "blowfish-5869c.firebasestorage.app"
+messagingSenderId = "74547788078"
+appId = "1:74547788078:web:11cbf9b22aab83885ea2bf"
+measurementId = "G-RYKK74M9PF"
 
 [header]
 layout = "basic"
