@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tomfieber.github.io/sitemap.xml
