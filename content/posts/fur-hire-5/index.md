@@ -1,5 +1,5 @@
 ---
-date: 2026-03-08T11:58:02
+date: 2026-03-10T16:45:02
 draft: false
 summary: Bypass a WAF blocklist to achieve cross-site scripting and account takeover
 title: Fur Hire (WAF Bypass)
@@ -158,4 +158,10 @@ There's a few things the development team can implement to make this application
 - Use an allow list to define acceptable values for the `/api/applications/:id/status` endpoint. For example, anything that is not the string "accepted" or "rejected" should be...rejected. In the current instance, the developers appear to be using a deny list to block certain words to prevent XSS attacks. Deny lists are generally less secure than allow lists, since it's difficult to include all possible abuse cases in the deny list and they can usually be circumvented.
 - Send a CSRF token with every state-changing HTTP request and ensure that it is validated on the server-side.
 - Ensure the change password functionality is implemented securely by requiring the current password as well as the new password. 
+
+## References
+
+[Intigriti: Cross-Site Request Forgery](https://www.intigriti.com/researchers/hackademy/cross-site-request-forgery-csrf)
+[PortSwigger XSS Cheatsheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
+
 
