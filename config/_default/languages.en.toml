@@ -1,0 +1,32 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "pawpawhacks"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "01 January 2006"
+copyright = "© 2026 Tom Fieber"
+description = "Blog about application security, information security, technology, and programming"
+logo = ""
+
+["params.author"]
+name = "Tom Fieber"
+headline = "Husband, father, grandfather, and semi-retired online tinkerer."
+image = "lazyriver.png"
+bio = "Web application security tester"
+
+  [["params.author".links]]
+  github = "https://github.com/tomfieber"
+
+  [["params.author".links]]
+  youtube = "https://www.youtube.com/@pawpawhacks"
+
+  [["params.author".links]]
+  discord = "https://discord.gg/pjUUkw38mC"
+
+  [["params.author".links]]
+  linkedin = "https://www.linkedin.com/in/tom-fieber-9b1a7a1/"

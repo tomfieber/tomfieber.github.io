@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Something on Lazy River Infosec</title>
+    <link>http://localhost:1313/tags/something/</link>
+    <description>Recent content in Something on Lazy River Infosec</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Tom Fieber</copyright>
+    <lastBuildDate>Fri, 06 Mar 2026 07:44:36 -0600</lastBuildDate><atom:link href="http://localhost:1313/tags/something/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Test Article</title>
+      <link>http://localhost:1313/posts/test-article/</link>
+      <pubDate>Fri, 06 Mar 2026 07:44:36 -0600</pubDate>
+      
+      <guid>http://localhost:1313/posts/test-article/</guid>
+      <description>This is a test summary. I am not sure how this is going to work, but it is worth a test</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/test-article/featured.png" />
+    </item>
+    
+  </channel>
+</rss>
