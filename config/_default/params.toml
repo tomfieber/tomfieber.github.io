@@ -20,8 +20,9 @@ verification = { }
 rssnext = { }
 advertisement = { }
 smartTOC = true
-defaultBackgroundImage = "tie-dye-background.png"
+defaultBackgroundImage = ""
 defaultSocialImage = "morning-coffee.png"
+showLikes = true
 
 [buymeacoffee]
 identifier = "pawpawhacks"
@@ -63,7 +64,7 @@ disableHeroImageFilter = false
 [article]
 showDate = true
 showViews = true
-showLikes = false
+showLikes = true
 showDateOnlyInArticle = false
 showDateUpdated = false
 showAuthor = true
