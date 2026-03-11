@@ -16,13 +16,19 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 fathomAnalytics = { }
 umamiAnalytics = { }
 selineAnalytics = { }
-buymeacoffee = { }
 verification = { }
 rssnext = { }
 advertisement = { }
 smartTOC = true
 defaultBackgroundImage = "tie-dye-background.png"
 defaultSocialImage = "morning-coffee.png"
+
+[buymeacoffee]
+identifier = "pawpawhacks"
+globalWidget = true
+globalWidgetMessage = ""
+globalWidgetColor = ""
+globalWidgetPosition = ""
 
 [firebase]
 apiKey = "AIzaSyARKk9W0yHKqxPgF5ZFwzaDbphW3GVsYic"
