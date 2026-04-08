@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Tom Fieber</copyright>
-    <lastBuildDate>Tue, 10 Mar 2026 16:45:02 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Apr 2026 07:35:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>HackTheBox Certified Web Exploitation Specialist: Review and Recommendations</title>
+      <link>http://localhost:1313/posts/htb-cwes-review/</link>
+      <pubDate>Wed, 08 Apr 2026 07:35:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/htb-cwes-review/</guid>
+      <description>My review of the HackTheBox Certified Web Exploitation Specialist (CWES) exam. I&amp;rsquo;ll discuss my thoughts on the exam and make recommendations for how to best prepare for it.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb-cwes-review/featured.png" />
+    </item>
     
     <item>
       <title>Fur Hire (WAF Bypass)</title>

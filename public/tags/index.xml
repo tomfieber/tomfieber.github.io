@@ -7,7 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Tom Fieber</copyright>
-    <lastBuildDate>Tue, 10 Mar 2026 16:45:02 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Mar 2026 13:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Appsec</title>
+      <link>http://localhost:1313/tags/appsec/</link>
+      <pubDate>Sun, 29 Mar 2026 13:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/appsec/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Cwes</title>
+      <link>http://localhost:1313/tags/cwes/</link>
+      <pubDate>Sun, 29 Mar 2026 13:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/cwes/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Htb</title>
+      <link>http://localhost:1313/tags/htb/</link>
+      <pubDate>Sun, 29 Mar 2026 13:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/htb/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>CSRF</title>
