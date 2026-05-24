@@ -19,7 +19,7 @@ Away from the computer, I enjoy spending time with my family, playing trivia and
 
 {{< timeline >}}
 
-{{< timelineItem icon="chevron-down" header="Owner" badge="August 2025 - Present" subheader="Eagle Rising Information Security" md=true >}}
+{{< timelineItem icon="chevron-down" header="Owner" badge="August 2025 - Present" subheader="Eagle Rising Information Security LLC" md=true >}}
 
 {{< /timelineItem >}}
 
