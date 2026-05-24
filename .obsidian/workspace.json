@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/htb-cwes-review/index.md",
+                "file": "content/about/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -186,6 +186,8 @@
   },
   "active": "e6a8010b122c789c",
   "lastOpenFiles": [
+    "content/about.md",
+    "content/posts/htb-cwes-review/index.md",
     "public/posts/htb-cwes-review/Pasted image 20260408071314.png",
     "content/posts/htb-cwes-review/Pasted image 20260408071314.png",
     "public/posts/htb-cwes-review/Pasted image 20260408061200.png",
@@ -205,12 +207,9 @@
     "public/lib/packery/packery.pkgd.min.8b0cbb30a72acb6a0188f690a3768e9c531f056dcf18df8d739ececb994387d28137ed684b2f23da6df5a0c416eb4f8818d5db4493419a9b97c7452ac602fbd4.js",
     "public/lib/packery",
     "public/css/components/gallery.5ecf2cf593db008f5b1a9adc1bac0f07fd02452d9b9f3b024618673e799cb2090cbf655712937b710dfe6422e08e163234b64b43ddae4b41642e6b560c46418d.css",
-    "content/posts/htb-cwes-review/index.md",
     "content/posts/fur-hire-5/index.md",
     "public/posts/htb-cwes-review/featured_hu_1154f0f610cc55bf.png",
     "public/posts/htb-cwes-review/featured_hu_4bfb0fa799dda89d.png",
-    "resources/_gen/images/posts/htb-cwes-review/featured_hu_4bfb0fa799dda89d.png",
-    "content/about.md",
     "content/posts/_index.md",
     "content/posts/test-article-2/index.md",
     "content/posts/test-article/index.md"
