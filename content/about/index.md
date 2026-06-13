@@ -19,6 +19,10 @@ Away from the computer, I enjoy spending time with my family, playing trivia and
 
 {{< timeline >}}
 
+{{< timelineItem icon="chevron-down" header="Senior Web Application Penetration Tester" badge="June 2026 - Present" subheader="SIXGEN" md=true >}}
+
+{{< /timelineItem >}}
+
 {{< timelineItem icon="chevron-down" header="Owner" badge="August 2025 - Present" subheader="Eagle Rising Information Security LLC" md=true >}}
 
 {{< /timelineItem >}}
@@ -45,10 +49,10 @@ I earned an MS in Cybersecurity from Utica University (Utica, NY) in 2015.
 ## Certifications
 
 - Certified Information Systems Security Professional (CISSP)
+- HTB Certified Penetration Testing Specialist (CPTS)
+- HTB Certified Web Exploitation Specialist (CWES)
 - OffSec Experienced Penetration Tester (OSEP)
 - OffSec Certified Professional (OSCP)
-- HTB Certified Web Exploitation Specialist (CWES)
-- HTB Certified Penetration Testing Specialist (CPTS)
 - TCM Practical Web Penetration Testing Professional (PWPP)
 - TCM Practical Network Penetration Tester (PNPT)
 - TCM Practical Web Penetration Testing Associate (PWPA)
